@@ -40,7 +40,7 @@
 
         <!-- 검색 -->
         <form id="fsearch" class="relative" name="fsearch" method="post" onsubmit="return false;">
-            <input type="text" name="keyword"  onchange="GetAddr();" onkeydown="GetAddr();" id="fsearch_addr" placeholder="지번, 도로명 검색"/>
+            <input type="text" name="keyword"  onended="alter('dasda')" onchange="GetAddr();" onkeydown="GetAddr();" id="fsearch_addr" placeholder="지번, 도로명 검색"/>
             <button type="button" id="btn_search" class="word-del"> <!--onclick="GetAddr();"-->
                 <span class="hidden">삭제</span>
             </button>
@@ -69,6 +69,7 @@
                         </p>
                     </a>
                 </li>
+                
             </ul>
         </div> -->
     </div>

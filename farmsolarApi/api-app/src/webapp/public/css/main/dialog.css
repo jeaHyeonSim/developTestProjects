@@ -120,7 +120,8 @@
     position: relative;
     transition: all .5s ease;
 }
-
+.type-select1 a:hover {background-color: #416bff;}
+.type-select1 a:hover strong {background: #fff; color: #416bff;}
 .type-select1 a strong {
     position: absolute;
     left: 50%;

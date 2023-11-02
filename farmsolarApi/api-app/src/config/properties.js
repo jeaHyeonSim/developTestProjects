@@ -22,6 +22,8 @@ config.cookie_time = 1 * 30 * 1000;
 
 // 공공데이터 포털
 config.key = "";
+// 주소기반산업지원서비스 - 검색API
+config.confmKey = 'devU01TX0FVVEgyMDIzMDkyNTE0MDk1MDExNDEyODQ=';
 // 공공데이터포털 - 국토교통부_건축물대장 표제부
 config.bldKey = 'rFQGSmKC0okekhO4D79Zw0QJugOvcbC3gvWgQHOCeDm7sskr7Nru3gUQ0bp2G%2FlS7lgrx0xqI3fszVbEilxHwg%3D%3D';
 // 국가공간 - 개별공시지가속성 (발급 ID : simjh7601)

@@ -1,6 +1,5 @@
 
 // 주소 입력시 발생 이벤트
-let addr_list = new Array(); // 조회한 주소 데이터 담을 배열
 const GetAddr = () => {
     if(checkSearchedWord(document.fsearch.keyword) == false)
     {
@@ -11,13 +10,8 @@ const GetAddr = () => {
     var txt = $("#fsearch_addr").val(); // 인풋 입력 값
     if(txt.length >= 2){
         $.ajax({
-            url: `https://business.juso.go.kr/addrlink/addrLinkApi.do?currentPage=1&countPerPage=10&keyword=${txt}&resultType=json
-            &confmKey=devU01TX0FVVEgyMDIzMDkyNTE0MDk1MDExNDEyODQ=`,
-            // dataType: 'json',
+            url: `/jusoAPI/addrLinkApi?txt=${txt}`,
             type: 'GET',
-            // data : {
-                
-            // },
             success: function (data) {
                 // 결과 리턴
                 if(data && data.results.juso){
@@ -45,11 +39,7 @@ const GetAddr = () => {
                         $('.addr_list_inbox').append(
                             '<ul class="addr-list"></ul>'
                         );
-
-                        // console.log(data.results.juso);
                         $.each(data.results.juso, function (i, v) {
-                            addr_list[i] = {};
-                            addr_list[i] = v;
                             $('.addr-list').append(
                                 `
                                     <li class='result_li' data->
@@ -91,12 +81,22 @@ const GetAddr = () => {
         console.log("뭐든 에러");
     }  
 }
-
+// 삭제?
+let addr_data;
+// 선택한 리스트 인덱스 번호 저장
+let addr_index; 
+// 주소 검색할 경우 나오는 리스트중 선택시 이벤트 발생
 $(document).on('click', '.result_li', function() {
-    let addr_data = addr_list[$(this).index()]; // 선택한 주소 데이터
-    console.log(addr_data);
+    // addr_data = addr_list[$(this).index()]; // 선택한 주소 데이터
+    addr_index = $(this).index();
     $('.modal-btn').trigger("click");
-})
+});
+// 주소 검색 후 => 설치타입 선택시 이벤트 발생
+$('.type-select1 a').on('click', function(){
+    let addr_type = $(this).attr('class');
+    location.href = `/jusoAPI/addrLinkMove?addr_type=${addr_type}&addr_index=${addr_index}`;
+});
+
 
 /**
 *  
