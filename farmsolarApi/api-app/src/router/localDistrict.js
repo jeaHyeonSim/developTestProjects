@@ -296,7 +296,8 @@ router.post('/bld-rgst-service', async (req, res) => {
         let platGbCd = req.body.platGbCd;  // 대지구분코드
         let _type = "json";
         let re = await re3Fn(key, sigunguCd, bjdongCd, bun, ji, platGbCd, _type);
-
+        console.log("re.response.body");
+        console.log(re.response.body);
         if ((re.response.body.items.item).length <= 0) {
             return res.status(209).send("0");
         }
