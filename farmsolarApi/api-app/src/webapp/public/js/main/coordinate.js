@@ -47,6 +47,7 @@ $('.searchLand').on('click', async function(){
 	let landCharacteristics = await nsdi_landCharacteristicsWfs();
 	console.log(kakaoData);
 	console.log(landCharacteristics);
+	kakaoMaps(landCharacteristics);
 	return;
 
 	
