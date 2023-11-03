@@ -38,7 +38,23 @@ $ npm install --save-dev mocha
 ```
 
 ## Page Description
-JS
+HTML / JS (서버에 호출 및 결과 활용)
+└───juso
+    └─── 주소검색
+└───localDistrict
+    └───지역지구 분석
+└───landType
+    └─── 토지유형
+└───lawData
+    └─── 조례정보
+└───coordinate
+    └─── 토지/건물 영역 좌표정보
+
+
+ROUTER (API 호출)
+└───juso
+    └─── 주소검색
+        └─── 주소기반 검색 API 호출
 └───localDistrict
     └───지역지구 분석
         └─── 소유 및 기타정보 [ 국가공간 - 토지소유정보속성조회 REST API ]
@@ -47,15 +63,12 @@ JS
         └─── 지역지구/가능여부/조건·제한·예외사항 조회하기
 └───landType
     └─── 토지유형
-        └─── 토지이동이력속성 조회하기
+        └─── 국가공간 - 토지특성속성조회
+        └─── 국가공간 - 토지이동이력속성조회
 └───lawData
     └─── 조례정보
         └─── 국가법령정보(조례정보 목록-법규ID)
         └─── 국가법령정보(자치법규 본문 조회) - 개발행위허가 기준
-
-ROUTER
-└───localDistrict
-
-└───landType
-
-└───lawData
+└───coordinate
+    └─── 토지/건물 영역 좌표정보
+        └─── 

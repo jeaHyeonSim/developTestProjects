@@ -61,9 +61,8 @@ const landMoveService = (authkey, pnu, startDt, endDt, format, numOfRows, pageNo
 
 
 // 토지특성속성조회,토지이동이력속성 조회하기
-// API 신청한거 승인나면 구현하기
 router.get('/landTypeSearch', async (req, res) => {
-    console.log("토지유형 조ㅚ");
+    console.log("토지유형 조회");
     try {
         let pnu = req.session.pnu;
         let stdrYear = "2023";

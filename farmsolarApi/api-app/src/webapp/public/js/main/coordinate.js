@@ -120,7 +120,7 @@ function jusoCallBack2(jsonStr) {
 
 function jusoCallBack_3() {
 	$.ajax({
-		url : `/jusoAPI/vworldAPI3`
+		url : `/coordinate/vworldAPI3`
 		,type:"get"
 		,success:function(jsonStr){
             console.log(jsonStr);
@@ -256,7 +256,7 @@ let url3 = `https://api.vworld.kr/req/data?service=data&version=2.0
 function getAddr2(){
 	$.ajax({
         // url :`https://api.vworld.kr/req/data?ctprvn_cd=2920016000&ctp_kor_nm=광주광역&key=045D5FE7-1CC7-3CE8-B653-793E6F1919FB`
-		url : `/jusoAPI/vworldAPI`
+		url : `/coordinate/vworldAPI`
 		,type:"get"
 		,success:function(jsonStr){
             console.log(jsonStr);
@@ -273,7 +273,7 @@ getAddr2();
 
 function getAddr3(){
 	$.ajax({
-		url : `/jusoAPI/vworldAPI2`
+		url : `/coordinate/vworldAPI2`
 		,type:"get"
 		,success:function(jsonStr){
             console.log(jsonStr);
