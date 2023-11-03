@@ -11,77 +11,11 @@
 	<link rel="stylesheet" href="/css/main/coordinate.css">
 	<script src="/js/main/coordinate.js" defer></script>
 	<script src="/js/main/kakao.js" defer></script>
-
-
-	<style type="text/css">
-		.noSearchResult {
-			border: 1px solid #ccc;
-			border-radius: 10px;
-			/*	height: 50px; */
-			width: 280px;
-			text-align: left;
-			margin: 0 0 20px;
-			/*	padding: 20px 0 0; */
-			padding: 15px;
-			letter-spacing: 0.7px;
-			line-height: 18px;
-		}
-
-		caption {
-			visibility: hidden;
-			width: 0;
-			height: 0;
-			overflow: hidden;
-			font-size: 0;
-		}
-
-		table.tbl8 th {
-			background: #5a86b0 !important;
-			color: #fff !important;
-			font-size: 0.95em;
-			text-align: center;
-			border-bottom: 0px !important;
-		}
-	</style>
-
-	<script type="text/javascript">
-		function movePage(pg) {
-			$("#page").attr("value", pg);
-			$("#lawSearchForm").submit();
-
-			return true;
-		}
-
-		function openPop(thisUrl) {
-			var popUrl = thisUrl;
-			var contentPop = window.open('', '', 'scrollbars=no,toolbar=no,resizable=yes,status=no,menubar=no');
-			contentPop.location.href = popUrl;
-
-		}
-	</script>
-
-
 </head>
 
 <body>
 	<%- include('../partials/menuBtn.html') %>
 	<div class="wrap">
-		<form name="form" id="form" method="post">
-
-
-			<input type="text" name="confmKey"
-				value="U01TX0FVVEgyMDIzMTAxMzEwMTcyMzExNDE2NTA=" /><!-- 요청 변수 설정 (승인키) -->
-			<input type="text" name="admCd" value="2920016000" /> <!-- 요청 변수 설정 (행정구역코드) -->
-			<input type="text" name="rnMgtSn" value="292003352953" /><!-- 요청 변수 설정 (도로명코드) -->
-			<input type="text" name="udrtYn" value="0" /> <!-- 요청 변수 설정 (지하여부) -->
-			<input type="text" name="buldMnnm" value="15" /><!-- 요청 변수 설정 (건물본번) -->
-			<input type="text" name="buldSlno" value="0" /><!-- 요청 변수 설정 (건물부번) -->
-			<input type="text" name="resultType" value="json" /><!-- 검색결과형식 -->
-			<input type="button" onClick="getAddr();" value="좌표검색하기" />
-			<div id="list"></div><!-- 검색 결과 리스트 출력 영역 -->
-		</form>
-
-
 
 		<div class="">
 			<button class="searchLand">토지특성WFS 조회</button>
