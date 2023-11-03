@@ -37,6 +37,10 @@ $ npm install --save-dev mocha
 계정 : sysAdmin // 1234
 ```
 
+## Router API Description
+국가공간정보포털 오픈API
+└───nsdi-서비스URL
+
 ## Page Description
 HTML / JS (서버에 호출 및 결과 활용)
 └───juso
@@ -65,6 +69,7 @@ ROUTER (API 호출)
     └─── 토지유형
         └─── 국가공간 - 토지특성속성조회
         └─── 국가공간 - 토지이동이력속성조회
+        └─── 
 └───lawData
     └─── 조례정보
         └─── 국가법령정보(조례정보 목록-법규ID)

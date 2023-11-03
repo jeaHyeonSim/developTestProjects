@@ -20,7 +20,7 @@ function getAddr(){
 				if(jsonStr != null){
 					makeListJson(jsonStr);
 					jusoCallBack(jsonStr);
-					jusoCallBack_3();
+					
 				}
 			}
 		}
@@ -93,198 +93,127 @@ function jusoCallBack(jsonStr) {
     console.log('위도: ' + p.y);
     console.log('경도: ' + p.x);
 }
-function jusoCallBack2(jsonStr) {
-	let proj4_02 = proj4;
+
+
+
+
+// 카카오 맵에 표시 할 수 있는 함수로 변경하기 및 실행
+function kakaoMaps(jsonStr) {
+	// console.log(jsonStr.length);
+	let coordinateStr = "";
+	let coordinateList = [];
+	let reverse = jsonStr[0].reverse();
+	for (let i = 0; i < reverse.length; i++) {
+		if(i % 2 == 0) {
+			coordinateStr += `new kakao.maps.LatLng(${reverse[i]}, `;
+		}else {
+			coordinateStr += `${reverse[i]}),`;
+			coordinateList.push(coordinateStr);
+			coordinateStr = "";
+		}
+		
+	}
+
+	console.log(coordinateList);
+// 	new kakao.maps.LatLng(34.64010354, 126.76727138),
+// new kakao.maps.LatLng(34.64009173, 126.76716808),
+// new kakao.maps.LatLng(34.64021073, 126.76706943),
+// new kakao.maps.LatLng(34.64022066, 126.76708272),
+// new kakao.maps.LatLng(34.64027978, 126.76701157),
+// new kakao.maps.LatLng(34.64040706, 126.76690646),
+// new kakao.maps.LatLng(34.64042987, 126.76694795),
+// new kakao.maps.LatLng(34.64055512, 126.76716679),
+// new kakao.maps.LatLng(34.64046846, 126.76727945),
+// new kakao.maps.LatLng(34.64038782, 126.76739295),
+// new kakao.maps.LatLng(34.6403464, 126.76747444),
+// new kakao.maps.LatLng(34.64031806, 126.76751289),
+// new kakao.maps.LatLng(34.64018744, 126.76749377),
+// new kakao.maps.LatLng(34.64017464, 126.76749088),
+// new kakao.maps.LatLng(34.64013609, 126.76748054),
+// new kakao.maps.LatLng(34.64011821, 126.76731981),
+// new kakao.maps.LatLng(34.64011381, 126.76730554),
+// new kakao.maps.LatLng(34.64010354, 126.76727138)
+	// 'new kakao.maps.LatLng(33.450965145649576, 126.57020280169624),'
+}
+
+
+
+
+
+
+// 카카오에서 입력한 주소 좌표 얻기
+function kakaoAddress() {
+	return new Promise((resolve, reject) => {
+		$.ajax(`/coordinate/kakao-kakaoAddress`,
+		{
+			method: 'post'
+		}
+	)
+	.done(function (jsonStr) { // 서버요청이 성공시의 콜백함수
+		return resolve(jsonStr);
+	})
+	.fail(function (error) { // 서버요청이 에러시의 콜백함수
+		console.log(error);
+		// alert(error.responseJSON.errMsg);
+		return reject("err");
+	});
+	})
 	
 
-	// var eps2097p = proj4(eps2097_1, wgs84_1, arrB);
-	// console.log(eps2097p);
-	// let proj4_01 = proj4;
-	// let pp = proj4_01.toPoint(arrA);
-	// pp = proj4_01.transform(grs80, pp);
-	// console.log(pp);
+
+    // $.ajax({
+    //     url :`https://dapi.kakao.com/v2/local/search/address.json?query=전라남도 강진군 강진읍 남성리 170-1` 
+	// 	,type:"get"
+	// 	// ,dataType:"jsonp"
+    //     ,headers : {'Authorization': `KakaoAK 5396bdb11af5af0741cf1ce924f30d27`}
+	// 	,crossDomain:true
+    //     ,dataType : 'json'
+	// 	,success:function(jsonStr){
+    //         console.log("-- 카카오 에서 제공하는 주소 정보 --");
+    //         console.log(jsonStr);
+    //         console.log(jsonStr.documents[0].address); // 지번주소
+    //         console.log(jsonStr.documents[0].road_address); // 도로명 주소
+    //         console.log(jsonStr.documents[0].x); 
+    //         console.log(jsonStr.documents[0].y);
+    //         console.log("-- 카카오 에서 제공하는 주소 정보 --");
+
+	// 	}
+	//     ,error: function(xhr,status, error){
+    //         console.log(error);
+	//     	alert("에러발생");
+	//     }
+	// });
+}
+
+const nsdi_landCharacteristicsWfs = () => {
+	return new Promise((resolve, reject) => {
+		$.ajax(`/coordinate/nsdi-landCharacteristicsWfs`,
+			{
+				method: 'post',
+			}
+		)
+		.done(function (jsonStr) { // 서버요청이 성공시의 콜백함수
+			resolve(jsonStr);
+		})
+		.fail(function (error) { // 서버요청이 에러시의 콜백함수
+			// console.log('좌표 에러발생');
+			// console.log(error);
+			reject(error.responseJSON.errMsg);
+			return;
+		});
+	});
+}
+
+
+$('.searchLand').on('click', async function(){
+
+	let kakaoData = await kakaoAddress();
+	let landCharacteristics = await nsdi_landCharacteristicsWfs();
+	console.log(kakaoData);
+	console.log(landCharacteristics);
+	return
 
 	
-    proj4_02.defs["EPSG:5179"] = "+proj=tmerc +lat_0=38 +lon_0=127.5 +k=0.9996 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +units=m +no_defs";//제공되는 좌표
-	
-
-
-    let grs80 = proj4_02.Proj(proj4_02.defs["EPSG:5179"])
-    let wgs84 = proj4_02.Proj(proj4_02.defs["EPSG:4326"]); //경위도
-    let p = proj4_02.toPoint(point);
-    p = proj4_02.transform(grs80, wgs84, p);
-
-    console.log('위도: ' + p.y);
-    console.log('경도: ' + p.x);
-}
-
-function jusoCallBack_3() {
-	$.ajax({
-		url : `/coordinate/vworldAPI3`
-		,type:"get"
-		,success:function(jsonStr){
-            console.log(jsonStr);
-            console.log(jsonStr[0]);
-
-		}
-	    ,error: function(xhr,status, error){
-            console.log(error);
-	    	alert("에러발생");
-	    }
-	});
-}
-  /*
-     <form name="form" id="form" method="post">
-
-
-        <input type="text" name="confmKey" value="U01TX0FVVEgyMDIzMTAxMjE1MzMyMDExNDE2Mjc="/><!-- 요청 변수 설정 (승인키) -->
-        <input type="text" name="admCd" value="2920016000"/> <!-- 요청 변수 설정 (행정구역코드) -->
-        <input type="text" name="rnMgtSn" value="292003352953"/><!-- 요청 변수 설정 (도로명코드) --> 
-        <input type="text" name="udrtYn" value="0"/> <!-- 요청 변수 설정 (지하여부) -->
-        <input type="text" name="buldMnnm" value="15"/><!-- 요청 변수 설정 (건물본번) --> 
-        <input type="text" name="buldSlno" value=""/><!-- 요청 변수 설정 (건물부번) --> 
-        <input type="button" onClick="getAddr();" value="좌표검색하기"/>
-        <div id="list" ></div><!-- 검색 결과 리스트 출력 영역 -->
-
-        <table >
-			<colgroup>
-				<col style="width:20%"><col>
-			</colgroup>
-			<tbody>
-				<tr>
-					<th>우편번호</th>
-					<td>
-					    <input type="hidden" id="confmKey" name="confmKey" value=""  >
-						<input type="text" id="zipNo" name="zipNo" readonly style="width:100px">
-						<input type="button"  value="주소검색" onclick="goPopup();">
-					</td>
-				</tr>
-				<tr>
-					<th><label>도로명주소</label></th>
-					<td><input type="text" id="roadAddrPart1" style="width:85%"></td>
-				</tr>
-				<tr>
-					<th>상세주소</th>
-					<td>
-						<input type="text" id="addrDetail" style="width:40%" value="">
-						<input type="text" id="roadAddrPart2"  style="width:40%" value="">
-					</td>
-				</tr>
-				<tr>
-					<th>좌표정보</th>
-					<td>
-						<input type="text" id="entX" style="width:40%" value="">
-						<input type="text" id="entY"  style="width:40%" value="">
-					</td>
-				</tr>
-			</tbody>
-		</table>
-    </form>
-
-    */
-
-/*
-// function init(){
-//     var url = location.href;
-//     var confmKey = "U01TX0FVVEgyMDIzMTAxMjE1MzMyMDExNDE2Mjc=";//승인키
-//     var resultType = "4"; // 도로명주소 검색결과 화면 출력유형, 1 : 도로명, 2 : 도로명+지번, 3 : 도로명+상세건물명, 4 : 도로명+지번+상세건물명
-//     var inputYn= "<%=inputYn%>";
-//     if(inputYn != "Y"){
-//         document.form.confmKey.value = confmKey;
-//         document.form.returnUrl.value = url;
-//         document.form.resultType.value = resultType;
-//         document.form.action="https://business.juso.go.kr/addrlink/addrCoordUrl.do"; // 인터넷망
-//         document.form.submit();
-//     }else{
-//         opener.jusoCallBack("<%=roadFullAddr%>","<%=roadAddrPart1%>","<%=addrDetail%>", "<%=roadAddrPart2%>","<%=engAddr%>"
-//             , "<%=jibunAddr%>","<%=zipNo%>", "<%=admCd%>", "<%=rnMgtSn%>", "<%=bdMgtSn%>", "<%=detBdNmList%>"
-//             , "<%=bdNm%>", "<%=bdKdcd%>", "<%=siNm%>", "<%=sggNm%>", "<%=emdNm%>", "<%=liNm%>", "<%=rn%>", "<%=udrtYn%>"
-//             , "<%=buldMnnm%>", "<%=buldSlno%>", "<%=mtYn%>", "<%=lnbrMnnm%>", "<%=lnbrSlno%>", "<%=emdNo%>", "<%=entX%>", "<%=entY%>");
-//         window.close();
-//     }
-// }
-
-<form id="form" name="form" method="post">
-<input type="hidden" id="confmKey" name="confmKey" value="U01TX0FVVEgyMDIzMTAxMjE1MzMyMDExNDE2Mjc="/>
-<input type="hidden" id="returnUrl" name="returnUrl" value="4"/>
-<input type="hidden" id="resultType" name="resultType" value=""/>
-<!-- 해당시스템의 인코딩타입이 EUC-KR일경우에만 추가 START--> 
-<!-- 
-<input type="hidden" id="encodingType" name="encodingType" value="EUC-KR"/>
- -->
-<!-- 해당시스템의 인코딩타입이 EUC-KR일경우에만 추가 END-->
-</form>
-
-
-*/
-
-let url2 = `https://api.vworld.kr/req/data?
-service=data&version=2.0
-&request=GetFeature
-&key=045D5FE7-1CC7-3CE8-B653-793E6F1919FB
-&format=xml
-&errorformat=xml
-&size=10
-&page=1
-&data=LT_C_ADSIDO_INFO
-
-&attrfilter=ctprvn_cd:like:2920016000
-&columns=GetFeature
-&geometry=true
-&attribute=true
-
-&domain=`
-
-"&crs=EPSG:900913"
-
-let url3 = `https://api.vworld.kr/req/data?service=data&version=2.0
-&request=GetFeature
-&key=
-&format=xml
-&errorformat=xml
-&size=10
-&page=1
-&data=LT_C_ADSIDO_INFO
-&attrfilter=ctp_kor_nm:like:광주광역시
-&columns=ctprvn_cd,ctp_kor_nm,ctp_eng_nm,ag_geom
-&geometry=true
-&attribute=true
-&crs=EPSG:5179
-&domain=`
-
-
-function getAddr2(){
-	$.ajax({
-        // url :`https://api.vworld.kr/req/data?ctprvn_cd=2920016000&ctp_kor_nm=광주광역&key=045D5FE7-1CC7-3CE8-B653-793E6F1919FB`
-		url : `/coordinate/vworldAPI`
-		,type:"get"
-		,success:function(jsonStr){
-            console.log(jsonStr);
-            console.log(jsonStr[0]);
-
-		}
-	    ,error: function(xhr,status, error){
-            console.log(error);
-	    	alert("에러발생");
-	    }
-	});
-}
-getAddr2();
-
-function getAddr3(){
-	$.ajax({
-		url : `/coordinate/vworldAPI2`
-		,type:"get"
-		,success:function(jsonStr){
-            console.log(jsonStr);
-            console.log(jsonStr[0]);
-
-		}
-	    ,error: function(xhr,status, error){
-            console.log(error);
-	    	alert("에러발생");
-	    }
-	});
-}
+});
 
 // getAddr3();

@@ -33,3 +33,128 @@
 
 
 */
+
+
+
+/*자치법규 html 폼 복사해온거?
+
+<form id="lawSearchForm" method="post" action="/DRF/lawSearch.do">
+			<div class="conwrap1">
+				<!-- number -->
+				<div class="lelitop">
+					<div class="num">총<strong>2</strong>건</div>
+				</div>
+				<!-- number //-->
+				<!-- list -->
+				<!--
+	<table cellpadding="0" cellspacing="0" class="tbl1 tbd1" summary="순번, 법령명, 소관부처, 제개정구분, 법령종류, 공포번호, 공포일자, 시행일로 구성됨">
+			<colgroup><col width="8%" /><col width="32%" /><col width="12%" /><col width="13%" /><col width="12%" /><col width="12%" /><col width="12%" /></colgroup>
+			<caption>펼친화면 목록</caption>
+
+			<thead>
+				<tr>
+					<th scope="col">순번</th>
+					<th scope="col">자치법규명</th>
+					<th scope="col">제개정구분</th>
+					<th scope="col">법령종류</th>
+					<th scope="col">공포번호</th>
+					<th scope="col">공포일자</th>
+					<th scope="col" class="bano">시행일</th>
+				</tr>
+			</thead>
+	</table>
+	-->
+				<table cellpadding="0" cellspacing="0" class="tbl8 wd"
+					summary="순번, 자치법규명, 제개정구분, 법령종류, 공포번호, 공포일자, 시행일로 구성됨">
+					<colgroup>
+						<col width="8%" />
+						<col width="32%" />
+						<col width="12%" />
+						<col width="13%" />
+						<col width="12%" />
+						<col width="12%" />
+						<col width="12%" />
+					</colgroup>
+					<caption>자치법규 목록 : 순번, 자치법규명, 제개정구분, 법령종류, 공포번호, 공포일자, 시행일로 구성됨</caption>
+					<thead>
+						<tr>
+							<th scope="col">순번</th>
+							<th scope="col">자치법규명</th>
+							<th scope="col">제개정구분</th>
+							<th scope="col">법령종류</th>
+							<th scope="col">공포번호</th>
+							<th scope="col">공포일자</th>
+							<th scope="col" class="bano">시행일</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="ce">1</td>
+							<td><a
+									href="/DRF/lawService.do?OC=simjh7601&amp;target=ordin&amp;MST=1607111&amp;type=HTML&amp;mobileYn="><strong
+										class="tbl_tx_type">광주광역시</strong>
+									동구 <strong class="tbl_tx_type">태양광</strong> 등 친환경에너지 시설 보급 촉진에 관한 조례</a></td>
+							<td class="ce">제정</td>
+							<td class="ce">조례</td>
+							<td class="ce">제1485호</td>
+							<td class="ce">2021.6.30.</td>
+							<td class="ce">2021.6.30.</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr class="gr">
+							<td class="ce">2</td>
+							<td><a
+									href="/DRF/lawService.do?OC=simjh7601&amp;target=ordin&amp;MST=1665107&amp;type=HTML&amp;mobileYn="><strong
+										class="tbl_tx_type">광주광역시</strong>
+									북구 <strong class="tbl_tx_type">태양광</strong>·풍력 등 친환경에너지 시설 보급 촉진에 관한 조례</a></td>
+							<td class="ce">일부개정</td>
+							<td class="ce">조례</td>
+							<td class="ce">제1735호</td>
+							<td class="ce">2022.1.5.</td>
+							<td class="ce">2022.1.13.</td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="hidden" id="query" name="query" value='광주광역시 태양광' />
+				<input type="hidden" id="target" name="target" value="ordin" />
+				<input type="hidden" id="OC" name="OC" value="simjh7601" />
+				<input type="hidden" id="search" name="search" value="1" />
+				<input type="hidden" id="display" name="display" value="20" />
+				<input type="hidden" id="sort" name="sort" value="" />
+				<input type="hidden" id="date" name="date" value="" />
+				<input type="hidden" id="nb" name="nb" value="" />
+				<input type="hidden" id="refAdr" name="refAdr" value="" />
+				<input type="hidden" id="org" name="org" value="" />
+				<input type="hidden" id="sborg" name="sborg" value="" />
+				<input type="hidden" id="knd" name="knd" value="" />
+				<input type="hidden" id="nw" name="nw" value="3" />
+				<input type="hidden" id="gana" name="gana" value="" />
+				<input type="hidden" id="rrClsCd" name="rrClsCd" value="" />
+				<input type="hidden" id="efYd" name="efYd" value="" />
+				<input type="hidden" id="ancYd" name="ancYd" value="" />
+				<input type="hidden" id="ancNo" name="ancNo" value="" />
+				<input type="hidden" id="ordinFd" name="ordinFd" value="" />
+				<input type="hidden" id="popYn" name="popYn" value="N" />
+				<input type="hidden" id="page" name="page" value="1" />
+				<input type="hidden" id="type" name="type" value="HTML" />
+				<!-- list //-->
+				<!-- paging -->
+				<div class="paging mar5">
+					<!-- paging -->
+					<div class="paging">
+						<img src="/DRF/images/button/page_first.gif" alt="처음으로" />
+						<img src="/DRF/images/button/page_prev.gif" alt="이전으로" />
+						<ol start="1">
+							<li class="on">1</li>
+						</ol>
+						<img src="/DRF/images/button/page_next.gif" alt="다음으로" />
+						<img src="/DRF/images/button/page_last.gif" alt="마지막으로" />
+					</div>
+					<!-- paging //-->
+				</div>
+				<!-- paging //-->
+			</div>
+		</form>
+
+ */

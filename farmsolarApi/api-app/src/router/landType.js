@@ -61,7 +61,7 @@ const landMoveService = (authkey, pnu, startDt, endDt, format, numOfRows, pageNo
 
 
 // 토지특성속성조회,토지이동이력속성 조회하기
-router.get('/landTypeSearch', async (req, res) => {
+router.get('/nsdi-landTypeSearch', async (req, res) => {
     console.log("토지유형 조회");
     try {
         let pnu = req.session.pnu;
@@ -71,10 +71,10 @@ router.get('/landTypeSearch', async (req, res) => {
         let pageNo = "1";
 
         // 국가공간 - 토지특성속성조회
-        let landCharacteristicsKey = properties.landCharacteristicsKey;
+        let landCharacteristicsKey = properties.nsdi_landCharacteristicsKey;
         let rs1 = await landCharacteristicsService(landCharacteristicsKey, pnu, stdrYear, format, numOfRows, pageNo);
         // 국가공간 - 토지이동이력속성조회
-        let landMoveAttrKey = properties.landMoveAttrKey;
+        let landMoveAttrKey = properties.nsdi_landMoveAttrKey;
         let rs2 = await landMoveService(landMoveAttrKey, pnu, "", "", format, numOfRows, pageNo);
 
         // 필요한 속성

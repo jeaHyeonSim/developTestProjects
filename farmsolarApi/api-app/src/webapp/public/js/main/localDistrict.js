@@ -207,7 +207,7 @@ const g_table2 = (data) => {
 /** ajax 통신요청 */
 // 소유 및 기타정보 [ 국가공간 - 토지소유정보속성조회 REST API ]
 function land_possession_service() {
-    $.ajax(`/localDistrict/land-possession-service`,
+    $.ajax(`/localDistrict/nsdi-landPossessionService`,
         {
             method: 'post',
             data: { 
@@ -229,7 +229,7 @@ function land_possession_service() {
 }
 // 소유 및 기타정보 [ 국가공간 - 개별공시지가속성조회 REST API ]
 function land_price_service() {
-    $.ajax(`/localDistrict/land-price-service`,
+    $.ajax(`/localDistrict/nsdi-landPriceService`,
         {
             method: 'post',
             data: { 

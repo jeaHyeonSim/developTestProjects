@@ -20,7 +20,7 @@ const landTypeSearch_0 = (data) => {
 /** 비동기 통신 */
 // 토지이동이력속성 조회하기
 function landTypeSearch() {
-    $.ajax(`/landType/landTypeSearch`,
+    $.ajax(`/landType/nsdi-landTypeSearch`,
         {
             method: 'get',
             // data: { name: "chan" },

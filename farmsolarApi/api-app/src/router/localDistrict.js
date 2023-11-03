@@ -94,11 +94,11 @@ router.get('/searchA', async (req, res) => {
         let pageNo = "1";
 
 
-        let possessionKey = properties.possessionKey;
+        let possessionKey = properties.nsdi_possessionKey;
         // 토지소유정보속성조회
         let rs1 = await re1Fn(possessionKey, pnu, stdrYear, format, numOfRows, pageNo);
         
-        let indvdLandKey = properties.indvdLandKey;
+        let indvdLandKey = properties.nsdi_indvdLandKey;
         // 개별공시지가속성조회
         let rs2 = await re2Fn(indvdLandKey, pnu, stdrYear, format, numOfRows, pageNo);
 
@@ -196,7 +196,7 @@ router.get('/searchB', async (req, res)=> {
 //  =================================================================================================
 
 // 소유 및 기타정보 조회 - 토지소유정보속성조회
-router.post('/land-possession-service', async (req, res) => {
+router.post('/nsdi-landPossessionService', async (req, res) => {
     try {
         let pnu = req.session.pnu;
         let stdrYear = req.body.stdrYear;
@@ -205,7 +205,7 @@ router.post('/land-possession-service', async (req, res) => {
         let pageNo = "1";
 
         // 토지소유정보속성조회
-        let possessionKey = properties.possessionKey;
+        let possessionKey = properties.nsdi_possessionKey;
         let rs1 = await re1Fn(possessionKey, pnu, stdrYear, format, numOfRows, pageNo);
         
         if((rs1.field).length <= 0) {
@@ -239,7 +239,7 @@ router.post('/land-possession-service', async (req, res) => {
     }
 });
 // 소유 및 기타정보 조회 - 개별공시지가속성조회
-router.post('/land-price-service', async (req, res) => {
+router.post('/nsdi-landPriceService', async (req, res) => {
     try {
         let pnu = req.session.pnu;
         let stdrYear = req.body.stdrYear;
@@ -248,7 +248,7 @@ router.post('/land-price-service', async (req, res) => {
         let pageNo = "1";
 
         // 개별공시지가속성조회
-        let indvdLandKey = properties.indvdLandKey;
+        let indvdLandKey = properties.nsdi_indvdLandKey;
         let rs1 = await re2Fn(indvdLandKey, pnu, stdrYear, format, numOfRows, pageNo);
 
 
