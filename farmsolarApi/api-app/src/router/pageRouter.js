@@ -3,18 +3,30 @@ const router = express.Router();
 const axios = require('axios');
 
 // root: dashboard/ 
+
+// 순서 0 : 사용자 주소 입력페이지
 router.get('/', async function (req, res) {
+	try {
+		res.render('main/juso.html');
+	} catch (error) {
+		return(error)
+	}
+});
+// 순서 1 : 주소+설치타입 선택 후=> 표시할 첫번째 페이지
+router.get('/step0', async function (req, res) {
 	let pnu = req.session.pnu;
-	console.log(pnu);
 	try {
 		res.render('main/step0.html', {
 			pnu : pnu,
-			stdrYear : "2023"
+			stdrYear : "2023",
+			_type  : req.session.addr_type
 		});
 	} catch (error) {
 		return(error)
 	}
 });
+
+
 router.get('/dialog', async function (req, res) {
 	try {
 		res.render('main/dialog.html');

@@ -75,19 +75,12 @@ router.get('/addrLinkMove', async (req, res) => {
 		return res.redirect('/juso');
 	}
 });
-
+// 설치 타입 선택 후 => 페이지 이동
 router.get('/addr_data', (req, res) => {
-	// console.log();
-	// console.log(req.query.addr_type);
-	// console.log(JSON.parse(req.query.addr_data));
-	// console.log(req.session.pnu);
-			
 	let addr_type = req.session.addr_type;
 	let addr_data = req.session.addr_data;
 	let pnu = req.session.pnu;
-	// console.log(addr_type);
-	// console.log(addr_data);
-	res.render('main/dialog.html');
+	res.redirect('/step0');
 })
 
 module.exports = router;

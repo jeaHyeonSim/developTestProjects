@@ -4,7 +4,7 @@ const landType = require('../services/landType');
 const LandTypeService = new landType();
 
 // 토지특성속성조회,토지이동이력속성 조회하기
-router.get('/nsdi-landTypeSearch', async (req, res) => {
+router.get('/getNsdiLandTypeSearch', async (req, res) => {
     // console.log("토지유형 조회");
     try {
         let dto = {

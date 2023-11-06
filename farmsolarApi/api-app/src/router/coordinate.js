@@ -27,6 +27,10 @@ router.post('/nsdi-landCharacteristicsWfs', async (req,res) => {
 router.post('/kakao-kakaoAddress', async (req,res) => {
     
     try {
+        if(req.session.addr_data == undefined) {
+            console.log("kakao 지도 좌표값 주소부터 다시");
+            return "0"
+        }
         let dto = {
             jibunAddr : req.session.addr_data != undefined ? req.session.addr_data.jibunAddr  : false
         }

@@ -29,9 +29,7 @@ const lawDataList = (rsData) => {
         </tr>
     `
     });
-
     $('.ordinanceData').html(str);
-
     return;
 
 }
@@ -79,9 +77,6 @@ function getLawDataList() {
         }
         return lawDataList("err");
     })
-    // .always(function () { // 항상 실행 (finally 같은느낌)
-    //     alert("complete");
-    // });
 }
 
 // 국가법령정보(자치법규 본문 조회) - 개발행위허가 기준
@@ -111,4 +106,8 @@ $('.lawService').on('click', function() {
     getLawDataMain();
 });
 
+// function lawApi() {
+//     getLawDataList();
+//     getLawDataMain();
+// }
 

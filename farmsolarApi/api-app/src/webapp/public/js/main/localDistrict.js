@@ -269,8 +269,9 @@ function getBldRgstService() {
 
 /**
  * 지역지구/가능여부/조건·제한·예외사항 조회하기
+ * G_table => GreenFesco Table
  */
-function getG_table2() {
+function getGFTable() {
     $.ajax({
 		url: `/localDistrict/getEum`
 		, type: "get"
@@ -347,17 +348,17 @@ function getG_table2() {
 // land_possession_service();
 
 async function rest_api_service() {
-    await getLandPossessionService();
-    await getLandPriceService();
-    await getBldRgstService();
-    await getG_table2();
+    getLandPossessionService();
+    getLandPriceService();
+    getBldRgstService();
+    getGFTable();
 }
 
 $('.seach').on('click', function(){
     getBldRgstService();
     getLandPriceService();
     getLandPossessionService();
-    getG_table2();
+    getGFTable();
 });
 
 (function(){

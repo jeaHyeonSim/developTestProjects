@@ -59,29 +59,7 @@ if (properties.env !== "prod") app.use(morgan("tiny", {
 	stream: logger.stream
 }));
 
-// const schedule = require('node-schedule');
-// const checkLogin = require('./middleware/checkLogin');
-// const cmn_api = require("./router/cmnApiAction");
-// const job = schedule.scheduleJob('50 * * * *', function () {
-// 	//cmn_api.getWeatherInfoByCmnApi();
-// });
-
-// const cron = require('node-cron');
-// 초 분 시
-// ┌────────────── second (optional)
-// │ ┌──────────── minute
-// │ │ ┌────────── hour
-// │ │ │ ┌──────── day of month
-// │ │ │ │ ┌────── month
-// │ │ │ │ │ ┌──── day of week
-// │ │ │ │ │ │
-// │ │ │ │ │ │
-// * * * * * *
-// smp 데이터는 매일
-
-// cron.schedule('20 10 1 * * *', () => {Api2Router.getSmpApi(); });
-
-
+const checkSessionData = require('./middleware/checkSessionData');
 
 // 미들웨어 공통정보
 app.use(function (req, res, next) {
@@ -94,8 +72,9 @@ app.use(function (req, res, next) {
 
 // app.use('/', require("./router/login"));
 // 로그인 인증
-// app.use('/', checkLogin);
 app.use('/', require('./router/pageRouter')); // 페이지 라우터
+// app.use('/', checkSessionData);
+
 app.use('/jusoAPI', require('./router/jusoAPI')); // 기타등등
 app.use('/lawAPI', require('./router/lawAPI')); // 조례
 app.use('/landType', require('./router/landType')); // 토지유형

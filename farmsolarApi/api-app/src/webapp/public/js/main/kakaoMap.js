@@ -1,6 +1,3 @@
-
-
-
 // daum.maps.event.addListener(polygon, 'click', function () {
 //     editpolygon = null;
 //     let check = confirm('구역을 수정하시겠습니까?');
@@ -22,57 +19,29 @@
 
 
 // 카카오 맵에 표시 할 수 있는 함수로 변경하기 및 실행
-function kakaoMaps(jsonStr) {
-    let coordinateStr = "";
+function kakaoMaps(jsonStr, kakaoData) {
     let coordinateList = [];
-    let coordinateList2 = [];
     let reverse = jsonStr[0].reverse();
-    console.log(new kakao.maps.LatLng().la);
     for (let i = 0; i < reverse.length; i++) {
         if (i % 2 == 0) {
-            coordinateStr += `new kakao.maps.LatLng(${reverse[i]}, `;
         } else {
-            coordinateStr += `${reverse[i]}),`;
-            coordinateList.push(coordinateStr);
-            coordinateList2.push(new kakao.maps.LatLng(reverse[i - 1], reverse[i]),);
-            coordinateStr = "";
+            coordinateList.push(new kakao.maps.LatLng(reverse[i - 1], reverse[i]),);
         }
-
     }
-
-    // console.log(coordinateList);
-    // console.log(coordinateList2);
-
 
     let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
         mapOption = {
-            center: new kakao.maps.LatLng(34.6403079026262, 126.767226879428), // 지도의 중심좌표
+            center: new kakao.maps.LatLng(kakaoData[0].y, kakaoData[0].x), // 지도의 중심좌표
             level: 2 // 지도의 확대 레벨  
         };
 
     let map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
     // 다각형을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 다각형을 표시합니다 
-    let polygonPath = coordinateList2;
+    let polygonPath = coordinateList;
     // let polygonPath = [
     //     new kakao.maps.LatLng(34.64010354, 126.76727138),
-    //     new kakao.maps.LatLng(34.64009173, 126.76716808),
-    //     new kakao.maps.LatLng(34.64021073, 126.76706943),
-    //     new kakao.maps.LatLng(34.64022066, 126.76708272),
-    //     new kakao.maps.LatLng(34.64027978, 126.76701157),
-    //     new kakao.maps.LatLng(34.64040706, 126.76690646),
-    //     new kakao.maps.LatLng(34.64042987, 126.76694795),
-    //     new kakao.maps.LatLng(34.64055512, 126.76716679),
-    //     new kakao.maps.LatLng(34.64046846, 126.76727945),
-    //     new kakao.maps.LatLng(34.64038782, 126.76739295),
-    //     new kakao.maps.LatLng(34.6403464, 126.76747444),
-    //     new kakao.maps.LatLng(34.64031806, 126.76751289),
-    //     new kakao.maps.LatLng(34.64018744, 126.76749377),
-    //     new kakao.maps.LatLng(34.64017464, 126.76749088),
-    //     new kakao.maps.LatLng(34.64013609, 126.76748054),
-    //     new kakao.maps.LatLng(34.64011821, 126.76731981),
-    //     new kakao.maps.LatLng(34.64011381, 126.76730554),
-    //     new kakao.maps.LatLng(34.64010354, 126.76727138)
+    //     new kakao.maps.LatLng(34.64009173, 126.76716808), .....
     // ];
 
     // 지도에 표시할 다각형을 생성합니다

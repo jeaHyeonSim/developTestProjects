@@ -1,16 +1,26 @@
 
 
 const rest_api_collection = async () => {
-    $('.loading').css('display', 'flex');
-    await landTypeSearch();
-    await rest_api_service();
-    await lawData_0();
+    // $('.loading').css('display', 'flex');
+    mapApi();
+    getLandTypeSearch();
+    rest_api_service();
+    getLawDataList();
     // await getEum();
+    console.log(_type)
+    if(_type == "type1"){
+        console.log("지붕형");
+    }
+    if(_type == "type2"){
+        console.log("지상형");
+        getLawDataMain();
+    }
+    
 
     
-    setTimeout(() => {
-        $('.loading').css('display', 'none');
-    }, 2000);
+    // setTimeout(() => {
+    //     $('.loading').css('display', 'none');
+    // }, 2000);
     return;
 }
 

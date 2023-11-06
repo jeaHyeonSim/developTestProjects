@@ -46,11 +46,19 @@ $('.searchLand').on('click', async function(){
 	let kakaoData = await kakaoAddress();
 	let landCharacteristics = await nsdi_landCharacteristicsWfs();
 	console.log(kakaoData);
-	console.log(landCharacteristics);
-	kakaoMaps(landCharacteristics);
+	// console.log(landCharacteristics);
+	kakaoMaps(landCharacteristics, kakaoData);
 	return;
 
 	
 });
+
+async function mapApi() {
+	let kakaoData = await kakaoAddress();
+	let landCharacteristics = await nsdi_landCharacteristicsWfs();
+	// console.log(kakaoData);
+	// console.log(landCharacteristics);
+	kakaoMaps(landCharacteristics, kakaoData);
+}
 
 // getAddr3();

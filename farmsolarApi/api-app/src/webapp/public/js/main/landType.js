@@ -1,7 +1,10 @@
-
-
-const landTypeSearch_0 = (data) => {
-    let str = "";
+/**
+ * 토지특성속성조회,토지이동이력속성 조회하기
+ * @param {Object} data 
+ * @returns 
+ */
+const setLandTypeSearch = (data) => {
+    if(data == "err") return;
     $('.trData').html(`
         <td>${data['lndcgrCodeNm']}</td>
         <td>${data['lndpclAr']} m<sup>2</sup></td>
@@ -15,37 +18,31 @@ const landTypeSearch_0 = (data) => {
 
 }
 
-
-
 /** 비동기 통신 */
-// 토지이동이력속성 조회하기
-function landTypeSearch() {
-    $.ajax(`/landType/nsdi-landTypeSearch`,
+// 토지특성속성조회,토지이동이력속성 조회하기
+function getLandTypeSearch() {
+    $.ajax(`/landType/getNsdiLandTypeSearch`,
         {
-            method: 'get',
-            // data: { name: "chan" },
-            // dataType: 'json'
+            method: 'get'
         }
     )
-    .done(function (landTypeSearch) { // 서버요청이 성공시의 콜백함수
+    .done(function (rsData) { // 서버요청이 성공시의 콜백함수
         // console.log(typeof landTypeSearch);
-        landTypeSearch_0(landTypeSearch)
+        setLandTypeSearch(rsData);
     })
     .fail(function (error) { // 서버요청이 에러시의 콜백함수
         console.log('landTypeSearch 에러발생');
         console.log(error.status);
         console.log(error.responseJSON.errorMsg);
+        setLandTypeSearch("err");
         // if(error.responseJSON.errorMsg == "NO Search Data") {
         //     alert("잘못 된 지역값");
         // }
     })
-    // .always(function () { // 항상 실행 (finally 같은느낌)
-    //     alert("complete");
-    // });
 }
 
 
 /** 버튼 클릭시 이벤트 */
 $('.landTypeSearchBtn').on('click', function() {
-    landTypeSearch();
+    getLandTypeSearch();
 });
