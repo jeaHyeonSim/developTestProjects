@@ -38,6 +38,8 @@ config.nsdi_landCharacteristicsKey = "348bb576db231e470a60aa";
 config.nsdi_landMoveAttrKey = "a3aed635a1400b0e0be93e";
 // 국가공간 - 토지특성WFS조회 (발급 ID : simjh7601)
 config.nsdi_landCharacteristicsWfsKey = "41417e27f43a26c0b7e85e";
+// 국가법령 API (가입한 ID)
+config.lawKey = "simjh7601";
 
 
 

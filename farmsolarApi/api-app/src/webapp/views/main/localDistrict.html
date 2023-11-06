@@ -3,40 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>계산</title>
+    <title>지역지구분석</title>
     <%- include('../partials/header.html') %>
 
-    <link rel="stylesheet" href="/css/main/localDistrict-2.css">
-    <script src="/js/main/localDistrict-2.js" defer></script>
+    <link rel="stylesheet" href="/css/main/localDistrict.css">
+    <script src="/js/main/localDistrict.js" defer></script>
 </head>
 <body>
     <%- include('../partials/menuBtn.html') %>
     <div class="wrap">
-        <div class="f-center">
-            <div class="inputText">
-                <form action="" id="sub">
-                    <div><span>입력 : </span></div>
-                    <div><span>MY 총 금액</span>
-                        <input type="number" name="m_amount" class="m_amount" placeholder="마이너스">
-                        <input type="number" name="amount" class="amount" placeholder="평가금액">
+        <div>
+            <button class="seach">조회</button>
+        </div>
+        <div class="f-center land-02"> <!-- 지역지구분석 -->
+            <!-- 강진군 행정구역 코드 4681025022 -->
+            <!-- 강진군 PNU 코드 4681025022101700001 -->
+            <h3 class="tit">지역지구분석</h3>
+            <div class="f-stack rda">
+                <!-- 소유 및 기타정보 -->
+                <div class="content">
+                    <h3 class="s-tit">소유 및 기타정보</h4>
+                    <div class="info">
+                        <div>
+                            <dl>
+                                <dt>소유구분</dt>
+                                <dd>-</dd>
+                            </dl>
+                            <dl>
+                                <dt>공유인수</dt>
+                                <dd>-</dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <dl>
+                                <dt>소유권 변동원인</dt>
+                                <dd>-</dd>
+                            </dl>
+                            <dl>
+                                <dt>소유권 변동일자</dt>
+                                <dd>-</dd>
+                            </dl>
+                        </div>
+                        <div class="bg">
+                            <dl>
+                                <dt>공시지가(원)</dt>
+                                <dd><strong class="size18">-</strong></dd>
+                            </dl>
+                            <dl>
+                                <dt>공시지가 기준일자</dt>
+                                <dd>-</dd>
+                            </dl>
+                        </div>
                     </div>
-                    <div><span>MY 개수</span><input type="number" name="mYCnt" class="mYCnt"></div>
-                    <div><span>현재 가격</span><input type="number" name="currentAmount" class="currentAmount"></div>
-                    <div><span>구매 개수</span><input type="number" name="purchasesCnt" class="purchasesCnt"></div>
-                    <div><span>계산</span><input type="submit" value="평단계산"></div>
-                </form>
-                
+                </div>
+                <!-- 건축물 정보 -->
+                <div class="content">
+                    <h4 class="s-tit">건축물 정보</h4>
+                    <div class="info2">
+                        <dl>
+                            <dd>
+                                <div>
+                                    <div class="name">건축물 개수</div>
+                                    <div class="memo">-</div>
+                                </div>
+                                <div>
+                                    <div class="name">건축면적</div>
+                                    <div class="memo">-<sup>m2</sup></div>
+                                </div>
+                                <div>
+                                    <div class="name">주 용도</div>
+                                    <div class="memo">-</div>
+                                </div>
+                                <div>
+                                    <div class="name">기타 용도</div>
+                                    <div class="memo">-</div>
+                                </div>
+                                <div>
+                                    <div class="name">허가일자</div>
+                                    <div class="memo">-</div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
-            <div class="rsData">
-                <span>결과</span><b>-</b>
+
+            <!-- 지역지구/가능여부/조건·제한·예외사항 조회하기 -->
+            <div class="content g-table2">
+                <table summary="검색 지번에서 행위제한내용 분석표">
+                    <caption class="hidden">검색 지번에서 행위제한내용 분석표</caption>
+                    <colgroup>
+                        <col width="24%">
+                        <col width="30%">
+                        <col width="">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">지역·지구</th>
+                            <th scope="col">가능여부</th>
+                            <th scope="col">조건·제한·예외사항</th>
+                        </tr>
+                    </thead>
+                    <tbody class="htmlText">
+                        
+                    </tbody>
+                </table>
             </div>
-            <div class="delBox">
-                <button class="del">
-                    스토리지 삭제
-                </button>
-                
-            </div>
-        </div> <!-- f-center-->
+        </div> <!-- 지역지구분석 -->
         
     </div> <!-- wrap-->
 

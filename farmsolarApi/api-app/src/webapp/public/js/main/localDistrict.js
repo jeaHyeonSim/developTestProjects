@@ -1,4 +1,5 @@
-const land_possession_service_rs = (data) => {
+let time = currentTime();
+const setLandPossessionService = (data) => {
     if(data == "0"){
         return;
     }
@@ -25,7 +26,7 @@ const land_possession_service_rs = (data) => {
 }
 
 // 소유 및 기타정보 조회 - 개별공시지가속성조회
-const land_price_service_rs = (data) => {
+const setLandPriceService = (data) => {
     if(data == "0"){
         return;
     }
@@ -41,7 +42,7 @@ const land_price_service_rs = (data) => {
     return;
 }
 // 건축물 정보 - 국토교통부_건축물대장 표제부 조회
-const bld_rgst_service_rs = (data) => {
+const setBldRgstService = (data) => {
     if(data == "0"){
         return;
     }
@@ -206,19 +207,17 @@ const g_table2 = (data) => {
 
 /** ajax 통신요청 */
 // 소유 및 기타정보 [ 국가공간 - 토지소유정보속성조회 REST API ]
-function land_possession_service() {
-    $.ajax(`/localDistrict/nsdi-landPossessionService`,
+function getLandPossessionService() {
+    $.ajax(`/localDistrict/getLandPossessionService`,
         {
             method: 'post',
-            data: { 
-                pnu: pnu , stdrYear : stdrYear
-            },
+            data: {  stdrYear : time[10] },
             // dataType: 'json'
         }
     )
-    .done(function (land_possession_service) { // 서버요청이 성공시의 콜백함수
-        // console.log(land_possession_service);
-        land_possession_service_rs(land_possession_service);
+    .done(function (rsData) { // 서버요청이 성공시의 콜백함수
+        // console.log(rsData);
+        setLandPossessionService(rsData);
         return;
     })
     .fail(function (error) { // 서버요청이 에러시의 콜백함수
@@ -228,19 +227,19 @@ function land_possession_service() {
     });
 }
 // 소유 및 기타정보 [ 국가공간 - 개별공시지가속성조회 REST API ]
-function land_price_service() {
-    $.ajax(`/localDistrict/nsdi-landPriceService`,
+function getLandPriceService() {
+    $.ajax(`/localDistrict/getLandPriceService`,
         {
             method: 'post',
             data: { 
-                pnu: pnu , stdrYear : stdrYear
+                stdrYear : time[10]
             },
             // dataType: 'json'
         }
     )
-    .done(function (land_price_service) { // 서버요청이 성공시의 콜백함수
+    .done(function (rsData) { // 서버요청이 성공시의 콜백함수
         // console.log(land_price_service);
-        land_price_service_rs(land_price_service);
+        setLandPriceService(rsData);
         return;
     })
     .fail(function (error) { // 서버요청이 에러시의 콜백함수
@@ -250,27 +249,19 @@ function land_price_service() {
     });
 }
 // 건축물 정보 [ 공공데이터포털 - 국토교통부_건축물대장 표제부 조회 ]
-function bld_rgst_service() {
-    $.ajax(`/localDistrict/bld-rgst-service`,
+function getBldRgstService() {
+    $.ajax(`/localDistrict/getBldRgstService`,
         {
-            method: 'post',
-            data: { 
-                sigunguCd : "46810",
-                bjdongCd : "25022",
-                bun : "0170",
-                ji : "0001",
-                platGbCd  : "0"
-            },
-            // dataType: 'json'
+            method: 'get'
         }
     )
-    .done(function (bld_rgst_service) { // 서버요청이 성공시의 콜백함수
-        // console.log("bld_rgst_service : ", bld_rgst_service);
-        bld_rgst_service_rs(bld_rgst_service);
+    .done(function (rsData) { // 서버요청이 성공시의 콜백함수
+        // console.log("setBldRgstService : ", setBldRgstService);
+        setBldRgstService(rsData);
         return;
     })
     .fail(function (error) { // 서버요청이 에러시의 콜백함수
-        console.log('bld_rgst_service 에러발생');
+        console.log('setBldRgstService 에러발생');
         console.log(error.status);
         console.log(error.responseJSON.errorMsg);
     });
@@ -356,12 +347,18 @@ function getG_table2() {
 // land_possession_service();
 
 async function rest_api_service() {
-    await land_possession_service();
-    await land_price_service();
-    await bld_rgst_service();
+    await getLandPossessionService();
+    await getLandPriceService();
+    await getBldRgstService();
     await getG_table2();
 }
 
+$('.seach').on('click', function(){
+    getBldRgstService();
+    getLandPriceService();
+    getLandPossessionService();
+    getG_table2();
+});
 
 (function(){
     // rest_api_service();

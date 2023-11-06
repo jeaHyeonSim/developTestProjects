@@ -72,6 +72,13 @@ router.get('/localDistrict', async function (req, res) {
 		return(error)
 	}
 });
+router.get('/localDistrict-2', async function (req, res) {
+	try {
+		res.render('main/localDistrict-2.html');
+	} catch (error) {
+		return(error)
+	}
+});
 
 
 module.exports = router;

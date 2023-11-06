@@ -2,27 +2,27 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 const properties = require('../config/properties');
-
+const jusoAPI = require('../services/jusoAPI');
+const JusoApiService = new jusoAPI();
 /* ========================================== */
 /* ============ 주소기반 검색 API ============ */
 /* ========================================== */
 // 사용자가 입력한 주소 검색 API
 let addr_list = new Array(); // 조회한 주소 데이터 담을 배열
 router.get('/addrLinkApi', async (req, res) => {
+	let dto = {
+		txt : req.query.txt
+	}
 	try {
-		let confmKey = properties.confmKey;
-		let txt = req.query.txt;
-		let url = encodeURI(`https://business.juso.go.kr/addrlink/addrLinkApi.do?currentPage=1&countPerPage=10&keyword=${txt}&resultType=json&confmKey=${confmKey}`);
-		await axios.get(url).then((ress) => {
-			let data = ress.data.results.juso;
-			for (let i = 0; i < data.length; i++) {
-				addr_list[i] = data[i];
-			}
-			return res.send(ress.data);
-		})
-		.catch((err) => {
-			console.log("주소 검색 ERR : ", err);
-		})
+		let rsData = await JusoApiService.getAddrLinkApi(dto);
+		if(rsData.results.juso == undefined ) {
+			return "0"
+		}
+		let data = rsData.results.juso;
+		for (let i = 0; i < data.length; i++) {
+			addr_list[i] = data[i];
+		}
+		return res.send(rsData);
 	} catch (error) {
 		console.log("주소 검색 ERROR : ", error);
 	}
@@ -36,9 +36,16 @@ router.get('/addrLinkMove', async (req, res) => {
 		let addr_data = addr_list[addr_index];
 		let pnu = "";
 		pnu += addr_data['admCd'];
-		pnu += addr_data['mtYn'] == "1"?0:1 ;
-		pnu += pd(addr_data['lnbrMnnm']);
-		pnu += pd(addr_data['lnbrSlno']);
+		pnu += addr_data['mtYn'] == "0"? "0":"1";
+		pnu += pd(addr_data['lnbrMnnm']); // 번
+		pnu += pd(addr_data['lnbrSlno']); // 지
+		addr_data['pnu'] = pnu;
+		addr_data['platGbCd'] = addr_data['mtYn'] == "0"? "0":"1";
+		addr_data['bun'] = pd(addr_data['lnbrMnnm']);
+		addr_data['ji'] = pd(addr_data['lnbrSlno']);
+		addr_data['sigunguCd'] = addr_data['admCd'].slice(0,5); // 시군구코드-행정표준코드
+		addr_data['bjdongCd'] = addr_data['admCd'].slice(5); // 법정동코드-행정표준코드
+
 		function pd(str){
 			let rs = "";
 			if(str.length == 1){
