@@ -96,7 +96,9 @@ $('.type-select1 a').on('click', function(){
     let addr_type = $(this).attr('class');
     location.href = `/jusoAPI/addrLinkMove?addr_type=${addr_type}&addr_index=${addr_index}`;
 });
-
+$('#btn_del').on('click', function(){
+    $('#fsearch_addr').val(null);
+});
 
 /**
 *  

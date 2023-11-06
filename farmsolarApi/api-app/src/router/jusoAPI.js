@@ -15,7 +15,7 @@ router.get('/addrLinkApi', async (req, res) => {
 	}
 	try {
 		let rsData = await JusoApiService.getAddrLinkApi(dto);
-		if(rsData.results.juso == undefined ) {
+		if(rsData.results.juso == undefined || rsData.results.juso == null) {
 			return "0"
 		}
 		let data = rsData.results.juso;
