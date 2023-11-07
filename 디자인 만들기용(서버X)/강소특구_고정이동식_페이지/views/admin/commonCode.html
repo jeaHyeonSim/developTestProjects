@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	<head>
+		<%-include('partials/header.html') %>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<%-include('partials/sideBar.html') %>
+			<div class="main">
+				<%-include('partials/navigation.html') %>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+						  <li class="right-items"><h1 class="h3"><strong></strong>공통코드</h1></li>
+						  <li class="breadcrumb-item">시스템 관리</li>
+						  <li class="breadcrumb-item">코드 관리</li>
+						  <li class="breadcrumb-item" aria-current="page">공통코드</li>
+						</ol>
+					</nav>
+                    <div class="row">
+                        <div class="card">
+							<div class="card-header">
+									<div class="row border-bottom-line">
+										<div class="mb-3 col-2 col-xl-2">
+											<select class="form-select" id="searchSelect">
+												<option value="all" <%if(DTO.select === 'all') {%> selected <%}%>>검색조건</option>
+												<option value="code" <%if(DTO.select === 'code') {%> selected <%}%>>공통코드</option>
+												<option value="name" <%if(DTO.select === 'name') {%> selected <%}%>>코드이름</option>
+											</select>
+										</div>
+										<div class="mb-3 col-3 col-xl-3">
+											<input type="text" onkeyup="enterkey();" class="form-control" id="searchContent" name="searchContent" placeholder="검색 내용을 입력주세요" value="<%=DTO.content%>">
+										</div>
+										<div class="mb-3 col-3 col-xl-3">
+										</div>
+										<div class="mb-3 col-4 col-xl-4 d-flex justify-content-end">
+											<form name="searchform" method="get">
+												<input type="hidden" id="currentPage" name ="currentPage">
+												<input type="hidden" id="pageMove" name ="pageMove">
+												<input type="hidden" id="select" name ="select">
+												<input type="hidden" id="content" name ="content">
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:movePage(''); return false;"><i class="align-middle" data-feather="search"></i> 조회</button>
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:addCommonCode(); return false;"><i class="align-middle" data-feather="plus"></i> 등록</button>
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:init(); return false;"><i class="align-middle" data-feather="rotate-ccw"></i> 초기화</button>
+											</form>
+										</div>
+									</div>
+							</div>
+							<h6 class="card-subtitle text-muted">
+								<p class="text-start"></p>
+								<p class="text-end">검색결과: <Strong><%=pageVO.getTotal()%></Strong>건, &nbsp;<Strong><%=pageVO.getCurrentPage()%>/<%=pageVO.getTotalPages()%></Strong> 페이지</p>
+							</h6>
+							<table class="table table-striped table-bordered text-center">
+								<colgroup>
+									<col width="3%">
+									<col width="10%">
+									<col width="10%">
+									<col width="12%">
+									<col width="7%">
+									<col width="7%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>공통코드</th>
+										<th>코드이름</th>
+										<th>설명</th>
+										<th>사용여부</th>
+										<th>관리</th>
+									</tr>
+								</thead>
+								<tbody>
+									<% for(var i = 0; i < list.length; i++){ %>
+										<tr>
+											<td><%=(((pageVO.getCurrentPage() - 1) * pageVO.getSize()) + i + 1)%></td>
+											<td><%=list[i].CODEID%></td>
+											<td><%=list[i].CODEIDNM%></td>
+											<td><%=list[i].CODEIDDC%></td>
+											<td>
+												<%if(list[i].USEAT === 'Y') {%> 사용 <%}%>
+												<%if(list[i].USEAT === 'N') {%> 미사용 <%}%>
+											</td>
+											<td>
+												<button class="btn btn-primary btn-sm" onclick="modifyCommonCode(this); return false;" 
+												data-codelist='{"CODEID":"<%=list[i].CODEID%>","CODEIDNM":"<%=list[i].CODEIDNM%>","CODEIDDC":"<%=list[i].CODEIDDC%>","USEAT":"<%=list[i].USEAT%>"}' 
+												style="font-size: .4rem;">
+													<i class="align-middle" data-feather="edit-2"></i>
+													수정
+												</button>
+											</td>
+										</tr>
+									<% } %>
+									<% if (list.length == 0) { %>
+										<tr>
+											<td style="text-align: center;" colspan="5">
+												데이터가 존재하지 않습니다.
+											</td>
+										</tr>
+									<% } %>
+								</tbody>
+							</table>
+							<%-include('partials/paging.html') %>
+						</div>
+                    </div>
+
+					<div class="modal fade" id="defaultModalPrimary" tabindex="-1" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title ml-1">
+										<h4>공통코드 등록</h4>
+									</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+		
+									<div class="card">
+										<div class="card-body">
+											<form>
+												<div class="form-group row">
+													<label for="comCode" class="col-sm-3 col-form-label"><strong>공통코드 *</strong></label>
+													<div class="col-sm-6">
+													<input type="text" class="form-control checkInputNull" id="comCode" placeholder="공통코드" data-alert="공통코드를 입력해주세요.">
+													<code class="hidden">사용할 수 없는 코드이름 입니다.</code>
+													<code class="code-green hidden">사용할 수 있는 코드 입니다.</code>
+													</div>
+													<div class="col-sm-3"> 
+														<button class="ml-1 btn btn-primary btn-mg" onclick="checkDuplicatedComCode(); return false;"><i class="align-middle" data-feather="search"></i> 중복체크</button>
+													</div>
+												</div>
+												
+												<div class="form-group row">
+													<label for="comCodeNm" class="col-sm-3 col-form-label" ><strong>공통코드명 *</strong></label>
+													<div class="col-sm-9">
+													<input type="text" class="form-control checkInputNull" data-alert="공통코드명을 입력해주세요." id="comCodeNm" placeholder="공통코드명">
+													</div>
+												</div>
+		
+												<div class="form-group row">
+													<label for="comCodeDc" class="col-sm-3 col-form-label"><strong>설명</strong></label>
+													<div class="col-sm-9">
+													<input type="text" class="form-control" id="comCodeDc" placeholder="설명">
+													</div>
+												</div>
+		
+												<div class="form-group row">
+													<label for="comCodeUseYn" class="col-sm-3 col-form-label"><strong>사용여부</strong></label>
+													<div class="col-sm-9">
+														<select class="form-select" name="comCodeUseYn" id="comCodeUseYn" style="background-color: white">
+															<option value="Y">사용</option>
+															<option value="Y">미사용</option>
+														</select>
+													</div>
+												</div>
+												
+												<div class="form-group row"></div>
+												<div class="row">
+													<div class="col-sm-12 text-center">
+													<button type="button" class="btn btn-primary" onclick="insertCommonCode(); return false;">
+														<i class="align-middle" data-feather="save"></i> 저장</button>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="defaultModalPrimary2" tabindex="-1" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title ml-1">
+										<h4>공통코드 수정</h4>
+									</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+		
+									<div class="card">
+										<div class="card-body">
+											<form>
+												<div class="form-group row">
+													<label for="comCode2" class="col-sm-3 col-form-label"><strong>공통코드 *</strong></label>
+													<div class="col-sm-9">
+													<input type="text" class="form-control disabled checkInputNull" id="comCode2" placeholder="공통코드" readonly>
+													</div>
+												</div>
+												
+												<div class="form-group row">
+													<label for="comCodeNm2" class="col-sm-3 col-form-label"><strong>공통코드명 *</strong></label>
+													<div class="col-sm-9">
+													<input type="text" class="form-control checkInputNull" id="comCodeNm2" placeholder="공통코드명">
+													</div>
+												</div>
+		
+												<div class="form-group row">
+													<label for="comCodeDc2" class="col-sm-3 col-form-label"><strong>설명</strong></label>
+													<div class="col-sm-9">
+													<input type="text" class="form-control" id="comCodeDc2" placeholder="설명">
+													</div>
+												</div>
+		
+												<div class="form-group row">
+													<label for="comCodeUseYn2" class="col-sm-3 col-form-label"><strong>사용여부</strong></label>
+													<div class="col-sm-9">
+														<select class="form-select" name="" id="comCodeUseYn2" style="background-color: white">
+															<option value="Y">사용</option>
+															<option value="N">미사용</option>
+														</select>
+													</div>
+												</div>
+												
+												<div class="form-group row"></div>
+												<div class="row">
+													<div class="col-sm-12 text-center">
+													<button type="text" class="btn btn-primary" onclick="updateCommonCode(); return false;"><i class="align-middle" data-feather="save"></i> 수정</button>
+													<button type="text" class="ml-1 btn btn-secondary" onclick="deleteComcode(); return false;"><i class="align-middle" data-feather="delete"></i> 삭제</button>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</main>
+
+			<footer class="footer">
+				<%-include('partials/footer.html') %>
+			</footer>
+		</div>
+	</div>
+	
+	<script>
+		function movePage(curPage) {
+			document.searchform.currentPage.value = curPage;
+			document.searchform.select.value = $("#searchSelect").val().trim();
+			document.searchform.content.value = $("#searchContent").val().trim();
+			document.searchform.submit();
+		}
+
+		function movePagePreNext(curPage, pageState) {
+			document.searchform.pageMove.value = pageState;
+			document.searchform.currentPage.value = curPage;
+			document.searchform.select.value = $("#searchSelect").val().trim();
+			document.searchform.conetnt.value = $("#searchContent").val().trim();
+			document.searchform.submit();
+		}
+
+		function init() {
+			$("#searchSelect").val("all");
+			$("#searchContent").val("");
+			movePage('');
+		}
+
+		function enterkey() {
+			if (window.event.keyCode == 13) {
+				movePage('');
+    		}
+		}
+
+		function addCommonCode() {
+			$("#defaultModalPrimary").modal('toggle');
+		}
+
+		function modifyCommonCode(obj) {
+			$("#defaultModalPrimary2").modal('toggle');
+			var data = $(obj).data('codelist');
+			$("#comCode2").val(data.CODEID);
+			$("#comCodeNm2").val(data.CODEIDNM);
+			$("#comCodeDc2").val(data.CODEIDDC);
+			$("#comCodeUseYn2").val(data.USEAT);
+		}
+		function insertCommonCode() {
+			var nullcheck = checkInputNull();
+			if(nullcheck != "") {
+				alert(nullcheck);
+				return;
+			}
+
+			if(currentStatus == status[0]){
+				alert("공통코드 중복체크를 해주세요.");
+				$("#userId").focus();
+				return;
+			}
+
+			const comCodeInfo = {
+				comCode : $("#comCode").val(),
+				comCodeNm : $("#comCodeNm").val(),
+				comCodeDc : $("#comCodeDc").val(),
+				comCodeUseYn : $("#comCodeUseYn").val()
+			}
+
+			$.ajax({
+				type:"post",
+				url:"/manage/commoncode/insertcommoncode",
+				dataType: 'json',
+				data : comCodeInfo,
+				success : function(data){
+					if(data.status == "success") {
+						$("#defaultModalPrimary").modal('toggle');
+						alert("저장되었습니다.");
+						document.location.reload();
+					}
+				}, error : function() {
+				}
+			});
+		}
+
+		const status = ['notCheck','duplicated', 'notDuplicated'];
+		var currentStatus = status[0];
+
+		function checkDuplicatedComCode() {
+			if($("#comCode").val().trim() ==  "") {
+				alert("코드를 입력해주세요.");
+				return;
+			}
+			$.ajax({
+					type:"get",
+					url:"/manage/commoncode/commoncodecheck",
+					dataType: 'json',
+					data : {
+						code : $("#comCode").val()
+					},
+					success : function(data){
+						$("#defaultModalPrimary code").hide();
+						// 중복
+						if(data.status == status[1]) {
+							currentStatus = status[1];
+							$($("#defaultModalPrimary code").get(0)).show();
+						// 사용가능
+						} else if(data.status == status[2]) {
+							currentStatus = status[2];
+							$($("#defaultModalPrimary code").get(1)).show();
+						}
+					}, error : function(data) {
+						alert(data.msg);
+					}
+				});	
+		}
+
+		
+		function updateCommonCode(obj) {
+			var nullcheck = checkInputNull2();
+			if(nullcheck != "") {
+				alert(nullcheck);
+				return;
+			}
+			$.ajax({
+					type:"put",
+					url:"/manage/commoncode/updatecommoncode",
+					dataType: 'json',
+					data : {
+						commonCode : $("#comCode2").val(),
+						commonCodeNm : $("#comCodeNm2").val(),
+						commonCodeDc : $("#comCodeDc2").val(),
+						commonCodeUseYn : $("#comCodeUseYn2").val()
+					},
+					success : function(data){
+						$("#defaultModalPrimary2").modal('toggle');
+						alert("저장되었습니다.");
+						document.location.reload();
+					}, error : function(data) {
+						alert(data.msg);
+					}
+				});	
+		}
+
+		function deleteComcode() {
+			if(confirm($("#comCode2").val() +" 를 삭제 하시겠습니까?")) {
+					$.ajax({
+						type:"delete",
+						url:"/manage/commoncode/deletecommoncode",
+						dataType: 'json',
+						data : {commonCode : $("#comCode2").val()},
+						success : function(data){
+							if(data.status == "success") {
+								$("#defaultModalPrimary2").modal('toggle');
+								alert("삭제되었습니다.");
+								document.location.reload(true);
+							}
+						}, error : function() {
+							$(object).val(preUseYn);
+						}
+					});
+			} else {
+				$(object).val(preUseYn);
+			}
+		}
+
+		function checkInputNull(){
+			var result = '';
+			$('#defaultModalPrimary .checkInputNull').each(function(index, item) {
+				if($(this).val().trim() == "") {
+					result = $(this).data("alert");
+					return false;
+				}
+			});
+			return result;
+		}
+		
+		function checkInputNull2(){
+			var result = '';
+			$('#defaultModalPrimary2 .checkInputNull').each(function(index, item) {
+				if($(this).val().trim() == "") {
+					result = $(this).data("alert");
+					return false;
+				}
+			});
+			return result;
+		}
+	</script>
+</body>
+
+</html>

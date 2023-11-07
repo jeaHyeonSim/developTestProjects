@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum=scale-1, minimum-scale=1">
+    <title>STEP 0</title>
+
+    <!-- 공통 라이브러리 js -->
+    <!-- <script src="../../../node_modules/chart.js/dist/chart.min.js"></script> -->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/moment/min/moment.min.js"></script>
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/common.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/commmonSub.css">
+
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/step0.css">
+    <!-- 페이지별 JS -->
+    <script src="../public/js/step0.js" defer></script>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="container">
+                <h1 class="logo">
+                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                </h1>
+                <nav class="">
+                    <!-- <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">경제성분석</a> -->
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">로그인</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="contents">
+                    <p class="tit">
+                        <span>
+                            <img src="../public/imgs/step0/map.png" alt="">
+                        </span>
+                        광주광역시 광산구 삼거동 930
+                    </p>
+                    <div class="content">
+                        <div class="kakaMap">
+                            <div id="map" style="width:100%;height:200px;"></div>
+                            <p id="result"></p>
+                        </div>
+                    </div>
+
+                    <p class="tit">
+                        <span>
+                            <img src="../public/imgs/step0/map.png" alt="">
+                        </span>
+                        토지유형
+                        <small>* 토지정보의 대지면적과 건축물대장의 대지면적은 다를 수 있습니다.</small>
+                    </p>
+                    <div class="content">
+                        <div class="landType-1">
+                            <div>
+                                <div class="title">지목</div>
+                                <div class="content">공장용지</div>
+                            </div>
+                            <div>
+                                <div class="title">면적</div>
+                                <div class="content">399991.6㎡</div>
+                            </div>
+                            <div>
+                                <div class="title">고저</div>
+                                <div class="content">평지</div>
+                            </div>
+                            <div>
+                                <div class="title">형상</div>
+                                <div class="content">세로장방</div>
+                            </div>
+                            <div>
+                                <div class="title">방위</div>
+                                <div class="content">-</div>
+                            </div>
+                            <div>
+                                <div class="title">도로조건</div>
+                                <div class="content">중로한면</div>
+                            </div>
+                            <div>
+                                <div class="title">토지이용(변경)내역</div>
+                                <div class="content">토지개발사업완료</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="tit">
+                        <span>
+                            <img src="../public/imgs/step0/map.png" alt="">
+                        </span>
+                        지역지구분석
+                    </p>
+                    <div class="content">
+                        <div class="landType-2">
+                            <!-- 소유 및 기타정보 -->
+                            <div class="content">
+                                <p class="s-tit">
+                                    소유 및 기타정보
+                                    <span></span>
+                                </p>
+                                <div class="info infoCommon">
+                                    <div>
+                                        <dl>
+                                            <dt>소유구분</dt>
+                                            <dd>법인</dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dl>
+                                            <dt>공유인수</dt>
+                                            <dd>0</dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dl>
+                                            <dt>소유권 변동원인</dt>
+                                            <dd>소유권이전</dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dl>
+                                            <dt>소유권 변동일자</dt>
+                                            <dd>2021-10-14</dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dl>
+                                            <dt>공시지가(원)</dt>
+                                            <dd>185,000</dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dl>
+                                            <dt>공시지가 기준일자</dt>
+                                            <dd>2023-04-28</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 건축물 정보 -->
+                            <div class="content">
+                                <p class="s-tit">
+                                    건축물 정보
+                                    <span></span>
+                                </p>
+                                <div class="info2 infoCommon">
+                                    <div>
+                                        <dl>
+                                            <dt class="name">건축물 개수</dt>
+                                            <dd class="memo">-</dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dl>
+                                            <dt class="name">건축면적</dt>
+                                            <dd class="memo">-<sup>m2</sup></dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dl>
+                                            <dt class="name">주 용도</dt>
+                                            <dd class="memo">공장</dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dl>
+                                            <dt class="name">기타 용도</dt>
+                                            <dd class="memo">공장</dd>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dl>
+                                            <dt class="name">허가일자</dt>
+                                            <dd class="memo">2022-04-14</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="landType-2-table g-table2">
+                                <table summary="검색 지번에서 행위제한내용 분석표">
+                                    <caption class="hidden">검색 지번에서 행위제한내용 분석표</caption>
+                                    <colgroup>
+                                        <col width="20%">
+                                        <col width="35%">
+                                        <col width="">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">지역·지구</th>
+                                            <th scope="col">가능여부</th>
+                                            <th scope="col">조건·제한·예외사항</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="htmlText">
+                                        <tr style="">
+                                            <td style="background-color: rgb(255, 255, 255);">
+                                                <span class="gf_tip ico_i tipText">
+                                                    가축사육제한구역
+                                                </span>
+                                                <div class="gf_poptip a">
+                                                    <div class="gf_con">
+                                                        <span>
+                                                            <img src="../public/imgs/juso/!.png" alt="">
+                                                        </span>
+                                                        가축분뇨의 관리 및 이용에 관한 법률 제8조 가축사육의 제한 등
+                                                    </div>
+                                                    <div class="popper_arrow" style="display:block;"></div>
+                                                </div>
+                                            </td>
+                                            <td style="background-color:#FFFFFF;">
+                                                <span class="gf_tip tipText">
+                                                    검색결과 없음
+                                                </span>
+                                            </td>
+                                            <td style="background-color:#ffffff;">
+                                                <li class="tipText"></li>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color:#FFFFFF;">
+                                                <span class="gf_tip ico_i tipText">
+                                                    도시지역
+                                                </span>
+                                                <div class="gf_poptip" style="display:none;">
+                                                    <div class="gf_con">
+                                                        국토의 계획 및 이용에 관한 법률 제36조 제1항 제1호 용도지역의 지정
+                                                    </div>
+                                                    <div class="popper_arrow" style="display:block;"></div>
+                                                </div>
+                                            </td>
+                                            <td style="background-color:#FFFFFF;">
+                                                <span class="gf_tip tipText">
+                                                    검색결과 없음
+                                                </span>
+                                            </td>
+                                            <td style="background-color:#ffffff;">
+                                                <li class="tipText"></li>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background-color:#FFFFFF;">
+                                                <span class="gf_tip ico_i tipText">
+                                                    일반상업지역
+                                                </span>
+                                                <div class="gf_poptip" style="display:none;">
+                                                    <div class="gf_con">
+                                                        내용이 없습니다.
+                                                    </div>
+                                                    <div class="popper_arrow" style="display:block;"></div>
+                                                </div>
+                                            </td>
+                                            <td style="background-color:#FFFFFF;">
+                                                <span class="gf_tip tipText">
+                                                    검색결과 없음
+                                                </span>
+                                            </td>
+                                            <td style="background-color:#ffffff;">
+                                                <li class="tipText"></li>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+<!--                                 
+                                <table summary="검색 지번에서 행위제한내용 분석표">
+                                    <caption class="hidden">검색 지번에서 행위제한내용 분석표</caption>
+                                    <colgroup>
+                                        <col width="24%">
+                                        <col width="30%">
+                                        <col width="">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">지역·지구</th>
+                                            <th scope="col">가능여부</th>
+                                            <th scope="col">조건·제한·예외사항</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="htmlText">
+                                        
+                                    </tbody>
+                                </table> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="tit">
+                        <span>
+                            <img src="../public/imgs/step0/map.png" alt="">
+                        </span>
+                        전력계통정보
+                    </p>
+                    <div class="content">
+                        <div class="ElectronicInfo"></div>
+                    </div>
+
+                    <p class="tit">
+                        <span>
+                            <img src="../public/imgs/step0/map.png" alt="">
+                        </span>
+                        조례정보
+                    </p>
+                    <div class="content">
+                        <div class="law"></div>
+                    </div>
+
+                    <p class="tit"></p>
+                    <div class="content">
+                        <div class="Availability"></div>
+                    </div>
+                    
+                </div> <!-- container -->
+            </section>
+        </main>
+        <div class="footer" id="footer">
+            <div class="foo-companyInfo">
+                <p class="title">그린훼스코 주식회사</p>
+                <p class="tel">
+                    <span>Tel. 062-973-0086</span>
+                    <span>Fax. 062-443-2161</span>
+                    <span>Email. greenfesco@greenfesco.com</span>
+                </p>
+                <p>Add. 광주광역시 북구 첨단과기로 208번길 50, 302호(연구소)</p>
+                <p>Add. 광주광역시 광산구 빛그린18로 15(공장)</p>
+                <p>Add. 전라남도 나주시 노안면 노안로 455-41(전남지사)</p>
+            </div>
+            <div class="foo-companyBottom">
+                <p>Copyright © 2023 그린훼스코 주 All rights reserved</p>
+            </div>
+        </div>
+        
+        
+    </div> <!-- wrap-->
+
+
+</body>
+</html>

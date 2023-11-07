@@ -1,0 +1,8 @@
+head, body {
+    padding: 0;
+    margin: 0;
+}
+ul,dl,dt,dd{margin:0;padding:0;list-style:none; font-family: inherit; }
+ul,li,ins{list-style:none;text-decoration:none; font-family: inherit; }
+ol{margin-left:16px;}
+ol li{margin:3px 0;text-align:left; font-family: inherit;}

@@ -1,0 +1,25 @@
+<header id="header" class="container">
+    <h1 class="logoBox"><span class="logo">그린훼스코</span> 태양광 발전 통합 모니터링</h1>
+    <nav class="menuBox">
+        <!-- 해당 페이지 노출시 해당 메뉴의 class="active" 활성화 -->
+        <ul>
+            <li <% if(menu == "main") { %> class="active" <% } %> ><a href="/monitoring">홈</a></li>
+            <li <% if(menu == "chartStr") { %>  class="active" <% } %> ><a href="/monitoring/chartStr">Chart</a></li>
+        </ul>
+        <!-- //  -->
+    </nav>
+    <div class="clockBox">
+        <div id="currtDate"></div><!--날짜-->
+        <strong><div id="currtTime"></div></strong><!--시각-->
+    </div>
+    <ul class="mypageBox">
+        <!-- 로그인 전 -->
+        <!-- <li class="login"><a href="#">로그인</a></li> -->
+        <!-- // -->
+
+        <!-- 로그인 후 -->
+        <li class="welcome"><b>관리자</b>님 안녕하세요!</li>
+        <li class="logout"><a href="/logout">로그아웃</a></li>
+        <!-- // -->
+    </ul>
+</header>

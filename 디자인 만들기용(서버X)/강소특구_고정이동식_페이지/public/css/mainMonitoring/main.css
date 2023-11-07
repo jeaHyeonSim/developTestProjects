@@ -1,0 +1,203 @@
+@charset "utf-8";
+
+#mainContent {display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; color:#fff;}
+
+#mainContent .section {background:#1d2733; border-radius:10px; overflow:hidden; margin-top:1%;}
+
+#mainContent .section h2.contentTit {
+    font-family:'Gmarket Sans',sans-serif; color:#fff; 
+    font-size:16px; padding:15px 25px 10px; border-bottom:1px solid #8e9399; 
+    height: 25px;
+    font-weight:600;}
+
+#mainContent .section .contentTit-div {
+    height: 50px;
+    padding:0 10px 0 0; 
+    border-bottom:1px solid #8e9399; 
+    font-size:14px; 
+}
+button{
+    margin: 0;
+}
+#mainContent .section .contentTit-div button{
+    height: 100%;
+    padding: 0 20px;
+    font-family:'Gmarket Sans',sans-serif; 
+    color:#fff; 
+    font-size: 1em;
+    font-weight:600;
+}
+#mainContent .section .contentTit-div button:hover {
+    background-color: #171b1c;
+    font-size: 1.2em;
+}
+#mainContent .section .contentTit-div button#click {
+    background-color: #171b1c;
+}
+
+#mainContent .section .contentBox {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+
+#mainContent .section.sec01,
+#mainContent .section.sec02,
+#mainContent .section.sec03 {min-height:420px;}
+#mainContent .section.sec01 .contentBox,
+#mainContent .section.sec02 .contentBox,
+#mainContent .section.sec03 .contentBox {height:360px;}
+
+#mainContent .section.sec04,
+#mainContent .section.sec05,
+#mainContent .section.sec06 {min-height:373px;}
+#mainContent .section.sec04 .contentBox,
+#mainContent .section.sec05 .contentBox,
+#mainContent .section.sec06 .contentBox {height:317px}
+
+#mainContent .section.sec01 {width:32%;}
+#mainContent .section.sec02 {width:41%;}
+
+#mainContent .section.sec02 .contentBox {position:relative; display:block; overflow:hidden;}
+#mainContent .section.sec02 .contentBox .sunlightBox {position:relative;}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight {float:left; position:relative; display:inline-block; width:33.333%; text-align:center; margin:10px 0 0;}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight:nth-child(n+4):nth-child(-n+5) {float:right; width:40%;}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight.sunlight01 {}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight.sunlight02 {}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight.sunlight03 {}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight.sunlight04 {right:15%;}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight.sunlight05 {left:-7%;}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight .icon {}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight.sunlight02 .icon {margin-top:23px;}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight.sunlight03 .icon {margin-top:11px;}
+#mainContent .section.sec02 .contentBox .sunlightBox .sunlight h3 {font-size:14px; margin-top:5px;}
+
+#mainContent .section.sec02 .contentBox .valueBox {position:absolute; width:74%;left:24%;transform: translateY(-50%); top: 50%;}
+#mainContent .section.sec02 .contentBox .valueBox .value {position:relative; float:left; font-weight:300; font-size:20px; letter-spacing:-0.05em; text-align:center; }
+#mainContent .section.sec02 .contentBox .valueBox .value:before {}
+#mainContent .section.sec02 .contentBox .valueBox .value:nth-child(n+4):nth-child(-n+5) {float:right;}
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow {position:absolute; display:block;  top:35px; background:#26c057;}
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow:before {position:absolute; display:inline-block; }
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow:after {position:absolute; display:inline-block;}
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow.right:before {top:-4px; left:10%; content:url('../../imgs/main/valueArrowRight.gif');}
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow.right:after {top:-4px; right:10%; content:url('../../imgs/main/valueArrowRight.gif');}
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow.left:before {top:-4px; left:10%; content:url('../../imgs/main/valueArrowLeft.gif');}
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow.left:after {top:-4px; right:10%; content:url('../../imgs/main/valueArrowLeft.gif');}
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow.top:before {top:15%; right:-4px; content:url('../../imgs/main/valueArrowTop.gif');}
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow.top:after {bottom:15%; right:-4px; content:url('../../imgs/main/valueArrowTop.gif');}
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow.bottom:before {top:15%; right:-4px; content:url('../../imgs/main/valueArrowBottom.gif');}
+#mainContent .section.sec02 .contentBox .valueBox .value .arrow.bottom:after {bottom:15%; right:-4px; content:url('../../imgs/main/valueArrowBottom.gif');}
+#mainContent .section.sec02 .contentBox .valueBox .value ul li {}
+#mainContent .section.sec02 .contentBox .valueBox .value ul li img{position: relative; transform: translateY(15%);}
+#mainContent .section.sec02 .contentBox .valueBox .value ul li b {font-weight:600;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value01 {width:23%; color:#26c057;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value01 .arrow {width:100%; height:1px;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value02 {width:23%; margin-left:24%; color:#26c057;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value02 .arrow {width:100%; height:1px;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value03 {width:15%; margin-left:10%; color:#f1c12f; text-align:right;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value03 .arrow {display:none;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value04 {width:15%; margin:65px 0; margin-right:25%; color:#f1c12f; text-align:right;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value04 .arrow {width:1px; height:100%; top: -120px; left:-29%;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value05 {width:22%; margin:60px 0; margin-right:15%; color:#f1c12f;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value05 .arrow {width:100%; height:1px; top:45px;}
+#mainContent .section.sec02 .contentBox .valueBox .value.value05 ul li {margin:10px 0;}
+
+#mainContent .section.sec03 {width:25%;}
+#mainContent .section.sec03 h2.contentTit {margin-bottom:0;}
+#mainContent .section.sec03 .contentBox {align-content: center; font-size:14px; text-align:center; padding:0 25px;}
+#mainContent .section.sec03 .contentBox .sec03box {width:32%;  height: 97px;background:rgba(256,256,256,0.05); font-family:'Gmarket Sans',sans-serif !important; padding:2vh 0;}
+#mainContent .section.sec03 .contentBox .sec03box h3.sTit {display:inline-block; text-align:left; letter-spacing:-0.05em; line-height:120%; font-family:'Noto Sans KR',sans-serif;}
+#mainContent .section.sec03 .contentBox .sec03box strong {display:block;  font-size:20px; letter-spacing:-0.05em; color:#f1c12f; margin-top:6px; font-family:'Gmarket Sans',sans-serif !important;}
+#mainContent .section.sec03 .contentBox .sec03box strong.off {display:block;  font-size:20px; letter-spacing:-0.05em; color:#fff; margin-top:6px; font-family:'Gmarket Sans',sans-serif !important;}
+#mainContent .section.sec03 .contentBox .today {}
+#mainContent .section.sec03 .contentBox .accumulate {}
+#mainContent .section.sec03 .contentBox .CO2 {}
+#mainContent .section.sec03 .contentBox .barBox {width:100%; text-align:left; margin-top:3.5vh;}
+#mainContent .section.sec03 .contentBox .barBox h3.sTit {font-size:17px; letter-spacing:-0.05em; font-weight:500; margin-bottom:5px;}
+#mainContent .section.sec03 .contentBox .barBox .barCont {position:relative; overflow:hidden; width:100%; height:30px; background:#fff; border-radius:5px;}
+#mainContent .section.sec03 .contentBox .barBox .barCont .bar {display:block; height:30px;}
+#mainContent .section.sec03 .contentBox .barBox .barCont .bar01 {background:#26c057;}
+#mainContent .section.sec03 .contentBox .barBox .barCont .bar02 {background:#f1c12f;}
+#mainContent .section.sec03 .contentBox .barBox .barCont .amount {position:absolute; top:5px; right:20px; color:#333;}
+
+/* 인버터 */
+#mainContent .section.sec04 {width:53%;}
+#mainContent .section.sec04 .contentTit {}
+#mainContent .section.sec04 .contentBox {display:flex; flex-wrap:wrap; align-items:center; }
+
+/* 기존 그래프 */
+#mainContent .section.sec04 .graphBox {display:flex; flex-wrap: wrap; align-content: space-around; width:24%; text-align:center; padding-left: 8px;}
+
+/* 발전 하지 않는 시간 텍스트 */
+#mainContent .section.sec04 div.outTimeText {position: relative;width: 100%;display: flex;text-align: center;flex-wrap: wrap;}
+#mainContent .section.sec04 div.outTimeText div:nth-child(1){width: 30%;text-align: right;}
+#mainContent .section.sec04 div.outTimeText div:nth-child(1) img {position: relative;top: 21px;}
+#mainContent .section.sec04 div.outTimeText div:nth-child(2){padding-left: 15px;text-align: left;width: 68%;letter-spacing: 0.3em;font-size: 2em;font-weight: 400;color: #FEE5B1;}
+#mainContent .section.sec04 div.outTimeText div:nth-child(3) {width: 100%;padding-top: 10px;letter-spacing: 0.3em;font-size: 1.5em;font-weight: 400;color: #FEE5B1;}
+/* 인버터 조회시 최근 데이터 없을경우 텍스트 */
+#mainContent .section.sec04 div.internetDisconnectedText {position: relative;width: 100%;display: flex;text-align: center;flex-wrap: wrap;}
+#mainContent .section.sec04 div.internetDisconnectedText div:nth-child(1){padding-left: 15px;text-align: center;width: 100%;letter-spacing: 0.3em;font-size: 2em;font-weight: 400;color: #FEE5B1;}
+#mainContent .section.sec04 div.internetDisconnectedText div:nth-child(2) {width: 100%;padding-top: 10px;letter-spacing: 0.3em;font-size: 1.5em;font-weight: 400;color: #FEE5B1;}
+
+#mainContent .section.sec04 ul.lightBox {width:36.5%; margin-top: 5px;}
+#mainContent .section.sec04 ul.lightBox li {padding:10px 2% 10px 3%;}
+#mainContent .section.sec04 ul.lightBox li:nth-child(odd) {background:#171b1c;}
+
+/* 새로 만든 li박스 CSS 인버터 정보 리스트 */
+#mainContent .section.sec04 ul.lightBox li div {display: flex;width: 100%;}
+#mainContent .section.sec04 ul.lightBox li div div.ivt-title {width:40%; text-align: left; font-size: 14px;}
+#mainContent .section.sec04 ul.lightBox li div div.ivt-data {display:inline-block;width:49%;font-size:14px; font-weight:200; }
+#mainContent .section.sec04 ul.lightBox li div div.ivt-data:before {display:inline-block; margin: 0 9px 0 3px;font-weight: 600; content:':';}
+#mainContent .section.sec04 ul.lightBox li div span.ivt-unit {position: relative; font-size:14px; margin-left: 1%;} 
+
+#mainContent .section.sec04 ul.lightBox li .temp {display:inline-block; font-size:16px; font-weight:800;}
+#mainContent .section.sec04 ul.lightBox li .temp.color01 {color:#26c057;}
+#mainContent .section.sec04 ul.lightBox li .temp.color02 {color:#f1c12f;}
+#mainContent .section.sec04 ul.lightBox li .temp.color03 {color:#f12f52;}
+h3 {margin: 0;padding: 0;}
+
+/* 기상정보 */
+#mainContent .section.sec05 {width:20%;}
+#mainContent .section.sec05 .contentBox div p {font-size: 12px;}
+#mainContent .section.sec05 .contentBox > div {font-size: 14px;}
+
+#mainContent .section.sec05 {width:20%;}
+
+#mainContent .section.sec05 .weather {width:100%; text-align:center; margin:10px 0 20px;}
+#mainContent .section.sec05 .weather .location {font-size:14px; color:#888; margin-bottom:15px;}
+#mainContent .section.sec05 .weather .location:before {position:relative; display:inline-block; width:17px; height:17px; top:4px; margin-right:3px; background:url('../../imgs/main/weatherLoIcon.png') center no-repeat; content:'';}
+#mainContent .section.sec05 .weather .now {}
+#mainContent .section.sec05 .weather .now .icon {display:block; color:#fff; margin-bottom:5px;}
+#mainContent .section.sec05 .weather .now .icon i {font-size:40px;}
+#mainContent .section.sec05 .weather .now strong {display:block; font-size:28px; color:#61bdf0;}
+
+#mainContent .section.sec05 ul.weatherInfo {width:100%; }
+#mainContent .section.sec05 ul.weatherInfo li {padding:6px 25px; font-size:16px; letter-spacing:-0.05em;}
+#mainContent .section.sec05 ul.weatherInfo li:nth-child(odd) {background:#171b1c;}
+#mainContent .section.sec05 ul.weatherInfo li:nth-child(even) {background:#1a2127;}
+#mainContent .section.sec05 ul.weatherInfo li h3 {display:inline-block; font-size:15px; font-weight:300;}
+#mainContent .section.sec05 ul.weatherInfo li .value {position:relative; float:right; display:inline-block; width:120px; text-align:right; font-weight:300;}
+#mainContent .section.sec05 ul.weatherInfo li .value:before {position:absolute; display:inline-block; left:0; height:28px; background-position:center; background-repeat:no-repeat; content:'';}
+
+#mainContent .section.sec05 ul.weatherInfo li:nth-child(1) .value:before {width:16px; background-image:url('../../imgs/main/weatherInfoIcon01.png');}
+#mainContent .section.sec05 ul.weatherInfo li:nth-child(2) .value:before {width:18px; background-image:url('../../imgs/main/weatherInfoIcon02.png');}
+#mainContent .section.sec05 ul.weatherInfo li:nth-child(3) .value:before {width:16px; background-image:url('../../imgs/main/weatherInfoIcon03.png');}
+#mainContent .section.sec05 ul.weatherInfo li:nth-child(4) .value:before {width:25px; background-image:url('../../imgs/main/weatherInfoIcon04.png');}
+
+
+
+/* 현장 사진 */
+#mainContent .section.sec06 {width:25%;}
+#mainContent .section.sec06 .contentBox {
+    display: block;
+}
+#mainContent .section.sec06 .contentBox > div:nth-child(1) {
+    height: 55px;
+    padding: 10px 10px 15px;
+}
+#mainContent .section.sec06 .contentBox > div:nth-child(2) {
+    height: 247px;
+    background: url(../../imgs/pannel-r.png) no-repeat;
+    background-size: 100% 100%;
+
+}
+#mainContent .section.sec06 .contentBox > div:nth-child(2) img {
+    /* width: 100%;
+    height: 100%; */
+}

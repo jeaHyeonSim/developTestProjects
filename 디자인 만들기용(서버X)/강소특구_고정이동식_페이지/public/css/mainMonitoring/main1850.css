@@ -1,0 +1,19 @@
+
+@media (max-width : 1850px){
+
+    #mainContent .section.sec04 ul.lightBox li div span.ivt-unit {
+        font-size:12px;
+    }
+        
+
+    #mainContent .section.sec04 ul.lightBox li div div.ivt-title {
+        font-size:12px;
+    }
+
+    #mainContent .section.sec04 ul.lightBox li div div.ivt-data {
+        font-size: 12px;
+    }
+
+}
+
+

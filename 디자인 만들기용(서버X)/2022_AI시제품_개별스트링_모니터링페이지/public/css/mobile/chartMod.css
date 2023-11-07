@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+
+/* 팝업 */
+/* 스트링 그래프 표시 - 팝업 */
+.popupView {position:relative; cursor:inherit;}
+.popupView .accordionWrap:after {/*z-index:5;*/ display:block; position:absolute; content:''; background:rgba(0,0,0,0.75);width:100%; height:100%; top:0;}
+.popupView .moduleStatus > li > .tr > .td {position:relative;}
+.popupView .popup {z-index:10 !important; diaplay:block; border:1px solid #e5e5e5; background:linear-gradient(rgba(32,54,91,0.9), rgba(44,36,82,0.9)); line-height:1.5; 
+    cursor:default;
+    border-radius: 25px;
+}
+
+
+.chartModPopup {position:absolute; border-radius:25px; width: 100%; /*height: 110%;*/}
+.chartModPopup .popupTit {display:flex; justify-content:space-between; padding:10px 25px; border-bottom:1px solid #e5e5e5;}
+.chartModPopup .popupTit h3,
+.chartModPopup .popupTit .btn_close {font-size:16px; 
+    /* color:rgba(255,255,255,0.5);  */
+    color: #fff;
+    font-weight:600;}
+.chartModPopup .popupContent {padding:0 25px 20px;}
+.chartModPopup .popupContent h4 {font-size:16px; font-weight:600; font-family:'Gmarket Sans', sans-serif; display:flex; justify-content:space-between; margin:10px 0 10px;}
+.chartModPopup .popupContent h4 span {font-size:14px; font-weight:400;}
+.chartModPopup .popupContent h4 span[class*='cir']:before {left:0;}
+
+/* 스트링 그래프  */
+.chartModPopup .popupContent .stringModChart {
+    min-height: 285px;
+}
+#line_StringModGraph {
+    width: 100%;
+    min-height: 250px;
+}
+
+/* 스트링 모듈 상세 */
+.chartModPopup .popupContent .moduleStatus .contentTit {
+    display: block;
+}
+.chartModPopup .popupContent .moduleStatus .modulContentBox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.chartModPopup .popupContent .moduleStatus .modulContentBox a {width:33%; padding:5px; background:rgba(0,0,0,0.2); border-radius:15px; margin:1%; display:block;}
+.chartModPopup .popupContent .moduleStatus .modulContentBox a:hover {background:rgba(0,0,0,0.5);}
+.chartModPopup .popupContent .moduleStatus .modulContentBox a ul{width: 100%; }
+.chartModPopup .popupContent .moduleStatus .modulContentBox a ul li{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.chartModPopup .popupContent .moduleStatus .modulContentBox a ul li:nth-child(2){
+    margin: 10px 0;
+}
+.chartModPopup .popupContent .moduleStatus .modulContentBox a ul li p {
+    text-align: center;
+}
+
+.chartModPopup .popupContent .moduleStatus .modulContentBox .innerbox {border-radius:20px; background:rgba(255,255,255,0.05); padding: 10px; width: 24%;}
+.chartModPopup .popupContent .moduleStatus .modulContentBox .innerbox h3 {text-align: center;}
+.chartModPopup .popupContent .moduleStatus .modulContentBox .innerbox [class*='cir'] {
+    padding-left: 10%;
+    text-align: center;
+}
+
+.chartModPopup .popupContent .moduleStatus .modulContentBox .innerbox p {
+    text-align: center;
+}
+
+.chartModPopup .popupContent .moduleStatus .modulContentBox .innerbox:nth-child(n+2):nth-child(-n+4) p:first-child{
+    color: #f1c12f;
+}
+
+
+
+.chartModPopup .popupContent > ul:nth-of-type(1) {display:flex; justify-content:space-between;}
+.chartModPopup .popupContent > ul:nth-of-type(1) li {width:32%; text-align:center; padding:20px; font-family:'Gmarket Sans', sans-serif; font-size:20px;}
+.chartModPopup .popupContent > ul:nth-of-type(1) li h5 {font-family:'Noto Sans KR', sans-serif; font-size:17px; margin-bottom:5px;}
+.chartModPopup .popupContent > ul:nth-of-type(1) li strong {color:#f1c12f; font-family:inherit;}
+.chartModPopup .popupContent > ul:nth-of-type(2) {padding:20px 10px; max-height:430px; overflow:scroll;}
+.chartModPopup .popupContent > ul:nth-of-type(2)::-webkit-scrollBar {display:none;}
+.chartModPopup .popupContent > ul:nth-of-type(2) .tr {display:flex; justify-content:center;}
+.chartModPopup .popupContent > ul:nth-of-type(2) .tr .td {width:14px; height:14px; display:block; border-radius:50%; border:1px solid #999;margin: 8px;}
+.chartModPopup .popupContent > ul:nth-of-type(2) .tr .td.focus {background:#fff;}
+.chartModPopup .popupContent > ul:nth-of-type(2) .tr .td.off {opacity:0.1;}
+

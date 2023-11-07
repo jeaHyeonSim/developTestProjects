@@ -1,0 +1,522 @@
+@charset "utf-8";
+
+button{
+    margin: 0;
+}
+#mainContent {display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; color:#fff;}
+
+#mainContent .section {background:rgba(29,39,51,1); border-radius:10px; overflow:hidden; margin-top:1%;}
+#mainContent .section.sec01 {min-height:800px; width:21.7%; background: none;}
+#mainContent .section.sec02 {min-height:800px; width:77.2%;}
+
+@media (max-width : 950px){ 
+    /* #mainContent { display: block;} */
+    /* #mainContent .section.sec01 {width: 44.5%;}
+    #mainContent .section.sec02 {width: 54.5%;} */
+}
+
+#mainContent .section h2.contentTit {
+    font-family:'Gmarket Sans',sans-serif; color:#fff; 
+    font-size:16px; padding:15px 20px 10px 15px; border-bottom:1px solid #8e9399; 
+    height: 25px;
+    font-weight:600;}
+
+/* #mainContent .section .contentBox {display:flex; flex-wrap:wrap; align-items:center; 
+    justify-content:space-between; } */
+
+#mainContent .section .contentBox { display:block; overflow:hidden; height: 100%; width: 100%;}
+
+
+
+/* =========================== 발전그래프 =========================== */
+
+/* ====== 차트 CSS ====== */
+#mainContent .section.sec01 .sec01-box{
+    background: rgba(29,39,51,1);
+    height: 49%;
+    /* min-height: 400px; */
+    border-radius: 10px;
+}
+#mainContent .section.sec01 .sec01-box01 {margin-bottom: 17px;}
+#mainContent .section.sec01 .sec01-box02 {margin-top: 17px;}
+#mainContent .section.sec01 .sec01-box .contentBox .imgBox {
+    width: 100%;
+    height: 170px;
+}
+#mainContent .section.sec01 .sec01-box .contentBox .imgBox.imgBox01 {
+    background: url(../../imgs/main/reSize/solarpowerPanel.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+#mainContent .section.sec01 .sec01-box .contentBox .imgBox.imgBox02 {
+    background: url(../../imgs/main/reSize/solarpowerPanel.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+#mainContent .section.sec01 .sec01-box .contentBox ul li {
+    display: flex;
+    border-bottom: solid 1px #8E9399;
+    height: 41px;
+    padding: 0 25px;
+}
+#mainContent .section.sec01 .sec01-box .contentBox ul li:last-child{
+    border: none;
+}
+#mainContent .section.sec01 .sec01-box .contentBox ul li div {
+    line-height: 41px;
+    font-size: 14px;
+}
+
+#mainContent .section.sec01 .sec01-box .contentBox ul li div:nth-child(1)::before{
+    content: '●';
+    font-size: 8px;
+    font-weight: 900;
+    color: #fff;
+}
+#mainContent .section.sec01 .sec01-box .contentBox ul li div:nth-child(2) { 
+    margin-left: 8px;
+    width: 40%;
+
+}
+#mainContent .section.sec01 .sec01-box .contentBox ul li div.spaces {
+    width: 30%;
+}
+#mainContent .section.sec01 .sec01-box .contentBox ul li div:nth-child(4) {
+    width: 25%;
+    text-align: right;
+    
+}
+
+#mainContent .section.sec01 .sec01-box .contentBox ul li:nth-child(2) div:nth-child(4),
+#mainContent .section.sec01 .sec01-box .contentBox ul li:nth-child(3) div:nth-child(4) {
+    color: #81FF02;
+}
+
+
+
+
+
+/* ====== 차트 CSS ====== */
+
+
+/* =========================== 발전통계 =========================== */
+#mainContent .section.sec02 .contentBox > div {
+    padding: 0 20px 0 15px;
+}
+/* ====== 검색 라인 ====== */
+#mainContent .section.sec02 .contentBox .contentBoxSearch{
+    height: 48px;
+    display: grid;
+    grid-template-rows: repeat(1, 100%);
+    grid-template-columns: repeat(5, 12% 21.4% 15.4% 40.1% 9.1%);
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch > div {
+    line-height: 48px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectTitle {
+    font-size: 14px;
+    min-width: 90px;
+
+}
+
+/* #mainContent .section.sec02 .contentBox .contentBoxSearch .selectTitle span.aaa {
+    position: absolute;
+    width: 800px;
+    height: 23.5px;
+    left: 855px;
+    z-index: 555;
+    border: 1px solid red;
+} */
+
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectTitle span:first-child {
+    display: inline-block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    top: 2px;
+    background: url(../../imgs/svg/whiteCircle.svg) no-repeat;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent {
+    font-size: 16px;
+    min-width: 70px;
+}
+
+#mainContent .section.sec02 .contentBox .contentBoxSearch .ivtSelect {
+    padding-right: 8px;
+}
+
+#mainContent .section.sec02 .contentBox .contentBoxSearch .timeSelect {
+    text-align: right;
+    padding: 0 0 0 25.2%;
+}
+
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent #ivt-sn {
+    width: 100%;
+	height: 34px;
+	font-size: 16px;
+	background: rgba(29,39,51,1);
+	color: #fff;
+	border-radius: 5px;
+	border: 1px solid rgba(47,156,180,0.7);
+    text-align: center;
+    margin-top: 7px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent #ivt-sn.on{
+    cursor: pointer;
+}
+#header div.selectBox select {
+	width: 100%;
+	height: 30px;
+	font-size: 16px;
+	background: rgba(29,39,51,1);
+	color: #fff;
+	border-radius: 5px;
+	border: 1px solid rgba(29,39,51,1);
+	border: 1px solid #8e9399;
+}
+#header div.selectBox select option {
+	font-size: 14px;
+}
+
+/* 기간 */
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.selectDay {
+    display: flex;
+    margin-left: 8px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.selectDay div {
+    width: 140px;
+    height: 34px;
+
+    /* background-color: rgba(32, 62, 95, 1); */
+    background-color: rgba(54, 78, 104, 1);
+    border-radius: 20px;
+    margin-top: 7px;
+    /* display: flex; */
+    text-align: center;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.selectDay > span{
+    margin: 0 7px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.selectDay div span {
+    position: relative;
+    top: -11px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.selectDay div span:first-child{
+    display: inline-flex;
+    width: 14px;
+    height: 16px;
+    background: url(../../imgs/calendarPad_.png) no-repeat;
+    top: -7px;
+    margin-right: 3px;
+}
+/* 기간설정 안에 인풋대그 */
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.selectDay div span:last-child input{
+    /* position: relative; */
+    height: 24px;
+    width: 85px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(142, 147, 153, 0);
+    outline: none;
+    box-shadow: none;
+    border: 0;
+    margin:0 0 0 0 ;
+    /* top: 50%;
+    transform: translateY(-50%); */
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.selectDay div span:last-child input.on{
+    cursor: pointer;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.selectDay div:first-child{
+
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.selectDay div:last-child{
+
+}
+
+/* 조회 */
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.search {
+    position: relative;
+    /* text-align: right; */
+    margin-left: 16px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.search div.searchBackgroundEvent{
+    position: absolute;
+    width: 100%;
+    margin-top: 7px;
+    height: 34px;
+    z-index: 999;
+    opacity: 0;
+    border-radius: 20px;
+    /* background-color: rgba(142, 147, 153, 0.5); */
+    background-color:rgba(235, 240, 246, 0.3);
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.search div.searchBackgroundEvent.on{
+    opacity: 1;
+    cursor: pointer;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.search div:last-child {
+    width: 100%;
+    height: 34px;
+    /* background-color: #D9D9D9; */
+    background-color: rgba(235, 240, 246, 1);
+    margin-top: 7px;
+    border-radius: 20px;
+    /* display: flex; */
+    text-align: center;
+}
+
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.search div:last-child span {
+    position: relative;
+    top: -8px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.search div:last-child span:first-child{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../../imgs/svg/Search.svg) no-repeat ;
+    content: "";
+    top: -7px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxSearch .selectContent.search div:last-child span.searchSubmit{
+    /* height: 24px; */
+    color: black;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+/* ====== 검색 라인 ====== */
+/* ====== 엑셀 라인 ====== */
+#mainContent .section.sec02 .contentBox .contentBoxExcel{
+    position: relative;
+    margin-top: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height: 34px;
+    text-align: center;
+}
+#mainContent .section.sec02 .contentBox .contentBoxExcel .excelBackgroundEvent {
+    position: absolute;
+    right: 20px;
+    width: 136px;
+    height: 34px;
+    border-radius: 20px;
+    opacity: 0;
+    background-color: rgba(51, 53, 52, 0.5);
+}
+#mainContent .section.sec02 .contentBox .contentBoxExcel .excelBackgroundEvent.on{
+    opacity: 1;
+    cursor: pointer;
+}
+#mainContent .section.sec02 .contentBox .contentBoxExcel .ExcelBox{
+    float: right;
+    height: 100%;
+    width: 136px;
+    border-radius: 20px;
+    line-height: 34px;
+    background-color: rgba(28,204,113,1);
+    /* background-color: rgba(152, 204, 211, 1); */
+}
+#mainContent .section.sec02 .contentBox .contentBoxExcel .ExcelBox span:first-child{
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background: url(../../imgs/svg/excel.svg) no-repeat;
+    top: 1px;
+    margin-right: 3px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxExcel .ExcelBox span:last-child{
+    display: inline-block;
+}
+
+
+/* ====== 리스트 라인 ====== */
+#mainContent .section.sec02 .contentBox .contentBoxList{
+}
+.contentBoxList table thead{
+    color: #fff;
+    font-weight: 500;
+    font-size: 17px;
+}
+table, th, td {
+    border: 1px solid #fff;
+    border-collapse: collapse;
+    /* border-radius: 10px; */
+  }
+#mainContent .section.sec02 .contentBox .contentBoxList table {
+    /* color: #fff; */
+    color: rgba(235, 240, 246, 1);
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    /* border-radius: 20px; */
+    /* border: 1px solid #fff; */
+}
+#mainContent .section.sec02 .contentBox .contentBoxList table thead td {
+    padding: 5px 10px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxList table td {
+    padding: 3px 10px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxList table thead tr td:nth-child(1){
+    width: 15%;
+}
+#mainContent .section.sec02 .contentBox .contentBoxList table thead tr td:nth-child(2){
+    width: 30%;
+}
+#mainContent .section.sec02 .contentBox .contentBoxList table thead tr td:nth-child(3){
+    width: 17%;
+}
+#mainContent .section.sec02 .contentBox .contentBoxList table thead tr td:nth-child(4){
+    width: 38%;
+}
+
+#mainContent .section.sec02 .contentBox .contentBoxList table thead tr td,
+#mainContent .section.sec02 .contentBox .contentBoxList table .statisticsTbody tr td:first-child{
+    /* background-color: rgba(32, 62, 95, 1); */
+    background-color: rgba(54, 78, 104, 1);
+}
+#mainContent .section.sec02 .contentBox .contentBoxList .statisticsTbody .lowest{}
+#mainContent .section.sec02 .contentBox .contentBoxList .statisticsTbody .average{}
+#mainContent .section.sec02 .contentBox .contentBoxList .statisticsTbody .highest{}
+#mainContent .section.sec02 .contentBox .contentBoxList .statisticsTbody .sum{}
+
+
+
+
+
+#mainContent .section.sec02 .contentBox .contentBoxList2 {
+    margin-top: 15px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxList2 table  {
+    /* color: #fff; */
+    color: rgba(235, 240, 246, 1);
+    width: 100%;
+    text-align: center;
+    /* border-radius: 20px; */
+    /* border: 1px solid #fff; */
+    /* border: 1px solid #fff; */
+}
+
+#mainContent .section.sec02 .contentBox .contentBoxList2 table thead {
+    height: 60px;
+}
+
+#mainContent .section.sec02 .contentBox .contentBoxList2 table td {
+    padding: 2px 2px;
+}
+#mainContent .section.sec02 .contentBox .contentBoxList2 table thead .theadTr td:nth-child(1){
+    width: 15%;
+}
+#mainContent .section.sec02 .contentBox .contentBoxList2 table thead .theadTr td:nth-child(2){
+    width: 30%;
+}
+#mainContent .section.sec02 .contentBox .contentBoxList2 table thead .theadTr td:nth-child(3){
+    width: 15%;
+}
+#mainContent .section.sec02 .contentBox .contentBoxList2 table thead .theadTr td:nth-child(4){
+    width: 40%;
+}
+
+#mainContent .section.sec02 .contentBox .contentBoxList2 table thead tr td,
+#mainContent .section.sec02 .contentBox .contentBoxList2 table .statisticsTbody .lowest td:first-child,
+#mainContent .section.sec02 .contentBox .contentBoxList2 table .statisticsTbody .average td:first-child,
+#mainContent .section.sec02 .contentBox .contentBoxList2 table .statisticsTbody .highest td:first-child,
+#mainContent .section.sec02 .contentBox .contentBoxList2 table .statisticsTbody .sum td:first-child
+{
+    /* background-color: rgba(32, 62, 95, 1); */
+    background-color: rgba(54, 78, 104, 1);
+}
+
+/* ====== 리스트 라인 ====== */
+
+
+/* ====== 페이징 라인 ====== */
+#mainContent .section.sec02 .contentBox .contentBoxPageing{
+    margin-top: 20px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+}
+#mainContent .section.sec02 .contentBox .contentBoxPageing .pageingBox{ 
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    width: 250px;
+
+}
+/* ====== 페이징 라인 ====== */
+
+
+
+/* ====== jquert datepicker 라인 ====== */
+#ui-datepicker-div {
+    margin-left: -90px;
+    width: 250px;
+}
+/*  달력 테두리 */
+.ui-widget.ui-widget-content {
+    border-radius: 10px;
+}
+/* 달력 헤더 바탕 */
+.ui-widget-header {
+    border: none;
+    background: none;
+    color: #333333;
+    font-weight: bold;
+}
+.ui-datepicker th {
+    padding: 0.3em 0.3em;
+}
+.ui-datepicker tbody tr td:first-child span,
+.ui-datepicker tbody tr td:first-child a {
+    color: red;
+}
+/* .ui-datepicker tbody tr td:last-child span,
+.ui-datepicker tbody tr td:last-child a {
+    color: blue;
+} */
+.ui-datepicker td a ,
+.ui-datepicker td span {
+    text-align: center;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: none;
+    background: none;
+    color: #454545;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid #dad55e;
+    background: #fffa90;
+    color: #777620;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+    background-image: none;
+    margin: 0.3em 0 0 0;
+    padding: 0 0.2em;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+/* ====== jquert datepicker 라인 ====== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

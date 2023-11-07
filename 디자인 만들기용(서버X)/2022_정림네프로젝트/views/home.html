@@ -1,0 +1,211 @@
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+		<meta name="author" content="그린훼스코 태양광 발전 통합 모니터링">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:image" content="">
+		<meta property="og:url" content="">
+		<meta property="og:description" content="">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="">
+		<meta name="twitter:image" content="">
+		<meta name="twitter:description" content="">
+		<meta http-equiv="imagetoolbar" content="no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="../public/imgs/common/favicon.ico" type="image/x-icon" sizes="16x16"/>
+		<link rel="icon" href="../public/imgs/common/favicon.ico" type="image/x-icon" sizes="16x16"/>    
+		
+		<title>디스플레이 정림네 프로젝트</title>
+
+		<!-- 공통 라이브러리 js -->
+		<script src="../../../node_modules/chart.js/dist/chart.min.js"></script>
+		<script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="../../../node_modules/moment/min/moment.min.js"></script>
+
+		<!-- 페이지별 CSS -->
+		<link rel="stylesheet" href="../public/css/lcdMonitor/home.css">
+		<link rel="stylesheet" href="../public/css/lcdMonitor/reset.css">
+
+		<!-- 페이지별 JS -->
+		<script src="../public/js/web/home.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="mainContent" class="container">				
+				
+				<div class="sec section01">
+					<div class="contentTit">
+						<span>
+							<img src="../public/imgs/web/status.svg" alt="">
+						</span>
+						상태
+					</div>
+					<div class="contentBox">
+						<div class="box box01">
+							<ul>
+								<li>
+									<span> 온도 
+										<img src="../public/imgs/web/temp.svg" alt="온도" >
+									</span>
+								</li>
+								<li class="boxContents">23.5 ℃</li>
+							</ul>
+						</div>
+						<div class="box box02">
+							<ul>
+								<li>
+									<span> 습도  
+										<img src="../public/imgs/web/humidity.svg" alt="습도">
+									</span>
+								</li>
+								<li class="boxContents">65 %</li>
+							</ul>
+						</div>
+						<div class="box box03">
+							<ul>
+								<li>
+									<span> 조도  
+										<img src="../public/imgs/web/illuminance.svg" alt="조도">
+									</span>
+								</li>
+								<li class="boxContents">123 lx</li>
+							</ul>
+						</div>
+						<div class="box box04">
+							<ul>
+								<li>
+									<span> Co2 
+										<img src="../public/imgs/web/co2.svg" alt="Co2">
+									</span>
+								</li>
+								<li class="boxContents">1231 ppm</li>
+							</ul>
+						</div>
+						<div class="box box05">
+							<ul>
+								<li>
+									<span> 토양정보  
+										<img src="../public/imgs/web/soilI.svg" alt="토양정보">
+									</span>
+								</li>
+								<li class="boxContents">
+									건조한 토양
+								</li>
+							</ul>
+						</div>
+						<div class="box box06">
+							<ul>
+								<li>토양정보 상세</li>
+								<li>▶ 0  ~300     건조한 토양</li>
+								<li>▶ 300~700     습한 토양</li>
+								<li>▶ 700~950     수중 토양</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<div class="sec section02">
+					<div class="contentTit">
+						<span>
+							<img src="../public/imgs/web/control.svg" alt="">
+						</span>
+						제어
+					</div>
+					<div class="contentBox">
+						<div class="box box01">
+							<ul class="blowClass">
+								<li>
+									<span> 송풍기
+										<img src="../public/imgs/web/blow.svg" alt="습도 svg" >
+									</span>
+								</li>
+								<li>
+									<button class="on">ON</button>
+									<button class="off">OFF</button>
+								</li>
+							</ul>
+						</div>
+						<div class="box box02">
+							<ul class="lightControlClass">
+								<li>
+									<span> 밝기조절 
+										<img src="../public/imgs/web/lightControl.svg" alt="습도 svg" >
+									</span>
+								</li>
+								<li class="boxContents">
+									<button name="off">OFF</button>
+									<button name="1">1</button>
+									<button name="2">2</button>
+									<button name="3">3</button>
+									<button name="max">MAX</button>
+								</li>
+							</ul>
+						</div>
+						<div class="box box03">
+							<ul class="coolingClass">
+								<li>
+									<span> 냉방
+										<img src="../public/imgs/web/cooling.svg" alt="습도 svg" >
+									</span>
+								</li>
+								<li class="boxContents">
+									<button class="on">ON</button>
+									<button class="off">OFF</button>
+								</li>
+							</ul>
+						</div>
+						<div class="box box04">
+							<ul class="heatingClass">
+								<li>
+									<span> 보온
+										<img src="../public/imgs/web/heating.svg" alt="습도 svg" >
+									</span>
+								</li>
+								<li class="boxContents">
+									<button class="on">ON</button>
+									<button class="off">OFF</button>
+								</li>
+							</ul>
+						</div>
+						<div class="box box05">
+							<ul class="tempControlClass">
+								<li>
+									<span> 온도조절
+										<img src="../public/imgs/web/tempControl.svg" alt="습도 svg" >
+									</span>
+								</li>
+								<li class="boxContents">
+									<!-- <font size = 2 id = "slider_value_view">25</font> -->
+									<div class="inputRangeVal" id="inputRangeVal">
+										<div>25 ℃</div>
+									</div>
+									<div class="inputRange">
+										<div>10</div>
+										<input class="inputRangeClass" oninput="ShowSliderValue(this.value)" type="range" min="10" max="40" value="25">
+										<div>40</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="box box06">
+
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<script language = "javascript">
+			// 온도조절 값 표시
+			function ShowSliderValue(sVal){
+				var obValueView = document.getElementById("inputRangeVal");
+				obValueView.innerText = sVal + ' ℃'
+			}
+		</script>
+	</body>
+</html>

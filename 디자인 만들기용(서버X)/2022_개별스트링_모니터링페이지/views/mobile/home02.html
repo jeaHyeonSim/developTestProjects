@@ -1,0 +1,133 @@
+<html lang="ko">
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+		<meta name="author" content="그린훼스코 태양광 발전 통합 모니터링">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:image" content="">
+		<meta property="og:url" content="">
+		<meta property="og:description" content="">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="">
+		<meta name="twitter:image" content="">
+		<meta name="twitter:description" content="">
+		<meta http-equiv="imagetoolbar" content="no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="../../public/imgs/common/favicon.ico" type="image/x-icon" sizes="16x16"/>
+		<link rel="icon" href="../../public/imgs/common/favicon.ico" type="image/x-icon" sizes="16x16"/>    
+
+		<title>(반응형)그린훼스코 개별스트링 태양광 발전 통합 모니터링</title>
+		<!-- 공통 CSS -->
+		<link rel="stylesheet" href="../../public/css/mobile/common/stylesheets.css">
+		<link rel="stylesheet" href="../../public/css/mobile/style.css">
+		<link rel="stylesheet" href="../../public/css/mobile/test.css">
+		
+		<!-- 공통 js -->
+		<script src="../../../node_modules/chart.js/dist/chart.min.js"></script>
+		<script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="../../../node_modules/moment/min/moment.min.js"></script>
+		<script src="../../public/js/script.js" defer></script>
+		<script src="../../public/js/common/datefrom.js"  ></script>
+		<script src="../../public/js/common/common.js" defer></script>
+
+
+
+		<!-- 페이지 별 링크 -->
+		<link rel="stylesheet" href="../../public/css/mobile/home02.css">
+		<link rel="stylesheet" href="../../public/css/mobile/homeChart.css">
+		<script src="../../public/js/mobile/home02.js" defer></script>
+		<script src="../../public/js/mobile/homeChart.js" defer></script>
+	</head>
+	<body>
+		<div id="wrap">
+			
+			<div id="mainContent" class="container">				
+				<div class="section sec02">
+					<div class="box box02">
+						<div class="contentTit">
+							<h2>발전소 정보</h2>
+						</div>
+						<div class="contentBox">
+							<div class="location">광주광역시첨단과기로 (주)그린훼스코</div> <!-- 현재 위치 표시 -->
+							<div class="innerBoxDiv">
+								<div class="innerBox scale">
+									<h3 class="sTit">규모</h3>
+									<strong>3,358</strong> <!-- 발전소 규모 표시 -->
+									kW/년
+								</div>
+								<div class="innerBox model">
+									<h3 class="sTit">인버터 모델</h3>
+									<strong>SIN17</strong> <!-- 발전소 인버터 모델 표시 -->
+								</div>
+								<div class="innerBox count">
+									<h3 class="sTit">인버터 수</h3>
+									<strong>208</strong> <!-- 발전소 인버터 수 표시 -->
+									대
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="box box03">
+						<div class="contentTit">
+							<h2>시간별 발전량</h2>
+						</div>
+						<div class="contentBox">
+							<canvas id="line_timeGraph" style="width: 95%; height: 100%;" ></canvas>
+						</div>
+					</div>
+					
+					<div class="box box04">
+						<div class="contentTit">
+							<h2>발전정보</h2>
+						</div>
+						<div class="contentBox">
+							<div class="innerBox today">
+								<h3 class="sTit">현재 <br />태양광 출력</h3>
+								<strong>9.2</strong> <!-- 현재 태양광 값 표시 -->
+								kW
+							</div>
+							<div class="innerBox accumulate">
+								<h3 class="sTit">누적 <br />태양광 발전량</h3>
+								<strong>862155.14</strong> <!-- 태양광 발전량 값 표시 -->
+								MWh
+							</div>
+							<div class="innerBox CO2">
+								<h3 class="sTit">이산화탄소 <br />절감량</h3>
+								<strong>365,554</strong> <!-- 이산화탄소 절감량 표시 -->
+								tCo2/년
+							</div>
+							<div class="barBox">
+								<h3 class="sTit">금일 태양광 발전량</h3>
+								<div class="barCont">
+									<span class="bar bar01" style="width:15%"></span><!-- 발전량의 수치를 백분율로 하여 값 산출 - ex)전체 발전량의 15%일 경우 style="width:15%" -->
+									<span class="amount">504,466 kWh</span> <!-- 금일 태양광 발전량 표시 -->
+								</div>
+							</div>
+							<div class="barBox">
+								<h3 class="sTit">전일 태양광 발전량</h3>
+								<div class="barCont">
+									<span class="bar bar02" style="width:25%"></span><!-- 발전량의 수치를 백분율로 하여 값 산출 - ex)전체 발전량의 25%일 경우 style="width:25%" -->
+									<span class="amount">591,110  kWh</span> <!-- 전일 태양광 발전량 표시 -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pageMove">
+					<button><a href="./home01.html" style="color: #ffff;">개별 모듈별</a> </button>
+					<button><a href="./home02.html" style="color: #ffff;">발전소 정보</a> </button>
+					<button><a href="./chartStrMenuList.html" style="color: #ffff;">모듈별 그래프</a> </button>
+				</div>
+			</div>
+			<footer id="footer" class="container">
+				COPYRIGHT ⓒ 그린훼스코(주). All Rights Reserved.
+			</footer>
+		</div>
+	</body>
+</html>

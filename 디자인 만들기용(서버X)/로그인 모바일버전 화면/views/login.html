@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+		<meta name="author" content="로그인">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:image" content="">
+		<meta property="og:url" content="">
+		<meta property="og:description" content="">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="">
+		<meta name="twitter:image" content="">
+		<meta name="twitter:description" content="">
+		<meta http-equiv="imagetoolbar" content="no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="../public/imgs/web/common/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="../public/imgs/web/common/favicon.ico" type="image/x-icon" />
+
+		<title>로그인</title>
+
+		<link href="../public/css/web/common/base.css" rel="stylesheet" type="text/css">
+		<link href="../public/css/web/common/layout.css" rel="stylesheet" type="text/css">
+
+		<link rel="stylesheet" href="../public/css/mobile/mobile-login.css" media="screen and (max-width:767px) and (max-height:767px)">
+		<style>
+			.px {
+				position: absolute;
+				width: 205px !important;
+				right: 80px;
+				bottom: 120px;
+				height: auto !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="container">
+				<h7>
+					<img id="main-logo" style="height: 61px;" class="d-inline-block align-top mr-2"
+						src="../public/imgs/web/common/gf_logo_02.png" alt="logo">
+				</h7>
+				<h1>
+					모든페이지 모바일 로그인 버전(개발용)
+				</h1>
+				<div class="content_area">
+					<h2>로그인</h2>
+					<div>
+						<form id="loginForm" name="loginForm" method="post">
+							<input type="text" id="userId" name="userId" value=""
+								placeholder="아이디를 입력하세요." /><br />
+							<input type="password" id="userPw" name="userPw" value="" placeholder="비밀번호를 입력하세요."
+								maxlength="12"
+								onkeydown="javascript:if (event.keyCode == 13) { actionLoginCheck(); return false; }" />
+						</form>
+						<button class="custom-btn btn-5" onclick="javascript:actionLoginCheck(); return false;"><span>확&emsp;인</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <script src="/js/login.js"></script> -->
+	</body>
+
+</html>

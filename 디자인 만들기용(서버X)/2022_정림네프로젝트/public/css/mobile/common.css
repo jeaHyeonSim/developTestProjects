@@ -1,0 +1,29 @@
+
+
+.container {
+    max-width: 765px;
+    min-width: 250px;
+    padding: 0;
+}
+#header {
+    display: none;
+}
+
+.pageMove {
+    display: flex;
+    /* justify-content: ; */
+    flex-wrap: wrap;
+    margin: 10px 0 ;
+}
+.pageMove button {
+    color: #fff;
+    font-size: 12px;
+    background-color: #6698cb;
+    padding: 5px 5px;
+    margin: 5px 5px;
+    border-radius: 5px;
+    line-height: 1;
+}
+#footer {
+    display: none;
+}

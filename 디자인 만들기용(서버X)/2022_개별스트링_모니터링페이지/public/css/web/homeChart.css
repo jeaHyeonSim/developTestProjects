@@ -1,0 +1,7 @@
+/* 시간별 발전량 */
+#mainContent .section .box.box03 .contentBox {
+    height: 245px;
+}
+#line_timegraph {
+    margin: 0.3em auto 0;
+}

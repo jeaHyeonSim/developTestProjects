@@ -1,0 +1,390 @@
+<html lang="ko">
+	<head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+		<meta name="author" content="뉴그린테크 태양광 발전 통합 모니터링">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:image" content="">
+		<meta property="og:url" content="">
+		<meta property="og:description" content="">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="">
+		<meta name="twitter:image" content="">
+		<meta name="twitter:description" content="">
+		<meta http-equiv="imagetoolbar" content="no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="../public/imgs/common/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="../public/imgs/common/favicon.ico" type="image/x-icon" />
+
+		<title>디자인 뉴그린 통계 페이지</title>
+
+		<!-- 공통 CSS -->
+		<link rel="stylesheet" href="../public/css/style.css">
+        
+		<!-- 페이지별 필요 CSS -->
+		<link rel="stylesheet" href="../public/css/statistics/monitoringStatistics.css">
+		<link rel="stylesheet" href="../public/css/statistics/mainStatistics.css">
+		<link rel="stylesheet" href="../../node_modules/jquery-ui/dist/themes/base/jquery-ui.css">
+
+		<!-- 공통 js -->
+		<script src="../../node_modules/chart.js/dist/chart.min.js"></script>
+		<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="../../node_modules/moment/min/moment.min.js"></script>
+		<script src="../public/js/common/datefrom.js" defer></script>
+
+
+		<!-- 페이지별 필요 js -->
+		<script src="../public/js/monitoringStatistics.js" defer></script>
+		<script src="../public/js/monitoringStatisticsChart.js" defer></script>
+		<script src="../../node_modules/jquery-ui/dist/jquery-ui.min.js"></script>
+
+
+	</head>
+	<body>
+		<div id="wrap">
+			<header id="header" class="container">
+				<h1 class="logoBox"><span class="logo">뉴그린테크</span> 태양광 발전 통합 모니터링</h1>
+				<nav class="menuBox">
+					<!-- 해당 페이지 노출시 해당 메뉴의 class="active" 활성화 -->
+					<ul>
+						<li class=""><a href="../views/그래프 수정.html">홈</a></li>
+						<li class="active"><a href="../views/통계페이지.html">통계</a></li>
+					</ul>
+					<!-- //  -->
+				</nav>
+				<div class="clockBox">
+					<div id="currtDate"></div><!--날짜-->
+					<strong><div id="currtTime"></div></strong><!--시각-->
+				</div>
+				<ul class="mypageBox">
+					<!-- 로그인 전 -->
+					<!-- <li class="login"><a href="#">로그인</a></li> -->
+					<!-- // -->
+
+					<!-- 로그인 후 -->
+					<li class="welcome"><b>시스템관리자</b>님 안녕하세요!</li>
+					<li class="logout"><a href="/logout">로그아웃</a></li>
+					<!-- // -->
+				</ul>
+			</header>
+
+			<div id="mainContent" class="container">
+				<!-- left content box -->
+				<div class="section sec01">
+					<div class="sec01-box sec01-box01">
+						<h2 class="contentTit">발전소 현황정보 - 추적식</h2>
+						<div class="contentBox">
+							<div class="imgBox imgBox01"></div>
+							<ul>
+								<li> 
+									<div></div>
+									<div>설비용량</div>
+									<div class="spaces"></div>
+									<div>99kW</div>
+								</li>
+								<li> 
+									<div></div>
+									<div>RTU 수신상태</div>
+									<div class="spaces"></div>
+									<div class="textColorChange">통신중</div>
+								</li>
+								<li> 
+									<div></div>
+									<div>발전상태</div>
+									<div class="spaces"></div>
+									<div class="textColorChange">통신중</div>
+								</li>
+								<li> 
+									<div></div>
+									<div>마지막 수신 날짜</div>
+									<div class="spaces"></div>
+									<div>2022-10-04</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="sec01-box sec01-box02">
+						<h2 class="contentTit">발전소 현황정보 - 고정식</h2>
+						<div class="contentBox">
+							<div class="imgBox imgBox02"></div>
+							<ul>
+								<li> 
+									<div></div>
+									<div>설비용량</div>
+									<div class="spaces"></div>
+									<div>99kW</div>
+								</li>
+								<li> 
+									<div></div>
+									<div>RTU 수신상태</div>
+									<div class="spaces"></div>
+									<div class="textColorChange">통신중</div>
+								</li>
+								<li> 
+									<div></div>
+									<div>발전상태</div>
+									<div class="spaces"></div>
+									<div class="textColorChange">통신중</div>
+								</li>
+								<li> 
+									<div></div>
+									<div>마지막 수신 날짜</div>
+									<div class="spaces"></div>
+									<div>2022-10-04</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- right content box-->
+				<div class="statistics-right section sec02">
+					<h2 class="contentTit">발전 통계</h2>
+					<div class="contentBox">
+
+						<!-- search -->
+						<div class="statistics-right__search mb-3"> 
+							<div class="left-items text-center">
+								<!-- <img class="mr-1" src="../../imgs/svg/whiteCircle.svg" alt="라벨 이미지"> -->
+								<label>인버터 선택</label>
+							</div>
+							<div class="left-items">
+								<select id="inverter">
+									<option value="all">전체</option>
+									<option value="tecking">추적식</option>
+									<option value="fixed">고정식</option>
+								</select>
+							</div>
+							<div class="right-items">
+								<!-- 일 선택 -->
+								<!-- <input id="daily-date" class="daily-date mr-1" type="text"> -->
+								<!-- 주간 선택 -->
+								<input id="weekly-date" class="weekly-date mr-1" type="text">
+
+
+								<select id="changeSearchBound">
+									<option value="daily" selected>일간</option>
+									<option value="weekly">주간</option>
+									<option value="monthly">월간</option>
+								</select>
+							</div>
+						</div>
+
+						<!-- content -->
+						<div class="statistics-right__content">
+							<div class="statistics-right__daily">
+								<div class="statistics-right__title mb-1">
+									<div><h3>■ <span class="dailytext"></span> 발전량 그래프</h3></div>
+								</div>
+
+								<div class="daily-graph mb-3">
+									<canvas id="daily-graph" style="width: 100%; height: 100%;"></canvas>
+									<!-- <p>일간 발전량 그래프를 표시할 수 없습니다.</p>  -->
+								</div>
+
+								<div class="statistics-right__title mb-1">
+									<div><h3>■ <span class="dailytext"></span> 발전량</h3></div>
+									<div class="right-items"><p>최고: <span class="red">■</span>, 최저: <span class="blue">■</span>, 단위: KW</p></div>
+								</div>
+								<table class="daily-table">
+									<tbody>
+										<tr>
+											<td>05시</td>
+											<td>06시</td>
+											<td>07시</td>
+											<td>08시</td>
+											<td>09시</td>
+											<td>10시</td>
+											<td>11시</td>
+											<td>12시</td>
+											<td>합계</td>
+										</tr>
+										<tr id="dailyTableData01">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td id="dailyTableSum" rowspan="3"></td>
+										</tr>
+										<tr>
+											<td>13시</td>
+											<td>14시</td>
+											<td>15시</td>
+											<td>16시</td>
+											<td>17시</td>
+											<td>18시</td>
+											<td>19시</td>
+											<td>20시</td>
+										</tr>
+										<tr id="dailyTableData02">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+<!-- 
+							<div class="statistics-right__weekly">
+								<div class="statistics-right__title mb-1">
+									<div><h3>■ 주간 발전량 그래프</h3></div>
+								</div>
+								<div class="weekly-graph mb-3">
+									<canvas id="weekly-graph" style="width: 100%; height: 100%;"></canvas>
+									<p>주간 발전량 그래프를 표시할 수 없습니다.</p> 
+								</div>
+
+								<div class="statistics-right__title mb-1">
+									<div><h3>■ 주간 발전량</h3></div>
+									<div class="right-items"><p>최고: <span class="red">■</span>, 최저: <span class="blue">■</span>, 단위: KW</p></div>
+								</div>
+								<table class="weekly-table">
+									<tbody>
+										<tr>
+											<td>(일)</td>
+											<td>(월)</td>
+											<td>(화)</td>
+											<td>(수)</td>
+											<td>(목)</td>
+											<td>(금)</td>
+											<td>(토)</td>
+											<td>(합계)</td> 
+										</tr>
+										<tr id="weeklyTableData">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td id="weeklyTableSum"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div> -->
+
+							
+							<!-- <div class="statistics-right__monthly">
+								<div class="statistics-right__title mb-1">
+									<div><h3>■ <span class="monthtext"></span>월 발전량 그래프</h3></div>
+								</div>
+								<div class="monthly-graph mb-3">
+									<canvas id="monthly-graph" style="width: 100%; height: 100%;"></canvas>
+									<p>월간 발전량 그래프를 표시할 수 없습니다.</p>
+								</div>
+
+								<div class="statistics-right__title mb-1">
+									<div><h3>■ <span class="monthtext"></span>월 발전량</h3></div>
+									<div class="right-items"><p>최고: <span class="red">■</span>, 최저: <span class="blue">■</span>, 단위: KW</p></div>
+								</div>
+								<table class="monthly-table mb-3">
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>2</td>
+											<td>3</td>
+											<td>4</td>
+											<td>5</td>
+											<td>6</td>
+											<td>7</td>
+											<td>8</td>
+											<td>9</td>
+											<td>10</td>
+											<td>11</td>
+										</tr>
+										<tr id="monthlyTableData01">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>12</td>
+											<td>13</td>
+											<td>14</td>
+											<td>15</td>
+											<td>16</td>
+											<td>17</td>
+											<td>18</td>
+											<td>19</td>
+											<td>20</td>
+											<td>21</td>
+											<td>22</td>
+										</tr>
+										<tr id="monthlyTableData02">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>23</td>
+											<td>24</td>
+											<td>25</td>
+											<td>26</td>
+											<td>27</td>
+											<td>28</td>
+											<td>29</td>
+											<td>30</td>
+											<td>31</td>
+											<td></td>
+											<td>합계</td>
+										</tr>
+										<tr id="monthlyTableData03">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td id="monthlySum"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div> -->
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer id="footer" class="container">
+			COPYRIGHT ⓒ 뉴그린테크(주). All Rights Reserved.
+		--> <a href="/manage/dashboard">관리자 홈</a>
+		</footer>
+	</body>
+
+</html>

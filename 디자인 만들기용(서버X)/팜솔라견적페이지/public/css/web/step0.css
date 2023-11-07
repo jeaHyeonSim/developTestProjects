@@ -1,0 +1,241 @@
+
+/* 컨텐츠 제목들 */
+.contents .tit {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+
+    line-height: 24px;
+    color: #171746;
+    margin: 35px 0 15px;
+    /* padding-left: 15px; */
+}
+.contents .tit span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+.contents .tit span img {
+    width: 100%;
+    height: 100%;
+}
+.contents .tit small {
+    font-size: 0.8rem;
+    padding-left: 10px;
+    color: #198B6A;
+    font-weight: 300;
+}
+
+/* 컨텐츠 내용들 */
+.contents > .content > div {
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    padding: 2%;
+    width: 96%;
+    background-color: #fff;
+}
+/* .content > div:not(.content > div:first-child) {
+    background-color: #fff;
+} */
+/* 카카오 맵은 패딩 없이 */
+.contents > .content:nth-child(2) > div {
+    padding: 0;
+    width: 100%;
+}
+
+/* 토지유형 */
+.landType-1 {
+    display: flex;
+    justify-content: space-between;
+}
+.landType-1 > div {
+    /* display: inline-block; */
+}
+.landType-1 > div:not(.landType-1 > div:last-child) {
+    width: 12%;
+    height: 100%;
+}
+.landType-1 > div > div {
+    text-align: center;
+    /* border: 0.5px solid black; */
+    border-radius: 5px;
+}
+.landType-1 > div > .title {
+    height: 20px;
+    margin-bottom: 2px;
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landType-1 > div:nth-child(1) > .title  {
+    background-color: #A0C34B;
+}
+.landType-1 > div:nth-child(2) > .title  {
+    background-color: #8DBB4F;
+}
+.landType-1 > div:nth-child(3) > .title  {
+    background-color: #7DB55A;
+}
+.landType-1 > div:nth-child(4) > .title  {
+    background-color: #66A959;
+}
+.landType-1 > div:nth-child(5) > .title  {
+    background-color: #4BA05F;
+}
+.landType-1 > div:nth-child(6) > .title  {
+    background-color: #339564;
+}
+.landType-1 > div:nth-child(7) > .title  {
+    background-color: #198B6A;
+}
+
+
+.landType-1 > div > .content {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    color: #000;
+    
+}
+
+
+
+/* 지역지구 분석 */
+.landType-2 {
+    display: flex;
+    color: #000;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* 소유 및 기타정보 , 건축물 정보*/ 
+.landType-2 div.content {
+    width:calc( 50% - 5px);
+}
+
+.landType-2 div.content .s-tit {
+    background-color: #198B6A;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+}
+.landType-2 div.content .infoCommon {
+    padding: 10px 0;
+    height: 220px;
+    margin-top: 5px;
+    background-color: #EFF5F3;
+    border-radius: 5px;
+}
+.landType-2 div.content .infoCommon  > div{
+    padding: 10px 20px;
+}
+.landType-2 div.content .infoCommon  > div dl {
+    display: flex;
+}
+.landType-2 div.content .infoCommon  > div dl dt {
+    width: 45%;
+    min-width: 154px;
+    color: #198B6A;
+}
+.landType-2 div.content .infoCommon  > div dl dd {
+    font-weight: bold;
+}
+
+
+
+/* 지역·지구	가능여부	조건·제한·예외사항 */
+.landType-2 .landType-2-table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* 지역지구/가능여부/조건·제한·예외사항  */
+.g-table2 table {
+    width: 100%;
+    height: auto;
+    /* margin: 50px auto; */
+    /* border: 1px solid black; */
+}
+.g-table2 table li {list-style: none;}
+.g-table2 .hidden {display: none;}
+
+.g-table2 thead tr th {
+    padding: 10px 0;background-color: #F9F9F9;
+    border-right: 0.5px rgba(0,0,0,0.2) solid;
+    border-top: 0.5px rgba(0,0,0,0.2) solid;
+    border-bottom: 0.5px rgba(0,0,0,0.2) solid;
+}
+.g-table2 thead tr th:last-child{
+    border-right: none;
+}
+.g-table2 tbody {position: relative;}
+.g-table2 tbody tr td {
+    padding: 10px 5px; 
+    border-right: 0.5px rgba(0,0,0,0.2) solid;
+    border-bottom: 0.5px rgba(0,0,0,0.2) solid;
+    text-align: center;
+}
+.g-table2 tbody tr td:last-child{
+    border-right: none;
+}
+.g-table2 tbody tr td .tipText {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 16px;
+    /* color: #171746; */
+    color: #7D7D7D;
+
+}
+.g-table2 .gf_poptip {
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    width: auto;
+    padding: 5px 15px;
+    font-size: 12px;
+    background: #fff;
+    border: 1px solid #1f2d3d;
+    height: 30px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+.g-table2 .gf_poptip.a {
+    top: 42px; 
+    width: 344.578px; 
+    left: -120.3px;
+
+}
+.g-table2 .gf_poptip:nth-child(even) {}
+.g-table2 .gf_poptip:nth-child(odd) {}
+.g-table2 .popper_arrow {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.g-table2 .popper_arrow {
+    border-width: 6px;
+    top: -7px;
+    border-bottom-width: 0;
+    border-top-color: #1f2d3d;
+}
+.g-table2 .popper_arrow:after {
+    content: " ";
+    border-width: 5px;
+    top: 1px;
+    margin-left: -5px;
+    border-top-width: 0;
+    border-bottom-color: #1f2d3d;
+}

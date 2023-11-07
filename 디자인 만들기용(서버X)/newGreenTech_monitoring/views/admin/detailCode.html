@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<%-include('partials/header.html') %>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<%-include('partials/sideBar.html') %>
+			
+			<div class="main">
+				<%-include('partials/navigation.html') %>
+
+				<main class="content">
+					<div class="container-fluid p-0">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+							<li class="right-items"><h1 class="h3"><strong></strong>상세코드 관리</h1></li>
+							<li class="breadcrumb-item">시스템관리</li>
+							<li class="breadcrumb-item">코드관리</li>
+							<li class="breadcrumb-item" aria-current="page">상세코드 관리</li>
+							</ol>
+						</nav>
+						<div class="row">
+							<div class="card">
+								<div class="card-header">
+										<div class="row border-bottom-line">
+											<div class="mb-3 col-2 col-xl-2">
+												<select class="form-select" id="searchSelect">
+													<option value="all" <%if(DTO.select === 'all') {%> selected <%}%>>검색조건</option>
+													<option value="code" <%if(DTO.select === 'code') {%> selected <%}%>>공통코드</option>
+													<option value="dtlCode" <%if(DTO.select === 'dtlCode') {%> selected <%}%>>공통코드</option>
+													<option value="dtlName" <%if(DTO.select === 'dtlName') {%> selected <%}%>>코드이름</option>
+												</select>
+											</div>
+											<div class="mb-3 col-3 col-xl-3">
+												<input type="text" onkeyup="enterkey();" class="form-control" id="searchContent" name="searchContent" placeholder="검색 내용을 입력주세요" value="<%=DTO.content%>">
+											</div>
+											<div class="mb-3 col-3 col-xl-3">
+											</div>
+											<div class="mb-3 col-4 col-xl-4 d-flex justify-content-end">
+												<form name="searchform" method="get">
+													<input type="hidden" id="currentPage" name ="currentPage">
+													<input type="hidden" id="pageMove" name ="pageMove">
+													<input type="hidden" id="select" name ="select">
+													<input type="hidden" id="content" name ="content">
+													<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:movePage(''); return false;"><i class="align-middle" data-feather="search"></i> 조회</button>
+													<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:addDetailcode(); return false;"><i class="align-middle" data-feather="plus"></i> 등록</button>
+													<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:init(); return false;"><i class="align-middle" data-feather="rotate-ccw"></i> 초기화</button>
+												</form>
+											</div>
+										</div>
+								</div>
+								<h6 class="card-subtitle text-muted">
+									<p class="text-start"></p>
+									<p class="text-end">검색결과: <Strong><%=pageVO.getTotal()%></Strong>건, &nbsp;<Strong><%=pageVO.getCurrentPage()%>/<%=pageVO.getTotalPages()%></Strong> 페이지</p>
+								</h6>
+								<table class="table table-striped table-bordered text-center">
+									<colgroup>
+										<col width="3%">
+										<col width="10%">
+										<col width="10%">
+										<col width="16%">
+										<col width="16%">
+										<col width="8%">
+										<col width="8%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>번호</th>
+											<th>공통코드</th>
+											<th>상세코드</th>
+											<th>상세코드명</th>
+											<th>설명</th>
+											<th>사용여부</th>
+											<th>관리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<% for(var i = 0; i < list.length; i++){ %>
+											<tr>
+												<td><%=(((pageVO.getCurrentPage() - 1) * pageVO.getSize()) + i + 1)%></td>
+												<td><%=list[i].COMCODE%></td>
+												<td><%=list[i].DETAILCODE%></td>
+												<td><%=list[i].DETAILNM%></td>
+												<td><%=list[i].DETAILDC%></td>
+												<td>
+													<%if(list[i].USEAT === 'Y') {%> 사용 <%}%>
+													<%if(list[i].USEAT === 'N') {%> 미사용 <%}%>
+												</td>
+												<td>
+													<button class="btn btn-primary btn-sm" onclick="modifDetailcode(this); return false;" 
+													data-record='{"COMCODE":"<%=list[i].COMCODE%>","DETAILCODE":"<%=list[i].DETAILCODE%>","DETAILNM":"<%=list[i].DETAILNM%>","DETAILDC":"<%=list[i].DETAILDC%>","USEAT":"<%=list[i].USEAT%>"}' 
+													style="font-size: .4rem;">
+														<i class="align-middle" data-feather="edit-2"></i> 수정
+													</button>
+												</td>
+											</tr>
+										<% } %>
+										<% if (list.length == 0) { %>
+											<tr>
+												<td style="text-align: center;" colspan="5">
+													데이터가 존재하지 않습니다.
+												</td>
+											</tr>
+										<% } %>
+									</tbody>
+								</table>
+								<%-include('partials/paging.html') %>
+							</div>
+						</div>
+					</div>
+				</main>
+
+				<!-- modal -->
+				<div class="modal fade" id="defaultModalPrimary" tabindex="-1" aria-hidden="true" style="display: none;">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title ml-1">
+									<h4>상세코드 등록</h4>
+								</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+
+								<div class="card">
+									<div class="card-body">
+										<form>
+											<div class="form-group row">
+												<label for="commonCode" class="col-sm-3 col-form-label"><strong>공통코드명 *</strong></label>
+												<div class="col-sm-9">
+													<select class="form-select color-white" id="commonCode">
+														<% for(var i = 0; i < commonCodeList.length; i++){ %>
+															<option value="<%=commonCodeList[i].CODE_ID%>"><%=commonCodeList[i].CODE_ID%> (<%=commonCodeList[i].CODE_ID_NM%>)</option>
+														<% } %>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group row">
+												<label for="detailCode" class="col-sm-3 col-form-label"><strong>상세코드 *</strong></label>
+												<div class="col-sm-6">
+												<input type="text" class="form-control checkInputNull" id="detailCode" placeholder="상세코드" data-alert="상세코드를 입력해주세요.">
+												<code class="hidden">사용할 수 없는 코드이름 입니다.</code>
+												<code class="code-green hidden">사용할 수 있는 코드 입니다.</code>
+												</div>
+												<div class="col-sm-3"> 
+													<button class="ml-1 btn btn-primary btn-mg" onclick="checkDuplicatedDetailcode(); return false;"><i class="align-middle" data-feather="search"></i> 중복확인</button>
+												</div>
+											</div>
+											
+											<div class="form-group row">
+												<label for="detailCodeNm" class="col-sm-3 col-form-label"><strong>상세코드명 *</strong></label>
+												<div class="col-sm-9">
+												<input type="text" class="form-control checkInputNull" id="detailCodeNm" placeholder="상세코드명" data-alert="상세코드명를 입력해주세요.">
+												</div>
+											</div>
+
+											<div class="form-group row">
+												<label for="detailCodeDc" class="col-sm-3 col-form-label"><strong>설명</strong></label>
+												<div class="col-sm-9">
+												<input type="text" class="form-control" id="detailCodeDc" placeholder="설명">
+												</div>
+											</div>
+
+											<div class="form-group row">
+												<label for="detailCodeUseYn" class="col-sm-3 col-form-label"><strong>사용여부</strong></label>
+												<div class="col-sm-9">
+													<select class="form-select color-white" id="detailCodeUseYn">
+														<option value="Y">사용</option>
+														<option value="N">미사용</option>
+													</select>
+												</div>
+											</div>
+											
+											<div class="form-group row"></div>
+											<div class="row">
+												<div class="col-sm-12 text-center">
+												<button type="text" class="btn btn-primary" onclick="insertDetailcode(); return false;"><i class="align-middle" data-feather="save"></i> 저장</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- modal -->
+				<div class="modal fade" id="defaultModalPrimary2" tabindex="-1" aria-hidden="true" style="display: none;">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title ml-1">
+									<h4>상세코드 수정</h4>
+								</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+
+								<div class="card">
+									<div class="card-body">
+																				<form>
+											<div class="form-group row">
+												<label for="modCommonCode" class="col-sm-3 col-form-label"><strong>공통코드명 *</strong></label>
+												<div class="col-sm-9">
+													<select class="form-select comCode" id="modCommonCode">
+														<% for(var i = 0; i < commonCodeList.length; i++){ %>
+															<option value="<%=commonCodeList[i].CODE_ID%>"><%=commonCodeList[i].CODE_ID%> (<%=commonCodeList[i].CODE_ID_NM%>)</option>
+														<% } %>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group row">
+												<label for="modDetailCode" class="col-sm-3 col-form-label"><strong>상세코드 *</strong></label>
+												<div class="col-sm-9">
+												<input type="text" class="form-control checkInputNull disabled" id="modDetailCode" placeholder="상세코드" data-alert="상세코드를 입력해주세요.">
+												</div>
+											</div>
+											
+											<div class="form-group row">
+												<label for="modDetailCodeNm" class="col-sm-3 col-form-label"><strong>상세코드명 *</strong></label>
+												<div class="col-sm-9">
+												<input type="text" class="form-control checkInputNull" id="modDetailCodeNm" placeholder="상세코드명" data-alert="상세코드명를 입력해주세요.">
+												</div>
+											</div>
+
+											<div class="form-group row">
+												<label for="modDetailCodeDc" class="col-sm-3 col-form-label"><strong>설명</strong></label>
+												<div class="col-sm-9">
+												<input type="text" class="form-control" id="modDetailCodeDc" placeholder="설명">
+												</div>
+											</div>
+
+											<div class="form-group row">
+												<label for="modDetailCodeUseYn" class="col-sm-3 col-form-label"><strong>사용여부</strong></label>
+												<div class="col-sm-9">
+													<select class="form-select color-white" id="modDetailCodeUseYn">
+														<option value="Y">사용</option>
+														<option value="N">미사용</option>
+													</select>
+												</div>
+											</div>
+											
+											<div class="form-group row"></div>
+											<div class="row">
+												<div class="col-sm-12 text-center">
+												<button type="button" class="btn btn-primary" onclick="updateDetailcode(); return false;"><i class="align-middle" data-feather="save"></i> 수정</button>
+												<button type="button" class="btn btn-secondary" onclick="deleteDetailcode(); return false;"><i class="align-middle" data-feather="delete"></i> 삭제</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<footer class="footer">
+					<%-include('partials/footer.html') %>
+				</footer>
+		</div>
+	</div>
+
+	<script>
+		function movePage(curPage) {
+			document.searchform.currentPage.value = curPage;
+			document.searchform.select.value = $("#searchSelect").val().trim();
+			document.searchform.content.value = $("#searchContent").val().trim();
+			document.searchform.submit();
+		}
+
+		function movePagePreNext(curPage, pageState) {
+			document.searchform.pageMove.value = pageState;
+			document.searchform.currentPage.value = curPage;
+			document.searchform.select.value = $("#searchSelect").val().trim();
+			document.searchform.conetnt.value = $("#searchContent").val().trim();
+			document.searchform.submit();
+		}
+
+		function init() {
+			$("#searchSelect").val("all");
+			$("#searchContent").val("");
+		}
+
+		function enterkey() {
+			if (window.event.keyCode == 13) {
+				movePage('');
+    		}
+		}
+
+		function addDetailcode() {
+			$("#defaultModalPrimary").modal('toggle');
+		}
+
+		function modifDetailcode(obj) {
+			$(".comCode option").removeAttr("disabled");
+			$("#defaultModalPrimary2").modal('toggle');
+			var data = $(obj).data('record');
+			$("#modCommonCode").val(data.COMCODE);
+			$("#modDetailCode").val(data.DETAILCODE);
+			$("#modDetailCodeNm").val(data.DETAILNM);
+			$("#modDetailCodeDc").val(data.DETAILDC);
+			$("#modDetailCodeUseYn").val(data.USEAT);
+			$(".comCode option").attr("disabled", "");
+		}
+		
+		const status = ['notCheck','duplicated', 'notDuplicated'];
+		var currentStatus = status[0];
+
+		function insertDetailcode() {
+			var nullcheck = checkInputNull();
+			if(nullcheck != "") {
+				alert(nullcheck);
+				return;
+			}
+
+			if(currentStatus == status[0]){
+				alert("상세코드 중복체크를 해주세요.");
+				$("#detailCode").focus();
+				return;
+			}
+
+			const detailcode = {
+				commonCode : $("#commonCode").val().trim(),
+				detailCode : $("#detailCode").val().trim(),
+				detailCodeNm : $("#detailCodeNm").val().trim(),
+				detailCodeDc : $("#detailCodeDc").val().trim(),
+				detailCodeUseYn : $("#detailCodeUseYn").val().trim()
+			}
+
+			$.ajax({
+				type:"post",
+				url:"/manage/detailcode/insertdetailcode",
+				dataType: 'json',
+				data : detailcode,
+				success : function(data){
+					if(data.status == "success") {
+						alert("저장되었습니다.");
+						$("#defaultModalPrimary").modal('toggle');
+					}
+				}, error : function() {
+				}
+			});
+		}
+
+		function checkDuplicatedDetailcode() {
+			if($("#detailCode").val().trim() ==  "") {
+				alert("코드를 입력해주세요.");
+				return;
+			}
+			$.ajax({
+					type:"get",
+					url:"/manage/detailcode/checkdatailcode",
+					dataType: 'json',
+					data : {
+						detailCode : $("#detailCode").val()
+					},
+					success : function(data){
+						$("#defaultModalPrimary code").hide();
+						// 중복
+						if(data.status == status[1]) {
+							currentStatus = status[1];
+							$($("#defaultModalPrimary code").get(0)).show();
+						// 사용가능
+						} else if(data.status == status[2]) {
+							currentStatus = status[2];
+							$($("#defaultModalPrimary code").get(1)).show();
+						}
+					}, error : function(data) {
+						alert(data.msg);
+					}
+				});	
+		}
+		
+		function updateDetailcode(obj) {
+			var nullcheck = checkInputNull2();
+			if(nullcheck != "") {
+				alert(nullcheck);
+				return;
+			}
+			$.ajax({
+					type:"put",
+					url:"/manage/detailcode/updatedetailcode",
+					dataType: 'json',
+					data : {
+						modCommonCode : $("#modCommonCode").val(),
+						modDetailCode : $("#modDetailCode").val(),
+						modDetailCodeNm : $("#modDetailCodeNm").val(),
+						modDetailCodeDc : $("#modDetailCodeDc").val(),
+						modDetailCodeUseYn : $("#modDetailCodeUseYn").val()
+					},
+					success : function(data){
+						$("#defaultModalPrimary2").modal('toggle');
+						alert("저장되었습니다.");
+						document.location.reload(true);
+					}, error : function(data) {
+						alert(data.msg);
+					}
+				});	
+		}
+
+		function deleteDetailcode() {
+			if(confirm($("#modDetailCode").val() +" 를 삭제 하시겠습니까?")) {
+					$.ajax({
+						type:"delete",
+						url:"/manage/detailcode/deletedetailcode",
+						dataType: 'json',
+						data : {detailCode : $("#modDetailCode").val()},
+						success : function(data){
+
+							console.log(JSON.stringify(data))
+
+							if(data.status == "success") {
+								$("#defaultModalPrimary2").modal('toggle');
+								alert("삭제되었습니다.");
+								document.location.reload(true);
+							}
+						}, error : function() {
+							$(object).val(preUseYn);
+						}
+					});
+			} else {
+				$(object).val(preUseYn);
+			}
+		}
+
+		function checkInputNull(){
+			var result = '';
+			$('#defaultModalPrimary .checkInputNull').each(function(index, item) {
+				if($(this).val().trim() == "") {
+					result = $(this).data("alert");
+					return false;
+				}
+			});
+			return result;
+		}
+		
+		function checkInputNull2(){
+			var result = '';
+			$('#defaultModalPrimary2 .checkInputNull').each(function(index, item) {
+				if($(this).val().trim() == "") {
+					result = $(this).data("alert");
+					return false;
+				}
+			});
+			return result;
+		}
+
+		// modal hidden event
+		$('#defaultModalPrimary').on('hidden.bs.modal', function () {
+			$("#defaultModalPrimary code").hide();
+			// 중복체크 초기화
+			currentStatus = status[0];
+			$('#defaultModalPrimary .checkInputNull').each(function(index, item) {
+				$(this).val("");
+			});
+		})
+
+
+	</script>
+</body>
+
+</html>

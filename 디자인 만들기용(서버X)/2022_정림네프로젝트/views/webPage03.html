@@ -1,0 +1,117 @@
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+		<meta name="author" content="그린훼스코 태양광 발전 통합 모니터링">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:image" content="">
+		<meta property="og:url" content="">
+		<meta property="og:description" content="">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="">
+		<meta name="twitter:image" content="">
+		<meta name="twitter:description" content="">
+		<meta http-equiv="imagetoolbar" content="no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="../public/imgs/common/favicon.ico" type="image/x-icon" sizes="16x16"/>
+		<link rel="icon" href="../public/imgs/common/favicon.ico" type="image/x-icon" sizes="16x16"/>    
+		
+		<title>정림네 프로젝트 - 성장 그래프</title>
+		<!-- 공통 라이브러리 js -->
+		<script src="../../node_modules/chart.js/dist/chart.min.js"></script>
+		<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="../../node_modules/moment/min/moment.min.js"></script>
+		<script src="../../node_modules/axios/dist/axios.min.js"></script>
+
+		<!-- 공통 CSS -->
+		<link rel="stylesheet" href="../public/css/web/style.css">
+		<!-- 페이지별 모바일 CSS -->
+        <link rel="stylesheet" href="../public/css/mobile/common.css" media="screen and (max-width:767px) and (max-height:767px)">
+		<!-- 공통 js -->
+		<script src="../public/js/common/datefrom.js"></script>
+
+
+		<!-- 페이지별 CSS -->
+		<link rel="stylesheet" href="../public/css/web/page03.css">
+		<!-- 페이지별 모바일 CSS -->
+        <link rel="stylesheet" href="../public/css/mobile/mobile-page03.css" media="screen and (max-width:767px) and (max-height:767px)">
+		<!-- 페이지별 JS -->
+		<script src="../public/js/web/webPage03.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+            <header id="header" class="container">
+				<h1 class="logoBox"><a href="/"><span class="logo">정린네</span></a>
+					<div style="margin-left: 10px; margin-top: -20px;">
+						<div style="font-size: 16px;">AI 가전산업 제어 및 모니터링</div>
+						<div style="font-size: 11px;">AI HomeApplianceIndustry Control & Monitoring</div>
+					</div>
+				</h1>
+				<nav class="menuBox">
+					<!-- 해당 페이지 노출시 해당 메뉴의 class="active" 활성화 -->
+					<ul>
+						<li ><a href="../views/webPage01.html">상태/제어</a></li>
+						<li ><a href="../views/webPage02.html">스트리밍</a></li>
+						<li class="active"><a href="../views/webPage03.html">성장 그래프</a></li>
+						<li ><a href="../views/webPage04.html">성장 과정</a></li>
+						<li ><a href="../views/webPage05.html">AI 진단</a></li>
+					</ul>
+					<!-- //  -->
+				</nav>
+				<div class="clockBox">
+					<div id="currtDate"></div><!--날짜-->
+					<strong><div id="currtTime"></div></strong><!--시각-->
+				</div>
+				<ul class="mypageBox">
+					<!-- 로그인 전 -->
+					<!-- <li class="login"><a href="#">로그인</a></li> -->
+					<!-- // -->
+			
+					<!-- 로그인 후 -->
+					<li class="welcome"><b>관리자</b>님 안녕하세요!</li>
+					<li class="logout"><a href="/logout">로그아웃</a></li>
+					<!-- // -->
+				</ul>
+			</header>
+			<div id="mainContent" class="container">				
+				<div class="sec section01">
+					<div class="contentTit">
+						성장 그래프
+					</div>
+					<div class="contentBox">
+						<div class="selBtn">
+							<div class="title">선택 :</div>
+							<div class="btn">
+								<button id="monthBtn" class="">월간</button>
+								<button id="weekBtn" class="">주간</button>
+								<button id="hoursBtn" class="">시간</button>
+							</div>
+						</div>
+						<div class="graphDiv">
+							<canvas id="lineGraph" style="width: 98%; height: 90%;"></canvas>
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+			<div class="pageMove">
+				<button ><a href="../views/webPage01.html">상태/제어</a></button>
+				<button ><a href="../views/webPage02.html">스트리밍</a></button>
+				<button class="active"><a href="../views/webPage03.html">성장 그래프</a></button>
+				<button ><a href="../views/webPage04.html">성장 과정</a></button>
+				<button ><a href="../views/webPage05.html">AI 진단</a></button>
+			</div>
+			
+			<footer id="footer" class="container">
+				COPYRIGHT ⓒ 그린훼스코(주). All Rights Reserved.
+			</footer>
+		</div>
+
+	</body>
+</html>

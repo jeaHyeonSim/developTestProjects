@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="loadingBar" style="display:none;">
+        <img src="/images/loadingBar.gif" />
+    </div>
+    
+    <script type="text/javascript">
+
+        function getCookie(name) {
+            var parts = document.cookie.split(name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+
+        function expireCookie(name) {
+            document.cookie = encodeURIComponent(name) + "=deleted; expires=" + new Date(0).toUTCString();
+        }
+
+        var downloadTimer;
+
+        //파일 다운로드를 submit할 때 아래 함수 실행
+        function blockUI() {
+            $("#loadingBar").show();
+            downloadTimer = setInterval(function () {
+                var token = getCookie("fileDownloadToken");
+                if (token == "TRUE") {
+                    unBlockUI();
+                }
+            }, 1000);
+        }
+
+        function unBlockUI() {
+            $("#loadingBar").hide();
+            clearInterval(downloadTimer);
+        }
+
+    </script>
+</body>
+</html>

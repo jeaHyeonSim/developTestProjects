@@ -1,0 +1,21 @@
+<!-- Draggable DIV: -->
+<div id="modalNoticeLayer">
+    <div id="modalNoticeLayerheader" >
+        <div style="position: absolute;">
+            <label style="color:#fff; cursor: move;">알림 상세</label>
+        </div>
+        <div id="noticeHideDiv" style="margin-left: 310px; cursor: pointer;">
+            <img src="/imgs/admin/hide_01.png" alt="숨기기"/>
+        </div>
+    </div>
+    <div class="modalNoticeContent">
+        <div class="notice" id="noticeAllSection"></div>
+    </div>
+</div>
+
+<footer id="footer" class="container">
+    COPYRIGHT ⓒ 그린훼스코(주). All Rights Reserved.<span id="newNoteiceItem">새로운 알림 : <span id="newNoticeCnt">0건</span></span>
+    <% if(loginInfo.admin_id =='sysAdmin') { %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/manage/dashboard" style="color: rgb(145, 145, 229);">(관리자 페이지 바로가기)</a>
+    <% } %>
+</footer>

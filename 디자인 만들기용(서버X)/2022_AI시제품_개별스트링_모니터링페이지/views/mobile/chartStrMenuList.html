@@ -1,0 +1,433 @@
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+		<meta name="author" content="그린훼스코 태양광 발전 통합 모니터링">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:image" content="">
+		<meta property="og:url" content="">
+		<meta property="og:description" content="">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="">
+		<meta name="twitter:image" content="">
+		<meta name="twitter:description" content="">
+		<meta http-equiv="imagetoolbar" content="no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="../../public/imgs/common/favicon.ico" type="image/x-icon" sizes="16x16"/>
+		<link rel="icon" href="../../public/imgs/common/favicon.ico" type="image/x-icon" sizes="16x16"/>    
+
+		<title>(반응형)그린훼스코 개별스트링 태양광 발전 통합 모니터링</title>
+		<!-- 공통 CSS -->
+		<link rel="stylesheet" href="../../public/css/reset.css">
+		<link rel="stylesheet" href="../../public/css/stylesheets.css">
+		<link rel="stylesheet" href="../../public/css/weather-icons.min.css">
+		<link rel="stylesheet" href="../../public/css/weather-icons-wind.css">
+		<link rel="stylesheet" href="../../public/css/common.css">
+		<link rel="stylesheet" href="../../public/css/mobile/test.css">
+
+		<!-- 공통 js -->
+		<script src="../../../node_modules/chart.js/dist/chart.min.js"></script>
+		<script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="../../../node_modules/moment/min/moment.min.js"></script>
+		<script src="../../public/js/script.js" defer></script>
+		<script src="../../public/js/common/datefrom.js"  ></script>
+		<script src="../../public/js/common/common.js" defer></script>
+		
+		<!-- 스트링 그래프 CSS/JS -->
+		<link rel="stylesheet" href="../../public/css/mobile/chart.css">
+		<link rel="stylesheet" href="../../public/css/mobile/chartChart.css">
+		<script src="../../public/js/mobile/chart.js"></script>
+
+		<!-- 모듈 상세 CSS/JS -->
+		<link rel="stylesheet" href="../../public/css/mobile/chartMod.css">
+		<link rel="stylesheet" href="../../public/css/mobile/chartModChart.css">
+		<script src="../../public/js/mobile/chartMod.js"></script>
+
+
+
+	</head>
+	<body>
+		<div id="wrap">
+			
+			<div id="mainContent" class="container">				
+				<div class="section sec01">
+					<div class="box box01">
+						<div class="contentTit">
+							<h2></h2>
+						</div>
+						<div class="contentBox">	
+							<ul class="accordionWrap">
+								<!-- 해당 페이지(스트링) 노출 시 해당 li.accordion에 class="active" 추가 -->
+								<!-- 메뉴(스트링) 노출하지 않을 시 해당 li.accordion에 class="off" 추가 -->
+								<li class="accordion ">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링1</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class="off"><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링2</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링3</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링4</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링5</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링6</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>	
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링7</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링8</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링9</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링10</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링11</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링12</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="accordion">
+									<!-- .accoTit > a 클릭시 해당 스트링 페이지로 링크 연결 -->
+									<h3 class="accoTit trigger"><a href="#"><strong>스트링13</strong></a></h3>
+									<div class="accoCont" style="overflow:hidden; display:none;">
+										<ul>
+											<!-- 해당 페이지(모듈) 노출 시 해당 li에 class="active" 추가  -->
+											<!-- 모듈 노출하지 않을 시 해당 li에 class="off" 추가  -->
+											<!-- li a 클릭시 해당 모듈상세 페이지로 링크 연결 -->
+											<li class=""><a href="#">모듈1</a></li>
+											<li class=""><a href="#">모듈2</a></li>
+											<li class=""><a href="#">모듈3</a></li>
+											<li class=""><a href="#">모듈4</a></li>
+											<li class=""><a href="#">모듈5</a></li>
+											<li class=""><a href="#">모듈6</a></li>
+											<li class=""><a href="#">모듈7</a></li>
+											<li class=""><a href="#">모듈8</a></li>
+											<li class=""><a href="#">모듈9</a></li>
+											<li class=""><a href="#">모듈10</a></li>
+											<li class=""><a href="#">모듈11</a></li>
+											<li class=""><a href="#">모듈12</a></li>
+											<li class=""><a href="#">모듈13</a></li>
+											<li class=""><a href="#">모듈14</a></li>
+											<li class=""><a href="#">모듈15</a></li>
+											<li class=""><a href="#">모듈16</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="pageMove">
+					<button><a href="./home01.html" style="color: #ffff;">개별 모듈별</a> </button>
+					<button><a href="./home02.html" style="color: #ffff;">발전소 정보</a> </button>
+					<button><a href="./chartStrMenuList.html" style="color: #ffff;">모듈별 그래프</a> </button>
+				</div>
+
+			</div>
+			<footer id="footer" class="container">
+				COPYRIGHT ⓒ 그린훼스코(주). All Rights Reserved.
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,581 @@
+.gauge-temp {
+
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 16px;
+    color: #004033;
+    }
+.gauge_title {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 그래프 뒷 배경(빈 게이지) */
+.gauge_body{
+    width: 100%;
+    height : 0;
+    padding-bottom: 50%;
+    background: #b4c0be;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden;
+    z-index: 1;
+    }
+    
+/* 정상 온도 그래프 */
+.gauge_fill{
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    transform-origin: center bottom;
+    /*  0.5 => 0(시작) , 0.005 => 1% , 0.01 => 2% */
+    /* transform: rotate(0.5turn); */
+    transition: transform 0.2s ease-out;
+    z-index: 2;
+}
+.gauge_fill.state01{
+    background: #26c057;
+}
+.gauge_fill.state02{
+    background: #f1c12f ;
+}
+.gauge_fill.state03{
+    background: #f12f52 ;
+}
+
+/* 그래프 내부 데이터 값 표시 */
+.gauge_text{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 33%;
+    width: 120px;
+    height: 60%;
+    text-align: center;
+    z-index: 5;
+    color: #fff;
+}
+.gauge_text span {
+    text-align: center;
+    display: block;
+}
+.gauge_text .text01 {
+    font-weight: 600;
+    font-size: 17px;
+}
+.gauge_text .text02 {
+    font-size: 30px;
+    font-weight: 600;
+}
+.gauge_text .text02.state01{
+    color: #26c057;
+}
+.gauge_text .text02.state02{
+    color: #f1c12f ;
+}
+.gauge_text .text02.state03{
+    color: #f12f52 ;
+}
+
+/* 게이지 표시 해주기 위한 원 생성 CSS 코드*/
+.gauge_cover{
+    width: 75%; 
+    height: 75%; 
+    background: #1d2733; 
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    position: absolute;
+    top: 25%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 4;
+}
+
+/*  0.5 => 0(시작) , 0.005 => 1% , 0.01 => 2% */
+.gauge_fill.per0{ transform: rotate(0.5turn);  }
+.gauge_fill.per1{ transform: rotate(0.505turn); }
+.gauge_fill.per2{ transform: rotate(0.51turn); }
+.gauge_fill.per3{ transform: rotate(0.515turn); }
+.gauge_fill.per4{ transform: rotate(0.52turn); }
+.gauge_fill.per5{ transform: rotate(0.525turn); }
+.gauge_fill.per6{ transform: rotate(0.53turn); }
+.gauge_fill.per7{ transform: rotate(0.535turn); }
+.gauge_fill.per8{ transform: rotate(0.54turn); }
+.gauge_fill.per9{ transform: rotate(0.545turn); }
+.gauge_fill.per10{ transform: rotate(0.55turn); }
+.gauge_fill.per11{ transform: rotate(0.555turn); }
+.gauge_fill.per12{ transform: rotate(0.56turn); }
+.gauge_fill.per13{ transform: rotate(0.565turn); }
+.gauge_fill.per14{ transform: rotate(0.57turn); }
+.gauge_fill.per15{ transform: rotate(0.575turn); }
+.gauge_fill.per16{ transform: rotate(0.58turn); }
+.gauge_fill.per17{ transform: rotate(0.585turn); }
+.gauge_fill.per18{ transform: rotate(0.59turn); }
+.gauge_fill.per19{ transform: rotate(0.595turn); }
+.gauge_fill.per20{ transform: rotate(0.6turn); }
+.gauge_fill.per21{ transform: rotate(0.605turn); }
+.gauge_fill.per22{ transform: rotate(0.61turn); }
+.gauge_fill.per23{ transform: rotate(0.615turn); }
+.gauge_fill.per24{ transform: rotate(0.62turn); }
+.gauge_fill.per25{ transform: rotate(0.625turn); }
+.gauge_fill.per26{ transform: rotate(0.63turn); }
+.gauge_fill.per27{ transform: rotate(0.635turn); }
+.gauge_fill.per28{ transform: rotate(0.64turn); }
+.gauge_fill.per29{ transform: rotate(0.645turn); }
+.gauge_fill.per30{ transform: rotate(0.65turn); }
+.gauge_fill.per31{ transform: rotate(0.655turn); }
+.gauge_fill.per32{ transform: rotate(0.66turn); }
+.gauge_fill.per33{ transform: rotate(0.665turn); }
+.gauge_fill.per34{ transform: rotate(0.67turn); }
+.gauge_fill.per35{ transform: rotate(0.675turn); }
+.gauge_fill.per36{ transform: rotate(0.68turn); }
+.gauge_fill.per37{ transform: rotate(0.685turn); }
+.gauge_fill.per38{ transform: rotate(0.69turn); }
+.gauge_fill.per39{ transform: rotate(0.695turn); }
+.gauge_fill.per40{ transform: rotate(0.7turn); }
+.gauge_fill.per41{ transform: rotate(0.705turn); }
+.gauge_fill.per42{ transform: rotate(0.71turn); }
+.gauge_fill.per43{ transform: rotate(0.715turn); }
+.gauge_fill.per44{ transform: rotate(0.72turn); }
+.gauge_fill.per45{ transform: rotate(0.725turn); }
+.gauge_fill.per46{ transform: rotate(0.73turn); }
+.gauge_fill.per47{ transform: rotate(0.735turn); }
+.gauge_fill.per48{ transform: rotate(0.74turn); }
+.gauge_fill.per49{ transform: rotate(0.745turn); }
+.gauge_fill.per50{ transform: rotate(0.75turn); }
+.gauge_fill.per51{ transform: rotate(0.755turn); }
+.gauge_fill.per52{ transform: rotate(0.76turn); }
+.gauge_fill.per53{ transform: rotate(0.765turn); }
+.gauge_fill.per54{ transform: rotate(0.77turn); }
+.gauge_fill.per55{ transform: rotate(0.775turn); }
+.gauge_fill.per56{ transform: rotate(0.78turn); }
+.gauge_fill.per57{ transform: rotate(0.785turn); }
+.gauge_fill.per58{ transform: rotate(0.79turn); }
+.gauge_fill.per59{ transform: rotate(0.795turn); }
+.gauge_fill.per60{ transform: rotate(0.8turn); }
+.gauge_fill.per61{ transform: rotate(0.805turn); }
+.gauge_fill.per62{ transform: rotate(0.81turn); }
+.gauge_fill.per63{ transform: rotate(0.815turn); }
+.gauge_fill.per64{ transform: rotate(0.82turn); }
+.gauge_fill.per65{ transform: rotate(0.825turn); }
+.gauge_fill.per66{ transform: rotate(0.83turn); }
+.gauge_fill.per67{ transform: rotate(0.835turn); }
+.gauge_fill.per68{ transform: rotate(0.84turn); }
+.gauge_fill.per69{ transform: rotate(0.845turn); }
+.gauge_fill.per70{ transform: rotate(0.85turn); }
+.gauge_fill.per71{ transform: rotate(0.855turn); }
+.gauge_fill.per72{ transform: rotate(0.86turn); }
+.gauge_fill.per73{ transform: rotate(0.865turn); }
+.gauge_fill.per74{ transform: rotate(0.87turn); }
+.gauge_fill.per75{ transform: rotate(0.875turn); }
+.gauge_fill.per76{ transform: rotate(0.88turn); }
+.gauge_fill.per77{ transform: rotate(0.885turn); }
+.gauge_fill.per78{ transform: rotate(0.89turn); }
+.gauge_fill.per79{ transform: rotate(0.895turn); }
+.gauge_fill.per80{ transform: rotate(0.9turn); }
+.gauge_fill.per81{ transform: rotate(0.905turn); }
+.gauge_fill.per82{ transform: rotate(0.91turn); }
+.gauge_fill.per83{ transform: rotate(0.915turn); }
+.gauge_fill.per84{ transform: rotate(0.92turn); }
+.gauge_fill.per85{ transform: rotate(0.925turn); }
+.gauge_fill.per86{ transform: rotate(0.93turn); }
+.gauge_fill.per87{ transform: rotate(0.935turn); }
+.gauge_fill.per88{ transform: rotate(0.94turn); }
+.gauge_fill.per89{ transform: rotate(0.945turn); }
+.gauge_fill.per90{ transform: rotate(0.95turn); }
+.gauge_fill.per91{ transform: rotate(0.955turn); }
+.gauge_fill.per92{ transform: rotate(0.96turn); }
+.gauge_fill.per93{ transform: rotate(0.965turn); }
+.gauge_fill.per94{ transform: rotate(0.97turn); }
+.gauge_fill.per95{ transform: rotate(0.975turn); }
+.gauge_fill.per96{ transform: rotate(0.98turn); }
+.gauge_fill.per97{ transform: rotate(0.985turn); }
+.gauge_fill.per98{ transform: rotate(0.99turn); }
+.gauge_fill.per99{ transform: rotate(0.995turn); }
+.gauge_fill.per100{ transform: rotate(1turn); }
+
+
+
+
+/*  영하온도 포함 */
+.gauge1-temp {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 16px;
+    color: #004033;
+}
+.gauge1_title {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+.gauge1_num{
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    color: red;
+    transform: rotate(-0.15turn); 
+}
+
+/* 그래프 뒷 배경(빈 게이지) */
+.gauge1_body{
+    
+    width: 100%;
+    height : 0;
+    padding-bottom: 50%;
+    background: #b4c0be;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden;
+    z-index: 1;
+    }
+
+.gauge1_line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: black;
+
+    transform-origin: center bottom;
+    transform: rotate(0.85turn); 
+    z-index: 4;
+}
+    
+/* 그래프 마이너스 부분 백그라운드 */
+.gauge1_fillBg{
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+
+    transform-origin: center bottom;
+    transform: rotate(1.1turn); 
+    z-index: 2;
+}
+.gauge1_fillBg.state01{
+    background: #26c057;
+}
+.gauge1_fillBg.state02{
+    background: #f1c12f ;
+}
+.gauge1_fillBg.state03{
+    background: #f12f52 ;
+}
+
+/* 그래프 마이너스 부분 백그라운드 */
+.gauge1_minusBg{
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: blue;
+
+    transform-origin: center bottom; /* 회전 중심 */
+    transform: rotate(0.6turn); 
+    z-index: 2;
+}
+
+/* 정상 온도 그래프 */
+.gauge1_fill{
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #b4c0be;
+    transform-origin: center bottom;
+    transform: rotate(0.2turn);  /* 데이터에 따라 변경해주기 0.1 => 0,  0.5 => 100 , 0.004 => 1%*/
+    transition: transform 0.2s ease-out; /* 그래프 애니메이션*/
+    z-index: 4;
+}
+
+
+
+/* 그래프 마이너스 그래프 */
+.gauge1_minus{
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #b4c0be;
+    transform-origin: center bottom;
+    /* 데이터에 따라 변경해주기 0.5 => 0 , 0.6 => 멕스  0.001 => 1%*/
+    /* transform: rotate(0.59turn);  */
+    transition: transform 0.2s ease-out;
+    z-index: 3;
+}
+
+
+/* 그래프 내부 데이터 값 표시 */
+.gauge1_text{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 33%;
+    width: 120px;
+    height: 60%;
+    text-align: center;
+    z-index: 5;
+    color: #fff;
+}
+.gauge1_text span {
+    text-align: center;
+    display: block;
+}
+.gauge1_text .text01 {
+    font-weight: 600;
+    font-size: 17px;
+}
+.gauge1_text .text02 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.gauge1_text .text02.state01{
+    color: #26c057;
+}
+.gauge1_text .text02.state02{
+    color: #f1c12f ;
+}
+.gauge1_text .text02.state03{
+    color: #f12f52 ;
+}
+
+.gauge1_cover{
+    /* 초록색 게이지 표시 해주기 위한 원 생성 CSS 코드*/
+    width: 75%; 
+    height: 75%; 
+    background: #1d2733; /* 배경색 하고 같아야 가릴 수 있다*/
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    position: absolute;
+    top: 25%; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+
+/* 영상 온도 */
+.gauge1_fill.per0{ transform: rotate(0.1turn);  /* 데이터에 따라 변경해주기 0.1 => 0,  0.5 => 100 , 0.004 => 1%*/}
+.gauge1_fill.per1{ transform: rotate(0.104turn); }
+.gauge1_fill.per2{ transform: rotate(0.108turn); }
+.gauge1_fill.per3{ transform: rotate(0.112turn); }
+.gauge1_fill.per4{ transform: rotate(0.116turn); }
+.gauge1_fill.per5{ transform: rotate(0.120turn); }
+.gauge1_fill.per6{ transform: rotate(0.124turn); }
+.gauge1_fill.per7{ transform: rotate(0.128turn); }
+.gauge1_fill.per8{ transform: rotate(0.132turn); }
+.gauge1_fill.per9{ transform: rotate(0.136turn); }
+.gauge1_fill.per10{ transform: rotate(0.140turn); }
+.gauge1_fill.per11{ transform: rotate(0.144turn); }
+.gauge1_fill.per12{ transform: rotate(0.148turn); }
+.gauge1_fill.per13{ transform: rotate(0.152turn); }
+.gauge1_fill.per14{ transform: rotate(0.156turn); }
+.gauge1_fill.per15{ transform: rotate(0.160turn); }
+.gauge1_fill.per16{ transform: rotate(0.164turn); }
+.gauge1_fill.per17{ transform: rotate(0.168turn); }
+.gauge1_fill.per18{ transform: rotate(0.172turn); }
+.gauge1_fill.per19{ transform: rotate(0.176turn); }
+.gauge1_fill.per20{ transform: rotate(0.180turn); }
+.gauge1_fill.per21{ transform: rotate(0.184turn); }
+.gauge1_fill.per22{ transform: rotate(0.188turn); }
+.gauge1_fill.per23{ transform: rotate(0.192turn); }
+.gauge1_fill.per24{ transform: rotate(0.196turn); }
+.gauge1_fill.per25{ transform: rotate(0.200turn); }
+
+.gauge1_fill.per26{ transform: rotate(0.204turn); }
+.gauge1_fill.per27{ transform: rotate(0.208turn); }
+.gauge1_fill.per28{ transform: rotate(0.212turn); }
+.gauge1_fill.per29{ transform: rotate(0.216turn); }
+.gauge1_fill.per30{ transform: rotate(0.220turn); }
+.gauge1_fill.per31{ transform: rotate(0.224turn); }
+.gauge1_fill.per32{ transform: rotate(0.228turn); }
+.gauge1_fill.per33{ transform: rotate(0.232turn); }
+.gauge1_fill.per34{ transform: rotate(0.236turn); }
+.gauge1_fill.per35{ transform: rotate(0.240turn); }
+.gauge1_fill.per36{ transform: rotate(0.244turn); }
+.gauge1_fill.per37{ transform: rotate(0.248turn); }
+.gauge1_fill.per38{ transform: rotate(0.252turn); }
+.gauge1_fill.per39{ transform: rotate(0.256turn); }
+.gauge1_fill.per40{ transform: rotate(0.260turn); }
+.gauge1_fill.per41{ transform: rotate(0.264turn); }
+.gauge1_fill.per42{ transform: rotate(0.268turn); }
+.gauge1_fill.per43{ transform: rotate(0.272turn); }
+.gauge1_fill.per44{ transform: rotate(0.276turn); }
+.gauge1_fill.per45{ transform: rotate(0.280turn); }
+.gauge1_fill.per46{ transform: rotate(0.284turn); }
+.gauge1_fill.per47{ transform: rotate(0.288turn); }
+.gauge1_fill.per48{ transform: rotate(0.292turn); }
+.gauge1_fill.per49{ transform: rotate(0.296turn); }
+.gauge1_fill.per50{ transform: rotate(0.300turn); }
+
+.gauge1_fill.per51{ transform: rotate(0.304turn); }
+.gauge1_fill.per52{ transform: rotate(0.308turn); }
+.gauge1_fill.per53{ transform: rotate(0.312turn); }
+.gauge1_fill.per54{ transform: rotate(0.316turn); }
+.gauge1_fill.per55{ transform: rotate(0.320turn); }
+.gauge1_fill.per56{ transform: rotate(0.324turn); }
+.gauge1_fill.per57{ transform: rotate(0.328turn); }
+.gauge1_fill.per58{ transform: rotate(0.332turn); }
+.gauge1_fill.per59{ transform: rotate(0.336turn); }
+.gauge1_fill.per60{ transform: rotate(0.340turn); }
+.gauge1_fill.per61{ transform: rotate(0.344turn); }
+.gauge1_fill.per62{ transform: rotate(0.348turn); }
+.gauge1_fill.per63{ transform: rotate(0.352turn); }
+.gauge1_fill.per64{ transform: rotate(0.356turn); }
+.gauge1_fill.per65{ transform: rotate(0.360turn); }
+.gauge1_fill.per66{ transform: rotate(0.364turn); }
+.gauge1_fill.per67{ transform: rotate(0.368turn); }
+.gauge1_fill.per68{ transform: rotate(0.372turn); }
+.gauge1_fill.per69{ transform: rotate(0.376turn); }
+.gauge1_fill.per70{ transform: rotate(0.380turn); }
+.gauge1_fill.per71{ transform: rotate(0.384turn); }
+.gauge1_fill.per72{ transform: rotate(0.388turn); }
+.gauge1_fill.per73{ transform: rotate(0.392turn); }
+.gauge1_fill.per74{ transform: rotate(0.396turn); }
+.gauge1_fill.per75{ transform: rotate(0.400turn); }
+.gauge1_fill.per76{ transform: rotate(0.404turn); }
+.gauge1_fill.per77{ transform: rotate(0.408turn); }
+.gauge1_fill.per78{ transform: rotate(0.412turn); }
+.gauge1_fill.per79{ transform: rotate(0.416turn); }
+.gauge1_fill.per80{ transform: rotate(0.420turn); }
+.gauge1_fill.per81{ transform: rotate(0.424turn); }
+.gauge1_fill.per82{ transform: rotate(0.428turn); }
+.gauge1_fill.per83{ transform: rotate(0.432turn); }
+.gauge1_fill.per84{ transform: rotate(0.436turn); }
+.gauge1_fill.per85{ transform: rotate(0.440turn); }
+.gauge1_fill.per86{ transform: rotate(0.444turn); }
+.gauge1_fill.per87{ transform: rotate(0.448turn); }
+.gauge1_fill.per88{ transform: rotate(0.452turn); }
+.gauge1_fill.per89{ transform: rotate(0.456turn); }
+.gauge1_fill.per90{ transform: rotate(0.460turn); }
+.gauge1_fill.per91{ transform: rotate(0.464turn); }
+.gauge1_fill.per92{ transform: rotate(0.468turn); }
+.gauge1_fill.per93{ transform: rotate(0.472turn); }
+.gauge1_fill.per94{ transform: rotate(0.476turn); }
+.gauge1_fill.per95{ transform: rotate(0.480turn); }
+.gauge1_fill.per96{ transform: rotate(0.484turn); }
+.gauge1_fill.per97{ transform: rotate(0.488turn); }
+.gauge1_fill.per98{ transform: rotate(0.492turn); }
+.gauge1_fill.per99{ transform: rotate(0.496turn); }
+.gauge1_fill.per100{ transform: rotate(0.5turn); }
+
+/* 영하 온도 */
+.gauge1_minus.per0{ transform: rotate(0.6turn);  /* 데이터에 따라 변경해주기 0.5 => 멕스 , 0.6 => 0  0.001 => 1%*/}
+.gauge1_minus.per1{ transform: rotate(0.599turn); }
+.gauge1_minus.per2{ transform: rotate(0.598turn); }
+.gauge1_minus.per3{ transform: rotate(0.597turn); }
+.gauge1_minus.per4{ transform: rotate(0.596turn); }
+.gauge1_minus.per5{ transform: rotate(0.595turn); }
+.gauge1_minus.per6{ transform: rotate(0.594turn); }
+.gauge1_minus.per7{ transform: rotate(0.593turn); }
+.gauge1_minus.per8{ transform: rotate(0.592turn); }
+.gauge1_minus.per9{ transform: rotate(0.591turn); }
+.gauge1_minus.per10{ transform: rotate(0.590turn); }
+.gauge1_minus.per11{ transform: rotate(0.589turn); }
+.gauge1_minus.per12{ transform: rotate(0.588turn); }
+.gauge1_minus.per13{ transform: rotate(0.589turn); }
+.gauge1_minus.per14{ transform: rotate(0.588turn); }
+.gauge1_minus.per15{ transform: rotate(0.587turn); }
+.gauge1_minus.per16{ transform: rotate(0.586turn); }
+.gauge1_minus.per17{ transform: rotate(0.585turn); }
+.gauge1_minus.per18{ transform: rotate(0.584turn); }
+.gauge1_minus.per19{ transform: rotate(0.583turn); }
+.gauge1_minus.per20{ transform: rotate(0.582turn); }
+.gauge1_minus.per21{ transform: rotate(0.581turn); }
+.gauge1_minus.per22{ transform: rotate(0.580turn); }
+.gauge1_minus.per23{ transform: rotate(0.579turn); }
+.gauge1_minus.per24{ transform: rotate(0.578turn); }
+.gauge1_minus.per25{ transform: rotate(0.577turn); }
+.gauge1_minus.per26{ transform: rotate(0.576turn); }
+.gauge1_minus.per27{ transform: rotate(0.575turn); }
+.gauge1_minus.per28{ transform: rotate(0.574turn); }
+.gauge1_minus.per29{ transform: rotate(0.573turn); }
+.gauge1_minus.per30{ transform: rotate(0.572turn); }
+.gauge1_minus.per31{ transform: rotate(0.571turn); }
+.gauge1_minus.per32{ transform: rotate(0.570turn); }
+.gauge1_minus.per33{ transform: rotate(0.569turn); }
+.gauge1_minus.per34{ transform: rotate(0.568turn); }
+.gauge1_minus.per35{ transform: rotate(0.567turn); }
+.gauge1_minus.per36{ transform: rotate(0.566turn); }
+.gauge1_minus.per37{ transform: rotate(0.565turn); }
+.gauge1_minus.per38{ transform: rotate(0.564turn); }
+.gauge1_minus.per39{ transform: rotate(0.563turn); }
+.gauge1_minus.per40{ transform: rotate(0.562turn); }
+.gauge1_minus.per41{ transform: rotate(0.561turn); }
+.gauge1_minus.per42{ transform: rotate(0.560turn); }
+.gauge1_minus.per43{ transform: rotate(0.559turn); }
+.gauge1_minus.per44{ transform: rotate(0.558turn); }
+.gauge1_minus.per45{ transform: rotate(0.557turn); }
+.gauge1_minus.per46{ transform: rotate(0.556turn); }
+.gauge1_minus.per47{ transform: rotate(0.555turn); }
+.gauge1_minus.per48{ transform: rotate(0.554turn); }
+.gauge1_minus.per49{ transform: rotate(0.553turn); }
+.gauge1_minus.per50{ transform: rotate(0.552turn); }
+.gauge1_minus.per51{ transform: rotate(0.551turn); }
+.gauge1_minus.per52{ transform: rotate(0.540turn); }
+.gauge1_minus.per53{ transform: rotate(0.549turn); }
+.gauge1_minus.per54{ transform: rotate(0.548turn); }
+.gauge1_minus.per55{ transform: rotate(0.547turn); }
+.gauge1_minus.per56{ transform: rotate(0.546turn); }
+.gauge1_minus.per57{ transform: rotate(0.545turn); }
+.gauge1_minus.per58{ transform: rotate(0.544turn); }
+.gauge1_minus.per59{ transform: rotate(0.543turn); }
+.gauge1_minus.per60{ transform: rotate(0.542turn); }
+.gauge1_minus.per61{ transform: rotate(0.541turn); }
+.gauge1_minus.per62{ transform: rotate(0.540turn); }
+.gauge1_minus.per63{ transform: rotate(0.539turn); }
+.gauge1_minus.per64{ transform: rotate(0.538turn); }
+.gauge1_minus.per65{ transform: rotate(0.537turn); }
+.gauge1_minus.per66{ transform: rotate(0.536turn); }
+.gauge1_minus.per67{ transform: rotate(0.535turn); }
+.gauge1_minus.per68{ transform: rotate(0.534turn); }
+.gauge1_minus.per69{ transform: rotate(0.533turn); }
+.gauge1_minus.per70{ transform: rotate(0.532turn); }
+.gauge1_minus.per71{ transform: rotate(0.531turn); }
+.gauge1_minus.per72{ transform: rotate(0.530turn); }
+.gauge1_minus.per73{ transform: rotate(0.529turn); }
+.gauge1_minus.per74{ transform: rotate(0.528turn); }
+.gauge1_minus.per75{ transform: rotate(0.527turn); }
+.gauge1_minus.per76{ transform: rotate(0.526turn); }
+.gauge1_minus.per77{ transform: rotate(0.525turn); }
+.gauge1_minus.per78{ transform: rotate(0.524turn); }
+.gauge1_minus.per79{ transform: rotate(0.523turn); }
+.gauge1_minus.per80{ transform: rotate(0.522turn); }
+.gauge1_minus.per81{ transform: rotate(0.521turn); }
+.gauge1_minus.per82{ transform: rotate(0.520turn); }
+.gauge1_minus.per83{ transform: rotate(0.519turn); }
+.gauge1_minus.per84{ transform: rotate(0.518turn); }
+.gauge1_minus.per85{ transform: rotate(0.517turn); }
+.gauge1_minus.per86{ transform: rotate(0.516turn); }
+.gauge1_minus.per87{ transform: rotate(0.515turn); }
+.gauge1_minus.per88{ transform: rotate(0.514turn); }
+.gauge1_minus.per89{ transform: rotate(0.513turn); }
+.gauge1_minus.per90{ transform: rotate(0.512turn); }
+.gauge1_minus.per91{ transform: rotate(0.511turn); }
+.gauge1_minus.per92{ transform: rotate(0.510turn); }
+.gauge1_minus.per93{ transform: rotate(0.5085turn); }
+.gauge1_minus.per94{ transform: rotate(0.5075turn); }
+.gauge1_minus.per95{ transform: rotate(0.5065turn); }
+.gauge1_minus.per96{ transform: rotate(0.5055turn); }
+.gauge1_minus.per97{ transform: rotate(0.5045turn); }
+.gauge1_minus.per98{ transform: rotate(0.5035turn); }
+.gauge1_minus.per99{ transform: rotate(0.5025turn); }
+.gauge1_minus.per100{ transform: rotate(0.5turn); }

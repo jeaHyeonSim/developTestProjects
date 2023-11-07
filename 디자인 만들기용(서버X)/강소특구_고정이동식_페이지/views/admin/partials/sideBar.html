@@ -1,0 +1,80 @@
+<nav id="sidebar" class="sidebar js-sidebar">
+    <div class="sidebar-content js-simplebar">
+        <a class="sidebar-brand" href="/manage/dashboard">
+              <span class="align-middle"><img id="main-logo" style="height: 24px;" class="d-inline-block align-top mr-2" src="/imgs/common/logo.png" alt="logo"></span>
+        </a>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-header">
+                이력 관리
+            </li>
+            <li class="sidebar-item">
+                <a data-bs-target="#history" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
+                    <i class="align-middle" data-feather="users"></i><span class="align-middle">사용자 이력</span>
+                </a>
+                <ul id="history" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/manage/loginhistory">로그인 이력</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="sidebar-header">
+                시스템 관리
+            </li>
+            <li class="sidebar-item">
+                <a data-bs-target="#system" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
+                    <i class="align-middle" data-feather="user-plus"></i><span class="align-middle">사용자 관리</span>
+                </a>
+                <ul id="system" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item"><a class="sidebar-link" href="/manage/userregistration">사용자 등록</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="/manage/userauthority">사용자 권한</a></li>
+                    <!-- <li class="sidebar-item"><a class="sidebar-link" href="/manage/userpassword">비밀번호 초기화</a></li> -->
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a data-bs-target="#authority" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
+                    <i class="align-middle" data-feather="settings"></i><span class="align-middle">권한 관리</span>
+                </a>
+                <ul id="authority" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item"><a class="sidebar-link" href="/manage/authorityregistration">권한 등록</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="/manage/rollregistration">롤 등록</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a data-bs-target="#menu" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
+                    <i class="align-middle" data-feather="menu"></i><span class="align-middle">메뉴 관리</span>
+                </a>
+                <ul id="menu" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <!-- <li class="sidebar-item"><a class="sidebar-link" href="/manage/programregistration">프로그램 등록</a></li> -->
+                    <li class="sidebar-item "><a class="sidebar-link" href="/manage/menulist">메뉴 생성</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="/manage/menucreation">메뉴 뷰 관리</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a data-bs-target="#code" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
+                    <i class="align-middle" data-feather="code"></i></i><span class="align-middle">코드 관리</span>
+                </a>
+                <ul id="code" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item"><a class="sidebar-link" href="/manage/commoncode">공통코드</a></li>
+                    <li class="sidebar-item "><a class="sidebar-link" href="/manage/detailcode">상세코드</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    // sidebar active
+    $(".sidebar-item").each(function(index, item, arr){
+        if($(this).children().attr("href") == window.location.pathname) {
+            $(this).addClass("active");
+            $(this).parent().parent().children().eq(0).removeClass("collapsed");
+            // $(this).parent().parent().children().eq(0).attr("aria-expanded","true");
+            $(this).parent().parent().addClass("active");
+            $(this).parent().addClass("show");
+        }
+    });
+</script>
+
+      

@@ -1,0 +1,299 @@
+
+
+
+/* 제안서내역/ 기자재 관리 */
+.r-area {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.r-area img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+.r-area  > div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    position: relative;
+    font-size: 0.8rem;
+}
+.r-area  > div:first-child {
+    background-color: #EBBD2C;
+}
+.r-area  > div:last-child {
+    margin-top: 10px;
+    background-color: #B1D034;
+}
+.r-area  > div > p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 15%;
+    font-weight: bold;
+}
+/* 이미지 + 텍스트 */
+.topBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 20px 0 50px;
+    padding: 0 15%;
+}
+.topBox  > div {
+    width: 400px;
+    height: 250px;
+}
+.topBox  img {
+    width: 100%;
+    height: 100%;
+}
+.topBox  span {
+    width: 100%;
+    display: block;
+}
+.topBox  span p:first-child {
+    margin: 20px 0 10px;
+}
+.topBox  span p:last-child {
+
+}
+/* 주소입력 박스 */
+.bottomBox{
+    /* width: ; */
+    margin-bottom: 50px;
+    padding: 0 15%;
+}
+#fsearch{
+    /* margin-left: 50px;
+    margin-top: 50px; */
+    /* width: 600px; */
+    width: 100%;
+    border-radius: 50px; 
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.02);
+    border: solid 1px #e3e5e7;
+    overflow: hidden;
+}
+
+#fsearch input {
+    /* height: 54px;
+    width: 100%;
+    font-size: 16px; */
+    border: 0;
+    width: calc(100% - 80px);
+    height: 50px;
+    background-color: #ffffff;
+    padding: 0 60px 0 30px;
+    font-size: 1rem;
+    line-height: 60px;
+    margin: 0;
+}
+
+#fsearch .word-del{
+    background: url(../../imgs/juso/close.png)no-repeat center center;
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    border: 0;
+    top: 0;
+}
+
+
+/* 검색 리스트 */
+.addr_list_inbox {
+    width: 100%;
+    height: auto;
+    /* margin-left: 50px; */
+}
+.addr_list_inbox .addr_list {
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 0 30px;
+}
+.addr_list_inbox .result_li {
+    /* padding: 5px 5px; */
+    font-size: 14px;
+    /* border: 1px solid #e3e5e7; */
+    border-top: none;
+    list-style: none;
+    padding: 15px 0;
+    border-bottom: 1px solid #4b515b;
+}
+.addr_list_inbox .result_li:last-child{
+    /* border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px; */
+    border: none;
+}
+.addr_list_inbox .result_li:hover {
+    background-color: rgba(199, 211, 255, 0.3);
+}   
+.addr_list_inbox .result_li p {
+    display: flex;
+    align-items: center;
+}
+
+.addr_list_inbox .result_li p.a1 {
+    color: #4b515b;
+    margin-bottom: 10px;
+}
+.addr_list_inbox .result_li p.a2 {
+    color:#4b515b;
+}
+
+.addr_list_inbox .result_li p.a1 strong {
+    background: #8EBC50;
+    color: #fff;
+}
+.addr_list_inbox .result_li p.a2 strong {
+    background: #2B9264;
+    color: #fff;
+}
+.addr_list_inbox .result_li p strong {
+    display: inline-block;
+    width: 54px;
+    height: 22px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 10px;
+    line-height: 22px;
+    margin-right: 10px;
+    /* padding: 2px 0px; */
+}
+li a {
+    display: block;
+    font-size: 14px;
+    color: #4b515b;
+}
+
+
+
+
+.addr_list_inbox .result_li > span {
+    display: block;
+}
+.addr_list_inbox .result_jibunAddr {
+    margin-bottom: 5px;
+}
+.addr_list_inbox .result_roadAddr {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 모달창 */
+.modal {
+    /* display: block; */
+}
+.modal-w690 {
+    max-width: 690px;
+}
+.modal-content {
+    padding: 4% 7%;
+}
+.modal-header {
+    border-bottom: none;
+    padding: 0;
+}
+.modal-header .modal-title {
+    font-weight: bold;
+}
+.modal-header .modal-sub-title {
+    margin-left: 10px;
+    position: relative;
+    /* padding-left: 10px; */
+    font-size: 0.9rem;
+    color: #2B9264;
+}
+.modal-header .modal-sub-title::before{
+    content: "*";
+    /* position: absolute; */
+    width: auto;
+    height: 100%;
+    /* left: 0;
+    top: 50%;
+    transform: translateY(-50%); */
+    padding-right: 5px;
+    vertical-align: middle;
+}
+.modal-content .modal-body {
+    padding: 0;
+}
+.type-select1 {
+    text-align: center;
+    padding: 20px 0 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.type-select1 a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 283px;
+    height: 258px;
+    background-color: #f2f6ff;
+    border-radius: 10px;
+    position: relative;
+    transition: all .5s ease;
+}
+/* .type-select1 a:hover {background-color: #416bff;}
+.type-select1 a:hover strong {background: #fff; color: #416bff;} */
+.type-select1 a strong {
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    z-index: 2;
+    transform: translateX(-50%);
+    font-size: 13px;
+    line-height: 32px;
+    min-width: 110px;
+    background: #d5deff;
+    color: #211b41;
+    border-radius: 16px;
+}
+
+
+
+
+.type-select1 a::after {
+    content: url(../../imgs/juso/type-01.png);
+    display: block;
+}
+.type-select1 a.type2::after {
+    content: url(../../imgs/juso/type-02.png);
+}
+
+.modal-body .type-select-btn {
+    text-align: center;
+
+}
+.modal-body .type-select-btn button {
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #fff;
+    background : linear-gradient(90deg ,#8EBC50, #2B9264);
+}

@@ -1,0 +1,218 @@
+@charset "utf-8";
+@import url("statisticsMonitoring/mainStatistics.css");
+
+/* common */
+.mr-1 {margin-right: 10px;}
+.mr-2 {margin-right: 20px;}
+.mr-3 {margin-right: 30px;}
+.mr-4 {margin-right: 40px;}
+
+.ml-1 {margin-left: 10px;}
+.ml-2 {margin-left: 20px;}
+.ml-3 {margin-left: 30px;}
+.ml-4 {margin-left: 40px;}
+
+.mb-1 {margin-bottom: 10px;}
+.mb-2 {margin-bottom: 20px;}
+.mb-3 {margin-bottom: 30px;}
+.mb-4 {margin-bottom: 40px;}
+
+/* flex */
+.left-items { text-align: center;}
+.right-items {  margin-left: auto; text-align: center;}
+
+/* right content */
+.statistics-right * {
+    font-family: 'Gmarket Sans',sans-serif;
+    color: #fff;
+    font-size: 14px;
+}
+.statistics-right select {
+    font-size: 14px;
+}
+.statistics-right table {
+    color: #fff;
+}
+.statistics-right__search {
+    display: flex;
+}
+.statistics-right__search label {
+    font-size: 16px;    
+    font-weight: bold;
+}
+.left-items.text-center:first-child {
+    justify-content : left;
+}
+.left-items.text-center {
+    width: 90px;
+}
+.text-center.left-items {
+    width: 100px;
+    height: 48px;
+}
+.text-center {
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+.statistics-right__search .right-items {
+  width: 350px;
+  height: 48px;
+  display: flex;
+}
+.statistics-right__search select {
+    width: 120px;
+    height: 34px;
+    background: rgba(29,39,51,1);
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid rgba(47,156,180,0.7);
+    text-align: center;
+    margin-top: 7px;
+}
+.statistics-right__content table {
+    /* color: rgba(235, 240, 246, 1); */
+    width: 100%;
+    text-align: center;
+}
+.statistics-right__content table td{
+    padding-top: 6px;
+    padding-bottom: 3px;
+    height: 30px;
+}
+.statistics-right__content table tr:first-child {
+    background-color: rgba(54, 78, 104, 1);
+}
+.statistics-right__content table.daily-table tr:nth-child(3) {
+    background-color: rgba(54, 78, 104, 1);
+}
+.statistics-right__title {
+    display: flex;
+}
+.statistics-right__title h3{
+    font-weight: 600;
+}
+
+.daily-graph,.weekly-graph,.monthly-graph {
+    width: 100%;
+    height: 300px;
+    border: 1px solid rgba(235, 240, 246, 1);
+    text-align: center;
+}
+.daily-graph p,.weekly-graph p,.monthly-graph p {
+    margin-top: 140px;
+}
+.red {
+    color: rgb(255, 51, 0);
+}
+.blue {
+    color: rgb(61, 100, 228);
+}
+.daily-date,.weekly-date,.monthly-date {
+    width: 250px;
+    height: 34px;
+    color: #fff;
+    background: rgba(29,39,51,1);
+    border: 1px solid rgba(47,156,180,0.7) !important;
+    border-radius: 5px;
+    margin-top: 7px;
+    text-align: center;
+}
+
+
+.statistics-right__content table.monthly-table tr:nth-child(3),
+.statistics-right__content table.monthly-table tr:nth-child(5){
+    background-color: rgba(54, 78, 104, 1);
+}
+
+.statistics-right__content table, 
+.statistics-right__content th,
+.statistics-right__content td {
+    border: 1px solid #afafaf;
+}
+#ui-datepicker-div table, 
+#ui-datepicker-div {
+    border: 1px solid #afafaf;
+}
+
+/* datepicker custom */
+.ui-datepicker-prev.ui-corner-all,.ui-datepicker-next.ui-corner-all {
+    background: #ededed !important;
+}
+.ui-datepicker-month,.ui-datepicker-year,#ui-datepicker-div {
+    /* background: #1d2733; */
+    color: white;
+}
+#ui-datepicker-div *{
+    color: white;
+}
+.ui-state-default,.ui-widget-header {
+    background: #364e68 !important;
+}
+.ui-state-active {
+    border: 2px solid rgba(47,156,180,0.7) !important;
+}
+.ui-widget.ui-widget-content {
+    border: none !important;
+}
+
+.mtz-monthpicker.mtz-monthpicker-year,.mtz-monthpicker {
+    color: #fff !important;
+    background: #1d2733;
+    width: 248px;
+}
+
+element.style {
+    position: absolute;
+    z-index: 999999;
+    white-space: nowrap;
+    width: 250px;
+    overflow: hidden;
+    text-align: center;
+    top: 173.578px;
+    left: 1542.41px;
+    display: block;
+}
+.ui-widget.ui-widget-content {
+    border: 1px solid #c5c5c5;
+}
+.ui-widget.ui-widget-content {
+    border: none !important;
+}
+.ui-widget.ui-widget-content {
+    border-radius: 10px;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 3px;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 3px;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 3px;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 3px;
+}
+.ui-widget-content {
+    background: #1d2733 !important;
+}
+.ui-state-default.mtz-monthpicker.mtz-monthpicker-month {
+    text-align: center;
+}
+.mtz-monthpicker.mtz-monthpicker-year {
+    text-align: center;
+}
+.ui-state-highlight {
+    border: 2px solid #fff !important;
+}
+.tr-background:hover td a {
+    background: rgb(130, 130, 179) !important;
+}
+/* table.ui-datepicker-calendar { display:none; } */
+.max {
+    color: rgb(255, 51, 0);
+}
+.min {
+    color: rgb(61, 100, 228);
+}

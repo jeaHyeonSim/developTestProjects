@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	<head>
+		<%-include('partials/header.html') %>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<%-include('partials/sideBar.html') %>
+
+			<div class="main">
+				<%-include('partials/navigation.html') %>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+						  <li class="right-items"><h1 class="h3"><strong></strong>사용자 권한</h1></li>
+						  <li class="breadcrumb-item">시스템 관리</li>
+						  <li class="breadcrumb-item">권한 관리</li>
+						  <li class="breadcrumb-item" aria-current="page">사용자 권한</li>
+						</ol>
+					</nav>
+                    <div class="row">
+                        <div class="card">
+							<div class="card-header">
+									<div class="row border-bottom-line">
+										<div class="mb-3 col-2 col-xl-2">
+											<select class="form-select" id="searchSelect">
+												<option value="all" <%if(DTO.select === 'all') {%> selected <%}%>>검색조건</option>
+												<option value="id" <%if(DTO.select === 'id') {%> selected <%}%>>사용자 아이디</option>
+												<option value="name" <%if(DTO.select === 'name') {%> selected <%}%>>사용자이름</option>
+											</select>
+										</div>
+										<div class="mb-3 col-3 col-xl-3">
+											<input type="text" class="form-control" onkeyup="enterkey();" id="searchContent" name="searchContent" placeholder="검색 내용을 입력주세요" value="<%=DTO.content%>">
+										</div>
+										<div class="mb-3 col-3 col-xl-3">
+										</div>
+										<div class="mb-3 col-4 col-xl-4 d-flex justify-content-end">
+											<form name="searchform" method="get">
+												<input type="hidden" id="currentPage" name ="currentPage">
+												<input type="hidden" id="pageMove" name ="pageMove">
+												<input type="hidden" id="select" name ="select">
+												<input type="hidden" id="content" name ="content">
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:movePage(''); return false;"><i class="align-middle" data-feather="search"></i> 조회</button>
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:init(); return false;"><i class="align-middle" data-feather="rotate-ccw"></i> 초기화</button>
+											</form>
+										</div>
+									</div>
+							</div>
+							<h6 class="card-subtitle text-muted">
+								<p class="text-start"></p>
+								<p class="text-end">검색결과: <Strong><%=pageVO.getTotal()%></Strong>건, &nbsp;<Strong><%=pageVO.getCurrentPage()%>/<%=pageVO.getTotalPages()%></Strong> 페이지</p>
+							</h6>
+							<table class="table table-striped table-bordered text-center">
+								<colgroup>
+									<col width="2%">
+									<col width="10%">
+									<col width="10%">
+									<col width="10%">
+									<col width="10%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>사용자 아이디</th>
+										<th>사용자 이름</th>
+										<th>등록일</th>
+										<th>권한설정</th>
+									</tr>
+								</thead>
+								<tbody>
+									<% for(var i = 0; i < list.length; i++){ %>
+										<tr>
+											<td><%=(((pageVO.getCurrentPage() - 1) * pageVO.getSize()) + i + 1)%></td>
+											<td><%=list[i].ADMIN_ID%></td>
+											<td><%=list[i].ADMIN_NM%></td>
+											<td><%=list[i].CRT_DTTM%></td>
+											<td>
+												<select class="form-control form-control-sm authoritychange" data-current="<%=list[i].AUTHOR_CODE%>" data-id="<%=list[i].ADMIN_ID%>">
+													<% for(var j = 0; j < authoriyList.length; j++){ %>
+														<option value="<%=authoriyList[j].AUTHOR_CODE%>" <% if (list[i].AUTHOR_CODE == authoriyList[j].AUTHOR_CODE) { %> selected <% } %>>
+															<%=authoriyList[j].AUTHOR_NM%> 
+														</option>
+													<% } %>
+												</select>
+											</td>
+										</tr>
+									<% } %>
+									<% if (list.length == 0) { %>
+										<tr>
+											<td style="text-align: center;" colspan="6">
+												데이터가 존재하지 않습니다.
+											</td>
+										</tr>
+									<% } %>		
+								</tbody>
+							</table>
+							<%-include('partials/paging.html') %>
+						</div>
+                    </div>
+				</div>
+			</main>
+
+			<footer class="footer">
+				<%-include('partials/footer.html') %>
+			</footer>
+		</div>
+	</div>
+	<script>
+		function movePage(curPage) {
+			document.searchform.currentPage.value = curPage;
+			document.searchform.select.value = $("#searchSelect").val().trim();
+			document.searchform.content.value = $("#searchContent").val().trim();
+			document.searchform.submit();
+		}
+
+		function movePagePreNext(curPage, pageState) {
+			document.searchform.pageMove.value = pageState;
+			document.searchform.currentPage.value = curPage;
+			document.searchform.select.value = $("#searchSelect").val().trim();
+			document.searchform.conetnt.value = $("#searchContent").val().trim();
+			document.searchform.submit();
+		}
+
+		function init() {
+			$("#searchSelect").val("all");
+			$("#searchContent").val("");
+			movePage('');
+		}
+
+		function enterkey() {
+			if (window.event.keyCode == 13) {
+				movePage('');
+    		}
+		}
+
+		$(".authoritychange").on("change", function(){
+			authoritychange(this);
+		});
+
+		function authoritychange(object) {
+			if(confirm("사용자 권한을 변경 하시겠습니까?")) {
+				var data = {
+							 userId : $(object).data("id"),
+							 userAuth : $(object).val()
+						   }
+				$.ajax({
+					type:"put",
+					url:"/manage/userAuthority/changeauthority",
+					dataType: 'json',
+					data : data,
+					success : function(data){
+						if(data.status == "success") {
+							$(object).attr("data-current", $(object).val());
+							alert("변경되었습니다.");
+						}
+					}, error : function() {
+						$(object).val($(object).data("current"));
+					}
+				});
+			} else {
+				console.log($(object).data("current"));
+				$(object).val($(object).data("current"));
+				return;
+			}
+		}
+	</script>
+</body>
+
+</html>

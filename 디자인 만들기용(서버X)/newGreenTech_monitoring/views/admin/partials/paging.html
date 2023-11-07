@@ -1,0 +1,41 @@
+<div class="row">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <% for(var i = pageVO.getStartPage(); i <= pageVO.getEndPage(); i++){ %>
+                <!-- pre -->
+                <% if(i == pageVO.getStartPage()) { %>
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:movePagePreNext('<%=i%>','pre');">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                <% } %>
+                
+                <!-- paging -->
+                <% if(i == pageVO.getCurrentPage()) { %>
+                    <li class="page-item active"><a class="page-link" href="javascript:movePage('<%=i%>')"><%=i%></a></li>
+                <% } else { %> 
+                    <li class="page-item"><a class="page-link" href="javascript:movePage('<%=i%>')"><%=i%></a></li>
+                <% } %>
+
+                <!-- next -->
+                <% if(i == pageVO.getEndPage()) { %>
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:movePagePreNext('<%=pageVO.getCurrentPage()%>','next');" disabled>
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                <% } %>
+            <% } %>
+        </ul>
+    </nav>
+</div>
+<script>
+    // overriding movePage, movePagePreNext ...
+    function movePage(curPage) {
+        window.document.location.href = window.location.pathname + "?currentPage="+curPage;
+    }
+    function movePagePreNext(curPage, pageState) {
+        window.document.location.href = window.location.pathname + "?currentPage="+curPage+"&pageMove="+pageState;
+    }
+</script>

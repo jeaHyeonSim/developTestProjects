@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+#wrap { /*max-width: 600px; */  min-width: 226.7px; padding: 0px 5px 5px 5px; }
+
+/* #mainContent {display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; color:#fff; height:88vh;} */
+#mainContent {/*display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; */ color:#fff; /*height:88vh;*/ width: 100%;   }
+/* #mainContent .section {margin-top:0.5vh;} */
+#mainContent .section {margin-top:0.5vh; max-width: 100%; min-width: 226.7px; }
+/* #mainContent .section.sec01 {width:25%;} */
+#mainContent .section.sec02 {width:74%;}
+#mainContent .section .box {border-radius:25px; overflow:hidden; margin-top:1.5vh; width:100%;}
+#mainContent .section .box.box01 {min-height:675px; /*max-height:86vh;*/ background:#1d2733;}
+#mainContent .section .box.box02 {min-height:510px; max-height:54.5vh; background:linear-gradient(#1f365b, #2a2a54);}
+#mainContent .section .box.box03 {min-height:281px; max-height:30vh; background:linear-gradient(#2a2a54, #2c2452);}
+#mainContent .section .box .contentTit {padding:12px 25px 8px; border-bottom:1px solid #8e9399;}
+#mainContent .section .box .contentTit h2 {font-family:'Gmarket Sans',sans-serif; color:#fff; font-size:15px; font-weight:600;}
+#mainContent .section .box .contentBox {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;}
+
+[class*='cir'] { /*padding-left:15px;*/ padding-left: 42%; position:relative;}
+[class*='cir']:before {position:absolute; display:block; content:''; width:10px; height:10px; border-radius:50%; top:50%; transform:translateY(-50%);}
+.cir01:before {background:#26c057;}
+.cir02:before {background:#f1c12f;}
+.cir03:before {background:#f12f52;}
+
+
+/* 아코디언 메뉴 */
+#mainContent .section .box.box01 .contentTit {display:none;}
+#mainContent .section .box.box01 .contentBox {overflow:scroll; /*max-height:805px;*/}
+#mainContent .section .box.box01 .contentBox::-webkit-scrollBar {display:none;}
+
+.accordionWrap {width:100%;}
+.accordionWrap a:hover{cursor:pointer;}
+.accordionWrap .accordion {}
+.accordionWrap .accordion .accoTit.trigger {position:relative; width:100%; display:block; background:rgba(0,0,0,0.2); border-bottom:1px solid #272e37; width:100%; padding:15px 30px 12px;}
+.accordionWrap .accordion .accoTit.trigger:after {position:absolute; display:block; content:'>'; font-family:'Gmarket Sans'; font-weight:600; font-size:16px; right:35px; top:50%; transform:translateY(-50%) rotate(90deg); opacity:0.1;}
+.accordionWrap .accordion.show .accoTit.trigger:after {opacity:0.5; transform:translateY(-50%) scaleY(-1) rotate(90deg);}
+.accordionWrap .accordion .accoTit:hover .trigger {background:rgba(0,0,0,0.3);}
+.accordionWrap .accordion.show .accoTit.trigger {background:rgba(0,0,0,0.5);}
+.accordionWrap .accordion .accoTit.trigger strong {position:relative; font-size:16px; font-family:'Gmarket Sans',sans-serif;padding-right: 22px;}
+.accordionWrap .accordion .accoTit.trigger strong:after {position:absolute; display:block; content:''; background:url('../../imgs/main/linkIcon.png') center no-repeat;width: 14px;height: 14px;top: 50%;right:0;background-size: contain;transform: translateY(-50%);}
+.accordionWrap .accordion .accoCont {border-bottom:1px solid #313a45; width:100%; margin-bottom:-1px;}
+.accordionWrap .accordion .accoCont ul {display:flex; flex-wrap:wrap; margin-bottom:-1px;}
+.accordionWrap .accordion .accoCont ul li {width:25%; text-align:center; border-bottom:1px solid #313a45;}
+.accordionWrap .accordion .accoCont ul li.active {background:rgba(255,255,255,0.25);}
+.accordionWrap .accordion .accoCont ul li:hover {background:rgba(255,255,255,0.1);}
+.accordionWrap .accordion .accoCont ul li a {width:100%; display:block; padding:8px 0; font-size:16px; font-weight:100; font-family:'Noto Sans KR', sans-serif;}
+
+.accordionWrap .accordion.off,
+.accordionWrap .accordion .accoCont ul li.off {display:none;}
+
+/* 팝업 */
+/* 스트링 그래프 표시 - 팝업 */
+.popupView {position:relative; cursor:inherit;}
+.popupView .accordionWrap:after {/*z-index:5;*/ display:block; position:absolute; content:''; background:rgba(0,0,0,0.75);width:100%; height:100%; top:0;}
+.popupView .moduleStatus > li > .tr > .td {position:relative;}
+.popupView .popup {z-index:10 !important; diaplay:block; border:1px solid #e5e5e5; background:linear-gradient(rgba(32,54,91,0.9), rgba(44,36,82,0.9)); line-height:1.5; 
+    cursor:default;
+    border-radius: 25px;
+}
+
+
+.chartPopup {position:absolute; border-radius:25px; width: 100%; /*height: 110%;*/}
+.chartPopup .popupTit {display:flex; justify-content:space-between; padding:10px 25px; border-bottom:1px solid #e5e5e5;}
+.chartPopup .popupTit h3,
+.chartPopup .popupTit .btn_close {font-size:16px; 
+    /* color:rgba(255,255,255,0.5);  */
+    color: #fff;
+    font-weight:600;}
+.chartPopup .popupContent {padding:0 25px 20px;}
+.chartPopup .popupContent h4 {font-size:16px; font-weight:600; font-family:'Gmarket Sans', sans-serif; display:flex; justify-content:space-between; margin:10px 0 10px;}
+.chartPopup .popupContent h4 span {font-size:14px; font-weight:400;}
+.chartPopup .popupContent h4 span[class*='cir']:before {left:0;}
+
+/* 스트링 그래프  */
+.chartPopup .popupContent .stringChart {
+    min-height: 285px;
+}
+#line_StringGraph {
+    width: 100%;
+    min-height: 250px;
+}
+/* 스트링 모듈 상태 */
+.chartPopup .popupContent .moduleStatus .contentTit {
+    display: block;
+}
+.chartPopup .popupContent .moduleStatus .modulContentBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.chartPopup .popupContent .moduleStatus .modulContentBox a {width:23%; padding:5px; background:rgba(0,0,0,0.2); border-radius:15px; margin:1%; display:block;}
+.chartPopup .popupContent .moduleStatus .modulContentBox a:hover {background:rgba(0,0,0,0.5);}
+.chartPopup .popupContent .moduleStatus .modulContentBox a ul{width: 100%; }
+.chartPopup .popupContent .moduleStatus .modulContentBox a ul li{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.chartPopup .popupContent .moduleStatus .modulContentBox a ul li:nth-child(2){
+    margin: 10px 0;
+}
+.chartPopup .popupContent .moduleStatus .modulContentBox a ul li p {
+    text-align: center;
+}
+
+.chartPopup .popupContent .innerbox {border-radius:25px; background:rgba(255,255,255,0.05);}
+.chartPopup .popupContent > ul:nth-of-type(1) {display:flex; justify-content:space-between;}
+.chartPopup .popupContent > ul:nth-of-type(1) li {width:32%; text-align:center; padding:20px; font-family:'Gmarket Sans', sans-serif; font-size:20px;}
+.chartPopup .popupContent > ul:nth-of-type(1) li h5 {font-family:'Noto Sans KR', sans-serif; font-size:17px; margin-bottom:5px;}
+.chartPopup .popupContent > ul:nth-of-type(1) li strong {color:#f1c12f; font-family:inherit;}
+.chartPopup .popupContent > ul:nth-of-type(2) {padding:20px 10px; max-height:430px; overflow:scroll;}
+.chartPopup .popupContent > ul:nth-of-type(2)::-webkit-scrollBar {display:none;}
+.chartPopup .popupContent > ul:nth-of-type(2) .tr {display:flex; justify-content:center;}
+.chartPopup .popupContent > ul:nth-of-type(2) .tr .td {width:14px; height:14px; display:block; border-radius:50%; border:1px solid #999;margin: 8px;}
+.chartPopup .popupContent > ul:nth-of-type(2) .tr .td.focus {background:#fff;}
+.chartPopup .popupContent > ul:nth-of-type(2) .tr .td.off {opacity:0.1;}
+

@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+#mainContent {display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; color:#fff; height:88vh; background-color: #F4F4F4;}
+#mainContent .section {margin-top:0.5vh;}
+#mainContent .section.sec01 {width:25%;}
+#mainContent .section.sec02 {width:74%;}
+#mainContent .section .box {border-radius:25px; overflow:hidden; margin-top:1.5vh; width:100%;}
+#mainContent .section .box.box01 {min-height:805px; max-height:86vh; background: #ffffff; /*#1d2733*/}
+/* #mainContent .section .box.box02 {min-height:510px; max-height:54.5vh; background:linear-gradient(#1f365b, #2a2a54);} */
+#mainContent .section .box.box02 {min-height:510px; max-height:54.5vh; background:linear-gradient(#fdfbfb, #ebedee);}
+
+/* #mainContent .section .box.box03 {min-height:281px; max-height:30vh; background:linear-gradient(#2a2a54, #2c2452);} */
+#mainContent .section .box.box03 {min-height:281px; max-height:30vh; background:linear-gradient(#e6e9f0, #eef1f5);}
+#mainContent .section .box .contentTit {padding:12px 25px 8px; border-bottom:1px solid #8e9399;}
+#mainContent .section .box .contentTit h2 {font-family:'Gmarket Sans',sans-serif; color:#424242; font-size:15px; font-weight:600;}
+#mainContent .section .box .contentBox {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;}
+
+[class*='cir'] {padding-left:15px; position:relative;}
+[class*='cir']:before {position:absolute; display:block; content:''; width:10px; height:10px; border-radius:50%; top:50%; transform:translateY(-50%);}
+.cir01:before {background:#26c057;}
+.cir02:before {background:#f1c12f;}
+.cir03:before {background:#f12f52;}
+
+
+/* 아코디언 메뉴 */
+#mainContent .section .box.box01 .contentTit {display:none;}
+#mainContent .section .box.box01 .contentBox {overflow:scroll; max-height:805px;}
+#mainContent .section .box.box01 .contentBox::-webkit-scrollBar {display:none;}
+
+.accordionWrap {width:100%;}
+.accordionWrap a:hover{cursor:pointer;}
+.accordionWrap .accordion {}
+.accordionWrap .accordion .accoTit.trigger {position:relative; width:100%; display:block; background: #ffffff; /*rgba(0,0,0,0.2)*/ border-bottom:1px solid #272e37; width:100%; padding:15px 30px 12px; color: #424242;}
+.accordionWrap .accordion .accoTit.trigger:after {position:absolute; display:block; content:'>'; font-family:'Gmarket Sans'; font-weight:600; font-size:16px; right:35px; top:50%; transform:translateY(-50%) rotate(90deg); opacity:0.1;}
+.accordionWrap .accordion.show .accoTit.trigger:after {opacity:0.5; transform:translateY(-50%) scaleY(-1) rotate(90deg);}
+.accordionWrap .accordion .accoTit:hover .trigger {background:rgba(0,0,0,0.3);}
+/* .accordionWrap .accordion.show .accoTit.trigger {background:rgba(0,0,0,0.5);} */
+.accordionWrap .accordion .accoTit.trigger strong {position:relative; font-size:16px; font-family:'Gmarket Sans',sans-serif;padding-right: 22px;}
+.accordionWrap .accordion .accoTit.trigger strong:after {position:absolute; display:block; content:''; background:url('../imgs/main/linkIcon.png') center no-repeat;width: 14px;height: 14px;top: 50%;right:0;background-size: contain;transform: translateY(-50%);}
+.accordionWrap .accordion .accoCont {border-bottom:1px solid #313a45; width:100%; margin-bottom:-1px; color: #424242;}
+.accordionWrap .accordion .accoCont ul {display:flex; flex-wrap:wrap; margin-bottom:-1px;}
+.accordionWrap .accordion .accoCont ul li {width:25%; text-align:center; border-bottom:1px solid #313a45;}
+.accordionWrap .accordion .accoCont ul li.active {background:rgba(255,255,255,0.25);}
+.accordionWrap .accordion .accoCont ul li:hover {background:rgba(255,255,255,0.1);}
+.accordionWrap .accordion .accoCont ul li a {width:100%; display:block; padding:8px 0; font-size:15px; font-weight:300; font-family:'Noto Sans KR', sans-serif;}
+
+.accordionWrap .accordion.off,
+.accordionWrap .accordion .accoCont ul li.off {display:none;}
+
+/* 스트링 그래프 */
+#mainContent .section .box.box02 .contentBox {
+    height: 460px;
+}
+
+/* 스트링1 모듈 상세 */
+#mainContent .section .box.box03 {}
+#mainContent .section .box.box03 .contentBox {overflow:scroll; width:100%; max-height:235px;}
+#mainContent .section .box.box03 .contentBox::-webkit-scrollBar {display:none;}
+#mainContent .section .box.box03 .contentBox .modList {width:100%; display:flex; flex-wrap:wrap; margin:10px 1%;}
+#mainContent .section .box.box03 .contentBox .modList a {width:11.5%; padding:15px 10px; background:rgba(61, 60, 66, 0.5); border-radius:15px; margin:0.5%; display:block;}
+#mainContent .section .box.box03 .contentBox .modList a:hover {background:rgba(29, 39, 51, 0.8);}
+/* #mainContent .section .box.box03 .contentBox .modList a:hover {background:rgba(61, 60, 66, 0.8);} */
+#mainContent .section .box.box03 .contentBox .modList ul {width:100%;}
+#mainContent .section .box.box03 .contentBox .modList ul li {display:flex; justify-content:space-between;}
+#mainContent .section .box.box03 .contentBox .modList ul li h3,
+#mainContent .section .box.box03 .contentBox .modList ul li p {font-size:14px; font-weight:100;}
+#mainContent .section .box.box03 .contentBox .modList ul li p[class*='cir']:before {left:0;}
+
+#mainContent .section .box.box03 .contentBox .modList a.off {display:none;}
+
+
+/* 스트링1 모듈1-1 상세 */
+#mainContent .section .box.box04 {display:flex; justify-content:space-between;}
+#mainContent .section .box.box04 > div {min-height:281px; max-height:30vh; background:linear-gradient(#2a2a54, #2c2452); border-radius:25px; overflow:hidden;}
+#mainContent .section .box.box04 .modInfo {width:69%;}
+#mainContent .section .box.box04 .modLocation {width:30%;}
+
+.modInfo {}
+.modInfo .contentBox {display:flex; justify-content:space-between; margin:10px 25px;}
+.modInfo .contentBox .innerBox {background:rgba(0,0,0,0.2); border-radius:20px; text-align:center; width:24%; max-height:205px; padding: 70px 0; font-family:'Gmarket Sans', sans-serif; font-size:30px; line-height:30px;}
+.modInfo .contentBox .innerBox h3 {font-size:17px;}
+.modInfo .contentBox .innerBox p {font-size:18px; margin-top:8px; padding-left:25px;}
+.modInfo .contentBox .innerBox p[class*='cir']:before {width:20px; height:20px; left:35%; top:3px; transform:translate(0,0);}
+.modInfo .contentBox .innerBox strong {color:#f1c12f;}
+
+.modLocation {}
+.modLocation .contentTit {display:none;}
+.modLocation .contentBox {margin:0;}
+.modLocation .contentBox > ul {padding:17px 0; max-height: 281px; overflow:scroll; margin:0 auto;}
+.modLocation .contentBox > ul::-webkit-scrollBar {display:none;}
+.modLocation .contentBox > ul .tr {display:flex; justify-content:center;}
+.modLocation .contentBox > ul .tr .td {width:11px; height:11px; display:block; border-radius:50%; border:1px solid #999; margin:4px;}
+.modLocation .contentBox > ul .tr .td.focus {background:#fff;}
+.modLocation .contentBox > ul .tr .td.off {opacity:0.1;}
+
+

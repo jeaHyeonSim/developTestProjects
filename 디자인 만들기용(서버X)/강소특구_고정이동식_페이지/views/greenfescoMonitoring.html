@@ -1,0 +1,411 @@
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+		<meta name="author" content="그린훼스코 태양광 발전 통합 모니터링">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="">
+		<meta property="og:image" content="">
+		<meta property="og:url" content="">
+		<meta property="og:description" content="">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="">
+		<meta name="twitter:image" content="">
+		<meta name="twitter:description" content="">
+		<meta http-equiv="imagetoolbar" content="no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="../public/imgs/common/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="../public/imgs/common/favicon.ico" type="image/x-icon" />
+
+		<title>디자인 강소 이동/고정식 모니터링</title>
+
+		<link rel="stylesheet" href="../public/css/style.css">
+		<link rel="stylesheet" href="../public/css/notice.css">
+		<link rel="stylesheet" href="../public/css/reset.css">
+		<link rel="stylesheet" href="../public/css/stylesheets.css">
+		<link rel="stylesheet" href="../public/css/weather-icons.min.css">
+		<link rel="stylesheet" href="../public/css/weather-icons-wind.css">
+		<link rel="stylesheet" href="../public/css/chart.css">
+		<link rel="stylesheet" href="../public/css/grap.css">
+		<link rel="stylesheet" href="../public/css/common.css">
+		<link rel="stylesheet" href="../public/css/main.css">
+
+
+		<script src="../public/js/lib/mqttws31.js"></script>
+		<script src="../public/js/common/common.js"></script>
+		
+		<script src="../../node_modules/chart.js/dist/chart.min.js"></script>
+		<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="../public/js/common/datefrom.js" defer></script>
+
+		<script src="../public/js/common/monitoringCommon.js" defer></script>
+		<script src="/moment/moment.min.js"></script>
+		
+		<script src="../public/js/monitoring.js" defer></script>
+
+	</head>
+		<div id="wrap">
+			<header id="header" class="container">
+				<h1 class="logoBox"><span class="logo">그린훼스코</span> 이동/고정식 태양광 발전 통합 모니터링</h1>
+				<nav class="menuBox">
+					<!-- 해당 페이지 노출시 해당 메뉴의 class="active" 활성화 -->
+					<ul>
+						<li class="active"><a href="#">홈</a></li>
+					</ul>
+					<!-- //  -->
+				</nav>
+				<div class="clockBox">
+					<div id="currtDate"></div><!--날짜-->
+					<strong><div id="currtTime"></div></strong><!--시각-->
+				</div>
+				<ul class="mypageBox">
+					<!-- 로그인 전 -->
+					<!-- <li class="login"><a href="#">로그인</a></li> -->
+					<!-- // -->
+
+					<!-- 로그인 후 -->
+					<li class="welcome"><b>시스템관리자</b>님 안녕하세요!</li>
+					<li class="logout"><a href="/logout">로그아웃</a></li>
+					<!-- // -->
+				</ul>
+			</header>
+			<div id="mainContent" class="container">
+				<div class="section sec01">
+					<h2 class="contentTit">발전소 태양광 (시간별 발전량)</h2>
+					<div id="Line_graph" class="contentBox">
+						<ul class="contentBoxTit" >
+						</ul>
+						<canvas id="line_timeGraph" style="width: 97%; height: 91%;" ></canvas>
+					</div>
+				</div>
+				<div class="section sec02">
+					<h2 class="contentTit">현재 태양광 출력 (가장 최근데이터)</h2>
+					<div class="contentBox">
+						<div class="tracking">
+							<div class="sunlightBox">
+								<div class="sunlight sunlight01">
+									<div class="icon"><img src="../public/imgs/main/reSize/tracking-panel.png" alt="추적식태양광 아이콘" /></div>
+									<h3>추적식 태양광</h3>
+								</div>
+								<div class="sunlight sunlight02">
+									<div class="icon"><img src="../public/imgs/main/reSize/mainSec02Icon02.png" alt="인버터 아이콘" /></div>
+									<h3>인버터</h3>
+								</div>
+								<div class="sunlight sunlight03">
+									<div class="icon"><img src="../public/imgs/main/reSize/mainSec02Icon03.png" alt="송전탑 아이콘" /></div>
+									<h3>송전탑</h3>
+								</div>
+							</div>
+							<div class="valueBox">
+								<div class="value value01">
+									<div class="arrow right"></div> 
+									<ul>
+										<li><b>-</b> kW</li> 
+									</ul>
+								</div>
+								<div class="value value02">
+									<div class="arrow right"></div> 
+									<ul>
+										<li><b>-</b> kW</li> 
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="fixed">
+							<div class="sunlightBox">
+								<div class="sunlight sunlight01">
+									<div class="icon"><img src="../public/imgs/main/reSize/mainSec02Icon01.png" alt="고정식태양광 아이콘" /></div>
+									<h3>고정식 태양광</h3>
+								</div>
+								<div class="sunlight sunlight02">
+									<div class="icon"><img src="../public/imgs/main/reSize/mainSec02Icon02.png" alt="인버터 아이콘" /></div>
+									<h3>인버터</h3>
+								</div>
+								<div class="sunlight sunlight03">
+									<div class="icon"><img src="../public/imgs/main/reSize/mainSec02Icon03.png" alt="송전탑 아이콘" /></div>
+									<h3>송전탑</h3>
+								</div>
+							</div>
+							<div class="valueBox">
+								<div class="value value01">
+									<div class="arrow right"></div> 
+									<ul>
+										<li><b>-</b> kW</li> 
+									</ul>
+								</div>
+								<div class="value value02">
+									<div class="arrow right"></div> 
+									<ul>
+										<li><b>-</b> kW</li> 
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section sec03">
+					<h2 class="contentTit">태양광 발전량 종합</h2>
+					<div class="contentBox">
+						<div class="sec03box nowPowGen">
+							<h3 class="sTit">현재 <br />태양광 출력</h3>
+							<strong>-</strong> <!-- 현재 태양광 값 표시 -->
+							kw
+						</div>
+						<div class="sec03box accumulate">
+							<h3 class="sTit">누적 <br />태양광 발전량</h3>
+							<strong>-</strong> <!-- 태양광 발전량 값 표시 -->
+							Kwh
+						</div>
+						<div class="sec03box CO2">
+							<h3 class="sTit">이산화탄소 <br />절감량</h3>
+							<strong>-</strong> <!-- 이산화탄소 절감량 표시 -->
+							tCo2/년
+						</div>
+						<div class="barBox">
+							<h3 class="sTit">금일 태양광 발전량</h3>
+							<div class="barCont">
+								<span class="bar bar01" ></span>
+								<!-- 발전량의 수치를 백분율로 하여 값 산출 - ex)전체 발전량의 15%일 경우 style="width:15%" -->
+								<span class="amount"></span> 
+								<!-- 금일 태양광 발전량 표시 -->
+							</div>
+						</div>
+						<div class="barBox">
+							<h3 class="sTit">전일 태양광 발전량</h3>
+							<div class="barCont">
+								<span class="bar bar02" ></span><!-- 발전량의 수치를 백분율로 하여 값 산출 - ex)전체 발전량의 25%일 경우 style="width:25%" -->
+								<span class="amount"></span> <!-- 전일 태양광 발전량 표시 -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section sec04">
+					<div class="contentTit-div">
+						<button id="click" name="tracking"> 추적식 인버터</button> 
+						<button id="" name="fixed"> 고정식 인버터</button> 
+					</div>
+					<div class="contentBox">			
+						<div class="graphBox">
+							<div class="gauge-temp">
+							</div>
+
+							<div class="gauge1-temp">
+							</div>
+						</div>
+						<!-- sec 01 -->
+						<ul class="lightBox">
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit"></span>
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">kWh</span>
+								</div>
+							</li>							
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">kWh</span>
+								</div>
+							</li>							
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">%</span>
+								</div>
+							</li>							
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">시간</span>
+								</div>
+							</li>							
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">kW</span>
+								</div>
+							</li>							
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">℃</span>
+								</div>
+							</li>
+						</ul>
+						<!-- sec 02 -->
+						<ul class="lightBox" style="margin-right: 0.5%;">
+
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit"></span>
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">A</span>
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">V</span>
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">A</span>
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">Hz</span>
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit"></span>
+								</div>
+							</li>
+							<li>
+								<div>
+									<div class="nth0 ivt-title">
+										-
+									</div>
+									<div class="nth1 ivt-data"> 
+										-
+									</div> 
+									<span class="nth2 ivt-unit">kW</span>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+				<div class="section sec05">
+					<h2 class="contentTit">인버터 장비 이상</h2>
+					<div class="contentBox" style="display: block; overflow-y: auto; overflow-x: hidden; padding-top: 5px; padding-bottom: 3px;">
+	
+					</div>
+				</div>
+				<div class="section sec06">
+					<h2 class="contentTit">기상정보</h2>
+					<div class="contentBox">
+						<div class="weather">
+							<div class="location">광주 광산구 장록동</div> <!-- 현재 위치 표시 -->
+							<div class="now">
+								<!-- 상태에 따라 class명 노출 변경 / 정상-color01 / 주의-color02 / 경고-color03 -->
+								<span class="icon">
+									<i class="wi wi-day-cloudy"></i>
+									<!-- // -->
+								</span>
+								<div class= "wi_name"></div><!--  현재 날씨 문구 표시 -->
+								<!-- // -->
+								<strong class= "t1h_value"></strong> <!-- 현재 온도 표시 -->
+							</div>
+						</div>
+						<ul class="weatherInfo">
+							<li>
+								<h3>습도</h3>
+								<div id = "reh" class="value">-</div> <!-- 현재 습도 문구 표시 -->
+							</li>
+							<li>
+								<h3>시간당 강수량</h3>
+								<div id = "rn1v" class="value">-</div> <!-- 현재 시간당 강수량 문구 표시 -->
+							</li>
+							<li>
+								<h3>풍향</h3>
+								<div id = "vec"  class="value">-</div> <!-- 현재 풍향 문구 표시 -->
+							</li>
+							<li>
+								<h3>풍속</h3>
+								<div id = "wsd" class="value">-</div> <!-- 현재 풍속 문구 표시 -->
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer id="footer" class="container">
+			COPYRIGHT ⓒ 뉴그린테크(주). All Rights Reserved.
+		--> <a href="/manage/dashboard">관리자 홈</a>
+		</footer>
+	</body>
+</html>

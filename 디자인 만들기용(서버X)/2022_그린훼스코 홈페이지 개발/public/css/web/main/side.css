@@ -1,0 +1,124 @@
+
+
+
+
+
+/*
+ 마우스 휠 모양
+*/
+/* position, bottom, left 등으로 위치 설정 필요 */
+.scroll-down {
+    position: absolute;
+    right: 0px;
+    bottom: 15%;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    text-decoration-line: none;
+    white-space: nowrap;
+    /* height: 100%; */
+    /* top: 0; */
+    /* padding-top: 38%; */
+    /* border-left: 1px solid rgba(112, 148, 162); */
+}
+
+/* 마우스 모양 만들기 */
+.scroll {
+    width: 18px;
+    height: 30px;
+    border: 1.5px solid white;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 마우스 휠 움직임 */
+.scroll > span {
+    position: relative;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    background: white;
+    display: block;
+    /* animation: cursor 1.15s linear infinite; */
+    transform: translateY(-0.5rem);
+}
+.scroll > span.wheel-down {
+    animation: cursor-down 1s;
+    /* 반복여부 => infinite : 무한, initial: 초기화?*/
+    animation-iteration-count : 1;
+    /* 효과의 시간당 속도를 설정 => linear : 일정한 속도로 진행,  */
+    animation-timing-function : linear;
+    transform: translateY(0.5rem);
+}
+.scroll > span.wheel-up {
+    animation: cursor-up 1s;
+    /* 반복여부 => infinite : 무한, initial: 초기화?*/
+    animation-iteration-count : 1;
+    /* 효과의 시간당 속도를 설정 => linear : 일정한 속도로 진행,  */
+    animation-timing-function : linear;
+    transform: translateY(-0.5rem);
+}
+
+
+.span-text {
+    width: 100%;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    padding-left: 100%;
+    opacity: 1;
+    letter-spacing : 1;
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(1rem);
+    }
+}
+
+@keyframes cursor-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0.7rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-0.7rem);
+    }
+}
+
+@keyframes cursor-down {
+    0% {
+        opacity: 1;
+        transform: translateY(-0.7rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0.7rem);
+    }
+}
+
+.sideLine {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    right: 119px;
+    top: 0;
+    border-width: 0px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.2;
+}

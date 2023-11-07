@@ -1,0 +1,23 @@
+
+/* 테스트 페이지 이동 */
+#mainContent .pageMove {
+    margin: 10px 0;
+}
+#mainContent .pageMove button {
+    font-size: 1rem;
+    background-color: #1d2733;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+/* 테스트 페이지 이동 */
+#wrap .pageMove {
+    margin: 10px 0;
+}
+#wrap .pageMove button {
+    font-size: 1rem;
+    background-color: #1d2733;
+    border-radius: 25px;
+    padding: 10px;
+}
+

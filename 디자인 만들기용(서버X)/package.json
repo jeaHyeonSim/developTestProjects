@@ -1,0 +1,22 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "axios": "^1.2.0",
+    "chart.js": "^3.9.1",
+    "dayjs": "^1.11.6",
+    "foundation-sites": "^6.7.5",
+    "jquery": "^3.6.0",
+    "jquery-ui": "^1.13.2",
+    "moment": "^2.29.4",
+    "swiper": "^8.4.4"
+  }
+}

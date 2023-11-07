@@ -98,6 +98,12 @@ $('.type-select1 a').on('click', function(){
 });
 $('#btn_del').on('click', function(){
     $('#fsearch_addr').val(null);
+    $('#fsearch').css(
+        'border-radius', '12px'
+    );
+    $('.search_result_title').remove();
+    $('.addr-list').remove();
+
 });
 
 /**

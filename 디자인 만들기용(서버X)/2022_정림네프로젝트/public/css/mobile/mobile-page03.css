@@ -1,0 +1,61 @@
+
+
+#wrap #mainContent {
+    display: block;
+    height: auto;
+    padding: 10px 1%;
+    width: 98%;
+}
+/* #wrap #mainContent .sec.section01 .contentBox .box {
+    height: 100px;
+} */
+#wrap #mainContent .sec.section01 {
+    width: 98%;
+    height: auto;
+}
+
+#wrap #mainContent .sec .contentBox { 
+    height: auto;
+}
+#wrap #mainContent .sec .contentBox { 
+    /* display: flex;
+    flex-wrap: wrap; */
+    min-height: 67vh;
+}
+
+#wrap #mainContent .sec .contentTit {
+    height: 30px;
+    padding: 1% 1% 1% 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    display: flex;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+#wrap #mainContent .sec .contentBox div.selBtn {
+    min-height: 3vh;
+    margin-bottom: 10px;
+    display: flex;
+}
+#wrap #mainContent .sec .contentBox div.selBtn .title {
+    line-height: 1;
+    margin: auto 2px auto 0;
+}
+#wrap #mainContent .sec .contentBox div.selBtn .btn {
+    line-height: 1;
+}
+#wrap #mainContent .sec .contentBox div.selBtn .btn button {
+    line-height: 1;
+    background-color: #fff;
+    padding: 5px 7px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px 2px;
+    height: auto;
+}
+
+
+

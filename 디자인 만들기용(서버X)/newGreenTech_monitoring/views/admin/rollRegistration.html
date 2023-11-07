@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	<head>
+		<%-include('partials/header.html') %>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<%-include('partials/sideBar.html') %>
+
+			<div class="main">
+				<%-include('partials/navigation.html') %>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+						  <li class="right-items"><h1 class="h3"><strong></strong>롤 등록</h1></li>
+						  <li class="breadcrumb-item">시스템 관리</li>
+						  <li class="breadcrumb-item">권한 관리</li>
+						  <li class="breadcrumb-item" aria-current="page">롤 등록</li>
+						</ol>
+					</nav>
+                    <div class="row">
+                        <div class="card">
+							<div class="card-header">
+									<div class="row border-bottom-line">
+										<div class="mb-3 col-2 col-xl-2">
+											<select class="form-select" id="searchSelect">
+												<option value="all" <%if(DTO.select === 'all') {%> selected <%}%>>검색조건</option>
+												<option value="id" <%if(DTO.select === 'id') {%> selected <%}%>>롤ID</option>
+												<option value="name" <%if(DTO.select === 'name') {%> selected <%}%>>롤명</option>
+												<option value="pattern" <%if(DTO.select === 'pattern') {%> selected <%}%>>롤타입</option>
+											</select>
+										</div>
+										<div class="mb-3 col-3 col-xl-3">
+											<input type="text" onkeyup="enterkey();" class="form-control" id="searchContent" name="searchContent" placeholder="검색 내용을 입력주세요" value="<%=DTO.content%>">
+										</div>
+										<div class="mb-3 col-3 col-xl-3">
+										</div>
+										<div class="mb-3 col-4 col-xl-4 d-flex justify-content-end">
+											<form name="searchform" method="get">
+												<input type="hidden" id="currentPage" name ="currentPage">
+												<input type="hidden" id="pageMove" name ="pageMove">
+												<input type="hidden" id="select" name ="select">
+												<input type="hidden" id="content" name ="content">
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:movePage(''); return false;"><i class="align-middle" data-feather="search"></i> 조회</button>
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:addRoll(); return false;"><i class="align-middle" data-feather="plus"></i> 등록</button>
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:init(); return false;"><i class="align-middle" data-feather="rotate-ccw"></i> 초기화</button>
+											</form>
+										</div>
+									</div>
+							</div>
+							<h6 class="card-subtitle text-muted">
+								<p class="text-start"></p>
+								<p class="text-end">검색결과: <Strong><%=pageVO.getTotal()%></Strong>건, &nbsp;<Strong><%=pageVO.getCurrentPage()%>/<%=pageVO.getTotalPages()%></Strong> 페이지</p>
+							</h6>
+							<table class="table table-striped table-bordered text-center">
+								<colgroup>
+									<col width="3%">
+									<col width="10%">
+									<col width="10%">
+									<col width="10%">
+									<col width="10%">
+									<col width="10%">
+									<col width="8%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>롤ID</th>
+										<th>롤명</th>
+										<th>롤패턴</th>
+										<th>롤설명</th>
+										<th>등록일</th>
+										<th>관리</th>
+									</tr>
+								</thead>
+								<tbody>
+									<% for(var i = 0; i < list.length; i++){ %>
+										<tr>
+											<td><%=(((pageVO.getCurrentPage() - 1) * pageVO.getSize()) + i + 1)%></td>
+											<td><%=list[i].ROLE_CODE%></td>
+											<td><%=list[i].ROLE_NM%></td>
+											<td><%=list[i].ROLE_PTTRN%></td>
+											<td><%=list[i].ROLE_DC%></td>
+											<td><%=list[i].ROLE_CREAT_DE%></td>
+											<td>
+												<button class="btn btn-primary btn-sm" style="font-size: .4rem;"
+												onclick="modifyRoll(this); return false;"
+												data-record='{"ROLE_CODE":"<%=list[i].ROLE_CODE%>", "ROLE_NM":"<%=list[i].ROLE_NM%>","ROLE_PTTRN":"<%=list[i].ROLE_PTTRN%>","ROLE_DC":"<%=list[i].ROLE_DC%>"}'>
+													<i class="align-middle" data-feather="edit-2"></i>
+													수정
+												</button>
+												</button>
+											</td>
+										</tr>
+									<% } %>
+									<% if (list.length == 0) { %>
+										<tr>
+											<td style="text-align: center;" colspan="5">
+												데이터가 존재하지 않습니다.
+											</td>
+										</tr>
+									<% } %>		
+								</tbody>
+							</table>
+							<%-include('partials/paging.html') %>
+						</div>
+                    </div>
+				</div>
+			</main>
+
+			<!-- 등록 모달 -->
+			<div class="modal fade" id="defaultModalPrimary" tabindex="-1" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title ml-1">
+								<h4>롤등록</h4>
+							</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+
+							<div class="card">
+								<div class="card-body">
+									<form>
+										<div class="form-group row">
+											<label for="rollNm" class="col-sm-3 col-form-label"><strong>롤명 *</strong></label>
+											<div class="col-sm-9">
+											<input type="text" class="form-control checkInputNull" id="rollNm" placeholder="롤명">
+											</div>
+										</div>
+										
+										<div class="form-group row">
+											<label for="rollPt" class="col-sm-3 col-form-label"><strong>롤패턴(URL) *</strong></label>
+											<div class="col-sm-9">
+											<input type="text" class="form-control checkInputNull" id="rollPt" placeholder="롤패턴">
+											</div>
+										</div>
+
+										<div class="form-group row">
+											<label for="rollDc" class="col-sm-3 col-form-label"><strong>설명</strong></label>
+											<div class="col-sm-9">
+											<input type="text" class="form-control" id="rollDc" placeholder="설명">
+											</div>
+										</div>
+
+										<div class="form-group row"></div>
+										<div class="row">
+											<div class="col-sm-12 text-center">
+											<button type="text" class="btn btn-primary" onclick="insertRoll(); return false;"><i class="align-middle" data-feather="save"></i> 저장</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 등록 모달 -->
+			<div class="modal fade" id="defaultModalPrimary2" tabindex="-1" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title ml-1">
+								<h4>롤수정</h4>
+							</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+
+							<div class="card">
+								<div class="card-body">
+									<form>
+										<div class="form-group row">
+											<label for="rollId2" class="col-sm-3 col-form-label"><strong>롤ID *</strong></label>
+											<div class="col-sm-9">
+											<input type="text" class="form-control checkInputNull disabled" id="rollId2" placeholder="롤명" readonly>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="rollNm2" class="col-sm-3 col-form-label"><strong>롤명 *</strong></label>
+											<div class="col-sm-9">
+											<input type="text" class="form-control checkInputNull" id="rollNm2" placeholder="롤명">
+											</div>
+										</div>
+										
+										<div class="form-group row">
+											<label for="rollPt2" class="col-sm-3 col-form-label"><strong>롤패턴(URL) *</strong></label>
+											<div class="col-sm-9">
+											<input type="text" class="form-control checkInputNull" id="rollPt2" placeholder="롤패턴">
+											</div>
+										</div>
+
+										<div class="form-group row">
+											<label for="rollDc2" class="col-sm-3 col-form-label"><strong>설명</strong></label>
+											<div class="col-sm-9">
+											<input type="text" class="form-control" id="rollDc2" placeholder="설명">
+											</div>
+										</div>
+
+										<div class="form-group row"></div>
+										<div class="row">
+											<div class="col-sm-12 text-center">
+											<button type="button" class="btn btn-primary" onclick="updateRoll(); return false;"><i class="align-middle" data-feather="save"></i> 수정</button>
+											<button type="button" class="ml-1 btn btn-secondary" onclick="deleteRoll(); return false;"><i class="align-middle" data-feather="delete"></i> 삭제</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<footer class="footer">
+				<%-include('partials/footer.html') %>
+			</footer>
+		</div>
+	</div>
+
+	<script>
+		function addRoll() {
+			$("#defaultModalPrimary").modal('toggle');
+		}
+
+		function insertRoll() {
+			var nullcheck = checkInputNull();
+			if(nullcheck != "") {
+				alert(nullcheck);
+				return;
+			}
+			const rollInfo = {
+				rollNm : $("#rollNm").val(),
+				rollPt : $("#rollPt").val(),
+				rollDc : $("#rollDc").val()
+			}
+
+			$.ajax({
+				type:"post",
+				url:"/manage/rollregistration/insertroll",
+				dataType: 'json',
+				data : rollInfo,
+				success : function(data){
+					if(data.status == "success") {
+						$("#defaultModalPrimary").modal('toggle');
+						document.location.reload();
+						alert("저장되었습니다.");
+					}
+				}, error : function() {
+				}
+			});
+		}
+
+		function modifyRoll(obj) {
+			$("#defaultModalPrimary2").modal('toggle');
+			$("#rollId2").val($(obj).data("record")["ROLE_CODE"]);
+			$("#rollNm2").val($(obj).data("record")["ROLE_NM"]);
+			$("#rollPt2").val($(obj).data("record")["ROLE_PTTRN"]);
+			$("#rollDc2").val($(obj).data("record")["ROLE_DC"]);
+		}
+
+		function updateRoll() {
+			$.ajax({
+				type:"put",
+				url:"/manage/rollregistration/updateroll",
+				dataType: 'json',
+				data : {
+						rollId : $("#rollId2").val(),
+						rollNm : $("#rollNm2").val(),
+						rollPt : $("#rollPt2").val(),
+						rollDc : $("#rollDc2").val()
+				},
+				success : function(data){
+					if(data.status == "success") {
+						$("#defaultModalPrimary2").modal('toggle');
+						document.location.reload();
+						alert("저장되었습니다.");
+
+					}
+				}, error : function() {
+				}
+			});
+		}
+
+		function deleteRoll() {
+			if(confirm($("#rollId2").val() +" 를 삭제 하시겠습니까?")) {
+					var data = {rollId : $("#rollId2").val()};
+					$.ajax({
+						type:"delete",
+						url:"/manage/rollregistration/deleteroll",
+						dataType: 'json',
+						data : data,
+						success : function(data){
+							if(data.status == "success") {
+								$("#defaultModalPrimary2").modal('toggle');
+								document.location.reload(true);
+								alert("삭제되었습니다.");
+							}
+						}, error : function() {
+							$(object).val(preUseYn);
+						}
+					});
+			} else {
+				$(object).val(preUseYn);
+			}
+		}
+
+		function movePage(curPage) {
+			document.searchform.currentPage.value = curPage;
+			document.searchform.select.value = $("#searchSelect").val().trim();
+			document.searchform.content.value = $("#searchContent").val().trim();
+			document.searchform.submit();
+		}
+
+		function movePagePreNext(curPage, pageState) {
+			document.searchform.pageMove.value = pageState;
+			document.searchform.currentPage.value = curPage;
+			document.searchform.select.value = $("#searchSelect").val().trim();
+			document.searchform.conetnt.value = $("#searchContent").val().trim();
+			document.searchform.submit();
+		}
+
+		function enterkey() {
+			if (window.event.keyCode == 13) {
+				movePage('');
+    		}
+		}
+		// null check
+		function checkInputNull(){
+			var result = '';
+			$('#defaultModalPrimary .checkInputNull').each(function(index, item) {
+				if($(this).val().trim() == "") {
+					result = $(this).data("alert");
+					return false;
+				}
+			});
+			return result;
+		}
+		// modal data 삭제
+		$('#defaultModalPrimary').on('hidden.bs.modal', function () {
+			$('.checkInputNull').each(function(index, item) {
+				$(this).val("");
+			});
+		})
+	</script>
+</body>
+
+</html>

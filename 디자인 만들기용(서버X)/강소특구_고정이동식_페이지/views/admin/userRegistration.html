@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<%-include('partials/header.html') %>
+	</head>
+	<body>
+		<div class="wrapper">
+			<%-include('partials/sideBar.html') %>
+
+			<div class="main">
+				<%-include('partials/navigation.html') %>
+
+				<main class="content">
+					<div class="container-fluid p-0">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+							<li class="right-items"><h1 class="h3"><strong></strong>사용자 등록</h1></li>
+							<li class="breadcrumb-item">시스템 관리</li>
+							<li class="breadcrumb-item">사용자 관리</li>
+							<li class="breadcrumb-item" aria-current="page">사용자 등록</li>
+							</ol>
+						</nav>
+
+						<div class="row">
+							<div class="card">
+								<div class="card-header">
+									<div class="row border-bottom-line">
+										<div class="mb-3 col-2 col-xl-2">
+											<select class="form-select" id="searchSelect">
+												<option value="all" <%if(DTO.select === 'all') {%> selected <%}%>>검색조건</option>
+												<option value="id" <%if(DTO.select === 'id') {%> selected <%}%>>아이디</option>
+												<option value="name" <%if(DTO.select === 'name') {%> selected <%}%>>사용자이름</option>
+												<option value="applicant" <%if(DTO.select === 'applicant') {%> selected <%}%>>신청자</option>
+											</select>
+										</div>
+										<div class="mb-3 col-3 col-xl-3">
+											<input type="text" onkeyup="enterkey();" class="form-control" id="searchContent" name="searchContent" placeholder="검색 내용을 입력주세요" value="<%=DTO.content%>">
+										</div>
+										<div class="mb-3 col-3 col-xl-3">
+										</div>
+										<div class="mb-3 col-4 col-xl-4 d-flex justify-content-end">
+											<form name="searchform" method="get">
+												<input type="hidden" id="currentPage" name ="currentPage">
+												<input type="hidden" id="pageMove" name ="pageMove">
+												<input type="hidden" id="select" name ="select">
+												<input type="hidden" id="content" name ="content">
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:movePage(''); return false;"><i class="align-middle" data-feather="search"></i> 조회</button>
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:addUser(); return false;"><i class="align-middle" data-feather="plus"></i> 등록</button>
+												<button class="ml-1 btn btn-primary btn-mg" onclick="javascript:init(); return false;"><i class="align-middle" data-feather="rotate-ccw"></i> 초기화</button>
+											</form>
+											
+										</div>
+									</div>
+							</div>
+								<h6 class="card-subtitle text-muted">
+									<p class="text-start"></p>
+									<p class="text-end">검색결과: <Strong><%=pageVO.getTotal()%></Strong>건, &nbsp;<Strong><%=pageVO.getCurrentPage()%>/<%=pageVO.getTotalPages()%></Strong> 페이지</p>
+								</h6>
+								<table class="table table-striped table-bordered text-center">
+									<colgroup>
+										<col width="3%">
+										<col width="10%">
+										<col width="10%">
+										<col width="10%">
+										<col width="10%">
+										<col width="10%">
+										<col width="10%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>번호</th>
+											<th>아이디</th>
+											<th>사용자이름</th>
+											<th>신청자</th>
+											<th>가입일자</th>
+											<th>사용여부</th>
+											<th>관리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<% for(var i = 0; i < list.length; i++){ %>
+											<tr>
+												<td><%=(((pageVO.getCurrentPage() - 1) * pageVO.getSize()) + i + 1)%></td>
+												<td><%=list[i].admin_id%></td>
+												<td><%=list[i].admin_nm%></td>
+												<td><%=list[i].admin_id%></td>
+												<td><%=list[i].crt_dttm%></td>
+												<td>
+													<select class="form-control form-control-sm useYn" data-id="<%=list[i].admin_id%>">
+														<option value="Y" <%if(list[i].use_yn === 'Y') {%> selected <%}%> >사용</option>
+														<option value="N" <%if(list[i].use_yn !== 'Y') {%> selected <%}%> >미사용</option>
+													</select>
+												</td>
+												<td>
+													<% if (list[i].admin_id !== 'sysAdmin') { %>
+														<button class="btn btn-primary btn-sm" onclick="modifyUser(this); return false;" data-id="<%=list[i].admin_id%>" data-name="<%=list[i].admin_nm%>" style="font-size: .4rem;">
+															<i class="align-middle" data-feather="edit-2"></i>
+															수정
+														</button>
+													<% } %>
+												</td>
+											</tr>
+										<% } %>
+										<% if (list.length == 0) { %>
+											<tr>
+												<td style="text-align: center;" colspan="7">
+													데이터가 존재하지 않습니다.
+												</td>
+											</tr>
+										<% } %>
+									</tbody>
+								</table>
+								<%-include('partials/paging.html') %>
+							</div>
+						</div>
+						
+						<!-- 등록 -->
+						<div class="modal fade" id="defaultModalPrimary" tabindex="-1" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title ml-1">
+											<h4>사용자 등록</h4>
+										</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<div class="card">
+											<div class="card-body">
+												<form>
+													<div class="form-group row">
+													<label for="userId" class="col-sm-3 col-form-label"><strong>아이디 *</strong></label>
+													<div class="col-sm-6">
+														<input type="text" id="userId" class="form-control checkInputNull" placeholder="아이디" data-alert="아이디를 입력해주세요.">
+														<code class="hidden">사용할 수 없는 아이디 입니다.</code>
+														<code class="code-green hidden">사용할 수 있는 아이디 입니다.</code>
+													</div>
+													<div class="col-sm-3">
+															<button class="btn btn-primary" onclick="checkDuplicatedId(); return false;"><i class="align-middle" data-feather="search"></i>중복체크</button>
+													</div>
+													</div>
+													
+													<div class="form-group row">
+													<label for="userNm" class="col-sm-3 col-form-label"><strong>이름 *</strong></label>
+													<div class="col-sm-9">
+														<input type="text" class="form-control checkInputNull" id="userNm" placeholder="이름"  data-alert="이름을 입력해주세요.">
+													</div>
+													</div>
+													
+													<div class="form-group row">
+													<label for="passWd" class="col-sm-3 col-form-label"><strong>비밀번호 *</strong></label>
+													<div class="col-sm-9">
+														<input type="password" class="form-control checkInputNull" id="passWd" placeholder="비밀번호" data-alert="비밀번호를 입력해주세요.">
+													</div>
+													</div>
+
+													<div class="form-group row">
+													<label for="passWdck" class="col-sm-3 col-form-label"><strong>비밀번호확인 *</strong></label>
+													<div class="col-sm-9">
+														<input type="password" class="form-control checkInputNull" id="passWdck" placeholder="비밀번호 재확인" data-alert="비밀번호 재확인을 입력해주세요.">
+													</div>
+													</div>
+													
+													<div class="form-group row"></div>
+													<div class="row">
+													<div class="col-sm-12 text-center">
+														<button type="button" class="btn btn-primary" onclick="insertUser(); return false;"><i class="align-middle" data-feather="save"></i> 저장</button>
+													</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 수정 -->
+						<div class="modal fade" id="defaultModalPrimary2" tabindex="-1" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title ml-1">
+											<h4>사용자 수정</h4>
+										</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<div class="card">
+											<div class="card-body">
+												<form>
+													<div class="form-group row">
+													<label for="userId2" class="col-sm-3 col-form-label"><strong>아이디 *</strong></label>
+													<div class="col-sm-9">
+														<input type="text" id="userId2" class="form-control disabled" placeholder="아이디" data-alert="아이디를 입력해주세요." disabled>
+														</div>
+													</div>
+													
+													<div class="form-group row">
+													<label for="userNm2" class="col-sm-3 col-form-label"><strong>이름 *</strong></label>
+													<div class="col-sm-9">
+														<input type="text" class="form-control" id="userNm2" placeholder="이름"  data-alert="이름을 입력해주세요.">
+													</div>
+													</div>
+													
+													<div class="form-group row">
+													<label for="passWd2" class="col-sm-3 col-form-label"><strong>비밀번호 </strong></label>
+													<div class="col-sm-9">
+														<input type="password" class="form-control" id="passWd2" placeholder="비밀번호" data-alert="비밀번호를 입력해주세요.">
+														<code class="code-green">비밀번호를 입력하지 않으면 변경되지 않습니다.</code>
+													</div>
+													</div>
+
+													<div class="form-group row">
+													<label for="passWdck2" class="col-sm-3 col-form-label"><strong>비밀번호확인 </strong></label>
+													<div class="col-sm-9">
+														<input type="password" class="form-control" id="passWdck2" placeholder="비밀번호 재확인" data-alert="비밀번호 재확인을 입력해주세요.">
+													</div>
+													</div>
+													
+													<div class="form-group row"></div>
+													<div class="row">
+													<div class="col-sm-12 text-center">
+														<button type="button" class="btn btn-primary" onclick="updateUser(); return false;"><i class="align-middle" data-feather="save"></i> 수정</button>
+														<button type="button" class="ml-1 btn btn-secondary" onclick="userDelete(); return false;"><i class="align-middle" data-feather="delete"></i> 삭제</button>
+													</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>					
+					</div>
+				</main>
+
+				<footer class="footer">
+					<%-include('partials/footer.html') %>
+				</footer>
+		</div>
+	</div>
+
+	<script>
+		$('.input-group.date').datepicker({
+			format: 'yyyy-mm-dd',
+   			language: "ko"
+		});
+
+		function addUser() {
+			$("#defaultModalPrimary").modal('toggle');
+		}
+
+		function modifyUser(obj) {
+			$("#defaultModalPrimary2").modal('toggle');
+			$("#userId2").val($(obj).data("id"));
+			$("#userNm2").val($(obj).data("name"));
+		}
+
+		function movePage(curPage) {
+			document.searchform.currentPage.value = curPage;
+			document.searchform.select.value = $("#searchSelect").val().trim();
+			document.searchform.content.value = $("#searchContent").val().trim();
+			document.searchform.submit();
+		}
+
+		function movePagePreNext(curPage, pageState) {
+			document.searchform.pageMove.value = pageState;
+			document.searchform.currentPage.value = curPage;
+			document.searchform.select.value = $("#searchSelect").val().trim();
+			document.searchform.conetnt.value = $("#searchContent").val().trim();
+			document.searchform.submit();
+		}
+
+		function init() {
+			$("#searchSelect").val("all");
+			$("#searchContent").val("");
+			movePage('');
+		}
+
+		function changeUseYn(object) {
+
+			if($(object).val() === 'Y') {
+				var text ="사용으로 변경하시겠습니까?";
+				var preUseYn = 'N';
+			} else {
+				var text ="미사용으로 변경하시겠습니까?";
+				var preUseYn = 'Y';
+			}
+
+			if(confirm(text)) {
+					$.ajax({
+						type:"put",
+						url:"/manage/userregistration/changeuseyn",
+						dataType: 'json',
+						data : {
+							id : $(object).data("id"),
+							useYn : $(object).val()
+						},
+						success : function(data){
+							if(data.status == "success") {
+								alert("변경되었습니다.");
+							}
+						}, error : function() {
+							$(object).val(preUseYn);
+						}
+					});
+			} else {
+				$(object).val(preUseYn);
+			}
+		}
+
+		function userDelete() {
+			if(confirm($("#userId2").val() +" 를 삭제 하시겠습니까?")) {
+					$.ajax({
+						type:"delete",
+						url:"/manage/userregistration/deleteuser",
+						dataType: 'json',
+						data : {id : $("#userId2").val()},
+						success : function(data){
+							if(data.status == "success") {
+								alert("삭제되었습니다.");
+								document.location.reload(true);
+							}
+						}, error : function() {
+							$(object).val(preUseYn);
+						}
+					});
+			} else {
+				$(object).val(preUseYn);
+			}
+		}
+
+		const status = ['notCheck','duplicated', 'notDuplicated'];
+		var currentStatus = status[0];
+
+		function checkDuplicatedId() {
+			if($("#userId").val().trim() ==  "") {
+				alert("아이디를 입력해주세요.");
+				return;
+			}
+
+			$.ajax({
+					type:"get",
+					url:"/manage/userregistration/checkuserid",
+					dataType: 'json',
+					data : {
+						id : $("#userId").val()
+					},
+					success : function(data){
+						$("code").hide();
+						// 중복
+						if(data.status == status[1]) {
+							currentStatus = status[1];
+							$($("#defaultModalPrimary code").get(0)).show();
+						// 사용가능
+						} else if(data.status == status[2]) {
+							currentStatus = status[2];
+							$($("#defaultModalPrimary code").get(1)).show();
+						}
+					}, error : function(data) {
+						alert(data.msg);
+					}
+				});	
+		}
+
+		function insertUser () {
+			var nullcheck = checkInputNull();
+			if(nullcheck != "") {
+				alert(nullcheck);
+				return;
+			}
+
+			if(currentStatus == status[0]) {
+				alert("아이디 중복체크를 해주세요.");
+				$("#userId").focus();
+				return;
+			}
+
+			if(currentStatus == status[1]) {
+				alert("사용할수 없는 아이디 입니다.");
+				$("#userId").focus();
+				return;
+			} 
+			
+			if($("#passWd").val() != $("#passWdck").val()) {
+				alert("비밀번호가 같지 않습니다. 다시한번 확인해주세요.");
+				$("#passWd").focus();
+				return;
+			}
+
+			const userInfo = {
+				userId : $("#userId").val(),
+				userNm : $("#userNm").val(),
+				userPw : $("#passWdck").val()
+			}
+
+			$.ajax({
+				type:"post",
+				url:"/manage/userregistration/insertuser",
+				dataType: 'json',
+				data : userInfo,
+				success : function(data){
+					if(data.status == "success") {
+						alert("저장되었습니다.");
+						document.location.reload();
+						$("#defaultModalPrimary").modal('toggle');
+					}
+				}, error : function() {
+				}
+			});
+		}
+		
+		function updateUser() {
+			if($("#userNm2").val().trim() == "") {
+				alert("이름을 입력해주세요.");
+				$("#userNm2").focus();
+				return;
+			}
+
+			if($("#passWd2").val().trim() != "") {
+				if($("#passWd").val() != $("#passWdck").val()) {
+					alert("비밀번호가 같지 않습니다. 다시한번 확인해주세요.");
+					$("#passWd").focus();
+					return;
+				}
+			}
+			
+			$.ajax({
+				type:"put",
+				url:"/manage/userregistration/updateuser",
+				dataType: 'json',
+				data : {
+					userId : $("#userId2").val(),
+					userNm : $("#userNm2").val(),
+					userPw : $("#passWd2").val(),
+					pwChange : $("#passWd2").val().trim() == "" ? false : true
+				},
+				success : function(data){
+					if(data.status == "success") {
+						alert("저장되었습니다.");
+						document.location.reload();
+						$("#defaultModalPrimary2").modal('toggle');
+					}
+				}, error : function() {
+				}
+			});
+		}
+
+		function checkInputNull(){
+			var result = '';
+			$('.checkInputNull').each(function(index, item) {
+				if($(this).val().trim() == "") {
+					result = $(this).data("alert");
+					return false;
+				}
+			});
+			return result;
+		}
+
+		$(".useYn").on("change", function(){
+			changeUseYn(this);
+		});
+		
+		function enterkey() {
+			if (window.event.keyCode == 13) {
+				movePage('');
+    		}
+		}
+
+		// close modal
+		$('#defaultModalPrimary').on('hidden.bs.modal', function () {
+			$("#defaultModalPrimary code").hide();
+			// 중복체크 초기화
+			currentStatus = status[0];
+			$('.checkInputNull').each(function(index, item) {
+				$(this).val("");
+			});
+		})
+
+
+
+	</script>
+</body>
+
+</html>

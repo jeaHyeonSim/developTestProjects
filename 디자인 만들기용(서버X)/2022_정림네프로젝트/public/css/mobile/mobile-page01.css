@@ -1,0 +1,138 @@
+
+/* .container {
+    max-width: 450px;
+    min-width: 250px;
+    padding: 0;
+} */
+#header {
+    display: none;
+}
+
+#wrap #mainContent {
+    display: block;
+    height: auto;
+    padding: 10px 1%;
+    width: 99%;
+}
+#wrap #mainContent .sec.section02 .contentBox .box,
+#wrap #mainContent .sec.section01 .contentBox .box {
+    height: 100px;
+}
+#wrap #mainContent .sec.section02,
+#wrap #mainContent .sec.section01 {
+    width: 100%;
+    height: auto;
+}
+
+#wrap #mainContent .sec .contentBox { 
+    height: auto;
+}
+
+#wrap #mainContent .sec.section02 .contentBox > div,
+#wrap #mainContent .sec.section01 .contentBox > div{
+    /* width: 156px; */
+    width: 45%;
+}
+
+.contentBox .box ul li:first-child span{ 
+    line-height: 20px;
+    font-weight: 600;
+    font-size: 20px;
+
+}
+.section01 .contentBox .box ul li.boxContents {
+    font-size: 30px;
+}
+
+.section01 .contentBox .box06 ul {
+    font-size: 0.8rem;
+    text-align: left;
+    margin-top: 0;
+}
+.sec.section01 .contentBox .sec.section01 .box:nth-child(5) ul li span img { 
+
+}
+
+#wrap #mainContent .sec.section01 .contentBox .box:not(.box06) ul li:last-child{
+
+    margin-top: 20px;
+    height: 45px;
+    line-height: 45px;
+}
+.contentBox .box:nth-child(5) ul li span img { 
+    margin-top: 0px;
+}
+.section01 .contentBox .box06 ul li:not(li:first-child) {
+    padding: 2px 5px 2px 20px;
+    
+}
+
+
+
+
+/* 제어 */
+.sec.section02 .contentBox  .box:nth-child(5) ul li span img { 
+    margin-top: 1px;
+} 
+
+#wrap #mainContent .sec.section02 .contentBox .box:not(.box02):not(.box06):not(.box05) ul li:last-child{
+    margin-top: 25px;
+    height: 35px;
+    line-height: 30px;
+}
+#wrap #mainContent .sec.section02 .contentBox .box.box02 ul li:last-child{
+    margin-top: 10px;
+}
+.section02 .contentBox .box:not(.box02) button {
+    width: 60px;
+    height: 35px;
+    font-size: 16px;
+}
+    /* 밝기 조절 */
+.section02 .contentBox .box02 button {
+    width: 37px;
+    height: 32px;
+}
+.section02 .contentBox .box02 button {
+    border-radius: 14px;
+    font-size: 13px;
+    text-align: center;
+    padding: 0;
+    line-height: 32px;
+    margin-right: 2px;
+}
+.section02 .contentBox .box02 button:nth-child(2),
+.section02 .contentBox .box02 button:nth-child(3),
+.section02 .contentBox .box02 button:nth-child(4){
+    font-size: 16px;
+}
+
+    /* 온도조절 */
+
+.box05 > .tempControlClass > .boxContents {
+    text-align: center;
+    margin-top: 10px;
+}
+.box05 > .tempControlClass > .boxContents .inputRangeVal {
+    font-size: 12px;
+    margin: 0% 10%;
+}
+
+.box05 > .tempControlClass > .boxContents .inputRange {
+    font-size: 0.7rem;
+    margin: 0 0%;
+}
+.box05 > .tempControlClass > .boxContents .inputRange > div {
+    width: 25px;
+    line-height: 35px;
+}
+.box05 > .tempControlClass > .boxContents .inputRange div:last-child ,
+.box05 > .tempControlClass > .boxContents .inputRange div:first-child {
+    line-height: 35px;
+}
+.box05 > .tempControlClass > .boxContents .inputRange input {
+    height: 35px;
+}
+#footer {
+    display: none;
+}

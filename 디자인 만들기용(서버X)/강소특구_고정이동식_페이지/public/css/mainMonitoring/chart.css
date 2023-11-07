@@ -1,0 +1,40 @@
+.contentBox > .v1 {
+
+    width: 98%;
+    height: 27px;
+    list-style-type : square ;
+    margin-left: 7%;
+    margin-right: 4%;
+    padding-top: 2%;
+    font-size: 1em;
+}
+.contentBox > .v1 li{
+    display: flex;
+    align-items: center;
+}
+.contentBox > .v1 span {
+    height: 20px;
+    display: block;
+    line-height: 20px;
+}
+#line_timegraph{
+    margin: 0.3em auto 0;
+}
+#Line_graph span:first-child{
+    width: 5%;
+}
+#Line_graph span:nth-child(2){
+    width: 30%;
+}
+#Line_graph span:nth-child(2) ,#Line_graph span:nth-child(3),#Line_graph span:nth-child(4) {
+    font-size: 0.8em;
+}
+#Line_graph span:nth-child(3){
+    width: 40%;
+}
+#selectTime {
+    width: 30%;
+    text-align: center;
+    border-radius: 5px; 
+    background-color: #171b1c;
+}

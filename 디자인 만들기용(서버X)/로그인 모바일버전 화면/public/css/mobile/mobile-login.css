@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+body {display:block;}
+
+#wrap {text-align:center;
+    font-weight:bold;
+    display:block;}
+#container {
+    width: 100%;
+    height: auto;
+    /* background: url(../../../imgs/building_bg.png) no-repeat; */
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 1%;
+    position: relative;
+    left:0;
+    top:0;
+}
+
+#container h1 {
+    font-size: 20px;
+    color: #2e588d;
+    margin-bottom: 45px;
+}
+
+#container .content_area {
+    margin-top: 40px;
+}
+#container .content_area h2 {
+    font-size: 32px;
+    color: #253146;
+}
+
+#container .content_area div {
+    width: 100%;
+    margin: 50px auto;
+    height: 215px;
+}
+
+#container .content_area button {
+    font-weight: 800;
+    color: #fff;
+    width: 180px;
+    height: 54px;
+    background-color: #708eb3;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+
+.btn-5 {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background-color: rgb(255, 27, 0);
+    background: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+}
+
+.btn-5:hover {
+    color: #f0094a;
+    background: transparent;
+    box-shadow: none;
+}
+
+.btn-5:before,
+.btn-5:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 3px;
+    width: 0;
+    background: #f0094a;
+    box-shadow:
+        -1px -1px 5px 0px #fff,
+        7px 7px 20px 0px #0003,
+        4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+
+.btn-5:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.btn-5:hover:before,
+.btn-5:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}

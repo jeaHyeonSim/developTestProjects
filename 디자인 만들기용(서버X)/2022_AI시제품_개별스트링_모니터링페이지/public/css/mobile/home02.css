@@ -1,0 +1,71 @@
+@charset "utf-8";
+.scroll_container{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+    
+.scroll_container::-webkit-scrollbar{
+    display: none;
+    width: 0;  /* Remove scrollbar space */
+    height: 0;
+    background: transparent;  /* Optional: just make scrollbar invisible */
+    -webkit-appearance: none;
+}
+
+#wrap { /*max-width: 600px; */  min-width: 226.7px; padding: 0px 5px 5px 5px; }
+
+#mainContent {/*display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; */ color:#fff; /*height:88vh;*/ width: 100%;   }
+#mainContent .section {margin-top:0.5vh; max-width: 100%; min-width: 226.7px; }
+
+#mainContent .section .box {background:#1d2733; border-radius:25px; overflow:hidden; margin-top:1.5vh; width:100%;}
+#mainContent .section .box.box02 {min-height: 165px; max-height: 21vh;}
+#mainContent .section .box.box03,
+#mainContent .section .box.box04 {min-height:300px; max-height:32vh;}
+
+#mainContent .section .box .contentTit {padding:12px 4% 8px; border-bottom:1px solid #8e9399;}
+
+
+#mainContent .section .box .contentTit h2 {font-family:'Gmarket Sans',sans-serif; color:#fff; font-size:15px; font-weight:600;}
+#mainContent .section .box .contentBox {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;}
+
+
+
+
+/* 발전소 정보 */
+#mainContent .section .box.box02 .contentBox {align-content: center; font-size:12px; text-align:center; padding:0 4% 2% 4%; display: block;}
+#mainContent .section .box.box02 .contentBox .location {width:100%; text-align:left; padding-left:30px; position:relative; font-size:16px; font-weight:400; margin:10px 0 10px;}
+
+#mainContent .section .box.box02 .contentBox .location:before {position:absolute; display:block; content:''; background:url('../../imgs/main/weatherLoIcon.png') center no-repeat; width:18px; height:18px; top:5px; left:0;}
+#mainContent .section .box.box02 .contentBox .innerBoxDiv {
+    display: flex;
+    justify-content: space-between;
+    ;
+}
+#mainContent .section .box.box02 .contentBox .innerBoxDiv .innerBox {width:32%; background:rgba(255,255,255,0.05); font-family:'Gmarket Sans',sans-serif !important; padding:1.25vh 0; border-radius:20px; }
+#mainContent .section .box.box02 .contentBox .innerBoxDiv .innerBox h3.sTit {text-align:center; letter-spacing:-0.05em; line-height:120%; font-family:'Noto Sans KR',sans-serif; margin-bottom:3px;font-size: 12px; }
+#mainContent .section .box.box02 .contentBox .innerBoxDiv .innerBox strong {font-size:14px; letter-spacing:-0.05em; color:#f1c12f; font-family:'Gmarket Sans',sans-serif !important;}
+#mainContent .section .box.box02 .contentBox .innerBoxDiv .innerBox .scale {}
+#mainContent .section .box.box02 .contentBox .innerBoxDiv .innerBox .model {}
+#mainContent .section .box.box02 .contentBox .innerBoxDiv .innerBox .count {}
+
+
+
+/* 발전정보 */
+#mainContent .section .box.box04 .contentBox {align-content: center; font-size:12px; text-align:center; padding: 4% 4% 2% 4%;}
+#mainContent .section .box.box04 .contentBox .innerBox {width:32%; background:rgba(255,255,255,0.05); font-family:'Gmarket Sans',sans-serif !important; padding:1.25vh 0; border-radius:20px;}
+#mainContent .section .box.box04 .contentBox .innerBox h3.sTit {display:inline-block; text-align:left; letter-spacing:-0.05em; line-height:120%; font-family:'Noto Sans KR',sans-serif; font-size:12px;}
+#mainContent .section .box.box04 .contentBox .innerBox strong {display:block;  letter-spacing:-0.05em; color:#f1c12f; margin:6px 0 -3px; font-family:'Gmarket Sans',sans-serif !important; font-size:14px;}
+#mainContent .section .box.box04 .contentBox .today {}
+#mainContent .section .box.box04 .contentBox .accumulate {}
+#mainContent .section .box.box04 .contentBox .CO2 {}
+#mainContent .section .box.box04 .contentBox .barBox {width:100%; text-align:left; margin-top:1vh;}
+#mainContent .section .box.box04 .contentBox .barBox h3.sTit {font-size:15px; letter-spacing:-0.05em; font-weight:500; margin-bottom:5px;}
+#mainContent .section .box.box04 .contentBox .barBox .barCont {position:relative; overflow:hidden; width:100%; height:28px; background:#fff; border-radius:5px;}
+#mainContent .section .box.box04 .contentBox .barBox .barCont .bar {display:block; height:28px;}
+#mainContent .section .box.box04 .contentBox .barBox .barCont .bar01 {background:#26c057;}
+#mainContent .section .box.box04 .contentBox .barBox .barCont .bar02 {background:#f1c12f;}
+#mainContent .section .box.box04 .contentBox .barBox .barCont .amount {position:absolute; top:4px; right:20px; color:#333; font-size:14px;}
+
+
+
+

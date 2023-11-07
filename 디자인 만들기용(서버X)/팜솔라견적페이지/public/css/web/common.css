@@ -1,0 +1,156 @@
+html, body {
+    font-family: 'Spoqa Han Sans Neo', "맑은고딕", "Malgun Gothic", "돋움", "Dotum", sans-serif;
+    font-weight: 400;
+    color: #211b41;
+    font-size: 16px;
+    background-color: #FBFCF6;
+    color: #fff;
+}
+input {
+    border: none;
+    outline: none;
+}
+input :focus{
+    border: none;
+}
+button {
+    outline: none;
+    border: none;
+}
+.relative {
+    position: relative;
+}
+.hidden {
+    display: none;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    text-indent: -9999px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+}
+#wrap {
+    width: 100%;
+    /* height: auto; */
+    min-height: 100%;
+    /* margin: 0; */
+    /* padding: 0 15%; */
+}
+.container {
+    width: 100%;
+    max-width: 1024px;
+}
+
+/* 헤더 */
+#header {
+    padding: 10px 0;
+}
+#header .container{
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+#header .logo a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    line-height: 18px;
+    color: #171746;
+    transition: color .3s ease;
+}
+#header .logo a {
+    background: url(../../imgs/logo.png) no-repeat;
+    width: 200px;
+    height: 60px;
+}
+#header nav {
+
+}
+#header nav a {
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+    color: #E3F2ED;
+    font-weight: bold;
+    padding: 0 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    transition: all .7s ease;
+    border: 1px solid #e3e5e7;
+    background-color: #198B6A;
+}
+
+
+
+/* 본문 */
+main {
+    width: 100%;
+    /* height: calc(100% - 380.75px);
+    min-height: calc(100% - 380.75px); */
+    /* height: 500px; */
+    height: auto;
+}
+
+main .contents {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+}
+
+
+/* 푸터 */
+#footer {
+    /* position: absolute;
+    bottom: 0; */
+    width: 100%;
+    height: 200px;
+    background-color: #000;
+    padding: 50px 0;
+    
+}
+
+#footer p {
+    text-align: center;
+    color: #A6A6A6;
+    line-height: 22px;
+    bottom: 0;
+    /* margin-bottom: 10px; */
+}
+#footer p.title {
+    margin-bottom: 20px;
+}
+#footer p.tel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footer p span {
+    padding-left: 15px;
+    padding-right: 10px;
+    position: relative;
+}
+#footer p span:first-child {
+    padding-left: 0px;
+}
+#footer p span:not(#footer p span:first-child)::before {
+    content: "|";
+    font-size: 0.8rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#footer .foo-companyInfo p:first-child {
+    color: #ffffff;
+}
+#footer .foo-companyBottom {
+    margin-top: 35px;
+}

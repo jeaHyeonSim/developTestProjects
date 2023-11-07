@@ -1,0 +1,176 @@
+
+
+#header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    color:#fff;
+    height: 120px;
+    line-height: 120px;
+    z-index: 10;
+}
+#header .logoBox {
+    align-items: center;
+    padding-left: 100px;
+    z-index: 11;
+
+}
+#header .logoBox .logo {position:relative;
+    display:inline-block;
+    font-size:0;
+    width:220px;
+    height:39px;
+    background:url('../../../imgs/web/common/logoWhite.png') center no-repeat;
+    background-size: 220px 39px;
+    margin-top: -17px;
+}
+
+/* 메뉴 */
+#header .menuBox {
+    position: absolute;
+    padding:0;
+    z-index: 12;
+    left: 55%;
+    transform: translateX(-55%);
+    height: 120px;
+    width: 55%;
+
+}
+#header .menuBox > ul {
+    display:flex;
+    justify-content: space-between;
+    font-family: 'SUIT-ttf';
+    color: rgba(255,255,255, 0.8);
+    font-size: 19px;
+    text-align: justify;
+}
+#header .menuBox > ul >li {
+    position: relative;
+    color:#fff;
+    text-align: center;
+}
+#header .menuBox > ul > li > a {
+    display: block;
+    height: 100px;
+    line-height: 120px;
+    padding: 0 10px;
+}
+
+/* 메뉴 - 서브메뉴 */
+#header .menuBox ul li ul.subMenu {
+    position: absolute;
+    width: 145px;
+    /* z-index: 56; */
+    border: 0px rgb(0,0,0) solid;
+    border-radius: 10px;
+    background-color: rgb(255,255,255);
+    font-weight: 400;
+    font-size: 17px;
+    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0;
+    overflow: hidden;
+    transition-duration: 0.4s; /* 높이가 지정되어있지 않으면 애니메이션이 끊기는 느낌이 든다.*/
+    transition-timing-function: ease-in;
+}
+
+#header .menuBox ul li ul.subMenu li {
+    line-height: 20px;
+}
+#header .menuBox ul li ul.subMenu li:first-child{
+    color: rgba(25,138,105);
+}
+#header .menuBox ul li ul.subMenu li:not(li:first-child) {
+    color: rgb(0, 11, 15);
+    margin-top: 10px;
+}
+
+#header .menuBox ul li ul.subMenu > li:not(li:first-child):hover {
+    color: #e60012;
+    cursor: pointer;
+}
+
+
+/* headerBtn */
+#header .headerBtn {
+    display: flex;
+    z-index: 12;
+}
+/* KR EN */
+#header .KrEn {
+    width: 120px;
+    text-align: left;
+    font-family: 'SUIT-ttf';
+    font-weight: 800;
+    font-size: 18px;
+}
+#header .KrEn span {
+    color: rgba(255,255,255, 0.6);
+}
+#header .KrEn span:last-child{
+    margin-left: 5px;
+}
+#header .KrEn span.select {
+    color: #fff;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #fff;
+    border-width: 2px;
+}
+
+/* 사이드 메뉴 */
+#header .listMenu {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    line-height: 120px;
+}
+#header .listMenu .icon_menu {
+    position: absolute;
+    width: 35px;
+    height: 24px;
+    z-index: 73;
+    top: 45%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+}
+#header .listMenu .icon_menu span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 9px;
+    animation-duration: 0.2s; 
+}
+#header .listMenu .icon_menu span:nth-child(1){
+    margin-top: 0;
+}
+#header .listMenu .icon_menu span:nth-child(2){
+    margin-left: 5px;
+}
+
+@keyframes sideLineIn {
+    0%   {   margin-left: 5px;} 
+    50% {   margin-left: 3px;} 
+    100% {   margin-left: 0px;} 
+}
+@keyframes sideLineOut {
+    0%   {   margin-left: 0px;} 
+    50% {   margin-left: 3px;} 
+    100% {   margin-left: 5px;} 
+}
+
+
+
+
+
+
+#footer {
+    font-size:14px;
+    font-weight:300;
+    letter-spacing:-0.025em;
+    color:#A7A7A7;
+    padding-top:10px;
+}
+
