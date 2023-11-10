@@ -10,9 +10,11 @@
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../node_modules/moment/min/moment.min.js"></script>
     <!-- 공통 CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css" href="../public/css/web/reset.css">
     <link rel="stylesheet" type="text/css" href="../public/css/web/common.css">
     <link rel="stylesheet" type="text/css" href="../public/css/web/commmonSub.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/commonClass.css">
 
     <!-- 페이지별 CSS -->
     <link rel="stylesheet" type="text/css" href="../public/css/web/step0.css">
@@ -38,7 +40,7 @@
             <section>
                 <div class="contents">
                     <p class="tit">
-                        <span>
+                        <span class="tit-span">
                             <img src="../public/imgs/step0/map.png" alt="">
                         </span>
                         광주광역시 광산구 삼거동 930
@@ -51,7 +53,7 @@
                     </div>
 
                     <p class="tit">
-                        <span>
+                        <span class="tit-span">
                             <img src="../public/imgs/step0/map.png" alt="">
                         </span>
                         토지유형
@@ -91,7 +93,7 @@
                     </div>
 
                     <p class="tit">
-                        <span>
+                        <span class="tit-span">
                             <img src="../public/imgs/step0/map.png" alt="">
                         </span>
                         지역지구분석
@@ -205,12 +207,14 @@
                                                 </span>
                                                 <div class="gf_poptip a">
                                                     <div class="gf_con">
-                                                        <span>
+                                                        <span class="gf_con_img">
                                                             <img src="../public/imgs/juso/!.png" alt="">
                                                         </span>
                                                         가축분뇨의 관리 및 이용에 관한 법률 제8조 가축사육의 제한 등
                                                     </div>
-                                                    <div class="popper_arrow" style="display:block;"></div>
+                                                    <div class="popper_arrow" style="display:block;">
+                                                        <div></div>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td style="background-color:#FFFFFF;">
@@ -289,31 +293,212 @@
                         </div>
                     </div>
 
-                    <p class="tit">
-                        <span>
+                    <p class="tit" data-tit-name="ElectronicInfo">
+                        <span class="tit-span">
                             <img src="../public/imgs/step0/map.png" alt="">
+                            <q>전력계통정보</q>
                         </span>
-                        전력계통정보
+                        
+                        <span class="tit-area">
+                            <strong class="tit">전신주위치</strong>
+                            <select class="w250 round">
+                                <option>전신주정보가 존재하지 않습니다.</option>
+                            </select>
+                        </span>
+                        <!-- <div class="tit-area" style=" display: inline-block;">
+                            <strong class="tit">전신주위치</strong>
+                            <select class="w250 round">
+                                <option>전신주정보가 존재하지 않습니다.</option>
+                            </select>
+                        </div> -->
+
                     </p>
                     <div class="content">
-                        <div class="ElectronicInfo"></div>
-                    </div>
+                        <div class="ElectronicInfo">
+                            <div class="content location">
+                                <div class="items">
+                                    <div>
+                                        <h4 class="item-title">이름</h4>
+                                        <div class="item-content">
+                                            <dl>
+                                                <dt>변전소</dt>
+                                                <dd>변전소</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>변압기</dt>
+                                                <dd>변압기</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>D/L</dt>
+                                                <dd>D/L</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="item-title">누적연계용량</h4>
+                                        <div class="item-content">
+                                            <dl>
+                                                <dt>변전소</dt>
+                                                <dd>1234232</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>변압기</dt>
+                                                <dd>34232</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>D/L</dt>
+                                                <dd>12232</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="item-title">여유용량</h4>
+                                        <div class="item-content">
+                                            <dl>
+                                                <dt>변전소</dt>
+                                                <dd>1234232</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>변압기</dt>
+                                                <dd>1234232</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>D/L</dt>
+                                                <dd>1234232</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mr-t-20 tel-info">
+                                <div class="content">
+                                    <div>
+                                        <p class="txt">광주전남본부 / 강진지사</p>
+                                        <p class="tel">061-430-2237</p>
+                                    </div>
+                                    <div>
+                                        <p class="txt">광주전남본부 / 계통운영(기술)부</p>
+                                        <p class="tel">062-260-5518</p>
+                                    </div>
+                                </div>
+                                <div class="kepco">
+                                    <a href="http://home.kepco.co.kr/kepco/CO/H/E/COHEPP001/COHEPP00106.do?menuCd=FN040615" target="_new"
+                                    class="btn blue2">선로용량 확인하기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- 전력계통-->
+
 
                     <p class="tit">
-                        <span>
+                        <span class="tit-span">
                             <img src="../public/imgs/step0/map.png" alt="">
                         </span>
                         조례정보
                     </p>
                     <div class="content">
-                        <div class="law"></div>
+                        <div class="law">
+                            <table class="h-table2">
+                                <colgroup>
+                                    <col style="width: 15%;">
+                                    <col>
+                                    <col style="width: 20%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>종류</th>
+                                        <th>법규명</th>
+                                        <th>재/개정일</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="ordinanceData">
+                                    <tr>
+                                        <td><label class="label g-color2">조례</label></td>
+                                        <td><a href="https://www.law.go.kr/DRF/lawService.do?OC=simjh7601&amp;target=ordin&amp;MST=1772099&amp;type=HTML&amp;mobileYn="
+                                                class="title" target="_blank"><u>전라남도 도시계획 조례</u></a></td>
+                                        <td>2022-12-29</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label g-color2">조례</label></td>
+                                        <td><a href="https://www.law.go.kr/DRF/lawService.do?OC=simjh7601&amp;target=ordin&amp;MST=1858927&amp;type=HTML&amp;mobileYn="
+                                                class="title" target="_blank"><u>전라남도 사무위임 조례</u></a></td>
+                                        <td>2023-09-27</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="label g-color1">규칙</label></td>
+                                        <td><a href="https://www.law.go.kr/DRF/lawService.do?OC=simjh7601&amp;target=ordin&amp;MST=1860717&amp;type=HTML&amp;mobileYn="
+                                                class="title" target="_blank"><u>강진군 군계획 조례</u></a></td>
+                                        <td>2023-10-05</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
-                    <p class="tit"></p>
-                    <div class="content">
-                        <div class="Availability"></div>
+                    <div class="content mr-t-35 mr-b-50" >
+                        <div class="Availability">
+                            <div class="top">
+                                <div>
+                                    <img src="../public/imgs/step0/map.png" alt="">
+                                </div>
+                                <div>
+                                    <div>
+                                        <span>분석결과</span>
+                                        <span>제한적 가능</span>
+                                    </div>    
+                                    <div style="margin: auto 0;">※ 설치 가능성과 수익률은 별개입니다.</div>
+                                </div>
+                            </div>
+
+                            <div class="info">
+                                <div class="state-area">
+                                    <div class="area">
+                                        <div class="title">
+                                            <span>토지유형</span>
+                                            <span>지붕형</span>
+                                                    
+                                        </div>
+                                        <div class="state" style="background-color: #4D68C3;">
+                                            가능
+                                        </div>
+                                    </div>
+
+                                    <div class="area">
+                                        <div class="title">
+                                            <span>제한지역</span>
+                                            <span>확인필요</span>
+                                        </div>
+                                        <div class="state" style="background-color: #EBBD2C;">
+                                            제한적 가능
+                                        </div>
+                                    </div>
+
+                                    <div class="area">
+                                        <div class="title">
+                                            <span>선로용량 확인</span>
+                                            <span>확인필요</span>
+                                            <a
+                                                href="http://home.kepco.co.kr/kepco/CO/H/E/COHEPP001/COHEPP00106.do?menuCd=FN040615"
+                                                target="_new">
+                                                <b>한전에 확인 필요</b>
+                                            </a>
+                                        </div>
+                                        <div class="state" style="background-color: #EBBD2C;">
+                                            오류
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="btn mr-t-35">
+                                    <button type="button" class="btn prev" style="color: #767676; background-color: #DDDDDD;">이전</button>
+                                    <button type="button" class="btn next" style="background-color: #198B6A;">다음</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     
+
                 </div> <!-- container -->
             </section>
         </main>

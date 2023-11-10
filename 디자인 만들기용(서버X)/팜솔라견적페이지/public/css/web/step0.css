@@ -1,6 +1,8 @@
-
+body {
+    letter-spacing: -1px;
+}
 /* 컨텐츠 제목들 */
-.contents .tit {
+.contents p.tit {
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -11,13 +13,14 @@
     margin: 35px 0 15px;
     /* padding-left: 15px; */
 }
-.contents .tit span {
+.contents .tit span.tit-span:first-child {
     display: inline-block;
     width: 25px;
     height: 25px;
     margin-right: 10px;
 }
-.contents .tit span img {
+/* .contents .tit span.tit-span img */
+img {
     width: 100%;
     height: 100%;
 }
@@ -193,6 +196,7 @@
     color: #7D7D7D;
 
 }
+/* 삼각형 */
 .g-table2 .gf_poptip {
     position: absolute;
     z-index: 999;
@@ -200,21 +204,26 @@
     width: auto;
     padding: 5px 15px;
     font-size: 12px;
-    background: #fff;
-    border: 1px solid #1f2d3d;
+    background: #E0F6AB;
+    border: 1px solid #C4DE83;
     height: 30px;
     border-radius: 50px;
     display: flex;
     align-items: center;
+    color: #198A6C;
 }
 .g-table2 .gf_poptip.a {
-    top: 42px; 
-    width: 344.578px; 
-    left: -120.3px;
+    top: -43px; /* 이 위치 변경?*/
+    width: 360px;
+    left: 0px;
 
 }
 .g-table2 .gf_poptip:nth-child(even) {}
 .g-table2 .gf_poptip:nth-child(odd) {}
+.g-table2 .gf_poptip .gf_con_img img{
+    width: 10px;
+    height: 10px;
+}
 .g-table2 .popper_arrow {
     position: absolute;
     display: block;
@@ -222,20 +231,363 @@
     height: 0;
     border-color: transparent;
     border-style: solid;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.g-table2 .popper_arrow {
+    left: 80px; /* 이 치수 변경하면 화살표 이동한다*/
     border-width: 6px;
-    top: -7px;
+    bottom: -7px;
     border-bottom-width: 0;
-    border-top-color: #1f2d3d;
+    border-top-color: #C4DE83;
 }
-.g-table2 .popper_arrow:after {
+
+.g-table2 .popper_arrow > div {
+    position: absolute;
+    /* z-index: 1; */
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-color: transparent;
+    border-style: solid;
+    bottom: 0;
+    border-bottom-width: 0;
+    border-top-color: #E0F6AB;
+    bottom: 2px;
+    left: -6px;
+}
+
+/* .g-table2 .popper_arrow:after {
     content: " ";
     border-width: 5px;
     top: 1px;
     margin-left: -5px;
     border-top-width: 0;
     border-bottom-color: #1f2d3d;
+} */
+
+
+/*  ******** 전력계통정보 */
+.contents p.tit[data-tit-name="ElectronicInfo"] {
+    justify-content: space-between;
+}
+.contents p.tit[data-tit-name="ElectronicInfo"] span.tit-span {
+    display: flex;
+    width: auto;
+    height: 25px;
+}
+.contents p.tit[data-tit-name="ElectronicInfo"] span.tit-span img {
+    width: 25px;
+    height: 100%;
+    margin-right: 10px;
+    
+}
+
+.contents p.tit[data-tit-name="ElectronicInfo"] select{
+    height: 45px;
+    vertical-align: middle;
+    width: 300px;
+    min-width: 140px;
+    max-width: 300px;
+    margin: 2px 0;
+    font-size: 14px;
+    color: #171746;
+    background-color: #fff;
+    border: 1px solid #91C7B7;
+    padding: 0 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: border .5s ease-out;
+    border-radius: 10px;
+    padding-right: 30px !important;
+}
+/* 화살표 커스텀 */
+.contents p.tit[data-tit-name="ElectronicInfo"] select {
+    background: url(../../imgs/step0/arrow_down.png) no-repeat right 50%; /* 화살표 위치 */
+    background-size: 30px; /* 화살표 크기 */
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline:none;
+}
+
+.ElectronicInfo {
+    color: #000;
+}
+
+/*  ** 전력계통정보 - 용량 */
+.ElectronicInfo .location .items{
+    display: flex;
+    width: 100%;
+}
+.ElectronicInfo .location .items > div {
+    width: 30%;
+    height: auto;
+    min-height: 150px;
+    
+}
+.ElectronicInfo .location .items > div:nth-child(1){
+    
+}
+.ElectronicInfo .location .items > div:nth-child(2) {
+    margin: 0 5% 0 5%;
+}
+.ElectronicInfo .location .items > div:nth-child(3) {
+    /* margin-right: 0; */
+}
+
+.ElectronicInfo .location .items > div > .item-title {
+    height: 20px;
+    border-left: 4px solid #188A68;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.ElectronicInfo .location .items > div > .item-content {
+    border: 2px solid #EFEFEF;
+    /* height: calc(100% - 54px); */
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.ElectronicInfo .location .items > div > .item-content  dl {
+    display: flex;
+    /* justify-content: space-between; */
+}
+.ElectronicInfo .location .items > div > .item-content  dl:nth-child(2) {
+    margin: 25px 0;
+
+}
+.ElectronicInfo .location .items > div > .item-content  dt {
+    padding: 5px 10px;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+.ElectronicInfo .location .items > div > .item-content  dt,
+.ElectronicInfo .location .items > div > .item-content  dd {
+    display: flex;
+    align-items: center;
+}
+
+
+.ElectronicInfo .location .items > div > .item-content  dl:nth-child(1)  dt{
+    background-color: #EBF8CA;
+    color: #8DB928;
+}
+.ElectronicInfo .location .items > div > .item-content  dl:nth-child(2)  dt{
+    background-color: #E3F8D7;
+    color: #61A639;
+}
+.ElectronicInfo .location .items > div > .item-content  dl:nth-child(3)  dt{
+    background-color: #D1F3D8;
+    color: #3E984E;
+}
+
+.ElectronicInfo .location .items > div > .item-content  dd {
+    padding: 5px 10px;
+    /* justify-content: right; */
+}
+
+/*  ** 전력계통정보 - 용량확인하기 */
+.tel-info {
+    /* background-color: #EFF5F3; */
+    width: 100%;
+    height: auto;
+}
+.tel-info .content {
+    width: calc(100% - 100px);
+    height: auto;
+    padding: 50px;
+    background: url(../../imgs/step0/tel-bg.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+}
+.tel-info .content > div {
+    font-weight: bold;
+    /* font-size: 1.1rem; */
+}
+.tel-info .content > div > p:first-child{
+    color: #595B5A;
+}
+.tel-info .content > div > p:last-child{
+    margin-top: 10px;
+    font-size: 1.7rem;
+    color: #188A68;
+}
+.tel-info .content > div:last-child{
+    margin-left: 50px;
+}
+.kepco {
+    margin-top: 20px;
+    text-align: center;
+}
+.kepco a {
+    padding: 10px 25px;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    background : linear-gradient(90deg ,#8EBC50, #2B9264);
+}
+
+
+/* 조례정보 */
+.law {
+    color: #000;
+}
+.law table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px; /* tr 사이에 패딩넣기 옆 위아래*/
+}
+.law tr {
+    height: 45px;
+}
+.law thead  {
+
+}
+.law thead tr {
+    background-color: #E0F6AB;
+    /* height: 40px; */
+}
+.law tr:not(thead tr) {
+    background-color: #F9F9F9;
+}
+.law thead tr th{
+    vertical-align: middle;
+}
+.law thead tr th:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.law thead tr th:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.law tbody tr {
+    
+}
+.law tbody tr td {
+    padding: 10px 0;
+    text-align: center;
+    vertical-align: middle;
+}
+.law tbody tr td:nth-child(1) {
+    padding: 0;
+}
+.law tbody tr td:nth-child(2) {
+    text-align: left;
+}
+.law tbody tr td:nth-child(3) {
+    color: #767676;
+}
+.law tbody tr td .label {
+    padding: 3px 13px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+.law tbody tr td .label.g-color1 { /* 규칙 */
+    background-color: #A0C34B;
+}
+.law tbody tr td .label.g-color2 { /* 조례 */
+    background-color: #188A68;
+}
+
+
+
+/* 분석결과 */
+
+.Availability {
+    color: #000;
+}
+
+.Availability .top {
+    display: flex;
+    margin-bottom: 20px;
+}
+.Availability .top > div:first-child {
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+}
+.Availability .top > div img {
+
+}
+.Availability .top > div:last-child{
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 75px);
+}
+.Availability .top > div:last-child > div:first-child > span {
+    display: block;
+
+    display: flex;
+}
+.Availability .top > div:last-child > div:first-child > span:first-child {
+    align-items: baseline;
+    color: #828282;
+    height: 40%;
+}
+.Availability .top > div:last-child > div:first-child > span:last-child {
+    height: 60%;
+    align-items: end;
+    font-size: 1.5rem;
+    color: #ED882B;
+    font-weight: bold;
+}
+
+.Availability .info {
+    width: 100%;
+}
+.Availability .info .state-area {
+    display: flex;
+    justify-content: space-between;
+}
+.Availability .area  {
+    width: 32%;
+    height:160px ;
+}
+.Availability .area .title {
+    background-color: #F5F5F5;
+    height: 80px;
+    padding: 20px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.Availability .area .title span {
+    display: block;
+}
+.Availability .area .title span:first-child{
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.Availability .area .title span:nth-child(2){
+    color: #9B9B9B;
+    margin-bottom: 5px;
+}
+
+.Availability .area .title b {
+    color: red;
+}
+.Availability .area div.state {
+    height: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    line-height: 40px;
+    color: #fff;
+}
+.Availability .info div.btn {
+    text-align: center;
+}
+.Availability .info div.btn button {
+    width: 20%;
+    height: 50px;
+    border-radius: 5px;
+    /* font-size: 1.2rem; */
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
 }
