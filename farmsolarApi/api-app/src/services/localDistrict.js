@@ -5,7 +5,7 @@ const properties = require('../config/properties');
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 class LocalDistrictApiService {
-    // 국가법령정보(자치법규 목록 조회) - 광역시/도/특별시 조례검색
+    // 소유 및 기타정보 조회 - 토지소유정보속성조회
     async getPossessionService(dto) {
         return new Promise(function (resolve, reject) {
             try {
@@ -33,7 +33,7 @@ class LocalDistrictApiService {
 
     }
 
-    // 국가법령정보(자치법규 목록 조회) - 구/군/시 조례검색
+    // 소유 및 기타정보 조회 - 개별공시지가속성조회
     async getIndvdLandPriceService(dto) {
         return new Promise(function (resolve, reject) {
             try {
@@ -60,11 +60,11 @@ class LocalDistrictApiService {
             }
         });
     }
-    // 국가법령정보(자치법규 본문 조회) - 개발행위허가 기준
+    // 건축물 정보 - 국토교통부_건축물대장 표제부 조회
     async getBldRgstService_v2(dto) {
         try {
             let rsData;
-            let serviceKey = properties.bldKey;
+            let serviceKey = properties.openApiKey;
             let url = `https://apis.data.go.kr/1613000/BldRgstService_v2/getBrTitleInfo`;
             let queryParams = '?' + encodeURIComponent('serviceKey') + `=${serviceKey}`; /* Service Key*/
                 queryParams += '&' + encodeURIComponent('sigunguCd') + '=' + encodeURIComponent(dto.sigunguCd); /* */

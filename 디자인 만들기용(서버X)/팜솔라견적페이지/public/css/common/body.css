@@ -1,0 +1,16 @@
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+html, body {
+    /* word-break: keep-all; */
+    word-wrap: break-word;
+    -ms-overflow-style: none;  /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+
+    /* background-color: #000; */
+    background: url('../../imgs/common/bg.png') no-repeat center;
+    background-size: contain;
+    color: #fff;
+    /* letter-spacing: -1px; */
+    opacity: 0.9;
+}

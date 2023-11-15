@@ -26,8 +26,8 @@ config.key = "";
 config.kakaoAKkey = "5396bdb11af5af0741cf1ce924f30d27";
 // 주소기반산업지원서비스 - 검색API
 config.confmKey = 'devU01TX0FVVEgyMDIzMDkyNTE0MDk1MDExNDEyODQ=';
-// 공공데이터포털 - 국토교통부_건축물대장 표제부
-config.bldKey = 'rFQGSmKC0okekhO4D79Zw0QJugOvcbC3gvWgQHOCeDm7sskr7Nru3gUQ0bp2G%2FlS7lgrx0xqI3fszVbEilxHwg%3D%3D';
+// 공공데이터포털
+config.openApiKey = 'rFQGSmKC0okekhO4D79Zw0QJugOvcbC3gvWgQHOCeDm7sskr7Nru3gUQ0bp2G%2FlS7lgrx0xqI3fszVbEilxHwg%3D%3D';
 // 국가공간 - 개별공시지가속성 (발급 ID : simjh7601)
 config.nsdi_indvdLandKey = "8f6b977a5c750917ea1956";
 // 국가공간 - 토지소유정보속성 (발급 ID : simjh7601)

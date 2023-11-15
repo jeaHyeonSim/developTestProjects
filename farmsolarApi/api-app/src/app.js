@@ -80,6 +80,7 @@ app.use('/lawAPI', require('./router/lawAPI')); // 조례
 app.use('/landType', require('./router/landType')); // 토지유형
 app.use('/localDistrict', require('./router/localDistrict')); // 지역지구 분석
 app.use('/coordinate', require('./router/coordinate')); // 토지특성 조회
+app.use('/kecpoInformation', require('./router/kecpoInformation')); // 전력계통정보
 // app.use('/publicDataApi', require('./router/publicDataApi')); // REST_API 조회 모음
 
 /*

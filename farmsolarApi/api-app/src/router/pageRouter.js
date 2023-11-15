@@ -91,6 +91,14 @@ router.get('/localDistrict-2', async function (req, res) {
 		return(error)
 	}
 });
+// 한전 전력계통
+router.get('/kecpoInformation', async function (req, res) {
+	try {
+		res.render('main/kecpoInformation.html');
+	} catch (error) {
+		return(error)
+	}
+});
 
 
 module.exports = router;

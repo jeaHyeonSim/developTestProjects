@@ -17,12 +17,17 @@
     <!-- 공통 CSS -->
     <link rel="stylesheet" type="text/css" href="../public/css/web/reset.css">
     <link rel="stylesheet" type="text/css" href="../public/css/web/common.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/web/commonStyle.css"> -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/body.css"> <!-- 공통 BODY-->
+
     <!-- 페이지별 CSS -->
     <link rel="stylesheet" type="text/css" href="../public/css/web/juso.css">
     <!-- 페이지별 JS -->
     <script src="../public/js/juso.js" defer></script>
 </head>
 <body>
+    <div class="center-r"></div>
     <div class="wrap" id="wrap">
         <header class="header" id="header">
             <div class="container">
@@ -33,29 +38,36 @@
                 </h1>
                 <nav class="">
                     <!-- <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">경제성분석</a> -->
-                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">로그인</a>
+                    <img src="../public/imgs/common/icon_login.png" alt="">
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        로그인
+                    </a>
                 </nav>
             </div>
         </header>
         <main>
             <section>
                 <div class="contents">
-                   
-            
                     <div class="r-area">
                         <div class="proposal">
-                            <img src="../public/imgs/juso/testImg.png" alt="">
-                            <p>제안서 내역</p>
+                            <div>
+                                <img src="../public/imgs/juso/icon_제안서.png" alt="">
+                                <p>제안서 내역</p>
+                            </div>
+
                         </div>
                         <div class="equipment">
-                            <img src="../public/imgs/juso/testImg.png" alt="">
-                            <p>기자재 관리</p>
-                            
+                            <div>
+                                <img src="../public/imgs/juso/icon_기자재.png" alt="">
+                                <p>기자재 관리</p>
+                            </div>
                         </div>
                     </div>
                     <div class="topBox">
                         <div>
-                            <img src="../public/imgs/juso/mainTop.png" alt="">
+                            <!-- <img src="../public/imgs/juso/img2.png" alt=""> -->
+                            <img src="../public/imgs/juso/light-fade.png" alt="">
+                            <img src="../public/imgs/juso/img.png" alt="">
                         </div>
                         <span>
                             <p>주소입력으로 빠르고 간편하게 </p>
@@ -64,17 +76,21 @@
                         
                     </div>
                     <div class="bottomBox">
+                        <!-- <div class="bg-white"></div> -->
                         <!-- 검색 -->
-                        <form id="fsearch" class="relative" name="fsearch" method="post" onsubmit="return false;">
-                            <input type="text" name="keyword"  onended="alter('dasda')" onchange="GetAddr();" onkeydown="GetAddr();" id="fsearch_addr" placeholder="지번, 도로명 검색"/>
-                            <button type="button" id="btn_del" class="word-del"> <!--onclick="GetAddr();"-->
-                                <span class="hidden">삭제</span>
-                            </button>
-                            <!-- <input type="hidden" name="currentPage" value="1"/>
-                            <input type="hidden" name="countPerPage" value="10"/>
-                            <input type="hidden" name="resultType" value="json"/> 
-                            <input type="hidden" name="confmKey" value="도로명주소API KEY"/> -->
-                        </form>
+                        <div class="formBg" id="formBg">
+                            <form id="fsearch" class="relative" name="fsearch" method="post" onsubmit="return false;">
+                                <input type="text" name="keyword"  onended="alter('dasda')" onchange="GetAddr();" onkeydown="GetAddr();" id="fsearch_addr" placeholder="지번, 도로명 검색"/>
+                                <button type="button" id="btn_del" class="word-del"> <!--onclick="GetAddr();"-->
+                                    <span class="hidden">삭제</span>
+                                </button>
+                                <!-- <input type="hidden" name="currentPage" value="1"/>
+                                <input type="hidden" name="countPerPage" value="10"/>
+                                <input type="hidden" name="resultType" value="json"/> 
+                                <input type="hidden" name="confmKey" value="도로명주소API KEY"/> -->
+                            </form>
+                        </div>
+                       
                         <div class="addr_list_inbox">
                             <ul class="addr_list">
                                 <li class='result_li' data->
@@ -109,33 +125,75 @@
                                         </p>
                                     </a>
                                 </li>
+                                <li class='result_li' data->
+                                    <a href="">
+                                        <p class="a1">
+                                            <strong class=''>지번</strong>
+                                            <span class='result_jibunAddr rs_box'>
+                                                광주광역시 광산구 삼거동 930
+                                            </span>
+                                        </p>
+                                        <p class="a2">
+                                            <strong class=''>도로명</strong>
+                                            <span class='result_roadAddr rs_box'>
+                                                광주광역시 광산구 빛그린18로 15 (삼거동)
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class='result_li' data->
+                                    <a href="">
+                                        <p class="a1">
+                                            <strong class=''>지번</strong>
+                                            <span class='result_jibunAddr rs_box'>
+                                                광주광역시 광산구 삼거동 930
+                                            </span>
+                                        </p>
+                                        <p class="a2">
+                                            <strong class=''>도로명</strong>
+                                            <span class='result_roadAddr rs_box'>
+                                                광주광역시 광산구 빛그린18로 15 (삼거동)
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class='result_li' data->
+                                    <a href="">
+                                        <p class="a1">
+                                            <strong class=''>지번</strong>
+                                            <span class='result_jibunAddr rs_box'>
+                                                광주광역시 광산구 삼거동 930
+                                            </span>
+                                        </p>
+                                        <p class="a2">
+                                            <strong class=''>도로명</strong>
+                                            <span class='result_roadAddr rs_box'>
+                                                광주광역시 광산구 빛그린18로 15 (삼거동)
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <!-- <li class='result_li' data->
+                                    <a href="">
+                                        <p class="a1">
+                                            <strong class=''>지번</strong>
+                                            <span class='result_jibunAddr rs_box'>
+                                                광주광역시 광산구 삼거동 930
+                                            </span>
+                                        </p>
+                                        <p class="a2">
+                                            <strong class=''>도로명</strong>
+                                            <span class='result_roadAddr rs_box'>
+                                                광주광역시 광산구 빛그린18로 15 (삼거동)
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li> -->
                                 
                             </ul>
                         </div>
                     </div>
-                    
-                
-                    <!-- <div class="testBox">
-                        <ul class="addr-list">
-                            <li class='result_li' data->
-                                <a href="">
-                                    <p class="a1">
-                                        <strong class=''>지번</strong>
-                                        <span class='result_jibunAddr rs_box'>
-                                            광주광역시 광산구 삼거동 930
-                                        </span>
-                                    </p>
-                                    <p class="a2">
-                                        <strong class=''>도로면</strong>
-                                        <span class='result_roadAddr rs_box'>
-                                            광주광역시 광산구 빛그린18로 15 (삼거동)
-                                        </span>
-                                    </p>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div> -->
+
                 </div> <!-- container -->
             </section>
         </main>
@@ -162,23 +220,29 @@
      <!-- Button trigger modal -->
      <button type="button" style="display: none;" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-w690">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title fs-5" id="staticBackdropLabel">설치유형</h4>
-                <h6 class="modal-sub-title">설치하려는 유형을 선택해주세요</h6>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="type-select1">
-                    <a class="type1"><strong>지붕형</strong></a>
-                    <a class="type2"><strong>지상형</strong></a>
+        <div class="modal-dialog modal-w800">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">설치유형</h4>
+                    <h6 class="modal-sub-title">설치하려는 유형을 선택해주세요</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="type-select-btn">
-                    <button>설치유형 선택하기</button>
+                <div class="modal-body">
+                    <div class="type-select1">
+                        <a class="type1">
+                            <img src="../public/imgs/juso/type-11.png" alt="">
+                            <strong>지붕형</strong>
+                        </a>
+                        <a class="type2">
+                            <img src="../public/imgs/juso/type-2.png" alt="">
+                            <strong>지상형</strong>
+                        </a>
+                    </div>
+                    <div class="type-select-btn">
+                        <button>설치유형 선택하기</button>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div> <!-- Modal -->
 </body>
