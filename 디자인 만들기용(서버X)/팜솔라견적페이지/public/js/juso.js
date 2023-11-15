@@ -18,7 +18,7 @@ $(document).on('click', '.result_li', function() {
     // addr_data = addr_list[$(this).index()]; // 선택한 주소 데이터
     addr_index = $(this).index();
 });
-$('.modal-btn').trigger("click");
+// $('.modal-btn').trigger("click");
 
 // 모달창 실행 이벤트
 // $('.modal-btn').trigger("click");

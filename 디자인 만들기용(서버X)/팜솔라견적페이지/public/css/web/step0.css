@@ -1,6 +1,4 @@
-body {
-    letter-spacing: -1px;
-}
+
 /* 컨텐츠 제목들 */
 .contents p.tit {
     display: flex;
@@ -20,7 +18,7 @@ body {
     margin-right: 10px;
 }
 /* .contents .tit span.tit-span img */
-img {
+main img {
     width: 100%;
     height: 100%;
 }
