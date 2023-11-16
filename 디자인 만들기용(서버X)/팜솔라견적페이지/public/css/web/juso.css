@@ -18,29 +18,60 @@
     justify-content: center;
     /* flex-wrap: wrap; */
 }
+
 .r-area  > div > div {
     text-align: center;
-}
-.r-area  > div:first-child {
-    background-color: rgb(235, 188, 43);
-}
-.r-area  > div:last-child {
-    margin-top: 10px;
-    background-color: rgb(177,208,51);
-}
-.r-area img {
-
 }
 .r-area  > div > div > p {
     margin-top: 10px;
     font-weight: 600;
     font-size: 1.1rem;
-    /* position: absolute;
-    width: 100%;
-    text-align: center;
-    bottom: 15%;
-    font-weight: bold; */
 }
+.r-area  > div.proposal {
+    background-color: rgb(235, 188, 43);
+}
+.r-area  > div.equipment {
+    margin-top: 10px;
+    background-color: rgb(177,208,51);
+    margin-bottom: 50px;
+}
+
+.r-area  > div.smp-rec {
+    height: auto;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: start;
+    color: #000;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.r-area  > div.smp-rec > span:nth-child(1){
+    font-weight: 400;
+}
+.r-area  > div.smp-rec > span:nth-child(2){
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 1rem;
+}
+.r-area  > div.smp-rec > span:nth-child(2) > b{
+    font-size: 1.2rem;
+}
+.r-area  > div.smp-rec.rec span:nth-child(2) > b{
+    margin-right: -1px;
+}
+.r-area  > div.smp-rec > span:nth-child(3){
+    font-weight: 400;
+}
+.r-area  > div.smp-rec > span:nth-child(3).plus {
+    color: rgb(226, 2, 2);
+}
+.r-area  > div.smp-rec > span:nth-child(3).mius {
+    color:rgb(21, 106, 255);
+}
+
 /* 이미지 + 텍스트 */
 .topBox {
     display: flex;
@@ -156,7 +187,9 @@
     top: 0;
     background-color: rgba(255,255,255, 0);
 }
-
+#formBg #fsearch .word-del.on {
+    background: url(../../imgs/juso/icon_search_close.png)no-repeat center center;
+}
 
 /* 검색 리스트 */
 .addr_list_inbox {
@@ -166,12 +199,15 @@
     width: 100%;
     height: auto;
 }
+.addr_list_inbox .search_result_title {
+    padding: 10px 30px;
+}
 .addr_list_inbox .addr_list {
     background-color: #fff;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     padding: 0;
-
+    /* box-shadow: 0px 5px 15px -10px #000000; */
 }
 .addr_list_inbox .result_li {
     font-size: 1rem;
@@ -203,7 +239,7 @@
     background: #a0c34c;
 }
 .addr_list_inbox .result_li p.a2 strong {
-    background: #198a69;
+    background: var(--bg-green-color);
 }
 .addr_list_inbox .result_li p strong {
     display: inline-block;
@@ -269,7 +305,7 @@
     /* padding-left: 10px; */
     font-size: 1rem;
     line-height: 36px;
-    color: #198a69;
+    color: var(--bg-green-color);
 }
 .modal-header .modal-sub-title::before{
     content: "*";
@@ -307,7 +343,7 @@
     justify-content: center;
 }
 .type-select1 a:hover {background-color: #e0f6ab;}
-.type-select1 a:hover strong {color: #198a69;}
+.type-select1 a:hover strong {color: var(--bg-green-color);}
 .type-select1 a strong {
     position: absolute;
     left: 50%;

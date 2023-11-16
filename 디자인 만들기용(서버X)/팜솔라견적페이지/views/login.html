@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+     <!-- 공통 라이브러리 js -->
+    <!-- <script src="../../../node_modules/chart.js/dist/chart.min.js"></script> -->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/moment/min/moment.min.js"></script>
+
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/common.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/web/commonStyle.css"> -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/body.css"> <!-- 공통 BODY-->
+
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/login.css">
+    <!-- 페이지별 JS -->
+    <script src="../public/js/login.js" defer></script>
+</head>
+<body>
+    <!-- <div class="center-r"></div> -->
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                </div>
+                <nav class="off">
+                    <span></span>
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        로그인
+                    </a>
+                </nav>
+            </div>
+        </header>
+        
+        <main>
+            <section>
+                <div class="contents">
+                    <div class="box">
+                        <div class="title">로그인</div>
+                        <div class="loginBox">
+                            <form>
+                                <input type="text" placeholder="아이디">
+                                <input type="text" placeholder="비밀번호">
+                                <input type="checkbox" id="check1">
+                                <label for="check1"></label>
+                                <span>아이디 기억하기</span>
+                                <div class="loginBtn">
+                                    <button type="submit">로그인</button>
+                                </div>
+                            </form>
+                        
+                            <div class="find">
+                                <div class="id">
+                                    <button>아이디 찾기</button>
+                                </div>
+                                <div class="pw">
+                                    <button>비밀번호 찾기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    
+
+                </div> <!-- container -->
+            </section>
+        </main>
+        <div class="footer" id="footer">
+            <div class="foo-companyInfo">
+                <p class="title">그린훼스코 주식회사</p>
+                <p class="tel">
+                    <span>Tel. 062-973-0086</span>
+                    <span>Fax. 062-443-2161</span>
+                    <span>Email. greenfesco@greenfesco.com</span>
+                </p>
+                <p>Add. 광주광역시 북구 첨단과기로 208번길 50, 302호(연구소)</p>
+                <p>Add. 광주광역시 광산구 빛그린18로 15(공장)</p>
+                <p>Add. 전라남도 나주시 노안면 노안로 455-41(전남지사)</p>
+            </div>
+            <div class="foo-companyBottom">
+                <p>Copyright © 2023 그린훼스코 주 All rights reserved</p>
+            </div>
+        </div>
+        
+        
+    </div> <!-- wrap-->
+    
+</body>
+</html>

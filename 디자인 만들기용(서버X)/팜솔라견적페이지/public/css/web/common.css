@@ -49,7 +49,8 @@ button {
     position: relative;
     background: url('../../imgs/common/bg.png') no-repeat center;
     background-size: contain;
-    background-color: #fff;
+    background-color: #fafcf6;
+    /* font-size: 16px; */
 }
 .container {
     width: 100%;
@@ -82,16 +83,16 @@ button {
     width: 224px;
     height: 41px;
 }
+/* 로그인전 */
 #header nav {
     text-align: center;
     font-size: 1.12rem;
     line-height: 40px;
     font-weight: bold;
-    padding: 0 15px;
     border-radius: 20px;
     box-sizing: border-box;
     transition: all .7s ease;
-    border: 1px solid #e3e5e7;
+    /* border: 1px solid #e3e5e7; */
     background-color: var(--bg-green-color);
     display: flex;
     align-items: center;
@@ -99,12 +100,62 @@ button {
     min-width: 110px;
 }
 #header nav a {
-    margin-left: 10px;
     font-weight: 600;
+    text-align: left;
+    position: relative;
+    padding-left: 26px;
 }
-#heafer nav img {
-    width: 15px;
-    height: 15px;
+#header nav.off a::before {
+    display: inline-block;
+    position: absolute;
+    content: "";
+    background: url(../../imgs/common/icon_login.png) no-repeat;
+    background-size: cover;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    
+}
+
+
+/* 로그인후 / 유저 */
+#header nav.on{
+    border-radius: unset;
+    transition: unset;
+    border: unset;
+    background-color: unset;
+    min-width: 200px;
+}
+#header nav.on span {
+    font-size: 1rem;
+    color: #555555;
+    font-weight: 400;
+}
+#header nav.on a {
+    margin-left: 10px;
+    color: var(--bg-green-color);
+    font-weight: 700;
+    font-size: 1.12rem;
+    padding-left: 0;
+    padding-right: 45px;
+}
+#header nav.on a::after {
+    display: inline-block;
+    position: absolute;
+    content: "";
+    background: url(../../imgs/common/user_icon.png) no-repeat;
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+#header nav.on img {
+    width: 35px;
+    height: 35px;
 }
 /* 본문 */
 main {

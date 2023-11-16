@@ -1,0 +1,102 @@
+
+main {
+    color: #000;
+}
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+.loginBox {
+    width: calc(500px - 80px);
+    height: calc(465px - 80px);;
+    max-width: 500px;
+    max-height: 465px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px -10px #000000; 
+    padding: 40px;
+}
+.loginBox form {
+    width: 100%;
+    height: calc(100% - 40px);
+}
+.loginBox form input[type='text'] {
+    width: calc(100% - 40px);
+    height: 60px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+    font-size: 1.12rem;
+}
+input[type="checkbox"]{
+    display: none;
+}
+input[type="checkbox"] + label{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border:1px solid #dddddd;
+    border-radius: 3px;
+    position: relative;
+    vertical-align: -4px;
+}
+input[id="check1"]:checked + label::after{
+    content:'ｖ';
+    font-size: 1rem;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    color: #fff;
+    background-color: var(--bg-green-color);
+    border:1px solid  var(--bg-green-color);
+    border-radius: 3px;
+}
+input[type="checkbox"] + label + span {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 5px;
+}
+.loginBtn {
+    margin-top: 40px;
+    text-align: center;   
+}
+.loginBtn > button {
+    width: 420px;
+    height: 60px;
+    background : linear-gradient(90deg ,#8fbc50, #2a9165);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+    padding: 0;
+}
+.find {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.find > .id {
+    margin-right: 30px;
+}
+.find > .id > button {
+    font-size: 1.12rem;
+}
+.find > .pw {
+    margin-left: 30px;
+}
+.find > .pw > button {
+    font-size: 1.12rem;
+}

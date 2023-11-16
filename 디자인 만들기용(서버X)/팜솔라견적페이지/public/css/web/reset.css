@@ -25,6 +25,24 @@ time, mark, audio, video {
     /*font: inherit;*/
     vertical-align: baseline;
 }
+button {
+    background-color: unset;
+}
+button:hover {
+    cursor: pointer;
+}
+/* 인풋 자동완성 배경 지우기 */
+input:-webkit-autofill { 
+    -webkit-box-shadow: 0 0 0 30px #fff inset ; 
+    -webkit-text-fill-color: #000; 
+}
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill:seleted { 
+    -webkit-background-color: #ffffff ;
+} */
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
