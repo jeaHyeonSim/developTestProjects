@@ -1,13 +1,14 @@
-
+#wrap {
+    background-position: 0 calc(100% - 200px);
+}
 /* 컨텐츠 제목들 */
 .contents p.tit {
     display: flex;
     align-items: center;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 1.5rem;
-
     line-height: 24px;
-    color: #171746;
+    color: #111111;
     margin: 35px 0 15px;
     /* padding-left: 15px; */
 }
@@ -23,10 +24,10 @@ main img {
     height: 100%;
 }
 .contents .tit small {
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding-left: 10px;
-    color: #198B6A;
-    font-weight: 300;
+    color: var(--bg-green-color);
+    font-weight: 400;
 }
 
 /* 컨텐츠 내용들 */
@@ -55,7 +56,8 @@ main img {
     /* display: inline-block; */
 }
 .landType-1 > div:not(.landType-1 > div:last-child) {
-    width: 12%;
+    width: 13%;
+    max-width: 125px;
     height: 100%;
 }
 .landType-1 > div > div {
@@ -70,16 +72,17 @@ main img {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: var(--fontSize-18);
 }
 
 .landType-1 > div:nth-child(1) > .title  {
-    background-color: #A0C34B;
+    background-color: #a0c34c;
 }
 .landType-1 > div:nth-child(2) > .title  {
-    background-color: #8DBB4F;
+    background-color: #8dbb50;
 }
 .landType-1 > div:nth-child(3) > .title  {
-    background-color: #7DB55A;
+    background-color: #7cb559;
 }
 .landType-1 > div:nth-child(4) > .title  {
     background-color: #66A959;
@@ -88,21 +91,22 @@ main img {
     background-color: #4BA05F;
 }
 .landType-1 > div:nth-child(6) > .title  {
-    background-color: #339564;
+    background-color: #339563;
 }
 .landType-1 > div:nth-child(7) > .title  {
-    background-color: #198B6A;
+    background-color: var(--bg-green-color);
 }
 
 
 .landType-1 > div > .content {
-    height: 70px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #F5F5F5;
     color: #000;
-    
+    font-size: var(--fontSize-18);
+    font-weight: 600;
 }
 
 
@@ -121,31 +125,53 @@ main img {
 }
 
 .landType-2 div.content .s-tit {
-    background-color: #198B6A;
+    background-color: var(--bg-green-color);
     padding: 10px 20px;
     color: #fff;
     border-radius: 5px;
+    font-size: var(--fontSize-20);
 }
 .landType-2 div.content .infoCommon {
-    padding: 10px 0;
-    height: 220px;
+    padding: 15px 0;
+    height: auto;
+    min-height: 225px;
     margin-top: 5px;
-    background-color: #EFF5F3;
+    background-color: #eef5f3;
     border-radius: 5px;
+    position: relative;
 }
+
+.landType-2 div.content .infoCommon .bg-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+}
+.landType-2 div.content .info1.infoCommon .bg-img{
+    width: 113px;
+    height: 120px;
+}
+.landType-2 div.content .info2.infoCommon .bg-img{
+    width: 120px;
+    height: 119px;
+}
+
 .landType-2 div.content .infoCommon  > div{
-    padding: 10px 20px;
+    padding: 9.75px 20px;
 }
 .landType-2 div.content .infoCommon  > div dl {
     display: flex;
+    font-size: var(--fontSize-18);
 }
 .landType-2 div.content .infoCommon  > div dl dt {
     width: 45%;
     min-width: 154px;
-    color: #198B6A;
+    color: var(--bg-green-color);
+    font-weight: 400;
+
 }
 .landType-2 div.content .infoCommon  > div dl dd {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 
@@ -169,9 +195,9 @@ main img {
 
 .g-table2 thead tr th {
     padding: 10px 0;background-color: #F9F9F9;
-    border-right: 0.5px rgba(0,0,0,0.2) solid;
-    border-top: 0.5px rgba(0,0,0,0.2) solid;
-    border-bottom: 0.5px rgba(0,0,0,0.2) solid;
+    border-right: 0.5px rgba(238,238,238,1) solid;
+    border-top: 0.5px rgba(238,238,238,1) solid;
+    border-bottom: 0.5px rgba(238,238,238,1) solid;
 }
 .g-table2 thead tr th:last-child{
     border-right: none;
@@ -179,49 +205,63 @@ main img {
 .g-table2 tbody {position: relative;}
 .g-table2 tbody tr td {
     padding: 10px 5px; 
-    border-right: 0.5px rgba(0,0,0,0.2) solid;
-    border-bottom: 0.5px rgba(0,0,0,0.2) solid;
+    border-right: 0.5px rgba(238,238,238,1) solid;
+    border-bottom: 0.5px rgba(238,238,238,1) solid;
     text-align: center;
 }
 .g-table2 tbody tr td:last-child{
     border-right: none;
 }
 .g-table2 tbody tr td .tipText {
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 400;
     line-height: 16px;
     /* color: #171746; */
-    color: #7D7D7D;
+    color: #333333;
 
 }
-/* 삼각형 */
+/* 마우스 오버시 팝업 */
 .g-table2 .gf_poptip {
     position: absolute;
     z-index: 999;
     left: 0;
     width: auto;
     padding: 5px 15px;
-    font-size: 12px;
+    font-size: 1rem;
+    font-weight: 500;
     background: #E0F6AB;
-    border: 1px solid #C4DE83;
-    height: 30px;
+    border: 1px solid #d2eb96;
+    min-height: 30px;
+    height: auto;
     border-radius: 50px;
-    display: flex;
-    align-items: center;
-    color: #198A6C;
+    /* display: flex;
+    align-items: center; */
+    color: var(--bg-green-color);
 }
-.g-table2 .gf_poptip.a {
-    top: -43px; /* 이 위치 변경?*/
-    width: 360px;
+.g-table2 .gf_poptip {
+    display: none;
+    top: -45px; /* 이 위치 변경?*/
+    width: auto;
     left: 0px;
-
+    line-height: 1;
+    max-width: 600px;
+}
+.g-table2 .gf_poptip.bb {
+    top: 0px;
+}
+.g-table2 .gf_poptip .gf_con {
+    height: 100%;
+    margin-top: 7.5px;
 }
 .g-table2 .gf_poptip:nth-child(even) {}
 .g-table2 .gf_poptip:nth-child(odd) {}
+
 .g-table2 .gf_poptip .gf_con_img img{
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
 }
+
+/* 삼각형? 화살표 */
 .g-table2 .popper_arrow {
     position: absolute;
     display: block;
@@ -229,7 +269,7 @@ main img {
     height: 0;
     border-color: transparent;
     border-style: solid;
-    left: 80px; /* 이 치수 변경하면 화살표 이동한다*/
+    left: 93px; /* 이 치수 변경하면 화살표 이동한다*/
     border-width: 6px;
     bottom: -7px;
     border-bottom-width: 0;
@@ -278,34 +318,37 @@ main img {
 }
 
 .contents p.tit[data-tit-name="ElectronicInfo"] select{
-    height: 45px;
+    height: 40px;
     vertical-align: middle;
-    width: 300px;
+    width: 350px;
     min-width: 140px;
-    max-width: 300px;
-    margin: 2px 0;
-    font-size: 14px;
+    max-width: 350px;
+    font-size: 1rem;
     color: #171746;
     background-color: #fff;
-    border: 1px solid #91C7B7;
+    border: 1px solid var(--bg-green-color);
     padding: 0 10px;
     overflow: hidden;
     box-sizing: border-box;
     transition: border .5s ease-out;
-    border-radius: 10px;
+    border-radius: 5px;
     padding-right: 30px !important;
 }
 /* 화살표 커스텀 */
 .contents p.tit[data-tit-name="ElectronicInfo"] select {
-    background: url(../../imgs/step0/arrow_down.png) no-repeat right 50%; /* 화살표 위치 */
-    background-size: 30px; /* 화살표 크기 */
+    background: url(../../imgs/step0/arr_down.png) no-repeat 95% 50%; /* 화살표 위치 */
+    background-size: 16px; /* 화살표 크기 */
+    background-color: #ffffff;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     outline:none;
 }
-
+.contents p.tit[data-tit-name="ElectronicInfo"] .tit {
+    font-size: 1rem;
+    margin-right: 8px;
+}
 .ElectronicInfo {
     color: #000;
 }
@@ -314,45 +357,44 @@ main img {
 .ElectronicInfo .location .items{
     display: flex;
     width: 100%;
+    justify-content: space-between;
 }
 .ElectronicInfo .location .items > div {
-    width: 30%;
+    min-width: 310px;
+    width: 32.5%;
     height: auto;
     min-height: 150px;
     
 }
 .ElectronicInfo .location .items > div:nth-child(1){
-    
 }
 .ElectronicInfo .location .items > div:nth-child(2) {
-    margin: 0 5% 0 5%;
 }
 .ElectronicInfo .location .items > div:nth-child(3) {
-    /* margin-right: 0; */
 }
 
 .ElectronicInfo .location .items > div > .item-title {
     height: 20px;
-    border-left: 4px solid #188A68;
+    border-left: 4px solid var(--bg-green-color);
     padding-left: 10px;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-size: var(--fontSize-20);
+    color: var( --font-color-black);
 }
 .ElectronicInfo .location .items > div > .item-content {
     border: 2px solid #EFEFEF;
-    /* height: calc(100% - 54px); */
     padding: 15px;
+    height: 98px;
     border-radius: 10px;
-    font-weight: bold;
+    font-weight: 600;
 }
 .ElectronicInfo .location .items > div > .item-content  dl {
     display: flex;
-    /* justify-content: space-between; */
 }
 .ElectronicInfo .location .items > div > .item-content  dl:nth-child(2) {
-    margin: 25px 0;
-
+    margin: 4px 0;
 }
 .ElectronicInfo .location .items > div > .item-content  dt {
     padding: 5px 10px;
@@ -365,25 +407,27 @@ main img {
 .ElectronicInfo .location .items > div > .item-content  dd {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
 .ElectronicInfo .location .items > div > .item-content  dl:nth-child(1)  dt{
-    background-color: #EBF8CA;
-    color: #8DB928;
+    background-color: #EBF8Cb;
+    color: #8db727;
 }
 .ElectronicInfo .location .items > div > .item-content  dl:nth-child(2)  dt{
     background-color: #E3F8D7;
-    color: #61A639;
+    color: #62a639;
 }
 .ElectronicInfo .location .items > div > .item-content  dl:nth-child(3)  dt{
-    background-color: #D1F3D8;
-    color: #3E984E;
+    background-color: #D0F4D7;
+    color: #3c984d;
 }
 
 .ElectronicInfo .location .items > div > .item-content  dd {
     padding: 5px 10px;
     /* justify-content: right; */
+    color: #333333;
 }
 
 /*  ** 전력계통정보 - 용량확인하기 */
@@ -394,43 +438,75 @@ main img {
 }
 .tel-info .content {
     width: calc(100% - 100px);
+    max-width: 960px;
     height: auto;
-    padding: 50px;
-    background: url(../../imgs/step0/tel-bg.png) no-repeat center;
-    background-size: cover;
+    max-height: 160px;
+    padding: 48px 50px;
+    /* background: url(../../imgs/step0/tel-bg.png) no-repeat center;
+    background-size: cover; */
     display: flex;
+    margin-top: 20px;
+    background-color: #eef5f3;
+    position: relative;
+}
+.telInfo-bgImg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 350px;
+    height: 153px;
+    background: url(../../imgs/step0/tel-img.png) no-repeat center;
+    background-size: contain;
+    image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 .tel-info .content > div {
     font-weight: bold;
     /* font-size: 1.1rem; */
+}
+.tel-info .content > div:nth-child(2){
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-right: 0.5px solid rgba(25,138,105, 0.5);
+}
+.tel-info .content > div:nth-child(3){
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-left: 0.5px solid rgba(25,138,105, 0.5);
 }
 .tel-info .content > div > p:first-child{
     color: #595B5A;
 }
 .tel-info .content > div > p:last-child{
     margin-top: 10px;
-    font-size: 1.7rem;
-    color: #188A68;
+    font-size: var(--fontSize-28);
+    color: var(--bg-green-color);
 }
-.tel-info .content > div:last-child{
-    margin-left: 50px;
-}
+
 .kepco {
     margin-top: 20px;
     text-align: center;
+    height: 36px;
 }
 .kepco a {
-    padding: 10px 25px;
+    display: inline-block;
+    height: calc(100% - 17px);
+    padding: 8.5px 26px;
     color: #fff;
     border-radius: 5px;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 0.9375rem;
     background : linear-gradient(90deg ,#8EBC50, #2B9264);
 }
 
 
 /* 조례정보 */
 .law {
-    color: #000;
+    color: #333333;
+    font-size: var(--fontSize-18);
 }
 .law table {
     width: 100%;
@@ -446,6 +522,8 @@ main img {
 .law thead tr {
     background-color: #E0F6AB;
     /* height: 40px; */
+    font-weight: 600;
+
 }
 .law tr:not(thead tr) {
     background-color: #F9F9F9;
@@ -468,6 +546,7 @@ main img {
     padding: 10px 0;
     text-align: center;
     vertical-align: middle;
+    font-weight: 400;
 }
 .law tbody tr td:nth-child(1) {
     padding: 0;
@@ -479,16 +558,16 @@ main img {
     color: #767676;
 }
 .law tbody tr td .label {
-    padding: 3px 13px;
+    padding: 3px 13.5px;
     color: #fff;
     border-radius: 5px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 .law tbody tr td .label.g-color1 { /* 규칙 */
-    background-color: #A0C34B;
+    background-color: #A0C34c;
 }
 .law tbody tr td .label.g-color2 { /* 조례 */
-    background-color: #188A68;
+    background-color: var(--bg-green-color);
 }
 
 
@@ -504,9 +583,9 @@ main img {
     margin-bottom: 20px;
 }
 .Availability .top > div:first-child {
-    width: 50px;
-    height: 50px;
-    margin-right: 25px;
+    width: 56px;
+    height: 65px;
+    margin-right: 20px;
 }
 .Availability .top > div img {
 
@@ -525,11 +604,12 @@ main img {
     align-items: baseline;
     color: #828282;
     height: 40%;
+    font-size: 1rem;
 }
 .Availability .top > div:last-child > div:first-child > span:last-child {
     height: 60%;
-    align-items: end;
-    font-size: 1.5rem;
+    align-items: start;
+    font-size: var(--fontSize-28);
     color: #ED882B;
     font-weight: bold;
 }
@@ -544,6 +624,7 @@ main img {
 .Availability .area  {
     width: 32%;
     height:160px ;
+    max-width: 310px;
 }
 .Availability .area .title {
     background-color: #F5F5F5;
@@ -557,20 +638,26 @@ main img {
 }
 .Availability .area .title span:first-child{
     margin-bottom: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: var(--fontSize-20);
+    font-weight: 600;
+    color: #333333;
 }
 .Availability .area .title span:nth-child(2){
-    color: #9B9B9B;
+    color: #767676;
     margin-bottom: 5px;
+    font-size: var(--fontSize-18);
+    font-weight: 400;
 }
 
 .Availability .area .title b {
-    color: red;
+    color: #e72b2b;
+    font-weight: 600;
+    font-size: var(--fontSize-18);
 }
 .Availability .area div.state {
     height: 40px;
-    font-size: 1.2rem;
+    font-size: var(--fontSize-18);
+    font-weight: 600;
     text-align: center;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -585,7 +672,8 @@ main img {
     height: 50px;
     border-radius: 5px;
     /* font-size: 1.2rem; */
-    font-size: 1rem;
+    font-size: var(--fontSize-20);
     color: #fff;
-    font-weight: bold;
+    font-weight: 600;
+    
 }
