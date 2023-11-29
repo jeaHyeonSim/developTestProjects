@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum=scale-1, minimum-scale=1">
+    <title>step05</title>
+    <!-- 공통 라이브러리 js -->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/common.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/commonClass.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/web/commonStyle.css"> -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/body.css"> <!-- 공통 BODY-->
+    
+    <!-- step 공용 step0은 제외-->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/stepCommon.css"> <!-- step 공용-->
+    <script src="../public/js/stepCommon.js" defer></script>
+
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/step5.css">
+    <!-- 페이지별 JS -->
+    <script src="../public/js/step5.js" defer></script>
+</head>
+<body>
+    <div class="center-r"></div>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                </div>
+                <nav class="on">
+                    <span>연구기획본부</span>
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        홍길동
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <div class="l-area" id="l-area"> <!-- 정보 박스 (슬라이드)-->
+            <div class="juso">
+                <span>광주광역시 광산구 삼거동 930 </span>
+            </div>
+            <div class="content">
+                <div class="top">
+                    <div>
+                        <ul style="background-color: #ebbc2b;">
+                            <li><span>총 용량</span></li>
+                            <li>217.20 kW</li>
+                        </ul>
+                    </div>
+                    <div class="mr-t-10 mr-b-10">
+                        <ul style="background-color: #4c68c3;">
+                            <li><span>총 수량</span></li>
+                            <li>362 장</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul style="background-color: #935eb1;">
+                            <li><span>총 설치면적</span></li>
+                            <li>2,158.25 ㎡</li>
+                        </ul>
+                    </div>
+                    <div class="mr-t-40 mr-b-20">
+                        <button class="on">배치1</button>
+                        <button>배치2</button>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="on">
+                        <p>배치1</p>
+                        <div>
+                            <ul>
+                                <li>용량</li>
+                                <li>217.20 kW</li>
+                                <li>수량</li>
+                                <li>362 장</li>
+                                <li>설치면적</li>
+                                <li>2,158.25 ㎡</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p>배치2</p>
+                        <div>
+                            <ul>
+                                <li>용량</li>
+                                <li>217.20 kW</li>
+                                <li>수량</li>
+                                <li>362 장</li>
+                                <li>설치면적</li>
+                                <li>2,158.25 ㎡</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slideToggle">
+                <button>
+                    <img src="../public/imgs/step1/arr.png" alt="">    
+                </button>
+                
+            </div>
+        </div> <!-- 정보 박스 (슬라이드)-->
+
+        <main>
+            <section> 
+                <div class="contents">
+
+                    <div class="stepBox"> <!-- stepBox -->
+                        <div class="step tr1 s1 pd-r-10 on">
+                            <span>STEP 01</span>
+                        </div>
+                        <div class="step tr2 s2 on">
+                            <span>STEP 02</span>
+                        </div>
+                        <div class="step tr2 s3 on">
+                            <span>STEP 03</span>
+                        </div>
+                        <div class="step tr2 s4 on">
+                            <span>STEP 04</span>
+                        </div>
+                        <div class="step tr2 s5 on">
+                            <span>STEP 05</span>
+                        </div>
+                        <div class="step tr2 s6">
+                            <span>STEP 06</span>
+                        </div>
+                        <div class="step tr3 s7">
+                            <span>STEP 07</span>
+                        </div>
+                    </div>  <!-- stepBox -->
+                    <div> <!-- content -->
+                        <p class="tit">
+                            STEP 05. <span class="titFont">인버터 선택</span>
+                        </p>
+                        <div class="content">
+                            
+                            <div class="mapping kakaMap">
+                                <div id="map" style="width:100%;height:555px;">
+                                    지도
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="mapValTitle">
+                                <p>남은모듈수량 : <b>144</b>장</p>
+                                <button>삭제하기</button>
+                            </div>
+                            <div class="mapValSet">
+                                <div class="inverterBox mb01">
+                                    <div class="inverterImg">
+                                        <img src="../public/imgs/step4/inverter.png" alt="">
+                                    </div>
+                                    <div class="inverterInfo">
+                                        <ul>
+                                            <li>제조사</li>
+                                            <li>현대에너지솔루션</li>
+                                            <li>모델명</li>
+                                            <li>HPC-100HL-V1-OU</li>
+                                            <li>용량</li>
+                                            <li>100kW</li>
+                                            <li>가격</li>
+                                            <li>0 원</li>
+                                            <li>직·병렬</li>
+                                            <li>17 X 10</li>
+                                            <li>수량</li>
+                                            <li>0</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="inverterBox mb02">
+                                    <div class="inverterImg">
+                                        <img src="../public/imgs/step4/inverter.png" alt="">
+                                    </div>
+                                    <div class="inverterInfo">
+                                        <ul>
+                                            <li>제조사</li>
+                                            <li>현대에너지솔루션</li>
+                                            <li>모델명</li>
+                                            <li>HPC-100HL-V1-OU</li>
+                                            <li>용량</li>
+                                            <li>100kW</li>
+                                            <li>가격</li>
+                                            <li>0 원</li>
+                                            <li>직·병렬</li>
+                                            <li>17 X 10</li>
+                                            <li>수량</li>
+                                            <li>0</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="modifyBox">
+                                        <ul>
+                                            <li>
+                                                <span>가격</span> 
+                                                <div>
+                                                    <input type="text" placeholder="0">
+                                                </div>
+                                            </li>
+                                            <li class="plus-minus"> 
+                                                <span>수량</span> 
+                                                <div>
+                                                    <span class="minus">-</span>
+                                                    <span>0</span>
+                                                    <span class="plus">+</span>
+                                                </div>
+                                            </li>
+                                            <li class="mod-btn">
+                                                <div>
+                                                    <button>삭제하기</button>
+                                                </div>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="inverterBox mb03">
+                                    <div class="inverterImg">
+                                        <img src="../public/imgs/step4/inverter.png" alt="">
+                                    </div>
+                                    <div class="inverterInfo">
+                                        <ul>
+                                            <li>제조사</li>
+                                            <li>현대에너지솔루션</li>
+                                            <li>모델명</li>
+                                            <li>HPC-100HL-V1-OU</li>
+                                            <li>용량</li>
+                                            <li>100kW</li>
+                                            <li>가격</li>
+                                            <li>0 원</li>
+                                            <li>직·병렬</li>
+                                            <li>17 X 10</li>
+                                            <li>수량</li>
+                                            <li>0</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="gf-btn last-btn">
+                                <a href="../views/step4.html">
+                                    <button type="button" class="btn prev" style="color: #767676; background-color: #DDDDDD;">이전</button>
+                                </a>
+                                <a href="../views/step6.html">
+                                    <button type="button" class="btn next  mr-l-5" style="background-color: var(--bg-green-color);">다음</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>  <!-- content -->
+
+
+                </div> <!-- container -->
+            </section>
+        </main>
+
+        <div class="footer" id="footer">
+            <div class="foo-companyInfo">
+                <p class="title">그린훼스코 주식회사</p>
+                <p class="tel">
+                    <span>Tel. 062-973-0086</span>
+                    <span>Fax. 062-443-2161</span>
+                    <span>Email. greenfesco@greenfesco.com</span>
+                </p>
+                <p>Add. 광주광역시 북구 첨단과기로 208번길 50, 302호(연구소)</p>
+                <p>Add. 광주광역시 광산구 빛그린18로 15(공장)</p>
+                <p>Add. 전라남도 나주시 노안면 노안로 455-41(전남지사)</p>
+            </div>
+            <div class="foo-companyBottom">
+                <p>Copyright © 2023 그린훼스코 주 All rights reserved</p>
+            </div>
+        </div>
+        
+    
+    </div> <!-- wrap-->
+   
+</body>
+</html>

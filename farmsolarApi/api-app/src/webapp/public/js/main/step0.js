@@ -13,7 +13,7 @@ const rest_api_collection = async () => {
     }
     if(_type == "type2"){
         console.log("지상형");
-        getLawDataMain();
+        // getLawDataMain();
     }
     
 

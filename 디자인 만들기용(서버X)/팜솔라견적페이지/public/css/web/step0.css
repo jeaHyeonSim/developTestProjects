@@ -154,17 +154,19 @@ main img {
 .landType-2 div.content .info2.infoCommon .bg-img{
     width: 120px;
     height: 119px;
+    z-index: 50;
 }
 
 .landType-2 div.content .infoCommon  > div{
     padding: 9.75px 20px;
+    z-index: 100;
 }
 .landType-2 div.content .infoCommon  > div dl {
     display: flex;
     font-size: var(--fontSize-18);
 }
 .landType-2 div.content .infoCommon  > div dl dt {
-    width: 45%;
+    width: 40%;
     min-width: 154px;
     color: var(--bg-green-color);
     font-weight: 400;
@@ -172,8 +174,32 @@ main img {
 }
 .landType-2 div.content .infoCommon  > div dl dd {
     font-weight: 600;
+    width: 60%;
 }
+.landType-2 div.content .infoCommon  > div dl dt.a {
+    display: flex;
+    align-items: center;
+}
+.landType-2 div.content .infoCommon  > div dl dd.a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+}
+.landType-2 div.content .infoCommon  > div dl dd.a a {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+}
+.landType-2 div.content .infoCommon  > div dl dd.a1 a {
+    display: inline-block;
+}
+.landType-2 div.content .infoCommon  > div dl dd.a2 {
 
+}
+.landType-2 div.content .infoCommon  > div dl dd.a3 {
+
+}
 
 
 /* 지역·지구	가능여부	조건·제한·예외사항 */
@@ -255,7 +281,12 @@ main img {
 }
 .g-table2 .gf_poptip:nth-child(even) {}
 .g-table2 .gf_poptip:nth-child(odd) {}
-
+.g-table2 .gf_poptip .gf_con_img  {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 20px;
+}
 .g-table2 .gf_poptip .gf_con_img img{
     width: 15px;
     height: 15px;
@@ -349,31 +380,83 @@ main img {
     font-size: 1rem;
     margin-right: 8px;
 }
-.ElectronicInfo {
+.electronicInfo {
     color: #000;
 }
 
+
+/* 이격거리제한 */
+.separationDistance {
+    color: #424242;
+}
+.separationDistance .mapBox {
+    width: 100%;
+    height: 500px;
+}
+
+.separationDistance .ordBox p  {
+    font-size: 1rem;
+    font-weight: 500;
+}
+.separationDistance .ordBox div {
+    padding: 1%;
+    background-color: #eef5f3;
+}
+.separationDistance .ordBox div p.title {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.separationDistance .ordBox div p:not(.separationDistance .ordBox div p.title) {
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.separationDistance .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    margin-top: 20px;
+
+}
+.separationDistance .btn > button {
+    padding: 8.5px 26px;
+    font-size: 0.9375rem;
+    background-color: #a0c34c;
+    border-radius: 5px;
+    margin: 0 10px;
+    min-width: 120px;
+    color: #fff;
+
+}
+.separationDistance .btn > button:hover {
+    background-color: #66A959;
+}
+.separationDistance .btn > button.click {
+    background-color: var(--bg-green-color);
+}
+
 /*  ** 전력계통정보 - 용량 */
-.ElectronicInfo .location .items{
+.electronicInfo .location .items{
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
-.ElectronicInfo .location .items > div {
+.electronicInfo .location .items > div {
     min-width: 310px;
     width: 32.5%;
     height: auto;
     min-height: 150px;
     
 }
-.ElectronicInfo .location .items > div:nth-child(1){
+.electronicInfo .location .items > div:nth-child(1){
 }
-.ElectronicInfo .location .items > div:nth-child(2) {
+.electronicInfo .location .items > div:nth-child(2) {
 }
-.ElectronicInfo .location .items > div:nth-child(3) {
+.electronicInfo .location .items > div:nth-child(3) {
 }
 
-.ElectronicInfo .location .items > div > .item-title {
+.electronicInfo .location .items > div > .item-title {
     height: 20px;
     border-left: 4px solid var(--bg-green-color);
     padding-left: 10px;
@@ -383,48 +466,48 @@ main img {
     font-size: var(--fontSize-20);
     color: var( --font-color-black);
 }
-.ElectronicInfo .location .items > div > .item-content {
+.electronicInfo .location .items > div > .item-content {
     border: 2px solid #EFEFEF;
     padding: 15px;
     height: 98px;
     border-radius: 10px;
     font-weight: 600;
 }
-.ElectronicInfo .location .items > div > .item-content  dl {
+.electronicInfo .location .items > div > .item-content  dl {
     display: flex;
 }
-.ElectronicInfo .location .items > div > .item-content  dl:nth-child(2) {
+.electronicInfo .location .items > div > .item-content  dl:nth-child(2) {
     margin: 4px 0;
 }
-.ElectronicInfo .location .items > div > .item-content  dt {
+.electronicInfo .location .items > div > .item-content  dt {
     padding: 5px 10px;
     width: 50px;
     height: 20px;
     text-align: center;
     border-radius: 5px;
 }
-.ElectronicInfo .location .items > div > .item-content  dt,
-.ElectronicInfo .location .items > div > .item-content  dd {
+.electronicInfo .location .items > div > .item-content  dt,
+.electronicInfo .location .items > div > .item-content  dd {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 
-.ElectronicInfo .location .items > div > .item-content  dl:nth-child(1)  dt{
+.electronicInfo .location .items > div > .item-content  dl:nth-child(1)  dt{
     background-color: #EBF8Cb;
     color: #8db727;
 }
-.ElectronicInfo .location .items > div > .item-content  dl:nth-child(2)  dt{
+.electronicInfo .location .items > div > .item-content  dl:nth-child(2)  dt{
     background-color: #E3F8D7;
     color: #62a639;
 }
-.ElectronicInfo .location .items > div > .item-content  dl:nth-child(3)  dt{
+.electronicInfo .location .items > div > .item-content  dl:nth-child(3)  dt{
     background-color: #D0F4D7;
     color: #3c984d;
 }
 
-.ElectronicInfo .location .items > div > .item-content  dd {
+.electronicInfo .location .items > div > .item-content  dd {
     padding: 5px 10px;
     /* justify-content: right; */
     color: #333333;
@@ -574,39 +657,39 @@ main img {
 
 /* 분석결과 */
 
-.Availability {
+.availability {
     color: #000;
 }
 
-.Availability .top {
+.availability .top {
     display: flex;
     margin-bottom: 20px;
 }
-.Availability .top > div:first-child {
+.availability .top > div:first-child {
     width: 56px;
     height: 65px;
     margin-right: 20px;
 }
-.Availability .top > div img {
+.availability .top > div img {
 
 }
-.Availability .top > div:last-child{
+.availability .top > div:last-child{
     display: flex;
     justify-content: space-between;
     width: calc(100% - 75px);
 }
-.Availability .top > div:last-child > div:first-child > span {
+.availability .top > div:last-child > div:first-child > span {
     display: block;
 
     display: flex;
 }
-.Availability .top > div:last-child > div:first-child > span:first-child {
+.availability .top > div:last-child > div:first-child > span:first-child {
     align-items: baseline;
     color: #828282;
     height: 40%;
     font-size: 1rem;
 }
-.Availability .top > div:last-child > div:first-child > span:last-child {
+.availability .top > div:last-child > div:first-child > span:last-child {
     height: 60%;
     align-items: start;
     font-size: var(--fontSize-28);
@@ -614,47 +697,47 @@ main img {
     font-weight: bold;
 }
 
-.Availability .info {
+.availability .info {
     width: 100%;
 }
-.Availability .info .state-area {
+.availability .info .state-area {
     display: flex;
     justify-content: space-between;
 }
-.Availability .area  {
+.availability .area  {
     width: 32%;
     height:160px ;
     max-width: 310px;
 }
-.Availability .area .title {
+.availability .area .title {
     background-color: #F5F5F5;
     height: 80px;
     padding: 20px;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
-.Availability .area .title span {
+.availability .area .title span {
     display: block;
 }
-.Availability .area .title span:first-child{
+.availability .area .title span:first-child{
     margin-bottom: 15px;
     font-size: var(--fontSize-20);
     font-weight: 600;
     color: #333333;
 }
-.Availability .area .title span:nth-child(2){
+.availability .area .title span:nth-child(2){
     color: #767676;
     margin-bottom: 5px;
     font-size: var(--fontSize-18);
     font-weight: 400;
 }
 
-.Availability .area .title b {
+.availability .area .title b {
     color: #e72b2b;
     font-weight: 600;
     font-size: var(--fontSize-18);
 }
-.Availability .area div.state {
+.availability .area div.state {
     height: 40px;
     font-size: var(--fontSize-18);
     font-weight: 600;
@@ -663,17 +746,4 @@ main img {
     border-bottom-right-radius: 5px;
     line-height: 40px;
     color: #fff;
-}
-.Availability .info div.btn {
-    text-align: center;
-}
-.Availability .info div.btn button {
-    width: 20%;
-    height: 50px;
-    border-radius: 5px;
-    /* font-size: 1.2rem; */
-    font-size: var(--fontSize-20);
-    color: #fff;
-    font-weight: 600;
-    
 }
