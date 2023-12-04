@@ -1,6 +1,8 @@
 
 .tit span:last-child {
     font-size: var(--fontSize-16);
+    color: #555555;
+    font-weight: 400;
 }
 .contents .content {
     background-color: #ffffff;
@@ -9,6 +11,35 @@
     border-radius: 10px;
     padding: 30px 25px;
     width: calc(100% - 50px);
+}
+.contents .content > div.arrange {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 20px;
+}
+.contents .content > div.arrange > button {
+    width: 50px;
+    height: 50px;
+    background-color: #eeeeee;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: var(--fontSize-16);
+    font-weight: 400;
+    color: #999999;
+    box-sizing: border-box;
+    border: 1px solid #eeeeee;
+}
+.contents .content > div.arrange > button.on {
+    background-color: var(--bg-green-color);
+    color: #ffffff;
+}
+.contents .content > div.arrange > button:last-child {
+    border: 1px solid var(--bg-green-color);
+    font-size: var(--fontSize-24);
+    color: var(--bg-green-color);
+    background-color: #eef5f3;
 }
 .contents .content .mapping {
     color: #333333;
@@ -21,315 +52,97 @@
 .contents .content .mapValSet{
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     position: relative;
 }
-.contents .content .inverterBox {
-    background-color: #f9f9f9;
-    width: 49.5%;
-    height:auto;
-    min-height: 256px;
-    max-height: 285px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-/* 하단 인버터 정보 박스 : 박스 들 */
-.contents .content .inverterBox {
-    display: flex;
-    position: relative;
-}
-.contents .content .inverterBox div.inverterImg {
-    width: 35%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.contents .content .inverterBox div.inverterInfo {
-    width: 65%;
-    display: flex;
-    align-items: center;
-}
-.contents .content .inverterBox div.inverterInfo ul {
-    width: calc(100% - 10%);
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5%;
-}
-.contents .content .inverterBox div.inverterInfo ul li {
-    height: 35px;
-    display: flex;
-    align-items: center;
-}
-.contents .content .inverterBox div.inverterInfo ul li:nth-child(odd){
-    width: 25%;
-    font-size: var(--fontSize-18);
-    font-weight: 400;
-    color: #767676;
-}
-.contents .content .inverterBox div.inverterInfo ul li:nth-child(even) {
-    width: 65%;
-    font-size: var(--fontSize-18);
-    font-weight: 600;
-    color: #333333;
-    padding-left: 20px;
-}
-.contents .content .inverterBox div.inverterInfo ul li input {
-    height: 30px;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    max-width: 120px;
-    margin-right: 10px;
-}
 
-.contents .content .inverterBox div.inverterInfo ul li:last-child  div {
+.mapValSet > div {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom-right-radius: 10px;
     display: flex;
-    width: 110px;
-    height: 26px;
-    background-color: #fff;
-    border-radius: 60px;
     justify-content: space-between;
-    padding: 5px;
-    align-items: center;
-}
-.contents .content .inverterBox div.inverterInfo ul li:last-child > div > span {
-    display: block;
-}
-.contents .content .inverterBox div.inverterInfo ul li:last-child > div > span:nth-child(2){
-    font-size: var(--fontSize-18);
-    color: #111111;
-}
-.contents .content .inverterBox div.inverterInfo ul li:last-child > div > span:not(.contents .content .inverterBox div.inverterInfo ul li:last-child > div > span:nth-child(2)){
-    color: var(--bg-green-color);
-    width: 30px;
-    height: 30px;
-    background-color: #eef5f3;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-.contents .content .mapValSetbox.r-box > p:not(.contents .content .mapValSetbox.r-box > p:first-child){
-    font-size: var(--fontSize-16);
-    font-weight: 400;
-    color: #555555;
-    line-height: 1.1;
 }
 
-
-.contents .content .inverterBox div.inverterInfo ul li button {
-    height: 30px;
-    max-width: 90px;
-}
-.contents .content .inverterBox div.inverterInfo ul li button img {
-    width: 100%;
-    height: 100%;
+.mapValSet > div > div {
+    width: 48%;
 }
 
-/* 하단 인버터 정보 박스 : 박스 클릭하면 나오는 수정박스*/
-.contents .content .inverterBox .modifyBox {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(51,51,51, 0.9);
-    border-radius: 5px;
-}
-.contents .content .inverterBox .modifyBox ul {
-    width: 100%;
-    padding: 40px 0;
-    height: calc(100% - 80px);
-}
-.contents .content .inverterBox .modifyBox ul li {
-    width: 220px;
-    height: 60px;
-    text-align: center;
-    margin: 0 auto;
-    font-size: var(--fontSize-18);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-}
-.contents .content .inverterBox .modifyBox ul li:not(.mod-btn) > span {
-    width: 60px;
-}
-.contents .content .inverterBox .modifyBox ul li:not(.mod-btn) div {
-    width: 120px;
-    height: 36px;
-}
-.contents .content .inverterBox .modifyBox ul li:not(.mod-btn) div input {
-    width: calc(100% - 10px);
-    height: 100%;
-    padding: 0;
-    border-radius: 5px;
-    padding-left: 10px;
-    color: #111111;
-    font-weight: 600;
-}
-.contents .content .inverterBox .modifyBox ul li:not(.mod-btn) div input::placeholder {
-    color: #111111;
-    font-weight: 600;
-}
-.contents .content .inverterBox .modifyBox ul li.plus-minus div {
-    display: flex;
-    width: 110px;
-    height: 26px;
-    background-color: #fff;
-    border-radius: 60px;
-    justify-content: space-between;
-    padding: 5px;
-    align-items: center;
-}
-.contents .content .inverterBox .modifyBox ul li:not(.mod-btn) div > span {
-    display: block;
-    color: #111111;
-    font-weight: 600;
-}
-.contents .content .inverterBox .modifyBox ul li:not(.mod-btn) div > span:nth-child(2){
-    font-size: var(--fontSize-18);
-    color: #111111;
-}
-.contents .content .inverterBox .modifyBox ul li:not(.mod-btn) div > span.minus,
-.contents .content .inverterBox .modifyBox ul li:not(.mod-btn) div > span.plus
-{
-    color: #ffffff;
-    width: 30px;
-    height: 30px;
-    background-color: var(--bg-green-color);
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.contents .content .inverterBox .modifyBox ul li.mod-btn {
-    align-items: end;
-}
-
-.contents .content .inverterBox .modifyBox ul li.mod-btn div {
-    width: 100%;
-    height: 46px;
-}
-.contents .content .inverterBox .modifyBox ul li div button {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    background-color: #e72b2b;
-    font-weight: 600;
-    font-size: var(--fontSize-18);
-    color: #ffffff;
-}
-
-
-
-
-
-
-
-
-
-
-.mapValSet .l-area {
-    position: absolute;
-    left: 0;
-    height: 864px;
-    width: 420px;
-    max-width: 420px;
-    top: 25px;
-    z-index: 999;
-    border: 1px solid #8fc9b8;
-    border-top-right-radius: 11px;
-    border-bottom-right-radius: 11px;
-}
-
-
-.mapValSet .l-area .juso {
-    width: calc(100% - 30px);
-    height: 60px;
+.mapValSet > div .left .juso {
     border-top-right-radius: 10px;
-    background : linear-gradient(90deg ,#8EBC50, rgba(25, 138, 105, 1));
-    padding-left: 30px;
     display: flex;
     align-items: center;
     position: relative;
+    margin-bottom: 20px;
 }
-.mapValSet .l-area .juso::before {
+.mapValSet > div .left .juso::before {
     content: "";
     width: 16px;
     height: 21px;
-    background: url(../../imgs/step1/map.png) no-repeat;
+    background: url(../../imgs/step6/map.png) no-repeat;
     background-size: cover;
 }
-.mapValSet .l-area .juso span {
+.mapValSet > div .left .juso span {
     padding-left: 10px;
     font-size: var(--fontSize-20);
     font-weight: 600;
-    
+    color: #333333;
 }
 
-.mapValSet .l-area .content {
-    height: calc(804px - 60px);
-    background-color: #ffffff;
-    padding: 30px;
-    border-bottom-right-radius: 10px;
-}
-
-.mapValSet .l-area .content .top{
-    border-bottom: 1px solid #f0f0f0;
-}
-.mapValSet .l-area .content .top ul {
-    padding: 10px 25px;
+.mapValSet > div .left div:last-child {
     display: flex;
     justify-content: space-between;
+}
+.mapValSet > div .left div:last-child > div {
+    width: 150px;
+    height: 180px;
+    max-width: 150px;
+    max-height: 180px;
+}
+
+.mapValSet > div .left div:last-child ul {
     border-radius: 5px;
+    text-align: center;
+    height: calc(100% - 30px);
+    width: 100%;
+    padding-top: 30px;
 }
-.mapValSet .l-area .content .top ul li {
-    height: 40px;
-    width: 40%;
-    display: flex;
-    align-items: center;
+.mapValSet > div .left ul li {
+    margin: 0 auto;
 }
-.mapValSet .l-area .content .top ul li:first-child {
-    position: relative;
+.mapValSet > div .left div:last-child > div:nth-child(1) ul li:first-child {
+    background: url(../../imgs/step6/icon1.png) no-repeat;
+    background-size: contain;
+    width: 42px;
+    height: 42px;
+    padding-bottom: 25px;
 }
-.mapValSet .l-area .content .top ul li:first-child span {
-    padding-left: 5px;
+.mapValSet > div .left div:last-child > div:nth-child(2) ul li:first-child {
+    background: url(../../imgs/step6/icon2.png) no-repeat;
+    background-size: contain;
+    width: 46px;
+    height: 33px;
+    padding-bottom: 25px;
+}
+.mapValSet > div .left div:last-child > div:nth-child(3) ul li:first-child {
+    background: url(../../imgs/step6/icon3.png) no-repeat;
+    background-size: contain;
+    width: 46px;
+    height: 42px;
+    padding-bottom: 25px;
+}
+
+.mapValSet > div .left ul li span {
     font-size: var(--fontSize-18);
     font-weight: 400;
 }
-.mapValSet .l-area .content .top ul li:last-child{
+.mapValSet > div .left ul li:last-child{
     justify-content: end;
-    font-size: var(--fontSize-20);
+    font-size: var(--fontSize-24);
     font-weight: 600;
+    margin-top: 10px;
 }
-.mapValSet .l-area .content .top ul li:first-child::before {
-    content: "";
-    top: 0px;
-    background-size: cover;
-}
-.mapValSet .l-area .content .top div:nth-child(1) ul li:first-child::before  {
-    width: 18px;
-    height: 18px;
-    background: url(../../imgs/step1/icon01.png) no-repeat;
-}
-.mapValSet .l-area .content .top div:nth-child(2) ul li:first-child::before  {
-    width: 20px;
-    height: 15px;
-    background: url(../../imgs/step1/icon02.png) no-repeat;
-}
-.mapValSet .l-area .content .top div:nth-child(3) ul li:first-child::before  {
-    width: 21px;
-    height: 20px;
-    background: url(../../imgs/step1/icon03.png) no-repeat;
-}
-.mapValSet .l-area .content .top div:last-child {
 
-}
-.mapValSet .l-area .content .top div:last-child button {
+.mapValSet > div .left div:last-child button {
     padding: 0;
     width: 50px;
     height: 50px;
@@ -340,55 +153,58 @@
     font-weight: 400;
     color: #999999;
 }
-.mapValSet .l-area .content .top div:last-child button.on {
+.mapValSet > div .left div:last-child button.on {
     background-color: var(--bg-green-color);
     color: #fff;
 }
 
 
-.mapValSet .l-area .content .bottom{
+.mapValSet > div .right{
 
 }
-.mapValSet .l-area .content .bottom > div {
+.mapValSet > div .right > div {
     color: #333333;
-    font-size: var(--fontSize-16);
+    font-size: var(--fontSize-18);
+}
 
+.mapValSet > div .right > div:not(.mapValSet > div .right > div:last-child){
+    margin-bottom: 20px;
 }
-.mapValSet .l-area .content .bottom div p{
+.mapValSet > div .right div p{
     margin-bottom: 10px;
-    margin-top: 30px;
+    font-weight: 600;
 }
-.mapValSet .l-area .content .bottom div.on p {
+.mapValSet > div .right div.on p {
     color: var(--bg-green-color);
 }
-.mapValSet .l-area .content .bottom > div > div {
+
+.mapValSet > div .right > div > div {
     max-height: 128px;
     background-color: #f9f9f9;
     border-radius: 5px;
 }
-.mapValSet .l-area .content .bottom > div.on > div {
+.mapValSet > div .right > div.on > div {
     background-color: #eef5f3;
 }
-.mapValSet .l-area .content .bottom  ul {
-    font-size: var(--fontSize-18);
+.mapValSet > div .right  ul {
     padding: 10px 25px;
     display: flex;
     flex-wrap: wrap;
 }
-.mapValSet .l-area .content .bottom  ul li {
+.mapValSet > div .right  ul li {
     width: 50%;
     height: 36px;
     display: flex;
     align-items: center;
 }
-.mapValSet .l-area .content .bottom  ul li:nth-child(odd){
-
+.mapValSet > div .right  ul li:nth-child(odd){
+    font-weight: 400;
 }
-.mapValSet .l-area .content .bottom  ul li:nth-child(even){
+.mapValSet > div .right  ul li:nth-child(even){
     font-weight: 600;
     font-size: var(--fontSize-20);
     justify-content: end;
 }
-
-/* 퍼블리싱 할때는 안보이게 */
-/* .mapValSet .l-area {display: none;} */
+.mapValSet > div .right  ul li:nth-child(even) > span {
+    font-weight: 400;
+}

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum=scale-1, minimum-scale=1">
+    <title>STEP 0</title>
+
+    <!-- 공통 라이브러리 js -->
+    <!-- <script src="../../../node_modules/chart.js/dist/chart.min.js"></script> -->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/moment/min/moment.min.js"></script>
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/common.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/commonClass.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/web/commonStyle.css"> -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/body.css"> <!-- 공통 BODY-->
+
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/result.css">
+    <!-- 페이지별 JS -->
+    <script src="../public/js/result.js" defer></script>
+</head>
+<body>
+    <!-- <div class="center-r"></div> -->
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                </div>
+                <nav class="on">
+                    <span>연구기획본부</span>
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        홍길동
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="contents">
+
+                    <div class="content">
+                        <div class="installInfo">
+                            <div class="l-box">
+                                <div class="map"></div>
+                                <div class="">
+                                    <div class="juso">
+                                        <span>광주광역시 광산구 삼거동 930 </span>
+                                    </div>
+                                    <div>
+                                        <ul style="background-color: #ebbc2b;">
+                                            <li><span>총 용량</span></li>
+                                            <li>
+                                                217.20
+                                                <span>&nbsp;kW</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="mr-t-10 mr-b-10">
+                                        <ul style="background-color: #4c68c3;">
+                                            <li><span>총 설치면적</span></li>
+                                            <li>1,949
+                                                <span>&nbsp;㎡</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="r-box">
+                                <div class="arrangeBtn">
+                                    <button class="on">배치1</button>
+                                    <button>배치2</button>
+                                    <button>배치3</button>
+                                </div>
+                                <div class="arrangeContent">
+                                    <div class="on">
+                                        <p>
+                                            배치방법
+                                            <span></span>
+                                        </p>
+                                        <div>
+                                            <ul>
+                                                <li>설치유형</li>
+                                                <li>지붕형 공장용지</li>
+                                                <li>입사각</li>
+                                                <li>21도</li>
+                                                <li>건물 경사각</li>
+                                                <li>0도</li>
+                                                <li>모듈 경사각</li>
+                                                <li>25도</li>
+                                                <li>모듈 방위각</li>
+                                                <li>181도</li>
+                                                <li>설치면적</li>
+                                                <li>692㎡</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            태양광 모듈
+                                            <span></span>
+                                        </p>
+                                        <div>
+                                            <ul>
+                                                <li>모듈명</li>
+                                                <li>HIS-S6000J-ET</li>
+                                                <li>모듈제조사</li>
+                                                <li>현대에너지솔루션</li>
+                                                <li>모듈수량</li>
+                                                <li>110개</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            태양광 인버터
+                                            <span></span>
+                                        </p>
+                                        <div>
+                                            <div>
+                                                <button class="on">인버터1</button>
+                                                <button>인버터2</button>
+                                            </div>
+                                            <ul>
+                                                <li>인버터명</li>
+                                                <li>HIS-S6000J-ET</li>
+                                                <li>인버터 제조사</li>
+                                                <li>현대에너지솔루션</li>
+                                                <li>인버터 용량</li>
+                                                <li>1000kW</li>
+                                                <li>인버터 수량</li>
+                                                <li>1개</li>
+                                                <li>인버터 직병렬</li>
+                                                <li>10 x 1833333</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="equipment">
+                                    기자재비
+                                    <span>
+                                        5,880,555
+                                        <b>원</b>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content">
+                        <!-- 
+                            - 연간운영비용 : yearlyCostestimate
+                            - 금융조건 : financeCond
+                            - 판매조건 : saleCond
+                            - 기타조건 : etcCond
+                        -->
+                        <div class="on totalCost box" >
+                            <p class="dadTitle">
+                                총 사업비
+                                <span></span>
+                            </p>
+                            <div>
+                                <div>
+                                    * 아래 각 항목에 금액을 직접 입력하여 주세요(VAT별도)
+                                    <ul>
+                                        <li>총 합계</li>
+                                        <li>17,872 <span>만원</span></li>
+                                    </ul>
+                                </div>
+                                <ul class="box1-ul">
+                                    <li>
+                                        <p>공사비(kW당 단가)</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>총 공사비</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>토지매입비용</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>토목공사비</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p>개발부담금</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>개발행위 인/허가</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>계통연계비</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>측량비용</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p>기타수수료</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>DSRA(금융수수료)</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>건설기간 이자</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>대체산림자원조성비</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+
+
+                                    <li>
+                                        <p>구조설계</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>구조검토</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>구조물제작</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>구조물시공</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+
+
+                                    <li>
+                                        <p>전기설계,감리</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>수배전설비</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>전기자재,시공</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>안전진단</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+
+
+                                    <li>
+                                        <p>휀스공사</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>모니터링시스템</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+
+                                <ul class="box1-ul ul2">
+                                    <p>* 아래 항목은 설치 용량과 경사도, 공사비 등의 정보를 통해 계산된 것으로 오차 범위가 있을 수 있으니 정확한 금액은 담당기관에 문의하여 주시기 바랍니다.</p>
+                                    <li>
+                                        <p>농지보전부담금</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>산지복구비</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>토지매입비용</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>토목공사비</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="on box" >
+                            <p class="dadTitle">
+                                연간운영비용
+                                <span></span>
+                            </p>
+                            <div>
+                                <div>
+                                    * 아래 각 항목에 금액을 직접 입력하여 주세요(VAT별도)
+                                    <ul>
+                                        <li>총 합계</li>
+                                        <li>17,872 <span>만원</span></li>
+                                    </ul>
+                                </div>
+                                <ul class="box2-ul">
+                                    <li>
+                                        <p>공사비(kW당 단가)</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>총 공사비</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>토지매입비용</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>토목공사비</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p>제세공과금</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>임대료</p>
+                                        <div>
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="on box" >
+                            <p class="dadTitle">
+                                금융조건
+                                <span></span>
+                            </p>
+                            <div>
+                                <ul class="box3-ul">
+                                    <li>
+                                        <p>대출비용</p>
+                                        <div>
+                                            <input type="text" placeholder="100">%
+                                            <input type="text" placeholder="0">만원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>대출금리</p>
+                                        <div>
+                                            <input type="text" placeholder="0">%
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>거치기간</p>
+                                        <div>
+                                            <section class="sec1">
+                                                <button class="">
+                                                    <span>-</span>
+                                                    <img src="../public/imgs/result/trg.png" alt="">
+                                                </button>
+                                                <ul>
+                                                    <li><button value="1년">1년</button></li>
+                                                    <li><button value="2년">2년</button></li>
+                                                    <li><button value="3년">3년</button></li>
+                                                    <li><button value="4년">4년</button></li>
+                                                    <li><button value="5년">5년</button></li>
+                                                    <li><button value="10년">10년</button></li>
+                                                    <li><button value="15년">15년</button></li>
+                                                    <li><button value="20년">20년</button></li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>상환기간</p>
+                                        <div>
+                                            <section class="sec2">
+                                                <button class="">
+                                                    <span>-</span>
+                                                    <img src="../public/imgs/result/trg.png" alt="">
+                                                </button>
+                                                <ul>
+                                                    <li><button value="1년">1년</button></li>
+                                                    <li><button value="2년">2년</button></li>
+                                                    <li><button value="3년">3년</button></li>
+                                                    <li><button value="4년">4년</button></li>
+                                                    <li><button value="5년">5년</button></li>
+                                                    <li><button value="10년">10년</button></li>
+                                                    <li><button value="15년">15년</button></li>
+                                                    <li><button value="20년">20년</button></li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="on box" >
+                            <p class="dadTitle">
+                                판매조건
+                                <span></span>
+                            </p>
+                            <div>
+                                <ul class="box4-ul">
+                                    <li>
+                                        <p>SMP(한전계통한계)</p>
+                                        <div>
+                                            <input type="text" placeholder="100">원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>REC(발전자회사)</p>
+                                        <div>
+                                            <input type="text" placeholder="0">원
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>REC가중치</p>
+                                        <div>
+                                            <section class="sec1">
+                                                <button class="">
+                                                    <span>-</span>
+                                                    <img src="../public/imgs/result/trg.png" alt="">
+                                                </button>
+                                                <ul>
+                                                    <li><button value="0.8">0.8</button></li>
+                                                    <li><button value="1.0">1.0</button></li>
+                                                    <li><button value="1.2">1.2</button></li>
+                                                    <li><button value="1.5">1.5</button></li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>REC기간</p>
+                                        <div>
+                                            <section class="sec2">
+                                                <button class="">
+                                                    <span>-</span>
+                                                    <img src="../public/imgs/result/trg.png" alt="">
+                                                </button>
+                                                <ul>
+                                                    <li><button value="1년">1년</button></li>
+                                                    <li><button value="2년">2년</button></li>
+                                                    <li><button value="3년">3년</button></li>
+                                                    <li><button value="4년">4년</button></li>
+                                                    <li><button value="5년">5년</button></li>
+                                                    <li><button value="10년">10년</button></li>
+                                                    <li><button value="15년">15년</button></li>
+                                                    <li><button value="20년">20년</button></li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="on box" >
+                            <p class="dadTitle">
+                                기타조건
+                                <span></span>
+                            </p>
+                            <div>
+                                <ul class="box5-ul">
+                                    <li>
+                                        <p>법인세율</p>
+                                        <div>
+                                            <input type="text" placeholder="100">%
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>감가 상각기간</p>
+                                        <div>
+                                            <input type="text" placeholder="0">년
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>모듈 감소율</p>
+                                        <div>
+                                            <input type="text" placeholder="0">%
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>인상률</p>
+                                        <div>
+                                            <input type="text" placeholder="0">%
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="gf-btn last-btn">
+                            <a href="./estimate.html">
+                                <button type="button" class="btn prev" style="color: #ffffff;     background : linear-gradient(90deg ,#8EBC50, #2B9264);">제안서 작성/저장하기</button>
+                            </a>
+                        </div>
+                    </div><!-- content -->
+
+                    
+
+                    
+
+                    
+                    
+                </div> <!-- container -->
+            </section>
+        </main>
+        <div class="footer" id="footer">
+            <div class="foo-companyInfo">
+                <p class="title">그린훼스코 주식회사</p>
+                <p class="tel">
+                    <span>Tel. 062-973-0086</span>
+                    <span>Fax. 062-443-2161</span>
+                    <span>Email. greenfesco@greenfesco.com</span>
+                </p>
+                <p>Add. 광주광역시 북구 첨단과기로 208번길 50, 302호(연구소)</p>
+                <p>Add. 광주광역시 광산구 빛그린18로 15(공장)</p>
+                <p>Add. 전라남도 나주시 노안면 노안로 455-41(전남지사)</p>
+            </div>
+            <div class="foo-companyBottom">
+                <p>Copyright © 2023 그린훼스코 주 All rights reserved</p>
+            </div>
+        </div>
+        
+        
+    </div> <!-- wrap-->
+
+
+</body>
+</html>

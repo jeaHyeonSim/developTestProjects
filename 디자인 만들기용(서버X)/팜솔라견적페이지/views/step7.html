@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum=scale-1, minimum-scale=1">
+    <title>step07</title>
+    <!-- 모달창 용 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    <!-- 공통 라이브러리 js -->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/common.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/commonClass.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/web/commonStyle.css"> -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/body.css"> <!-- 공통 BODY-->
+    
+    <!-- step 공용 step0은 제외-->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/stepCommon.css"> <!-- step 공용-->
+    <script src="../public/js/stepCommon.js" defer></script>
+
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/step7.css">
+    <!-- 페이지별 JS -->
+    <script src="../public/js/step7.js" defer></script>
+</head>
+<body>
+    <div class="center-r"></div>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                </div>
+                <nav class="on">
+                    <span>연구기획본부</span>
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        홍길동
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section> 
+                <div class="contents">
+
+                    <div class="stepBox"> <!-- stepBox -->
+                        <div class="step tr1 s1 pd-r-10 on">
+                            <span>STEP 01</span>
+                        </div>
+                        <div class="step tr2 s2 on">
+                            <span>STEP 02</span>
+                        </div>
+                        <div class="step tr3 s3 on">
+                            <span>STEP 03</span>
+                        </div>
+                        <div class="step tr4 s4 on">
+                            <span>STEP 04</span>
+                        </div>
+                        <div class="step tr5 s5 on">
+                            <span>STEP 05</span>
+                        </div>
+                        <div class="step tr6 s6 on">
+                            <span>STEP 06</span>
+                        </div>
+                        <div class="step tr7 s7 on">
+                            <span>STEP 07</span>
+                        </div>
+                    </div>  <!-- stepBox -->
+                    <div> <!-- content -->
+                        <p class="tit">
+                            STEP 07. <span class="titFont">모듈&인버터 조합 선택</span>
+                        </p>
+                        <div class="content">
+                            <div class="arrange">
+                                <button class="on">조합1</button>
+                                <button>조합2</button>
+                                <button>+</button>
+                            </div>
+                            <div class="arrangeContents">
+                                <div class="group g1"> <!-- g1 조합1, 조합 추가되면 추가 되어야함-->
+                                    <div class="g-title">
+                                        <div>조합1</div>
+                                        <div>
+                                            <span>
+                                                총용량
+                                                <b>188.40kW</b>
+                                            </span><span>
+                                                모듈 수량
+                                                <b>314장</b>
+                                            </span><span>
+                                                인버터 수량
+                                                <b>2대</b>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="arrngs ar1"> <!-- arrngs : 배치 들, ar1 : 배치1-->
+                                        <p>
+                                            배치1
+                                        </p>
+                                        <div>
+                                            <div class="arrngContent arc1">
+                                                <div class="img">
+                                                    <img src="../public/imgs/stepCommon/module.png" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <ul>
+                                                        <li>제조사</li>
+                                                        <li>현대에너지솔루션</li>
+                                                        <li>모델명</li>
+                                                        <li>HIS-S6000J-ET</li>
+                                                        <li>용량</li>
+                                                        <li>605W</li>
+                                                        <li>가격</li>
+                                                        <li>0 </li>
+                                                        <li>세부정보</li>
+                                                        <li>
+                                                            <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                                                <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                                            </button>
+                                                        </li>
+                                                    
+                                                    </ul>
+                                                </div>
+                                            </div>
+            
+                                            <div class="arrngContent arc2">
+                                                <div class="img">
+                                                    <img src="../public/imgs/stepCommon/inverter.png" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <ul>
+                                                        <li>제조사</li>
+                                                        <li>현대에너지솔루션</li>
+                                                        <li>모델명</li>
+                                                        <li>HPC-100HL-V1-OU</li>
+                                                        <li>용량</li>
+                                                        <li>100kW</li>
+                                                        <li>가격</li>
+                                                        <li>0 </li>
+                                                        <li>직·병렬</li>
+                                                        <li>17 X 10</li>
+                                                        <li>수량</li>
+                                                        <li>0</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+        
+                                            <div class="arrngContent addBtn off">
+                                                <div class="plusbtn"></div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- arrngs : 배치 들-->
+                                    
+                                    <div class="arrngs ar2"> <!-- arrngs : 배치 들, ar1 : 배치1-->
+                                        <p>
+                                            배치2
+                                        </p>
+                                        <div>
+                                            <div class="arrngContent arc1">
+                                                <div class="img">
+                                                    <img src="../public/imgs/stepCommon/module.png" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <ul>
+                                                        <li>제조사</li>
+                                                        <li>현대에너지솔루션</li>
+                                                        <li>모델명</li>
+                                                        <li>HIS-S6000J-ET</li>
+                                                        <li>용량</li>
+                                                        <li>605W</li>
+                                                        <li>가격</li>
+                                                        <li>0 </li>
+                                                        <li>세부정보</li>
+                                                        <li>
+                                                            <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                                                <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                                            </button>
+                                                        </li>
+                                                    
+                                                    </ul>
+                                                </div>
+                                            </div>
+            
+                                            <div class="arrngContent arc2">
+                                                <div class="img">
+                                                    <img src="../public/imgs/stepCommon/inverter.png" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <ul>
+                                                        <li>제조사</li>
+                                                        <li>현대에너지솔루션</li>
+                                                        <li>모델명</li>
+                                                        <li>HPC-100HL-V1-OU</li>
+                                                        <li>용량</li>
+                                                        <li>100kW</li>
+                                                        <li>가격</li>
+                                                        <li>0 </li>
+                                                        <li>직·병렬</li>
+                                                        <li>17 X 10</li>
+                                                        <li>수량</li>
+                                                        <li>0</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+        
+                                            <div class="arrngContent arc2">
+                                                <div class="img">
+                                                    <img src="../public/imgs/stepCommon/inverter.png" alt="">
+                                                </div>
+                                                <div class="info">
+                                                    <ul>
+                                                        <li>제조사</li>
+                                                        <li>현대에너지솔루션</li>
+                                                        <li>모델명</li>
+                                                        <li>HPC-100HL-V1-OU</li>
+                                                        <li>용량</li>
+                                                        <li>100kW</li>
+                                                        <li>가격</li>
+                                                        <li>0 </li>
+                                                        <li>직·병렬</li>
+                                                        <li>17 X 10</li>
+                                                        <li>수량</li>
+                                                        <li>0</li>
+                                                    </ul>
+                                                </div>
+            
+                                                <div class="modifyBox">
+                                                    <ul>
+                                                        <li>
+                                                            <span>가격</span> 
+                                                            <div>
+                                                                <input type="text" placeholder="0">
+                                                            </div>
+                                                        </li>
+                                                        <li class="plus-minus"> 
+                                                            <span>수량</span> 
+                                                            <div>
+                                                                <span class="minus">-</span>
+                                                                <span>0</span>
+                                                                <span class="plus">+</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="mod-btn">
+                                                            <div>
+                                                                <button>삭제하기</button>
+                                                            </div>
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- arrngs : 배치 들-->
+                                    <div class="arrngs ar3"> <!-- arrngs : 배치 들, ar1 : 배치1-->
+                                        <p>
+                                            배치3
+                                        </p>
+                                        <div>
+                                            <div class="arrngContent addBtn off">
+                                                <div class="plusbtn"></div>
+                                            </div>
+            
+                                            <div class="arrngContent addBtn off">
+                                                <div class="plusbtn"></div>
+                                            </div>
+                                            <div class="arrngContent addBtn off">
+                                                <div class="plusbtn"></div>
+                                            </div>
+                                            <div class="arrngContent addBtn off">
+                                                <div class="plusbtn"></div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- arrngs : 배치 들-->
+                                    
+
+                                </div>
+                            </div>
+
+                            <div class="gf-btn last-btn">
+                                <a href="./step6.html">
+                                    <button type="button" class="btn prev" style="color: #767676; background-color: #DDDDDD;">이전</button>
+                                </a>
+                                <a href="./result.html">
+                                    <button type="button" class="btn next  mr-l-5" style="background-color: var(--bg-green-color);">다음</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>  <!-- content -->
+
+
+                </div> <!-- container -->
+            </section>
+        </main>
+
+        <div class="footer" id="footer">
+            <div class="foo-companyInfo">
+                <p class="title">그린훼스코 주식회사</p>
+                <p class="tel">
+                    <span>Tel. 062-973-0086</span>
+                    <span>Fax. 062-443-2161</span>
+                    <span>Email. greenfesco@greenfesco.com</span>
+                </p>
+                <p>Add. 광주광역시 북구 첨단과기로 208번길 50, 302호(연구소)</p>
+                <p>Add. 광주광역시 광산구 빛그린18로 15(공장)</p>
+                <p>Add. 전라남도 나주시 노안면 노안로 455-41(전남지사)</p>
+            </div>
+            <div class="foo-companyBottom">
+                <p>Copyright © 2023 그린훼스코 주 All rights reserved</p>
+            </div>
+        </div>
+        
+    
+    </div> <!-- wrap-->
+
+    <!-- Modal -->
+    <!-- Button trigger modal -->
+    <button type="button" style="display: none;" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-w1024">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">인버터 종류</h4>
+                    <h6 class="modal-sub-title">설치하려는 인버터를 선택해주세요</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="pdCom">
+                        <ul>
+                            <li class="on">전체</li>
+                            <li>10kW</li>
+                            <li>20kW</li>
+                            <li>30kW</li>
+                            <li>40kW</li>
+                            <li>50kW</li>
+                            <li>100kW</li>
+                            <li>125kW</li>
+                        </ul>
+                    </div>
+                    <div class="modal-body_select">
+                        <div class="box01">
+                            <div class="img">
+                                <img src="../public/imgs/step4/inverter.png" alt="">
+                            </div>
+                            <div class="info">
+                                <ul>
+                                    <li>제조사</li>
+                                    <li>현대에너지솔루션</li>
+                                    <li>모델명</li>
+                                    <li>HPC-100HL-V1-OU</li>
+                                    <li>용량</li>
+                                    <li>100kW</li>
+                                    <li>가격</li>
+                                    <li>0 원</li>
+                                    <li>세부사항</li>
+                                    <li>
+                                        <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                            <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                        </button>
+    
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box02">
+                            <div class="img">
+                                <img src="../public/imgs/step4/inverter.png" alt="">
+                            </div>
+                            <div class="info">
+                                <ul>
+                                    <li>제조사</li>
+                                    <li>현대에너지솔루션</li>
+                                    <li>모델명</li>
+                                    <li>HPC-100HL-V1-OU</li>
+                                    <li>용량</li>
+                                    <li>100kW</li>
+                                    <li>가격</li>
+                                    <li>0원</li>
+                                    <li>세부사항</li>
+                                    <li>
+                                        <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                            <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                        </button>
+    
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box03">
+                            <div class="img">
+                                <img src="../public/imgs/step4/inverter.png" alt="">
+                            </div>
+                            <div class="info">
+                                <ul>
+                                    <li>제조사</li>
+                                    <li>현대에너지솔루션</li>
+                                    <li>모델명</li>
+                                    <li>HPC-100HL-V1-OU</li>
+                                    <li>용량</li>
+                                    <li>100kW</li>
+                                    <li>가격</li>
+                                    <li>0원</li>
+                                    <li>세부사항</li>
+                                    <li>
+                                        <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                            <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                        </button>
+    
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box04">
+                            <div class="img">
+                                <img src="../public/imgs/step4/inverter.png" alt="">
+                            </div>
+                            <div class="info">
+                                <ul>
+                                    <li>제조사</li>
+                                    <li>현대에너지솔루션</li>
+                                    <li>모델명</li>
+                                    <li>HPC-100HL-V1-OU</li>
+                                    <li>용량</li>
+                                    <li>100kW</li>
+                                    <li>가격</li>
+                                    <li>0원</li>
+                                    <li>세부사항</li>
+                                    <li>
+                                        <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                            <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                        </button>
+    
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box05">
+                            <div class="img">
+                                <img src="../public/imgs/step4/inverter.png" alt="">
+                            </div>
+                            <div class="info">
+                                <ul>
+                                    <li>제조사</li>
+                                    <li>현대에너지솔루션</li>
+                                    <li>모델명</li>
+                                    <li>HPC-100HL-V1-OU</li>
+                                    <li>용량</li>
+                                    <li>100kW</li>
+                                    <li>가격</li>
+                                    <li>0원</li>
+                                    <li>세부사항</li>
+                                    <li>
+                                        <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                            <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                        </button>
+    
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="select-btn">
+                        <button>인버터 선택하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+   
+</body>
+</html>

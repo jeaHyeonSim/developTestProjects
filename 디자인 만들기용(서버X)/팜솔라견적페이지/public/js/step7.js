@@ -1,3 +1,10 @@
+$('.plusbtn').click(function(){
+    // 모달창 실행 이벤트
+    $('.modal-btn').trigger("click");
+});
+
+
+
 
 $('.modal-body .pdCom ul li').on({
     'click':function() {

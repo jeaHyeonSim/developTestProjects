@@ -1,0 +1,17 @@
+#wrap {
+    width: calc(100% - 10%);
+    padding: 0 5%;
+}
+/* @media (max-height: 565px) {
+    #footer {
+        transform: none;
+    }
+} */
+
+
+
+
+/* 푸터 안보이게 하기 */
+#footer {
+    display: none;
+}

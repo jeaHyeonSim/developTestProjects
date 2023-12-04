@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum=scale-1, minimum-scale=1">
+    <title>STEP 0</title>
+
+    <!-- 공통 라이브러리 js -->
+    <!-- <script src="../../../node_modules/chart.js/dist/chart.min.js"></script> -->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/moment/min/moment.min.js"></script>
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/common.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/commonClass.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/web/commonStyle.css"> -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/body.css"> <!-- 공통 BODY-->
+
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" type="text/css" href="../public/css/web/estimate.css">
+    <!-- 페이지별 JS -->
+    <script src="../public/js/estimate.js" defer></script>
+</head>
+<body>
+    <!-- <div class="center-r"></div> -->
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                </div>
+                <nav class="on">
+                    <span>연구기획본부</span>
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        홍길동
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="contents">
+
+                    <div class="content">
+                        <p class="juso">
+                            <span>광주광역시 광산구 삼거동 930 </span>
+                        </p>
+                        <div class="installInfo">
+                            <div class="l-box">
+                                <div class="map"></div>
+                            </div>
+                            <div class="r-box">
+                                <p class="start">
+                                    <!-- <span ></span>  -->
+                                    한전 선로 연계비 (약1100만원) 및 제세공과금 별도
+                                </p>
+                                <div>
+                                    <div>
+                                        총공사비
+                                        <span>(VAT별도)</span>
+                                    </div>
+                                
+                                    <span>
+                                        130,000,000
+                                        <b>원</b>
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <div>
+                                        <span>전력판매</span>
+                                        <span>
+                                            <b>약 </b>45,000,000
+                                            <b>원/연</b>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span>순수익</span>
+                                        <span>
+                                            <b>약 </b>27,000,000
+                                            <b>원/연</b><br>
+                                            <span class="start">대출 70~80% 원금 이자 관리비 제외</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span>
+                                        99.375kWp x 4.3시간 x 365일 x 290원
+                                    </span>
+                                    <span>
+                                        (가중치 1.5배 적용 / 22년 200원 SMP 기준 + REC 90원)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content">
+                        <!-- 
+                            - 연간운영비용 : yearlyCostestimate
+                            - 금융조건 : financeCond
+                            - 판매조건 : saleCond
+                            - 기타조건 : etcCond
+                        -->
+                        <div class="on totalCost box" >
+                            <p class="dadTitle">
+                                총 사업비
+                                <span></span>
+                            </p>
+                            <div>
+                                <div>
+                                    * 아래 각 항목에 금액을 직접 입력하여 주세요(VAT별도)
+                                    <ul>
+                                        <li>총 합계</li>
+                                        <li>17,872 <span>만원</span></li>
+                                    </ul>
+                                </div>
+                                
+
+                              
+                            </div>
+                        </div>
+
+                        <div class="on box" >
+                            <p class="dadTitle">
+                                연간운영비용
+                                <span></span>
+                            </p>
+                            <div>
+                                <div>
+                                    * 아래 각 항목에 금액을 직접 입력하여 주세요(VAT별도)
+                                    <ul>
+                                        <li>총 합계</li>
+                                        <li>17,872 <span>만원</span></li>
+                                    </ul>
+                                </div>
+                               
+
+                            </div>
+                        </div>
+                        <div class="on box" >
+                            <p class="dadTitle">
+                                금융조건
+                                <span></span>
+                            </p>
+                            <div>
+                               
+                            </div>
+                        </div>
+                        <div class="on box" >
+                            <p class="dadTitle">
+                                판매조건
+                                <span></span>
+                            </p>
+                            <div>
+                                
+
+                            </div>
+                        </div>
+                        <div class="on box" >
+                            <p class="dadTitle">
+                                기타조건
+                                <span></span>
+                            </p>
+                            <div>
+                               
+
+                            </div>
+                        </div>
+                        <div class="gf-btn last-btn">
+                            <a href="./step6.html">
+                                <button type="button" class="btn prev" style="color: #ffffff;     background : linear-gradient(90deg ,#8EBC50, #2B9264);">제안서 작성/저장하기</button>
+                            </a>
+                        </div>
+                    </div><!-- content -->
+
+                    
+
+                    
+
+                    
+                    
+                </div> <!-- container -->
+            </section>
+        </main>
+        <div class="footer" id="footer">
+            <div class="foo-companyInfo">
+                <p class="title">그린훼스코 주식회사</p>
+                <p class="tel">
+                    <span>Tel. 062-973-0086</span>
+                    <span>Fax. 062-443-2161</span>
+                    <span>Email. greenfesco@greenfesco.com</span>
+                </p>
+                <p>Add. 광주광역시 북구 첨단과기로 208번길 50, 302호(연구소)</p>
+                <p>Add. 광주광역시 광산구 빛그린18로 15(공장)</p>
+                <p>Add. 전라남도 나주시 노안면 노안로 455-41(전남지사)</p>
+            </div>
+            <div class="foo-companyBottom">
+                <p>Copyright © 2023 그린훼스코 주 All rights reserved</p>
+            </div>
+        </div>
+        
+        
+    </div> <!-- wrap-->
+
+
+</body>
+</html>

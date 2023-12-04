@@ -1,0 +1,634 @@
+#wrap {
+    background-position: 0 calc(100% - 200px);
+}
+
+
+
+/* 컨텐츠 제목들 */
+.contents p.tit {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 24px;
+    color: #111111;
+    margin: 35px 0 15px;
+    /* padding-left: 15px; */
+}
+.contents .tit span.tit-span:first-child {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+/* .contents .tit span.tit-span img */
+main img {
+    width: 100%;
+    height: 100%;
+}
+.contents .tit small {
+    font-size: 1rem;
+    padding-left: 10px;
+    color: var(--bg-green-color);
+    font-weight: 400;
+}
+
+/* 컨텐츠 내용들 */
+.contents > .content {
+    padding: 30px 25px;
+    width: calc(100% - 50px);
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+.contents > .content:last-child {
+    margin-bottom: 180px;
+}
+.contents > .content > div {
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    width: 100%;
+}
+
+
+/* 배치 지도 // 배치 정보 */
+.installInfo {
+    height: auto;
+    display: flex;
+}
+.installInfo > div {
+    width: calc(50% - 25px);
+}
+.installInfo .l-box {
+    padding-right: 25px;
+    height: 100%;
+}
+.installInfo .l-box > div {
+    width: 100%;
+}
+.installInfo .l-box .map {
+    width: 100%;
+    height: 300px;
+    background-color: #4BA05F;
+    border-radius: 5px;
+}
+
+.installInfo .l-box > div:last-child .juso {
+
+}
+
+.installInfo .l-box > div:last-child .juso {
+    width: 100%;
+    padding: 20px 0 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.installInfo .l-box > div:last-child .juso::before {
+    content: "";
+    width: 16px;
+    height: 21px;
+    background: url(../../imgs/result/map.png) no-repeat;
+    background-size: cover;
+}
+.installInfo .l-box > div:last-child .juso span {
+    padding-left: 10px;
+    font-size: var(--fontSize-20);
+    font-weight: 600;
+    color: #333333;
+}
+
+
+.installInfo .l-box > div:last-child ul {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+.installInfo .l-box > div:last-child ul li {
+    height: 40px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+.installInfo .l-box > div:last-child ul li:first-child {
+    position: relative;
+}
+.installInfo .l-box > div:last-child ul li:first-child span {
+    padding-left: 5px;
+    font-size: var(--fontSize-18);
+    font-weight: 400;
+}
+.installInfo .l-box > div:last-child ul li:first-child::before {
+    content: "";
+    top: 0px;
+    background-size: cover;
+}
+.installInfo .l-box > div:last-child ul li:last-child{
+    justify-content: end;
+    font-size: var(--fontSize-24);
+    font-weight: 600;
+}
+.installInfo .l-box > div:last-child ul li:last-child span {
+    font-weight: 400;
+    font-size: var(--fontSize-18);
+    margin-top: 6px;
+    
+}
+.installInfo .l-box > div:last-child >div:nth-child(2) ul li:first-child::before  {
+    width: 18px;
+    height: 18px;
+    background: url(../../imgs/step1/icon01.png) no-repeat;
+}
+.installInfo .l-box > div:last-child >div:nth-child(3) ul li:first-child::before  {
+    width: 21px;
+    height: 20px;
+    background: url(../../imgs/step1/icon03.png) no-repeat;
+}
+
+
+/* 오른쪽 배치 */
+.installInfo .r-box {
+    padding-left: 25px;
+}
+.installInfo .r-box > div.arrangeBtn {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 20px;
+}
+.installInfo .r-box > div.arrangeBtn > button {
+    width: 50px;
+    height: 50px;
+    background-color: #eeeeee;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: var(--fontSize-16);
+    font-weight: 400;
+    color: #999999;
+    box-sizing: border-box;
+    border: 1px solid #eeeeee;
+}
+.installInfo .r-box > div.arrangeBtn > button.on {
+    background-color: var(--bg-green-color);
+    color: #ffffff;
+}
+
+
+.installInfo .r-box > div.arrangeContent{
+
+}
+.installInfo .r-box > div.arrangeContent p{
+    color: #111111;
+    font-size: var(--fontSize-20);
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    background-color: #dddddd;
+    border-radius: 5px;
+    height: 45px;
+    margin-bottom: 3px;
+}
+.installInfo .r-box > div.arrangeContent p span {
+    background: url(../../imgs/result/arr.png) no-repeat center;
+    background-size: contain;
+    width: 15px;
+    height: 9px;
+}
+
+.installInfo .r-box > div.arrangeContent > div.on p span {
+    rotate: 180deg;
+}
+
+.installInfo .r-box > div.arrangeContent > div {
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+.installInfo .r-box > div.arrangeContent > div > div {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+.installInfo .r-box > div.arrangeContent > div > div > ul {
+    width: calc(100% - 60px);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 30px;
+}
+.installInfo .r-box > div.arrangeContent > div > div > ul > li {
+    margin-bottom: 15px;
+    font-size: var(--fontSize-18);
+}
+.installInfo .r-box > div.arrangeContent > div > div > ul > li:nth-child(odd){
+    color: #555555;
+    width: 40%;
+    font-weight: 400;
+}
+
+.installInfo .r-box > div.arrangeContent > div > div > ul > li:nth-child(even){
+    color: #333333;
+    width: 60%;
+    font-weight: 600;
+}
+
+.installInfo .r-box > div.arrangeContent > div > div > ul > li:nth-last-child(1),
+.installInfo .r-box > div.arrangeContent > div > div > ul > li:nth-last-child(2) {
+    margin-bottom: 0;
+}
+
+.installInfo .r-box > div.arrangeContent > div > div > div{
+    height: 25px;
+    padding: 20px 0 15px;
+    margin: 0 30px;
+    border-bottom: 3px dotted #d5d5d5;
+}
+.installInfo .r-box > div.arrangeContent > div > div > div > button {
+    width: 70px;
+    height: 28px;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    font-size: var(--fontSize-15);
+    font-weight: 400;
+    color: #999999;
+}
+.installInfo .r-box > div.arrangeContent > div > div > div > button.on {
+    background-color: #a0c34c;
+    color: #eef5f3;
+    font-weight: 600;
+}
+
+
+.installInfo .r-box > div.equipment {
+    height: 78px;
+    background-color: #eef5f3;
+    border: 1px solid #8fc9b8;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    color: #111111;
+    font-weight: 600;
+    font-size: var(--fontSize-18);
+}
+.installInfo .r-box > div.equipment span {
+
+    color: var(--bg-green-color);
+    font-size: var(--fontSize-30);
+}
+
+.installInfo .r-box > div.equipment span b {
+    font-size: var(--fontSize-18);
+}
+
+
+
+/* 하단 정보들 */
+.box {
+    margin-bottom: 20px;
+}
+.box:last-child{
+    margin-bottom: 0;
+}
+.box p.dadTitle {
+    font-size: var(--fontSize-20);
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    border-radius: 5px;
+    height: 45px;
+    margin-bottom: 3px;
+    
+    box-sizing: border-box;
+    border: 1px solid;
+}
+.box p.dadTitle.on  span {
+    rotate: 180deg;
+}
+.box p.dadTitle  span {
+    width: 15px;
+    height: 9px;
+
+}
+.box:nth-child(1) p.dadTitle{
+    color: #4c68c3;
+    background-color: #edf0f9;
+    border-color: #9babdc;
+}
+.box:nth-child(1) p.dadTitle span {
+    background: url(../../imgs/result/arr1.png) no-repeat center;
+    background-size: contain;
+}
+
+.box:nth-child(2) p.dadTitle{
+    color: #935eb1;
+    background-color: #f4eff7;
+    border-color: #c4a4d6;
+}
+.box:nth-child(2) p.dadTitle span {
+    background: url(../../imgs/result/arr2.png) no-repeat center;
+    background-size: contain;
+}
+
+.box:nth-child(3) p.dadTitle{
+    color: #e7b10e;
+    background-color: #fdf8e9;
+    border-color: #eecd68;
+}
+.box:nth-child(3) p.dadTitle span {
+    background: url(../../imgs/result/arr3.png) no-repeat center;
+    background-size: contain;
+}
+
+.box:nth-child(4) p.dadTitle{
+    color: #e72b2b;
+    background-color: #fef3f3;
+    border-color: #e48d8d;
+}
+.box:nth-child(4) p.dadTitle span {
+    background: url(../../imgs/result/arr4.png) no-repeat center;
+    background-size: contain;
+}
+
+.box:nth-child(5) p.dadTitle{
+    color: #198a69;
+    background-color: #eef5f3;
+    border-color: #8fc9b8;
+}
+.box:nth-child(5) p.dadTitle span {
+    background: url(../../imgs/result/arr5.png) no-repeat center;
+    background-size: contain;
+}
+
+
+.box > div {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 30px 25px;
+}
+.box > div > div {
+    font-size: var(--fontSize-16);
+    color: #999999;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.box > div > div ul {
+    width: calc(300px - 60px);
+    height: 50px;
+    /* background-color: #4c68c3; */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+.box:nth-child(1) > div > div ul {
+    background-color: #4c68c3;
+}
+.box:nth-child(2) > div > div ul {
+    background-color: #935eb1;
+}
+.box > div > div ul li{
+    color: #ffffff;
+}
+.box > div > div ul li:nth-child(1){
+    font-size: var(--fontSize-16);
+    font-weight: 400;
+}
+.box > div > div ul li:nth-child(2){
+    font-size: var(--fontSize-24);
+    font-weight: 600;
+}
+.box > div > div ul li:nth-child(2) span {
+    font-size: var(--fontSize-16);
+}
+/* 내용 박스들 */
+.box > div > ul {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    align-items: start;
+}
+.box > div > ul.ul2 {
+    padding-top: 30px;
+    border-top: 1px solid #eeeeee;
+}
+.box > div > ul:last-child {
+    padding-bottom: 0;    
+}
+.box > div > ul.ul2 > p{
+    font-size: var(--fontSize-16);
+    font-weight: 400;
+    color: #999999;
+    letter-spacing: -0.5px;
+    height: auto;
+    min-height: 20px;
+    margin-bottom: 30px;
+}
+.box > div > ul > li {
+    color: #333333;
+    font-size: var(--fontSize-16);
+    font-weight: 400;
+    margin-bottom: 20px;
+    /* margin-right: 15.5px; */
+    width: calc(25% - 15px);
+    padding-right: 15px;
+    min-width: 180px;
+}
+.box > div > ul > li:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+}
+.box > div > ul > li > p{
+    margin-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+.box > div > ul > li > p::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 16px;
+    width: 4px;
+}
+.box > div > ul.box1-ul > li > p::before{
+    border-left: 4px solid #4c68c3;
+}
+.box > div > ul.box2-ul > li > p::before{
+    border-left: 4px solid #935eb1;
+}
+.box > div > ul.box3-ul > li > p::before{
+    border-left: 4px solid #e7b10e;
+}
+.box > div > ul.box4-ul > li > p::before{
+    border-left: 4px solid #e72b2b;
+}
+.box > div > ul.box5-ul > li > p::before{
+    border-left: 4px solid #198a69;
+}
+.box > div > ul > li > div{
+    background-color: #f5f5f5;
+    width: 100%;
+    min-width: 180px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    border-radius: 5px;
+}
+.box > div > ul > li > div > input {
+    width: 123px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid #dddddd;
+    padding-left: 10px;
+    color: #333333;
+    font-size: var(--fontSize-16);
+    font-weight: 600;
+    margin-right: 5px;
+}
+.box > div > ul.box3-ul > li:first-child > div > input:first-child {
+    width: 38px;
+}
+.box > div > ul.box3-ul > li:first-child > div > input:last-child {
+    width: 68px;
+    margin-left: 5px;
+}
+
+
+select {
+    width:100%;
+    height:100%;
+   padding:0 28px 0 10px;
+   font-size: 15px;
+    border:0;
+    -webkit-appearance:none; /* for chrome */
+    -moz-appearance:none; /*for firefox*/
+    appearance:none;
+    box-sizing: border-box;
+    background:transparent!important;
+ }
+ select::-ms-expand{
+    display:none;/*for IE10,11*/
+ }
+.box > div > ul > li > div > select {
+    width: 133px;
+    height: 38px;
+}
+
+.select-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+.select-wrap {
+    height: 40px;
+    cursor: pointer;
+    background: url('../../imgs/result/trg.png') no-repeat 93% 50%/8px auto;
+    background-color: #fff;
+}
+
+.select_box {
+    display: block;
+    width: 135px;
+    height: calc(100% -2px);
+    border: 1px solid #767676;
+    padding: 6px 12px 6px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    font-size: var(--fontSize-18);
+    font-weight: 600;
+}
+/* .select-wrap:focus {
+    rotate: 180deg;
+} */
+.select_box option {
+    background: #fff;
+    color: #333333;
+    font-size: var(--fontSize-16);
+    padding-left: 6px;
+    margin: 20px 0;
+    border: none;
+}
+
+select option {
+    
+}
+
+
+.box > div > ul > li > div  section {
+    width: 133px;
+    height: 38px;
+    border: 1px solid #767676;
+    position: relative;
+}
+.box > div > ul > li > div  section > button {
+    position: absolute;
+    left: 0;
+    width: calc(100% - 20px);
+    height: 100%;
+    background-color: #fff;
+    text-align: right;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box > div > ul > li > div  section > button span {
+    font-size: var(--fontSize-18);
+    font-weight: 600;
+}
+.box > div > ul > li > div  section > button img{
+    width: 8px;
+    height: 6px;
+    rotate: 180deg;
+}
+.box > div > ul > li > div  section > button.on img {
+    rotate: 0deg;
+}
+.box > div > ul > li > div  section ul {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 999;
+}
+.box > div > ul > li > div  section li {
+    height: 40px;
+    background-color: #fff;
+}
+.box > div > ul > li > div  section li:hover {
+    background-color: #dddddd;
+}
+.box > div > ul > li > div  section li button {
+    padding-left: 10px;
+    text-align: left;
+    height: 100%;
+    width: calc(100% - 10px);
+    font-weight: 400;
+    font-size: var(--fontSize-16);
+
+}
+
+
+div.gf-btn.last-btn button {
+    width: 250px;
+}

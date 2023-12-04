@@ -3,6 +3,7 @@
     --font-color-black : #111111;
     --fontSize-12 : 0.75rem;
     --fontSize-14 : 0.875rem;
+    --fontSize-15 : 0.9375rem;
     --fontSize-16 : 1rem;
     --fontSize-18 : 1.125rem;
     --fontSize-20 : 1.25rem;
@@ -111,10 +112,10 @@ button {
     justify-content: center;
     min-width: 110px;
 }
-#header nav.off {
+#header nav.off { /* 실적용 X*/
     padding: 0 15px;
 }
-#header nav.on {
+#header nav.on { /* 실적용 X*/
     padding-right: 0;
     justify-content: end;
 }
@@ -184,7 +185,7 @@ main {
     margin-bottom: 50px;
     margin-top: 35px;
 }
-main .contents {
+main section > .contents {
     position: relative;
     max-width: 1024px;
     width: 100%;
