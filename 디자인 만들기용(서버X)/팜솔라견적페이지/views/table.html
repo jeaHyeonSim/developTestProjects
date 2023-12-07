@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>테이블 생성</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            height: 42px;
+            text-align: left;
+        }
+        thead tr {
+            border-top: 1px solid #999999;
+
+        }
+        th {
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333333;
+            font-size: 16px;
+            font-weight: 600;
+            position: relative; /* position 속성 추가 */
+        }
+        th::after { /* 오른쪽 테두리를 가상 요소로 생성 */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0px; /* 오른쪽 테두리 위치 조절 */
+            height: 100%;
+            border-right: 1px solid #eeeeee; /* 오른쪽 테두리 스타일 설정 */
+        }
+
+        th:first-child {
+            border-left: none;
+        }
+        th:last-child {
+            border-right: none;
+        }
+        tbody > tr:first-child > td {
+            border-top: 1px solid #999999;
+            border-bottom: 1px solid #999999;
+            color: #333333;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        tbody td {
+            position: relative;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        tbody td::after { /* 오른쪽 테두리를 가상 요소로 생성 */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0px; /* 오른쪽 테두리 위치 조절 */
+            height: 100%;
+            border-right: 1px solid #eeeeee;
+            border-left: none;
+        }
+        tbody tr:not(tbody tr:first-child) td {
+            font-size: 16px;
+            font-weight: 400;
+            color: #555555;
+        }
+        tbody tr td {
+            padding: 0 20px;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        tbody td:last-child {
+            border-right: none;
+        }
+        tbody > tr td:nth-child(2) {
+            text-align: center;
+        }
+        tbody > tr td:nth-child(3) {
+            text-align: center;
+        }
+        tbody > tr td:nth-child(4) {
+            text-align: right;
+        }
+        tbody > tr td:nth-child(5) {
+            text-align: center;
+        }
+
+
+        tfoot tr td {
+            border-top: 1px solid #999999;
+            border-bottom: 1px solid #999999;
+            padding: 0 20px;
+            position: relative;
+        }
+        tfoot tr td::after { /* 오른쪽 테두리를 가상 요소로 생성 */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0px; /* 오른쪽 테두리 위치 조절 */
+            height: 100%;
+            border-right: 1px solid #eeeeee;
+        }
+        tfoot tr td:last-child {
+            border-right: none;
+        }
+        tfoot > tr td:nth-child(2) {
+            text-align: center;
+        }
+        tfoot > tr td:nth-child(3) {
+            text-align: center;
+        }
+        tfoot > tr td:nth-child(4) {
+            text-align: right;
+        }
+        tfoot > tr td:nth-child(5) {
+            text-align: center;
+        }
+
+
+        tfoot tr td.td1 span:first-child{
+            color: #555555;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        tfoot tr td.td1 span:last-child{
+            color: #555555;
+            font-weight: 400;
+            font-size: 16px;
+        }
+        tfoot tr td.td2 {
+            color: #198a69;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        tfoot tr td.td3 {
+            color: #555555;
+            font-weight: 400;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>공증명</th>
+                <th>단위</th>
+                <th>수량</th>
+                <th>금액</th>
+                <th>비고</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="6">999kW</td>
+            </tr>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Dolor</td>
+                <td>Sit</td>
+                <td>Amet</td>
+            </tr>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Dolor</td>
+                <td>Sit</td>
+                <td>Amet</td>
+            </tr>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Dolor</td>
+                <td>Sit</td>
+                <td>Amet</td>
+            </tr>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Dolor</td>
+                <td>Sit</td>
+                <td>Amet</td>
+            </tr>
+            <tr>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+                <td>Dolor</td>
+                <td>Sit</td>
+                <td>Amet</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <!-- 마지막 줄 -->
+            <tr>
+                <td class="td1">
+                    <span>합계</span><span>(십만단위 이하 절사)</span>
+                </td>
+                <td></td>
+                <td></td>
+                <td class="td2">130,000,000</td>
+                <td class="td3">(VAT별도)</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

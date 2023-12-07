@@ -196,7 +196,7 @@ main img {
 }
 .installInfo .r-box > div:nth-child(3) > div:last-child > span:last-child span {
     position: relative;
-    padding-left: 15px;
+    padding-left: 15px; 
     color: var(--bg-green-color);
     font-size: var(--fontSize-16);
     font-weight: 400;

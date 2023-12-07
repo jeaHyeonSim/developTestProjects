@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>알림창</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        /* 알림창 스타일 */
+        #alertBox {
+            display: none;
+            position: fixed;
+           
+            align-items: start;
+            justify-content: space-between;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        /* 아이콘 스타일 */
+        #alertIcon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            background: url(../public/imgs/step0/!.png) no-repeat center;
+            background-size: auto;
+        }
+
+
+        /* 텍스트 스타일 */
+        #alertText {
+            display: inline-block;
+            text-align: left;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        #alertText > p {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        #alertText > p:first-child {
+            margin-bottom: 10px;
+        }
+        /* 확인 버튼 스타일 */
+        #okButton {
+            padding-top: 0;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .closeButton {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .closeButton:before,
+        .closeButton:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: black;
+        }
+
+        .closeButton:before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .closeButton:after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="alertBox">
+        <div id="alertIcon"></div>
+        <div id="alertText">
+            <p>알림</p>
+            <p>이격거리 확인 버튼을 눌러주세요.</p>
+        </div>
+        <div id="okButtonDiv">
+            <button id="okButton">
+                <div class="closeButton"></div>
+            </button>
+        </div>
+    </div>
+    <button id="checkDistanceButton">거리 확인 버튼</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#checkDistanceButton').click(function(){
+                $('#alertBox').fadeIn(); // 알림창을 보여줌
+                //setTimeout(function(){
+                //    $('#alertBox').fadeOut(); // 10초 후에 알림창을 숨김
+                //}, 10000);
+            });
+
+            $('#okButton').click(function(){
+                $('#alertBox').fadeOut(); // 'OK' 버튼을 클릭하면 알림창을 숨김
+            });
+        });
+    </script>
+</body>
+</html>
