@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum=scale-1, minimum-scale=1">
+    <title>관리자 - 사용자 리스트</title>
+
+    <!-- 공통 라이브러리 js -->
+    <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/common.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/commonClass.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/common/body.css"> <!-- 공통 BODY-->
+    <!-- admin 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/admin/common/common.css">
+
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/admin/web/userList.css">
+    
+    <!-- 페이지별 JS -->
+    <script src="../../public/js/admin/userList.js" defer></script>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                </div>
+                <nav class="on">
+                    <span>연구기획본부</span>
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        홍길동
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="contents">
+                    <div class="r-area"> <!-- r-area ::: admin 모든 페이지에 적용-->
+                        <div class="userList">
+                            <div>
+                                <a href="./userInfo.html">
+                                    <img src="../../public/imgs/admin/common/user.png" alt="">
+                                    <p>사용자 리스트</p>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="moduleList">
+                            <div>
+                                <a href="#">
+                                    <img src="../../public/imgs/admin/common/module.png" alt="">
+                                    <p>모듈 리스트</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="inverterList">
+                            <div>
+                                <a href="#">
+                                    <img src="../../public/imgs/admin/common/inverter.png" alt="">
+                                    <p>인버터 리스트</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- r-area ::: admin 모든 페이지에 적용-->
+                    
+                    <div class="content">
+                        <div class="on tableBox" >
+                            <p class="dadTitle title">
+                                사용자 리스트
+                            </p>
+                            <div>
+                                <div class="quote">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width: 17%;">
+                                            <col>
+                                            <col style="width: 17%;">
+                                            <col style="width: 17%;">
+                                            <col style="width: 17%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>이름</th>
+                                                <th>사원번호</th>
+                                                <th>부서</th>
+                                                <th>입사일</th>
+                                                <th>등록일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="quoteContents">
+                                            <!-- 여기에 내용이 동적으로 추가될 것입니다. -->
+                                        </tbody>
+                                    </table>
+                                    <div class="registration">
+                                        <button>등록하기</button>
+                                    </div>
+                                    <div class="pagination" id="pagination">
+                                        <!-- <button id="prevBtn">이전</button> -->
+                                        <span id="pageNumbers"></span>
+                                        <!-- <button id="nextBtn">다음</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div><!-- content -->
+
+                </div> <!-- container -->
+            </section>
+        </main>
+        <div class="footer" id="footer">
+            <div class="foo-companyInfo">
+                <p class="title">그린훼스코 주식회사</p>
+                <p class="tel">
+                    <span>Tel. 062-973-0086</span>
+                    <span>Fax. 062-443-2161</span>
+                    <span>Email. greenfesco@greenfesco.com</span>
+                </p>
+                <p>Add. 광주광역시 북구 첨단과기로 208번길 50, 302호(연구소)</p>
+                <p>Add. 광주광역시 광산구 빛그린18로 15(공장)</p>
+                <p>Add. 전라남도 나주시 노안면 노안로 455-41(전남지사)</p>
+            </div>
+            <div class="foo-companyBottom">
+                <p>Copyright © 2023 그린훼스코 주 All rights reserved</p>
+            </div>
+        </div>
+        
+        
+    </div> <!-- wrap-->
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+#wrap {
+    background-position: 0 calc(100% - 200px);
+}
+
+/* 컨텐츠 내용들 */
+.contents > .content {
+    padding: 60px;
+    width: calc(100% - 120px);
+    background-color: #fff;
+    border-radius: 5px;
+}
+.contents > .content:first-child{
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+}
+.contents > .content:last-child {
+    margin-bottom: 180px;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+}
+.contents > .content > div {
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    width: 100%;
+}
+
+
+.infoBox {
+    display: flex;
+}
+.infoBox > div:first-child {
+    width: 180px;
+    height: 230px;
+    border: 1px solid #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.infoBox > div:last-child {
+    width: calc(100% - 220px);
+    padding-left: 40px;
+}
+.infoBox > div:last-child  div.top ul {
+    display: flex;
+    justify-content: space-between;
+
+}
+.infoBox > div:last-child  div.top ul li:first-child {
+    display: flex;
+    align-items: center;
+}
+.infoBox > div:last-child  div.top ul li:first-child span {
+    display: inline-block;
+}
+.infoBox > div:last-child  div.top ul li:first-child span:first-child{
+    font-size: 28px;
+    font-weight: 600;
+    color: #333333;
+    position: relative;
+    padding-left: 14px;
+    padding-right: 20px;
+}
+.infoBox > div:last-child  div.top ul li:first-child span:first-child::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    border-left: 4px solid var(--bg-green-color);
+    height: 26px;
+    width: 4px;
+}
+.infoBox > div:last-child  div.top ul li:first-child span:last-child {
+    background-color: #fef3f3;
+    color: #e72b2b;
+    font-size: 14px;
+    padding: 6.5px 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+.infoBox > div:last-child  div.top ul li:first-child span:last-child img {
+    margin-right: 5px;
+}
+
+.infoBox > div:last-child  div.top ul li:last-child button{
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    background-color: #e72b2b;
+    text-align: center;
+    padding: 8px 32.5px;
+    border-radius: 5px;
+}
+
+
+
+
+.infoBox > div:last-child  div.bot {
+    margin-top: 25px;
+    min-height: 260px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.infoBox > div:last-child  div.bot ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 30px;
+}
+.infoBox > div:last-child  div.bot ul li {
+    width: 50%;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.infoBox > div:last-child  div.bot ul li span:first-child {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    font-weight: 400;
+    color: #555555;
+    margin-right: 15px;
+}
+.infoBox > div:last-child  div.bot ul li span:last-child {
+    font-weight: 600;
+    color: #111111;
+}

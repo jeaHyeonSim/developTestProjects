@@ -1,0 +1,47 @@
+section {
+    /* display: flex; */
+}
+.r-area {
+    position: absolute;
+    right: -220px;
+}
+
+.r-area > div {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.r-area > div.userList{
+    background-color: #ebbc2b;
+}
+
+.r-area > div.moduleList{
+    background-color: #4c68c3;
+    margin-top: 10px;
+}
+
+.r-area > div.inverterList{
+    background-color: #935eb1;
+    margin-top: 10px;
+}   
+
+.r-area  > div > div {
+    text-align: center;
+}
+.r-area  > div > div  p {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+div.gf-btn.last-btn button{
+    font-size: 16px;
+    width: 150px;
+    height: 40px;
+}

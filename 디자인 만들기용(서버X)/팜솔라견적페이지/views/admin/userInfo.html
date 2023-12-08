@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum=scale-1, minimum-scale=1">
+    <title>관리자 - 사용자 리스트</title>
+
+    <!-- 공통 라이브러리 js -->
+    <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/common.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/commonClass.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/common/body.css"> <!-- 공통 BODY-->
+    <!-- admin 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/admin/common/common.css">
+
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/admin/web/userInfo.css">
+    
+    <!-- 페이지별 JS -->
+    <script src="../../public/js/admin/userInfo.js" defer></script>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                </div>
+                <nav class="on">
+                    <span>연구기획본부</span>
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        홍길동
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="contents">
+                    <div class="r-area"> <!-- r-area ::: admin 모든 페이지에 적용-->
+                        <div class="userList">
+                            <div>
+                                <a href="./userInfo.html">
+                                    <img src="../../public/imgs/admin/common/user.png" alt="">
+                                    <p>사용자 리스트</p>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="moduleList">
+                            <div>
+                                <a href="#">
+                                    <img src="../../public/imgs/admin/common/module.png" alt="">
+                                    <p>모듈 리스트</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="inverterList">
+                            <div>
+                                <a href="#">
+                                    <img src="../../public/imgs/admin/common/inverter.png" alt="">
+                                    <p>인버터 리스트</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- r-area ::: admin 모든 페이지에 적용-->
+                    
+                    <div class="content">
+                        <div class="on infoBox" >
+                            <div>
+                                <img src="../../public/imgs/admin/userInfo/user.png" alt="">
+                            </div>
+                            <div>
+                                <div class="top">
+                                    <ul>
+                                        <li>
+                                            <span>홍길동</span>
+                                            <span>
+                                                <img src="../../public/imgs/admin/userInfo/x.png" alt="">
+                                                미사용
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <button>삭제하기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bot">
+                                    <ul>
+                                        <li>
+                                            <span>아이디</span>
+                                            <span>1</span>
+                                        </li>
+                                        <li>
+                                            <span>비밀번호</span>
+                                            <span>2</span>
+                                        </li>
+                                        <li>
+                                            <span>사원번호</span>
+                                            <span>3</span> 
+                                        </li>
+                                        <li>
+                                            <span>부서</span>
+                                            <span>4</span>
+                                        </li>
+                                        <li>
+                                            <span>고용일</span>
+                                            <span>2023-12-08</span>
+                                        </li>
+                                        <li>
+                                            <span>고용상태</span>
+                                            <span>재직</span>
+                                        </li>
+                                        <li>
+                                            <span>연봉</span>
+                                            <span>7,500만원</span>
+                                        </li>
+                                        <li>
+                                            <span>전화번호</span>
+                                            <span>010-1111-1111</span>
+                                        </li>
+                                        <li>
+                                            <span>성별</span>
+                                            <span>남성</span>
+                                        </li>
+                                        <li>
+                                            <span>생년월일</span>
+                                            <span>1999.01.01</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="gf-btn last-btn">
+                            <a href="../views/juso.html">
+                                <button type="button" class="btn prev" style="color: #555555; background-color: #f9f9f9; border: 1px solid #dddddd; box-sizing: border-box;">목록보기</button>
+                            </a>
+                            <a href="../views/step1.html">
+                                <button type="button" class="btn next  mr-l-5" style="background-color: var(--bg-green-color);">수정하기</button>
+                            </a>
+                        </div>
+                    </div><!-- content -->
+
+                </div> <!-- container -->
+            </section>
+        </main>
+        <div class="footer" id="footer">
+            <div class="foo-companyInfo">
+                <p class="title">그린훼스코 주식회사</p>
+                <p class="tel">
+                    <span>Tel. 062-973-0086</span>
+                    <span>Fax. 062-443-2161</span>
+                    <span>Email. greenfesco@greenfesco.com</span>
+                </p>
+                <p>Add. 광주광역시 북구 첨단과기로 208번길 50, 302호(연구소)</p>
+                <p>Add. 광주광역시 광산구 빛그린18로 15(공장)</p>
+                <p>Add. 전라남도 나주시 노안면 노안로 455-41(전남지사)</p>
+            </div>
+            <div class="foo-companyBottom">
+                <p>Copyright © 2023 그린훼스코 주 All rights reserved</p>
+            </div>
+        </div>
+        
+        
+    </div> <!-- wrap-->
+
+
+</body>
+</html>

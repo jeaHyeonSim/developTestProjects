@@ -1,0 +1,222 @@
+.contents #step3 .content .mapValSet{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+.contents #step3 .content .mapValSetbox {
+    background-color: #f9f9f9;
+    width: calc(49.5% - 80px);
+    max-width: 480px;
+    height:auto;
+    min-height: calc(270px - 60px);
+    max-height: calc(270px - 60px);
+
+    padding: 30px 40px;
+    border-radius: 5px;
+}
+.contents #step3 .content .mapValSetbox > p:first-child {
+    color: #111111;
+    font-size: var(--fontSize-18);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.contents #step3 .content .mapValSetbox.l-box > p:not(.c#step3 ontents .content .mapValSetbox > p:first-child){
+    font-size: var(--fontSize-16);
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.1;
+}
+.contents #step3 .content .mapValSetbox.l-box > div {
+    color: #555555;
+    font-size: var(--fontSize-16);
+    font-weight: 600;
+    background-color: #ffffff;
+    width: calc(100% - 60px);
+    height: 60px;
+    border-radius: 5px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contents #step3 .content .mapValSetbox.l-box > div > div:last-child {
+    width: 188px;
+    
+    border: 1px solid #eeeeee;
+    height: 38px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+.contents #step3 .content .mapValSetbox.l-box > div > div > span {
+    display: block;
+}
+
+.contents  #step3 .content .mapValSetbox.l-box > div > div > span:nth-child(2) input {
+    width: 40px;
+    font-size: var(--fontSize-18);
+    color: #111111;
+    font-weight: 600;
+    text-align: center;
+}
+.contents  #step3 .content .mapValSetbox.l-box > div > div > span:nth-child(2) input::placeholder{
+    color: #111111;
+}
+
+
+.contents #step3 .content .mapValSetbox.l-box > div > div > span:not(.contents #step3 .content .mapValSetbox.l-box > div > div > span:nth-child(2)){
+    color: var(--bg-green-color);
+    width: 30px;
+    height: 30px;
+    background-color: #eef5f3;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.contents #step3 .content .mapValSetbox.r-box > p:not(.c#step3 ontents .content .mapValSetbox.r-box > p:first-child){
+    font-size: var(--fontSize-16);
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.1;
+}
+.contents #step3 .content .mapValSetbox.r-box > div {
+    width: 100%;
+    min-height: 45px;
+    height: auto;
+    margin-top: 20px;
+    color: #111111;
+    font-size: var(--fontSize-18);
+    font-weight: 600;
+    /* margin-bottom: 15px; */
+}
+.contents #step3 .content .mapValSetbox.r-box > div.arrange {
+    display: flex;
+    height: 43px;
+    justify-content: space-between;
+}
+.contents #step3 .content .mapValSetbox.r-box > div.arrange button {
+    width: 193px;
+    height: 100%;
+    border: unset;
+    padding: 0;
+    border: 1px solid var(--bg-green-color);
+    color: var(--bg-green-color);
+    font-weight: 600;
+    font-size: var(--fontSize-16);
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contents #step3 .content .mapValSetbox.r-box > div.arrange button.on {
+    background-color: var(--bg-green-color);
+    color: #ffffff;
+}
+.contents #step3 .content .mapValSetbox.r-box > div.mGroup {
+    margin-top: 40px;
+}
+.contents #step3 .content .mapValSetbox.r-box img {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    width: 117px;
+    height: 120px;
+}
+
+
+
+/* 단계별 상태 스타일 */
+.step-state {
+    padding: 10px 0 15px;
+    background: #f7f7f7
+}
+.step-state ul {
+    position: relative;
+}
+/* li  */
+.step-state ul li {
+    cursor: pointer;
+    float: left;
+    position: relative;
+    padding-top: 40px;
+    /* 진행바 영역 확보 */
+    font-size: var(--fontSize-14);
+    font-weight: 400;
+    text-align: right;
+    line-height: 12px;
+    color: #666;
+}
+.step-state ul li:not(.step-state ul li:first-child) {
+    width: calc(12.5% - 2px);
+    margin-right: 2px;
+}
+.step-state ul li:first-child{
+    position: absolute;
+    left: 0;
+    min-width: 22px;
+}
+/* 활성화 상태바 라인 색상*/
+.step-state.step1 ul li.on:not(.step-state.step1 ul li.on:first-child):before {
+    background: var(--bg-green-color);
+}
+
+.step-state ul li p {
+    position: absolute;
+    right: -10px;
+}
+.step-state ul li:first-child p {
+    right: unset;
+    left: -11px;
+}
+
+/* 활성화 상태바 단 텍스트 */
+.step-state.step1 ul li.on p,
+.step-state ul li > span.on ~ p {
+    font-weight: 600;
+    color: #333333;
+}
+
+.step-state ul li > span.on {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 3px solid var(--bg-green-color);
+    border-radius: 50%;
+    right: -7.5px;
+}
+.step-state ul li > span.on > span {
+    display: block;
+    width: 9px;
+    height: 9px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.step-state ul li:first-child > span.on {
+    left: -7.5px;
+}
+/* 회색 진행바 생성 */
+.step-state ul li:before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #ddd;
+    content: ''
+}

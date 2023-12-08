@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>모달 창</title>
+    <style>
+        /* 모달 창 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 47% ;
+            left: 50%;
+            transform: translate(-47%, -50%);
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 20px 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            box-sizing: border-box;
+        }
+
+        .modal-w1024 {
+            max-width: 1020px;
+            max-height: 671px;
+        }
+        .modal-w690 {
+            max-width: 690px;
+        }
+        .modal-w800 {
+            max-width: 800px;
+            max-height: 500px; 
+        }
+        .modal-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .modal-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .modal-box {
+            width: 150px;
+            height: 100px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        /* 모달 보이기 버튼 스타일 */
+        .show-modal-btn {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+         /* 전체 화면을 불투명하게 만드는 스타일 */
+         .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* 불투명한 검은 배경 */
+            z-index: 9998; /* 모달보다 낮은 z-index */
+        }
+        
+        /* 닫기 버튼 스타일 */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <button class="show-modal-btn">모달 보이기</button>
+
+    <div class="overlay" id="overlay"></div> <!-- 전체 화면을 불투명하게 만드는 overlay 추가 -->
+    <div class="modal modal-w1024" id="myModal">
+        <span class="close-btn">&times;</span> <!-- X 모양의 닫기 버튼 -->
+        <div class="modal-title">모달 타입</div>
+        <div class="modal-content">
+            <div class="modal-box">내용1</div>
+            <div class="modal-box">내용2</div>
+            <div class="modal-box">내용3</div>
+            <!-- 필요한 만큼 추가적인 박스를 만들어주세요. -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 모달 보이기 버튼 클릭 시 모달 보이기
+            $('.show-modal-btn').click(function() {
+                $('#overlay').fadeIn(); // 전체 화면을 불투명하게 보이도록 fadeIn
+
+                // 화면 높이의 30%에서 아래로 내려오는 효과
+                var modalHeight = $(window).height() * 0.3;
+                $('#myModal').show().css('top', -modalHeight).animate({ top: '50%' }, 500);
+            });
+
+            // 닫기 버튼 클릭 시 모달 닫기
+            $('.close-btn').click(function() {
+                $('#overlay').fadeOut(); // 전체 화면을 투명하게 보이도록 fadeOut
+
+                // 모달이 위로 올라가면서 사라지는 효과
+                var modalHeight = $(window).height() * 0.3;
+                $('#myModal').animate({ top: -modalHeight }, 500, function() {
+                    $(this).hide();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
