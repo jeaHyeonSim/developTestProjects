@@ -22,10 +22,13 @@
 .r-area  > div > div {
     text-align: center;
 }
-.r-area  > div > div > p {
+.r-area  > div > div  p {
     margin-top: 10px;
     font-weight: 600;
     font-size: 1.1rem;
+}
+.r-area  > div > div a:hover {
+    color: unset;
 }
 .r-area  > div.proposal {
     background-color: rgb(235, 188, 43);

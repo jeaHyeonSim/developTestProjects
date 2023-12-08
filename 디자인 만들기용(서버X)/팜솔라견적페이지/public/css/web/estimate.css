@@ -39,10 +39,15 @@ main img {
     width: calc(100% - 50px);
     background-color: #fff;
     border-radius: 5px;
-    margin-bottom: 50px;
+}
+.contents > .content:first-child{
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
 }
 .contents > .content:last-child {
     margin-bottom: 180px;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
 }
 .contents > .content > div {
     border-radius: 5px;
@@ -78,7 +83,7 @@ main img {
 
 .content > p.juso {
     width: 100%;
-    padding: 40px 0 30px;
+    padding: 10px 0 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -222,43 +227,189 @@ main img {
 
 
 /* 하단 정보들 */
-.box {
-    margin-bottom: 20px;
-}
 .box:last-child{
     margin-bottom: 0;
 }
-.box p.dadTitle {
-    font-size: var(--fontSize-20);
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.tableBox > p.title {
+    font-size: var(--fontSize-24);
+    color: #111111;
+    font-weight: 700;
+    text-align: center;
     padding: 0 25px;
     border-radius: 5px;
-    height: 45px;
+    height: auto;
     margin-bottom: 3px;
-    
+
     box-sizing: border-box;
-    border: 1px solid;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
 }
-.box p.dadTitle.on  span {
-    rotate: 180deg;
+.tableBox > p.title span {
+    display: block;
+    width: 26px;
+    height: 25px;
+    background: url(../../imgs/estimate/icon.png) no-repeat center;
+    background-size: contain;
+    margin-bottom: 10px;
 }
-.box p.dadTitle  span {
-    width: 15px;
-    height: 9px;
+
+.tableBox table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.tableBox  th, td {
+    vertical-align: middle;
+}
+.tableBox th, td {
+    height: 44px;
+    text-align: left;
+}
+.tableBox thead tr {
+    border-top: 1px solid #999999;
 
 }
-.box:nth-child(1) p.dadTitle{
-    color: #4c68c3;
-    background-color: #edf0f9;
-    border-color: #9babdc;
+.tableBox th {
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative; /* position 속성 추가 */
 }
-.box:nth-child(1) p.dadTitle span {
-    background: url(../../imgs/result/arr1.png) no-repeat center;
-    background-size: contain;
+.tableBox th::after { /* 오른쪽 테두리를 가상 요소로 생성 */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0px; /* 오른쪽 테두리 위치 조절 */
+    height: 100%;
+    border-right: 1px solid #eeeeee; /* 오른쪽 테두리 스타일 설정 */
 }
+.tableBox th:last-child::after {
+    border-right: none;
+}
+
+.tableBox th:first-child {
+    border-left: none;
+}
+.tableBox th:last-child {
+    border-right: none;
+}
+.tableBox tbody > tr:first-child > td {
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    color: #333333;
+    font-size: 18px;
+    font-weight: 600;
+}
+.tableBox tbody td {
+    position: relative;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.tableBox tbody td::after { /* 오른쪽 테두리를 가상 요소로 생성 */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0px; /* 오른쪽 테두리 위치 조절 */
+    height: 100%;
+    border-right: 1px solid #eeeeee;
+    border-left: none;
+}
+.tableBox tbody td::after {
+    border-right: none;
+}
+
+.tableBox tbody tr:not(tbody tr:first-child) td {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555555;
+}
+.tableBox tbody tr td {
+    padding: 0 20px;
+}
+.tableBox tbody tr:last-child td {
+    border-bottom: none;
+}
+.tableBox tbody td:last-child {
+    border-right: none;
+}
+.tableBox tbody > tr td:nth-child(2) {
+    text-align: center;
+}
+.tableBox tbody > tr td:nth-child(3) {
+    text-align: center;
+}
+.tableBox tbody > tr td:nth-child(4) {
+    text-align: right;
+}
+.tableBox tbody > tr td:nth-child(5) {
+    text-align: center;
+}
+
+
+.tableBox tfoot tr td {
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    padding: 0 20px;
+    position: relative;
+}
+.tableBox tfoot tr td::after { /* 오른쪽 테두리를 가상 요소로 생성 */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0px; /* 오른쪽 테두리 위치 조절 */
+    height: 100%;
+    border-right: 1px solid #eeeeee;
+}
+.tableBox tfoot tr td::after {
+    border-right: none;
+}
+.tableBox tfoot tr td:last-child {
+    border-right: none;
+}
+.tableBox tfoot > tr td:nth-child(2) {
+    text-align: center;
+}
+.tableBox tfoot > tr td:nth-child(3) {
+    text-align: center;
+}
+.tableBox tfoot > tr td:nth-child(4) {
+    text-align: right;
+}
+.tableBox tfoot > tr td:nth-child(5) {
+    text-align: center;
+}
+
+
+.tableBox tfoot tr td.td1 span:first-child{
+    color: #555555;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.tableBox tfoot tr td.td1 span:last-child{
+    color: #555555;
+    font-weight: 400;
+    font-size: 16px;
+}
+.tableBox tfoot tr td.td2 {
+    color: #198a69;
+    font-weight: 600;
+    font-size: 18px;
+}
+.tableBox tfoot tr td.td3 {
+    color: #555555;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
 
 .box:nth-child(2) p.dadTitle{
     color: #935eb1;
@@ -270,299 +421,102 @@ main img {
     background-size: contain;
 }
 
-.box:nth-child(3) p.dadTitle{
-    color: #e7b10e;
-    background-color: #fdf8e9;
-    border-color: #eecd68;
-}
-.box:nth-child(3) p.dadTitle span {
-    background: url(../../imgs/result/arr3.png) no-repeat center;
-    background-size: contain;
-}
-
-.box:nth-child(4) p.dadTitle{
-    color: #e72b2b;
-    background-color: #fef3f3;
-    border-color: #e48d8d;
-}
-.box:nth-child(4) p.dadTitle span {
-    background: url(../../imgs/result/arr4.png) no-repeat center;
-    background-size: contain;
-}
-
-.box:nth-child(5) p.dadTitle{
-    color: #198a69;
-    background-color: #eef5f3;
-    border-color: #8fc9b8;
-}
-.box:nth-child(5) p.dadTitle span {
-    background: url(../../imgs/result/arr5.png) no-repeat center;
-    background-size: contain;
-}
 
 
-.box > div {
+
+.tableBox > div {
     background-color: #ffffff;
-    border: 1px solid #dddddd;
+    /* border: 1px solid #dddddd; */
     border-radius: 5px;
-    padding: 30px 25px;
+    padding: 0;
 }
-.box > div > div {
+.tableBox > div > div {
+    text-align: right;
+    margin-top: 15px;
+    
+}
+.tableBox > div > div > span {
     font-size: var(--fontSize-16);
-    color: #999999;
+    color: #767676;
     font-weight: 400;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
 }
-.box > div > div ul {
-    width: calc(300px - 60px);
-    height: 50px;
-    /* background-color: #4c68c3; */
+
+
+
+.botBox > div.top {
+    background-color: #f5f5f5;
+    /* border: 1px solid #dddddd; */
     border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-}
-.box:nth-child(1) > div > div ul {
-    background-color: #4c68c3;
-}
-.box:nth-child(2) > div > div ul {
-    background-color: #935eb1;
-}
-.box > div > div ul li{
-    color: #ffffff;
-}
-.box > div > div ul li:nth-child(1){
-    font-size: var(--fontSize-16);
-    font-weight: 400;
-}
-.box > div > div ul li:nth-child(2){
-    font-size: var(--fontSize-24);
-    font-weight: 600;
-}
-.box > div > div ul li:nth-child(2) span {
-    font-size: var(--fontSize-16);
-}
-/* 내용 박스들 */
-.box > div > ul {
-    display: flex;
-    /* justify-content: space-between; */
-    flex-wrap: wrap;
-    padding-bottom: 40px;
-    align-items: start;
-}
-.box > div > ul.ul2 {
-    padding-top: 30px;
-    border-top: 1px solid #eeeeee;
-}
-.box > div > ul:last-child {
-    padding-bottom: 0;    
-}
-.box > div > ul.ul2 > p{
-    font-size: var(--fontSize-16);
-    font-weight: 400;
-    color: #999999;
-    letter-spacing: -0.5px;
+    padding: 40px 0 0 60px;
+    min-height: 160px;
     height: auto;
-    min-height: 20px;
-    margin-bottom: 30px;
-}
-.box > div > ul > li {
-    color: #333333;
-    font-size: var(--fontSize-16);
-    font-weight: 400;
-    margin-bottom: 20px;
-    /* margin-right: 15.5px; */
-    width: calc(25% - 15px);
-    padding-right: 15px;
-    min-width: 180px;
-}
-.box > div > ul > li:nth-last-child(-n + 4) {
-    margin-bottom: 0;
-}
-.box > div > ul > li > p{
-    margin-bottom: 10px;
-    padding-left: 10px;
     position: relative;
 }
-.box > div > ul > li > p::before {
-    content: "";
-    display: inline-block;
+.botBox > div.top > img {
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 16px;
-    width: 4px;
+    width: 172px;
+    height: 119px;
+    right: 0;
+    bottom: -10px;
+    z-index: 1;
 }
-.box > div > ul.box1-ul > li > p::before{
-    border-left: 4px solid #4c68c3;
+.botBox > div.top > div {
+    font-size: var(--fontSize-16);
+    color: #999999;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 30px; */
 }
-.box > div > ul.box2-ul > li > p::before{
-    border-left: 4px solid #935eb1;
+.botBox > div.top > div > ul {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 10;
 }
-.box > div > ul.box3-ul > li > p::before{
-    border-left: 4px solid #e7b10e;
+
+.botBox > div.top > div > ul li {
+    width: 50%;
+    font-size: var(--fontSize-18);
+    color: #111111;
+    font-weight: 600;
+    min-height: 30px;
+    /* margin-bottom: 15px; */
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
-.box > div > ul.box4-ul > li > p::before{
-    border-left: 4px solid #e72b2b;
-}
-.box > div > ul.box5-ul > li > p::before{
-    border-left: 4px solid #198a69;
-}
-.box > div > ul > li > div{
-    background-color: #f5f5f5;
-    width: 100%;
-    min-width: 180px;
-    height: 80px;
+.botBox > div.top > div > ul li span {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 400;
-    border-radius: 5px;
-}
-.box > div > ul > li > div > input {
-    width: 123px;
-    height: 38px;
-    padding: 0;
-    border: 1px solid #dddddd;
-    padding-left: 10px;
-    color: #333333;
-    font-size: var(--fontSize-16);
-    font-weight: 600;
-    margin-right: 5px;
-}
-.box > div > ul.box3-ul > li:first-child > div > input:first-child {
-    width: 38px;
-}
-.box > div > ul.box3-ul > li:first-child > div > input:last-child {
-    width: 68px;
-    margin-left: 5px;
-}
-
-
-select {
-    width:100%;
-    height:100%;
-   padding:0 28px 0 10px;
-   font-size: 15px;
-    border:0;
-    -webkit-appearance:none; /* for chrome */
-    -moz-appearance:none; /*for firefox*/
-    appearance:none;
-    box-sizing: border-box;
-    background:transparent!important;
- }
- select::-ms-expand{
-    display:none;/*for IE10,11*/
- }
-.box > div > ul > li > div > select {
-    width: 133px;
-    height: 38px;
-}
-
-.select-group {
-    position: relative;
-    display: table;
-    border-collapse: separate;
-}
-.select-wrap {
-    height: 40px;
-    cursor: pointer;
-    background: url('../../imgs/result/trg.png') no-repeat 93% 50%/8px auto;
-    background-color: #fff;
-}
-
-.select_box {
-    display: block;
-    width: 135px;
-    height: calc(100% -2px);
-    border: 1px solid #767676;
-    padding: 6px 12px 6px;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
+    background-color: #ffffff;
+    border-radius: 50px;
     font-size: var(--fontSize-18);
-    font-weight: 600;
-}
-/* .select-wrap:focus {
-    rotate: 180deg;
-} */
-.select_box option {
-    background: #fff;
-    color: #333333;
-    font-size: var(--fontSize-16);
-    padding-left: 6px;
-    margin: 20px 0;
-    border: none;
-}
-
-select option {
-    
-}
-
-
-.box > div > ul > li > div  section {
-    width: 133px;
-    height: 38px;
-    border: 1px solid #767676;
-    position: relative;
-}
-.box > div > ul > li > div  section > button {
-    position: absolute;
-    left: 0;
-    width: calc(100% - 20px);
-    height: 100%;
-    background-color: #fff;
-    text-align: right;
-    padding-right: 10px;
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.box > div > ul > li > div  section > button span {
-    font-size: var(--fontSize-18);
-    font-weight: 600;
-}
-.box > div > ul > li > div  section > button img{
-    width: 8px;
-    height: 6px;
-    rotate: 180deg;
-}
-.box > div > ul > li > div  section > button.on img {
-    rotate: 0deg;
-}
-.box > div > ul > li > div  section ul {
-    position: absolute;
-    left: 0;
-    top: 40px;
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-.box > div > ul > li > div  section li {
-    height: 40px;
-    background-color: #fff;
-}
-.box > div > ul > li > div  section li:hover {
-    background-color: #dddddd;
-}
-.box > div > ul > li > div  section li button {
-    padding-left: 10px;
-    text-align: left;
-    height: 100%;
-    width: calc(100% - 10px);
+    color: #555555;
     font-weight: 400;
-    font-size: var(--fontSize-16);
-
+    min-width: 90px;
+    height: 30px;
+    margin-right: 15px;
 }
 
+.botBox {
+    margin-top: 40px;
+}
+.botBox > div.bot {
+    text-align: center;
+    margin-top: 30px;
+}
+.botBox > div.bot span {
+    color: #e72b2b;
+    font-weight: 600;
+    font-size: var(--fontSize-18);
+}
 
+div.gf-btn.last-btn a {
+    display: inline-block;
+}
 div.gf-btn.last-btn button {
-    width: 250px;
+    width: 200px;
+    box-sizing: border-box;
 }

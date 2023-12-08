@@ -1,0 +1,156 @@
+#wrap {
+    background-position: 0 calc(100% - 200px);
+}
+
+/* 컨텐츠 내용들 */
+.contents > .content {
+    padding: 30px 25px;
+    width: calc(100% - 50px);
+    /* background-color: #fff; */
+    border-radius: 5px;
+}
+.contents > .content:first-child{
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+}
+.contents > .content:last-child {
+    margin-bottom: 180px;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+}
+.contents > .content > div {
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    width: 100%;
+}
+
+
+
+
+
+/* 테이블 */
+/* 스타일링 */
+.tableBox > p.title {
+    font-size: var(--fontSize-24);
+    color: #111111;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 25px;
+    border-radius: 5px;
+    height: auto;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.tableBox > p.title span {
+    display: block;
+    width: 146px;
+    height: 139px;
+    background: url(../../imgs/estimateList/img.png) no-repeat center;
+    background-size: contain;
+    margin-bottom: 35px;
+}
+.quote {
+    margin: 20px;
+}
+th, td {
+    vertical-align: middle;
+}
+.quote table {
+    width: 100%;
+    border-collapse: separate;
+    margin-bottom: 20px;
+    border-spacing: 0 3px; /*각각 간격*/
+}
+
+.quote th, .quote td {
+    padding: 8px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.quote th {
+    background-color: #e0f6ab;
+    font-weight: 600;
+}
+.quote th ,.quote td {
+    height: 50px;
+    padding: 0;
+    color: #333333;
+    font-size: 18px;
+}
+
+.quote th:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.quote th:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.quote td:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.quote td:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.quote td {
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+
+.quote .pagination {
+    text-align: center;
+}
+.quote span#pageNumbers {
+    background-color: #ffffff;
+    display: inline-block;
+    border-radius: 20px;
+    height: 30px;
+    padding: 5px;
+}
+
+.quote .pagination button {
+    margin: 0 5px;
+    cursor: pointer;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.quote .pagination button:first-child {
+    margin-left: 0;;
+}
+
+.quote .prevBtn , 
+.quote .nextBtn {
+    color: #c7c7c7;
+    background-color: #f5f5f5;
+}
+.quote .prevBtn , 
+.quote .nextBtn, 
+.quote .pageBtn {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+}
+.quote .pageBtn {
+    background-color: unset;
+    color: #333333;
+}
+.quote .active {
+    background-color: #198a69;
+    color: #ffffff; /* 활성화된 페이지 번호의 색상을 빨간색으로 설정 */
+}
+
+
