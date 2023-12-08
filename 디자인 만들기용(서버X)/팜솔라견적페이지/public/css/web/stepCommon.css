@@ -586,6 +586,9 @@ main {
     color: #111111;
     font-weight: 600;
 }
+
+
+
 .modifyBox ul li.plus-minus div {
     display: flex;
     width: 110px;
@@ -601,10 +604,18 @@ main {
     color: #111111;
     font-weight: 600;
 }
-.modifyBox ul li:not(.mod-btn) div > span:nth-child(2){
+.modifyBox ul li:not(.mod-btn) div > span:nth-child(2) input {
+    width: 40px;
     font-size: var(--fontSize-18);
     color: #111111;
+    font-weight: 600;
+    text-align: center;
+    padding-left: 0;
 }
+.modifyBox ul li:not(.mod-btn) div > span:nth-child(2) input::placeholder {
+    color: #111111;
+}
+
 .modifyBox ul li:not(.mod-btn) div > span.minus,
 .modifyBox ul li:not(.mod-btn) div > span.plus
 {
