@@ -3,113 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <title>모달 창</title>
-    <style>
-        /* 모달 창 스타일 */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 47% ;
-            left: 50%;
-            transform: translate(-47%, -50%);
-            background: #fff;
-            border: 1px solid #ccc;
-            padding: 20px 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 9999;
-            box-sizing: border-box;
-        }
 
-        .modal-w1024 {
-            max-width: 1020px;
-            max-height: 671px;
-        }
-        .modal-w690 {
-            max-width: 690px;
-        }
-        .modal-w800 {
-            max-width: 800px;
-            max-height: 500px; 
-        }
-        .modal-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
 
-        .modal-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+    <link rel="stylesheet" type="text/css" href="../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/common.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/web/commonClass.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/web/commonStyle.css"> -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../public/css/common/body.css"> <!-- 공통 BODY-->
+    <link rel="stylesheet" href="../public/css/web/modal.css">
 
-        .modal-box {
-            width: 150px;
-            height: 100px;
-            background: #f0f0f0;
-            border: 1px solid #ccc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-        }
-
-        /* 모달 보이기 버튼 스타일 */
-        .show-modal-btn {
-            padding: 10px 20px;
-            background: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-         /* 전체 화면을 불투명하게 만드는 스타일 */
-         .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.3); /* 불투명한 검은 배경 */
-            z-index: 9998; /* 모달보다 낮은 z-index */
-        }
-        
-        /* 닫기 버튼 스타일 */
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #333;
-        }
-    </style>
 </head>
 <body>
     <button class="show-modal-btn">모달 보이기</button>
 
     <div class="overlay" id="overlay"></div> <!-- 전체 화면을 불투명하게 만드는 overlay 추가 -->
-    <div class="modal modal-w1024" id="myModal">
-        <span class="close-btn">&times;</span> <!-- X 모양의 닫기 버튼 -->
-        <div class="modal-title">모달 타입</div>
+    <div class="modal modal-w1024 modal-h650" id="step1">
         <div class="modal-content">
-            <div class="modal-box">내용1</div>
-            <div class="modal-box">내용2</div>
-            <div class="modal-box">내용3</div>
-            <!-- 필요한 만큼 추가적인 박스를 만들어주세요. -->
+            <div class="modal-header">
+                <h4 class="modal-title" id="staticBackdropLabel">모달 타입</h4>
+                <h6 class="modal-sub-title">설치하려는 모듈을 선택해주세요</h6>
+                <button type="button" class="btn-close close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content-title">
+                    <ul>
+                        <li class="on">전체</li>
+                        <li>현대에너지솔루션</li>
+                        <li>한화큐셀</li>
+                        <li>LONGI</li>
+                        <li>에스에너지</li>
+                    </ul>
+                </div>
+                <div class="modal-body_select">
+                    <div class="modal-box box1">
+                        <div class="img">
+                            <img src="../public/imgs/step1/module.png" alt="">
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>제조사</li>
+                                <li>현대에너지솔루션</li>
+                                <li>모델명</li>
+                                <li>HIS-S6000J-ET</li>
+                                <li>용량</li>
+                                <li>605W</li>
+                                <li>가격</li>
+                                <li>0 원</li>
+                                <li>세부정보</li>
+                                <li>
+                                    <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                        <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                    </button>
+                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-box box2">
+                        <div class="img">
+                            <img src="../public/imgs/step1/module.png" alt="">
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>제조사</li>
+                                <li>현대에너지솔루션</li>
+                                <li>모델명</li>
+                                <li>HIS-S6000J-ET</li>
+                                <li>용량</li>
+                                <li>605W</li>
+                                <li>가격</li>
+                                <li>0 원</li>
+                                <li>세부정보</li>
+                                <li>
+                                    <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                        <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                    </button>
+                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-box box3">
+                        <div class="img">
+                            <img src="../public/imgs/step1/module.png" alt="">
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>제조사</li>
+                                <li>현대에너지솔루션</li>
+                                <li>모델명</li>
+                                <li>HIS-S6000J-ET</li>
+                                <li>용량</li>
+                                <li>605W</li>
+                                <li>가격</li>
+                                <li>0 원</li>
+                                <li>세부정보</li>
+                                <li>
+                                    <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                        <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                    </button>
+                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-box box4">
+                        <div class="img">
+                            <img src="../public/imgs/step1/module.png" alt="">
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>제조사</li>
+                                <li>현대에너지솔루션</li>
+                                <li>모델명</li>
+                                <li>HIS-S6000J-ET</li>
+                                <li>용량</li>
+                                <li>605W</li>
+                                <li>가격</li>
+                                <li>0 원</li>
+                                <li>세부정보</li>
+                                <li>
+                                    <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                        <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                    </button>
+                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 필요한 만큼 추가적인 박스를 만들어주세요. -->
+                </div> <!-- modal-body_select  -->
+                <div class="select-btn">
+                    <button>모듈 선택하기</button>
+                </div>
+            </div>
         </div>
+        
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+
+        // mfgCompany, modelName, volume, price
+        const productData = [
+            { mfgCompany: "현대에너지솔루션", modelName: "HIS-S6000J-ET", volume: "605", price:"12000", detail:"PDF주소" },
+            { mfgCompany: "현대에너지솔루션", modelName: "HIS-S6000J-ET", volume: "605", price:"12000", detail:"PDF주소" },
+            { mfgCompany: "현대에너지솔루션", modelName: "HIS-S6000J-ET", volume: "605", price:"12000", detail:"PDF주소" },
+            { mfgCompany: "현대에너지솔루션", modelName: "HIS-S6000J-ET", volume: "605", price:"12000", detail:"PDF주소" },
+
+            { mfgCompany: "그린훼스코", modelName: "GF-G2023F-A1", volume: "550", price:"250000", detail:"PDF주소" },
+            { mfgCompany: "그린훼스코", modelName: "GF-G2023F-A1", volume: "550", price:"250000", detail:"PDF주소" },
+            { mfgCompany: "그린훼스코", modelName: "GF-G2023F-A1", volume: "550", price:"250000", detail:"PDF주소" },
+            { mfgCompany: "그린훼스코", modelName: "GF-G2023F-A1", volume: "550", price:"250000", detail:"PDF주소" },
+
+            { mfgCompany: "팜솔라", modelName: "FM-F2023M-A1", volume: "500", price:"200000", detail:"PDF주소" },
+            { mfgCompany: "팜솔라", modelName: "FM-F2023M-A1", volume: "500", price:"200000", detail:"PDF주소" },
+            { mfgCompany: "팜솔라", modelName: "FM-F2023M-A1", volume: "500", price:"200000", detail:"PDF주소" },
+            { mfgCompany: "팜솔라", modelName: "FM-F2023M-A1", volume: "500", price:"200000", detail:"PDF주소" },
+            // ... 나머지 데이터들
+        ];
+
+
         $(document).ready(function() {
             // 모달 보이기 버튼 클릭 시 모달 보이기
             $('.show-modal-btn').click(function() {
                 $('#overlay').fadeIn(); // 전체 화면을 불투명하게 보이도록 fadeIn
+                
+                let titleList = [];
+                let titleLiList = `<li class="on">전체</li>`;;
+                let productDataList = ``;
+                productData.forEach(item => {
+                    titleList.push(item.mfgCompany);
+                });
+                const set = new Set(titleList);
+                titleList = [...set];
+                titleList.forEach(item => {
+                    titleLiList += `<li>${item}</li>`
+                });
+
+                productData.forEach((item, index) => {
+                    // $('#step1 .modal-body > .modal-body_select').append();
+                    productDataList += `
+                        <div class="modal-box box${index}">
+                            <div class="img">
+                                <img src="../public/imgs/step1/module.png" alt="">
+                            </div>
+                            <div class="info">
+                                <ul>
+                                    <li>제조사</li>
+                                    <li>${item.mfgCompany}</li>
+                                    <li>모델명</li>
+                                    <li>${item.modelName}</li>
+                                    <li>용량</li>
+                                    <li>${item.volume}W</li>
+                                    <li>가격</li>
+                                    <li>${item.price} 원</li>
+                                    <li>세부정보</li>
+                                    <li>
+                                        <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
+                                            <img src="../public/imgs/step1/btn_pdf.png" alt="">
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                $('#step1 .modal-body > .modal-content-title > ul').html(titleLiList);
+                $('#step1 .modal-body > .modal-body_select').html(productDataList);
 
                 // 화면 높이의 30%에서 아래로 내려오는 효과
                 var modalHeight = $(window).height() * 0.3;
-                $('#myModal').show().css('top', -modalHeight).animate({ top: '50%' }, 500);
+                $('#step1').show().css('top', -modalHeight).animate({ top: '47%' }, 500);
             });
 
             // 닫기 버튼 클릭 시 모달 닫기
@@ -118,10 +226,38 @@
 
                 // 모달이 위로 올라가면서 사라지는 효과
                 var modalHeight = $(window).height() * 0.3;
-                $('#myModal').animate({ top: -modalHeight }, 500, function() {
+                $('#step1').animate({ top: -modalHeight }, 500, function() {
                     $(this).hide();
                 });
             });
+        });
+
+
+
+        $('.modal-body .modal-content-title ul li').on({
+            'click':function() {
+                console.log("클릭");
+                $('.modal-body .modal-content-title ul li').removeClass('on');
+                $(this).addClass("on");
+            },
+            // 'mouseenter': function(){
+            //     console.log('마우스커서가 문장 위로 들어옴');
+            // },
+            // 'mouseleave': function(){
+            //     console.log('마우스커서가 문장을 빠져 나감');
+                
+            // }
+        });
+        
+        $('.modal-body .modal-body_select > div').on('click', function() {
+            $('.modal-body .modal-body_select > div').removeClass("on");
+            $(this).addClass('on');
+           let mfgCompany = $(this).find(".info > ul > li").eq(1).text();
+           let modelName = $(this).find(".info > ul > li").eq(3).text();
+           let volume = $(this).find(".info > ul > li").eq(5).text();
+           let price = $(this).find(".info > ul > li").eq(7).text();
+            console.log(mfgCompany, modelName, volume, price);
+
         });
     </script>
 </body>

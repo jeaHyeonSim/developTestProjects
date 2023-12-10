@@ -1,9 +1,0 @@
-.f-center {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.contents > div {
-    width: 100%;
-    height: auto;
-}
