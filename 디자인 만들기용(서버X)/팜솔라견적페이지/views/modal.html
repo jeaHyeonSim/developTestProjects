@@ -193,13 +193,13 @@
                             <div class="info">
                                 <ul>
                                     <li>제조사</li>
-                                    <li>${item.mfgCompany}</li>
+                                    <li data-val="${item.mfgCompany}">${item.mfgCompany}</li>
                                     <li>모델명</li>
-                                    <li>${item.modelName}</li>
+                                    <li data-val="${item.modelName}">${item.modelName}</li>
                                     <li>용량</li>
-                                    <li>${item.volume}W</li>
+                                    <li data-val="${item.volume}">${item.volume}W</li>
                                     <li>가격</li>
-                                    <li>${item.price} 원</li>
+                                    <li data-val="${item.price}">${item.price} 원</li>
                                     <li>세부정보</li>
                                     <li>
                                         <button class="pdfDL" data-pdfDl-url="../public/imgs/step1/pdf01">
@@ -233,32 +233,24 @@
         });
 
 
-
-        $('.modal-body .modal-content-title ul li').on({
-            'click':function() {
-                console.log("클릭");
-                $('.modal-body .modal-content-title ul li').removeClass('on');
-                $(this).addClass("on");
-            },
-            // 'mouseenter': function(){
-            //     console.log('마우스커서가 문장 위로 들어옴');
-            // },
-            // 'mouseleave': function(){
-            //     console.log('마우스커서가 문장을 빠져 나감');
-                
-            // }
+        $(document).on('click', '.modal-body .modal-content-title ul li', function() {
+            console.log("클릭");
+            $('.modal-body .modal-content-title ul li').removeClass('on');
+            $(this).addClass("on");
         });
-        
-        $('.modal-body .modal-body_select > div').on('click', function() {
+        $(document).on('click', '.modal-body .modal-body_select > div', function() {
             $('.modal-body .modal-body_select > div').removeClass("on");
             $(this).addClass('on');
-           let mfgCompany = $(this).find(".info > ul > li").eq(1).text();
-           let modelName = $(this).find(".info > ul > li").eq(3).text();
-           let volume = $(this).find(".info > ul > li").eq(5).text();
-           let price = $(this).find(".info > ul > li").eq(7).text();
-            console.log(mfgCompany, modelName, volume, price);
-
+            let mfgCompany = $(this).find(".info > ul > li").eq(1).attr('data-val');
+            let modelName = $(this).find(".info > ul > li").eq(3).attr('data-val');
+            let volume = $(this).find(".info > ul > li").eq(5).attr('data-val');
+            let price = $(this).find(".info > ul > li").eq(7).attr('data-val');
+            console.log(mfgCompany);
+            console.log(modelName);
+            console.log(volume);
+            console.log(price);
         });
+
     </script>
 </body>
 </html>
