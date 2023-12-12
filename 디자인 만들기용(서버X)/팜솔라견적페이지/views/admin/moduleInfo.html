@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum=scale-1, minimum-scale=1">
-    <title>관리자 - 사용자 정보</title>
+    <title>관리자 - 모듈 정보</title>
 
     <!-- 공통 라이브러리 js -->
     <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
@@ -17,10 +17,10 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/admin/common/common.css">
 
     <!-- 페이지별 CSS -->
-    <link rel="stylesheet" type="text/css" href="../../public/css/admin/web/userInfo.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/admin/web/moduleInfo.css">
     
     <!-- 페이지별 JS -->
-    <script src="../../public/js/admin/userInfo.js" defer></script>
+    <script src="../../public/js/admin/moduleInfo.js" defer></script>
 </head>
 <body>
     <div class="wrap" id="wrap">
@@ -74,16 +74,16 @@
                     <div class="content">
                         <div class="on infoBox" >
                             <div>
-                                <img src="../../public/imgs/admin/userInfo/user.png" alt="">
+                                <img src="../../public/imgs/admin/module/module.png" alt="">
                             </div>
                             <div>
                                 <div class="top">
                                     <ul>
                                         <li>
-                                            <span class="name">홍길동</span>
-                                            <span class="useStatus off">
-                                                <img src="../../public/imgs/admin/userInfo/x.png" alt="">
-                                                미사용
+                                            <span class="modelNm">HIS-S6001J-ET</span>
+                                            <span class="useStatus on">
+                                                <img src="../../public/imgs/admin/common/v.png" alt="">
+                                                사용
                                             </span>
                                         </li>
                                         <li>
@@ -94,49 +94,33 @@
                                 <div class="bot">
                                     <ul>
                                         <li>
-                                            <span>아이디</span>
-                                            <span class="id">1</span>
+                                            <span>제조사</span>
+                                            <span class="manufacturerName">1</span>
                                         </li>
                                         <li>
-                                            <span>비밀번호</span>
-                                            <span class="password">2</span>
+                                            <span>가격(원)</span>
+                                            <span class="price">2</span>
                                         </li>
                                         <li>
-                                            <span>사원번호</span>
-                                            <span class="empNumber">3</span> 
+                                            <span>용량[W]</span>
+                                            <span class="pMax">3</span> 
                                         </li>
                                         <li>
-                                            <span>부서</span>
-                                            <span class="dept">4</span>
+                                            <span>세부정보</span>
+                                            <!-- <span class="detailFileName">4</span> -->
+                                            <button class="detailFileName" data-detailFileName-url="../public/imgs/step1/pdf01">
+                                                <img src="../../public/imgs/admin/common/btn_pdf.png" alt="">
+                                            </button>
                                         </li>
                                         <li>
-                                            <span>고용일</span>
-                                            <span class="empDate">2023-12-08</span>
+                                            <span>넓이</span>
+                                            <span class="width">2023-12-08</span>
                                         </li>
                                         <li>
-                                            <span>고용상태</span>
-                                            <span class="empStatus">재직</span>
+                                            <span>높이</span>
+                                            <span class="heifght">재직</span>
                                         </li>
-                                        <li>
-                                            <span>연봉</span>
-                                            <span class="salary">7,500만원</span>
-                                        </li>
-                                        <li>
-                                            <span>전화번호</span>
-                                            <span class="phoneNumber">010-1111-1111</span>
-                                        </li>
-                                        <li>
-                                            <span>성별</span>
-                                            <span class="gender">남성</span>
-                                        </li>
-                                        <li>
-                                            <span>생년월일</span>
-                                            <span class="birthDate">1999.01.01</span>
-                                        </li>
-                                        <li>
-                                            <span>이메일</span>
-                                            <span class="email">gr@naver.com</span>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -145,10 +129,10 @@
 
 
                         <div class="gf-btn last-btn">
-                            <a href="./userList.html" class="list">
+                            <a href="./moduleList.html" class="list">
                                 <button type="button" class="btn prev" style="color: #555555; background-color: #f9f9f9; border: 1px solid #dddddd; box-sizing: border-box;">목록보기</button>
                             </a>
-                            <a href="./userEdit.html" class="edit">
+                            <a href="./moduleEdit.html" class="edit">
                                 <button type="button" class="btn next  mr-l-5" style="background-color: var(--bg-green-color);">수정하기</button>
                             </a>
                         </div>

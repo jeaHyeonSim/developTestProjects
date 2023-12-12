@@ -40,14 +40,21 @@
     justify-content: center;
     margin-bottom: 40px;
 }
-
-.userList table {
+.tableBox > p.title span {
+    display: block;
+    width: 146px;
+    height: 139px;
+    background: url(../../imgs/estimateList/img.png) no-repeat center;
+    background-size: contain;
+    margin-bottom: 35px;
+}
+.moduleList table {
     width: 100%;
     border-collapse: separate;
     margin-bottom: 20px;
     border-spacing: 0 3px; /*각각 간격*/
 }
-.userList th, .userList td {
+.moduleList th, .moduleList td {
     vertical-align: middle;
     padding: 8px;
     text-align: center;
@@ -56,39 +63,39 @@
     color: #333333;
     font-size: 18px;
 }
-.userList td {
+.moduleList td {
     background-color: #f9f9f9;
 }
-.userList th {
+.moduleList th {
     background-color: #e0f6ab;
     font-weight: 600;
 }
 
-.userList th:first-child{
+.moduleList th:first-child{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-.userList th:last-child {
+.moduleList th:last-child {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.userList td:first-child{
+.moduleList td:first-child{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-.userList td:last-child {
+.moduleList td:last-child {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.userList td {
+.moduleList td {
     margin: 5px 0;
     font-weight: 400;
 }
 
-.userList .userRegister {
+.moduleList .moduleRegister {
     text-align: right;
 }
-.userList .userRegister button {
+.moduleList .moduleRegister button {
     width: 150px;
     height: 40px;
     background-image: linear-gradient(90deg ,#8EBC50, #2B9264); /* 원하는 색상 및 방향으로 설정 */
@@ -100,10 +107,10 @@
 }
 
 
-.userList .pagination {
+.moduleList .pagination {
     text-align: center;
 }
-.userList span#pageNumbers {
+.moduleList span#pageNumbers {
     background-color: #ffffff;
     display: inline-block;
     border-radius: 20px;
@@ -111,7 +118,7 @@
     padding: 5px;
 }
 
-.userList .pagination button {
+.moduleList .pagination button {
     margin: 0 5px;
     cursor: pointer;
     margin: 0;
@@ -119,32 +126,60 @@
     font-size: 14px;
     font-weight: 700;
 }
-.userList .pagination button:first-child {
+.moduleList .pagination button:first-child {
     margin-left: 0;;
 }
 
-.userList .prevBtn , 
-.userList .nextBtn {
+.moduleList .prevBtn , 
+.moduleList .nextBtn {
     color: #c7c7c7;
     background-color: #f5f5f5;
 }
-.userList .prevBtn , 
-.userList .nextBtn, 
-.userList .pageBtn {
+.moduleList .prevBtn , 
+.moduleList .nextBtn, 
+.moduleList .pageBtn {
     width: 30px;
     height: 30px;
     border-radius: 30px;
     border: none;
 }
-.userList .pageBtn {
+.moduleList .pageBtn {
     background-color: unset;
     color: #333333;
 }
-.userList .active {
+.moduleList .active {
     background-color: #198a69;
     color: #ffffff; /* 활성화된 페이지 번호의 색상을 빨간색으로 설정 */
 }
 
+
+
+.content .pdCom {
+    /* height: 40px; */
+    margin-bottom: 20px;
+}
+.content .pdCom ul {
+    height: 40px;
+    display: flex;
+    color: #999999;
+}
+.content .pdCom ul li{
+    font-size: var(--fontSize-16);
+    border: 1px solid #dddddd;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+.content .pdCom ul li.on {
+    color: #ffffff;
+    background-color: var(--bg-green-color);
+}
+.content .pdCom ul li:hover {
+    color: #ffffff;
+    background-color: var(--bg-green-color);
+}
 
 
 

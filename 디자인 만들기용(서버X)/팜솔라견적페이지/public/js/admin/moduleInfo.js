@@ -2,29 +2,24 @@
 let queryString = window.location.search;
 // 추출된 쿼리 문자열을 객체로 변환하여 데이터 추출
 let queryParams = new URLSearchParams(queryString);
-let selectUser = queryParams.get('selectUser'); // key1에 해당하는 값(value1) 추출
+let selectModule = queryParams.get('selectModule'); // key1에 해당하는 값(value1) 추출
 
 
-// selectUser(사원번호) => DB 조회해서 유저 정보 가져오기
+// selectModule(사원번호) => DB 조회해서 유저 정보 가져오기
 // ========= 테스트 데이터 ==========
-let userInfo = JSON.parse(localStorage.getItem('userInfo'));
-// userInfo.empNumber(사원번호로 검색하면 될듯?)
+let moduleInfo = JSON.parse(localStorage.getItem('moduleInfo'));
+// moduleInfo.empNumber(사원번호로 검색하면 될듯?)
 const userData = { 
-    name: userInfo.name,
-    id : userInfo.empNumber,
-    password : userInfo.empNumber,
-    empNumber: userInfo.empNumber, // 사원번호
-    dept: userInfo.dept, // 부서
-    empDate: userInfo.empDate, // 고용일
-    empStatus : 1, // 고용상태 1: 재직, 0 : 퇴사, 2 : 없음
-    salary : "7,500", // 연봉
-    phoneNumber : "010-1111-2222", 
-    gender : 1, // 성별 1: 남성, 0:여성, 2 : 없음
-    birthDate : "1999.01.01", 
-    email : "gf@naver.com",
+    modelNm: moduleInfo.modelNm,
+    manufacturerName : moduleInfo.manufacturerName,
+    price : moduleInfo.price,
+    pMax: moduleInfo.pMax, 
+    detailFileName: moduleInfo.detailFileName, 
+    width: moduleInfo.width, 
+    height: moduleInfo.height, 
     date: "2023-01-01" ,
     useStatus : 1, // 사용여부 1: 사용, 0 : 비사용
-};
+}; 
 
 // 이름
 $('.content .infoBox .top .name').text(userData.name);
@@ -53,14 +48,14 @@ $('.content .infoBox .bot ul li').each(function(index, item) {
 });
 
 // 유저 데이터 저장(수정하기에서 사용) 추후 => DB에서 조회해야함 각각페이지 에서?
-localStorage.setItem('userInfo', JSON.stringify(userData));
+localStorage.setItem('moduleInfo', JSON.stringify(userData));
 
 
 $('gf-btn > .edit').on('click', function(e) {
     e.preventDefault();
     // 데이터 준비
     let dataToSend = {
-        selectUser : selectUser
+        selectModule : selectModule
     };
 
     // URL과 데이터를 조합하여 페이지 이동

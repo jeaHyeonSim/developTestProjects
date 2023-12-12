@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum=scale-1, minimum-scale=1">
+    <title>관리자 - 사용자 수정하기</title>
+
+    <!-- 공통 라이브러리 js -->
+    <script src="../../../node_modules/moment/min/moment.min.js"></script>
+    <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/common.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/commonClass.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/common/body.css"> <!-- 공통 BODY-->
+    <!-- admin 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/admin/common/common.css">
+
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/admin/web/userEdit.css">
+    
+    <!-- 페이지별 JS -->
+    <script src="../../public/js/admin/userEdit.js" defer></script>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                </div>
+                <nav class="on">
+                    <span>연구기획본부</span>
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        홍길동
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="contents">
+                    <div class="r-area"> <!-- r-area ::: admin 모든 페이지에 적용-->
+                        <div class="userListMov">
+                            <div>
+                                <a href="./userList.html">
+                                    <img src="../../public/imgs/admin/common/user.png" alt="">
+                                    <p>사용자 리스트</p>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="moduleListMov">
+                            <div>
+                                <a href="./moduleList.html">
+                                    <img src="../../public/imgs/admin/common/module.png" alt="">
+                                    <p>모듈 리스트</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="inverterListMov">
+                            <div>
+                                <a href="./inverterList.html">
+                                    <img src="../../public/imgs/admin/common/inverter.png" alt="">
+                                    <p>인버터 리스트</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- r-area ::: admin 모든 페이지에 적용-->
+                    
+                    <div class="content">
+                        <div class="on editBox" >
+                            <p class="tit">
+                                사용자 수정하기
+                            </p>
+                            <div>
+                                <form id="editForm">
+                                    <div>
+                                        <label for="name">이름<span>*</span></label>
+                                        <input type="text" id="name" name="name" value="123" required>
+                                    </div>
+                                    <div class="checkBox">
+                                        <label for="useStatus" class="checkBoxTit">사용여부<span>*</span></label>
+                                        <div>
+                                            <input type="checkbox" id="useCheckbox" name="useStatus" value="use">
+                                            <label for="useCheckbox">사용</label>
+                                            
+                                            <input type="checkbox" id="unusedCheckbox" name="useStatus" value="unused">
+                                            <label for="unusedCheckbox">미사용</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="id">아이디<span>*</span></label>
+                                        <input type="text" id="id" name="id" required>
+                                    </div>
+                                    <div>
+                                        <label for="password">비밀번호<span>*</span></label>
+                                        <input type="text" id="password" name="password" required>
+                                    </div>
+                                    <div>
+                                        <label for="empNumber">사원번호</label>
+                                        <input type="text" id="empNumber" name="empNumber" required>
+                                    </div>
+                                    <div>
+                                        <label for="dept">부서</label>
+                                        <input type="text" id="dept" name="dept" required>
+                                    </div>
+                                    <div>
+                                        <label for="empDate">고용일</label>
+                                        <input type="text" id="empDate" name="empDate" required>
+                                    </div>
+                                    <div class="checkBox">
+                                        <label for="empStatus" class="checkBoxTit">고용상태</label>
+                                        <div>
+                                            <input type="checkbox" id="tenureCheckbox" name="empStatus" value="tenure">
+                                            <label for="tenureCheckbox">재직</label>
+                                            
+                                            <input type="checkbox" id="leaveCheckbox" name="empStatus" value="leave">
+                                            <label for="leaveCheckbox">퇴사</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="salary">연봉</label>
+                                        <input type="text" id="salary" name="salary" required>
+                                    </div>
+                                    <div>
+                                        <label for="phoneNumber">전화번호</label>
+                                        <input type="text" id="phoneNumber" name="phoneNumber" required>
+                                    </div>
+                                    <div class="checkBox">
+                                        <label for="gender" class="checkBoxTit">성별</label>
+                                        <div>
+                                            <input type="checkbox" id="maleCheckbox" name="gender" value="genderMale">
+                                            <label for="maleCheckbox">남성</label>
+                                            
+                                            <input type="checkbox" id="femaleCheckbox" name="gender" value="genderFemale">
+                                            <label for="femaleCheckbox">여성</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="birthDate">생년월일</label>
+                                        <!-- <input type="text" id="birthDate" name="birthDate" required> -->
+                                        <input type="text" id="birthdate" name="birthdate">
+                                    </div>
+
+                                    <div class="filebox">
+                                        <label for="userPhoto">사진</label>
+                                        <div>
+                                            <label for="userPhotoSearch">파일 선택</label>
+                                            <input type="file" id="userPhotoSearch" class="upload-hidden" name="userPhotoSearch" value="파일선택">
+                                            <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                                        </div>
+                                    </div>
+                                    <!-- <div>
+                                        <button type="submit">등록</button>
+                                    </div> -->
+                                </form>
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="gf-btn last-btn submit">
+                            <a href="#">
+                                <button type="button" class="btn next  mr-l-5" style="background-color: var(--bg-green-color);">저장하기</button>
+                            </a>
+                        </div>
+                    </div><!-- content -->
+
+                </div> <!-- container -->
+            </section>
+        </main>
+        <div class="footer" id="footer">
+            <div class="foo-companyInfo">
+                <p class="title">그린훼스코 주식회사</p>
+                <p class="tel">
+                    <span>Tel. 062-973-0086</span>
+                    <span>Fax. 062-443-2161</span>
+                    <span>Email. greenfesco@greenfesco.com</span>
+                </p>
+                <p>Add. 광주광역시 북구 첨단과기로 208번길 50, 302호(연구소)</p>
+                <p>Add. 광주광역시 광산구 빛그린18로 15(공장)</p>
+                <p>Add. 전라남도 나주시 노안면 노안로 455-41(전남지사)</p>
+            </div>
+            <div class="foo-companyBottom">
+                <p>Copyright © 2023 그린훼스코 주 All rights reserved</p>
+            </div>
+        </div>
+        
+        
+    </div> <!-- wrap-->
+
+
+</body>
+</html>

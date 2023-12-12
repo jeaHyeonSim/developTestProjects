@@ -1,20 +1,11 @@
-.contents .content {
-    background-color: #ffffff;
-    min-height: calc(430px - 60px);
-    height: auto;
-    border-radius: 10px;
-    padding: 30px 25px;
-    width: calc(100% - 50px);
-}
-
-.contents .content > div.arrange {
+.contents #step7 .content > div.arrange {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     border-bottom: 1px solid #eeeeee;
     padding-bottom: 20px;
 }
-.contents .content > div.arrange > button {
+.contents #step7 .content > div.arrange > button {
     width: 50px;
     height: 50px;
     background-color: #eeeeee;
@@ -26,11 +17,11 @@
     box-sizing: border-box;
     border: 1px solid #eeeeee;
 }
-.contents .content > div.arrange > button.on {
+.contents #step7 .content > div.arrange > button.on {
     background-color: var(--bg-green-color);
     color: #ffffff;
 }
-.contents .content > div.arrange > button:last-child {
+.contents #step7 .content > div.arrange > button:last-child {
     border: 1px solid var(--bg-green-color);
     font-size: var(--fontSize-24);
     color: var(--bg-green-color);
@@ -38,7 +29,7 @@
 }
 
 /* 하단 인버터 정보 박스 */
-.contents .content .arrangeContents{
+.contents #step7 .content .arrangeContents{
     width: 100%;
     height: 100%;
     display: flex;
@@ -48,20 +39,20 @@
 }
 
 /* 조합 들 */
-.arrangeContents .group {
+.contents #step7 .content .arrangeContents .group {
     width: 100%;
     height: 100%;
     max-height: 915px;
     overflow-y: scroll;
 }
-.arrangeContents .group::-webkit-scrollbar {
+.contents #step7 .content .arrangeContents .group::-webkit-scrollbar {
     display: none;
 }
-.arrangeContents .group {
+.contents #step7 .content .arrangeContents .group {
     -ms-overflow-style: none; /* 인터넷 익스플로러 */
     scrollbar-width: none; /* 파이어폭스 */
 }
-.arrangeContents .group .g-title {
+.contents #step7 .content .arrangeContents .group .g-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -72,33 +63,33 @@
     height: 20px;
     margin-bottom: 19px;
 }
-.arrangeContents .group .g-title > div:first-child{
+.contents #step7 .content .arrangeContents .group .g-title > div:first-child{
     font-size: var(--fontSize-20);
     font-weight: 600;
 }
-.arrangeContents .group .g-title > div:last-child {
+.contents #step7 .content .arrangeContents .group .g-title > div:last-child {
     font-size: var(--fontSize-16);
     font-weight: 400;
 }
-.arrangeContents .group .g-title > div:last-child span b {
+.contents #step7 .content .arrangeContents .group .g-title > div:last-child span b {
     font-weight: 600;
 }
 
-.arrangeContents .group .g-title > div:last-child span{
+.contents #step7 .content .arrangeContents .group .g-title > div:last-child span{
     display: inline-block;
 }
-.arrangeContents .group .g-title > div:last-child span:nth-child(1){
+.contents #step7 .content .arrangeContents .group .g-title > div:last-child span:nth-child(1){
     width: 139px;
     text-align: left;
     border-right: 1px solid #b0c186;
 }
-.arrangeContents .group .g-title > div:last-child span:nth-child(2) {
+.contents #step7 .content .arrangeContents .group .g-title > div:last-child span:nth-child(2) {
     width: 139px;
     text-align: center;
     border-right: 1px solid #b0c186;
 }
 
-.arrangeContents .group .g-title > div:last-child span:nth-child(3) {
+.contents #step7 .content .arrangeContents .group .g-title > div:last-child span:nth-child(3) {
     width: 115px;
     text-align: right;
 }
@@ -108,16 +99,16 @@
 
 
 /* 하단 인버터 정보 박스 : 박스 들 */
-.arrangeContents .group .arrngs {
+.contents #step7 .content .arrangeContents .group .arrngs {
     padding: 20px 10px;
     margin-bottom: 10px;
     background-color: #f9f9f9;
     border-radius: 5px;
 }
-.arrangeContents .group .arrngs:last-child {
+.contents #step7 .content .arrangeContents .group .arrngs:last-child {
     margin-bottom: 0;
 }
-.arrangeContents .group .arrngs > p {
+.contents #step7 .content .arrangeContents .group .arrngs > p {
     font-size: var(--fontSize-20);
     font-weight: 600;
     color: #111111;
@@ -126,7 +117,7 @@
     position: relative;
     height: 20px;
 }
-.arrangeContents .group .arrngs > p::before {
+.contents #step7 .content .arrangeContents .group .arrngs > p::before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -136,19 +127,19 @@
     height: 20px;
     width: 4px;
 }
-.arrangeContents .group .arrngs > div {
+.contents #step7 .content .arrangeContents .group .arrngs > div {
     display: flex;
     justify-content: space-between;
     overflow-x: scroll;
 }
-.arrangeContents .group .arrngs > div::-webkit-scrollbar {
+.contents #step7 .content .arrangeContents .group .arrngs > div::-webkit-scrollbar {
     display: none;
 }
-.arrangeContents .group .arrngs > div {
+.contents #step7 .content .arrangeContents .group .arrngs > div {
     -ms-overflow-style: none; /* 인터넷 익스플로러 */
     scrollbar-width: none; /* 파이어폭스 */
 }
-.arrangeContents .group .arrngs > div > .arrngContent  {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  {
     background-color: #ffffff;
     width: 100%;
     height:333px;
@@ -163,43 +154,43 @@
     margin-right: 10px;
 }
 
-.arrangeContents .group .arrngs > div > .arrngContent  div.img {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.img {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
 }
-.arrangeContents .group .arrngs > div > .arrngContent  div.info {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info {
     width: 100%;
     display: flex;
     align-items: center;
 }
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li {
     height: 30px;
     display: flex;
     align-items: center;
     font-size: var(--fontSize-16);
     text-align: left;
 }
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:nth-child(odd){
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:nth-child(odd){
     width: 27%;
     font-weight: 400;
     color: #767676;
 }
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:nth-child(even) {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:nth-child(even) {
     width: calc(73% - 20px);
     min-width: 70px;
     font-weight: 600;
     color: #333333;
     padding-left: 20px;
 }
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li input {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li input {
     height: 30px;
     border: 1px solid #dddddd;
     border-radius: 5px;
@@ -207,7 +198,7 @@
     margin-right: 10px;
 }
 
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child  div {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child  div {
     display: flex;
     width: 110px;
     height: 26px;
@@ -217,14 +208,14 @@
     padding: 5px;
     align-items: center;
 }
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span {
     display: block;
 }
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span:nth-child(2){
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span:nth-child(2){
     font-size: var(--fontSize-18);
     color: #111111;
 }
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span:not(.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span:nth-child(2)){
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span:not(.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span:nth-child(2)){
     color: var(--bg-green-color);
     width: 30px;
     height: 30px;
@@ -236,7 +227,7 @@
     justify-content: center;
     cursor: pointer;
 }
-.contents .content .arrangeContentsbox.r-box > p:not(.contents .content .arrangeContentsbox.r-box > p:first-child){
+.contents #step7 .content .arrangeContentsbox.r-box > p:not(.c#step7 ontents .content .arrangeContentsbox.r-box > p:first-child){
     font-size: var(--fontSize-16);
     font-weight: 400;
     color: #555555;
@@ -244,11 +235,11 @@
 }
 
 
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li button {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li button {
     height: 30px;
     max-width: 90px;
 }
-.arrangeContents .group .arrngs > div > .arrngContent  div.info ul li button img {
+.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li button img {
     width: 100%;
     height: 100%;
 }

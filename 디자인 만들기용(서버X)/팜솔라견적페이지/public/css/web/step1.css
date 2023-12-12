@@ -5,16 +5,16 @@
     border-radius: 10px;
     padding: 30px 25px;
     width: calc(100% - 50px);
-
 }
-.contents .content .module{
+
+.contents #step1 .content .module{
     width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.contents .content .moduleBox {
+.contents #step1 .content .moduleBox {
     background-color: #f9f9f9;
     width: 49.5%;
     height:auto;
@@ -24,70 +24,70 @@
 }
 
 
-.contents .content .moduleBox.on {
+.contents #step1 .content .moduleBox.on {
     display: flex;
 }
-.contents .content .moduleBox.off {
+.contents #step1 .content .moduleBox.off {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.contents .content .moduleBox.off .plusbtn {
+.contents #step1 .content .moduleBox.off .plusbtn {
     width: 45px;
     height: 45px;
     background: url(../../imgs/step1/plus.png) no-repeat center;
     background-size: contain;
 }
-.contents .content .moduleBox.off .plusbtn:hover{
+.contents #step1 .content .moduleBox.off .plusbtn:hover{
     cursor: pointer;
 }
-.contents .content .moduleBox div.moduleImg {
+.contents #step1 .content .moduleBox div.moduleImg {
     width: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.contents .content .moduleBox div.moduleInfo {
+.contents #step1 .content .moduleBox div.moduleInfo {
     width: 65%;
     display: flex;
     align-items: center;
 }
-.contents .content .moduleBox div.moduleInfo ul {
+.contents #step1 .content .moduleBox div.moduleInfo ul {
     width: calc(100% - 10%);
     display: flex;
     flex-wrap: wrap;
     padding: 5%;
 }
-.contents .content .moduleBox div.moduleInfo ul li {
+.contents #step1 .content .moduleBox div.moduleInfo ul li {
     height: 40px;
     display: flex;
     align-items: center;
 }
-.contents .content .moduleBox div.moduleInfo ul li:nth-child(odd){
+.contents #step1 .content .moduleBox div.moduleInfo ul li:nth-child(odd){
     width: 25%;
     font-size: var(--fontSize-18);
     font-weight: 400;
     color: #767676;
 }
-.contents .content .moduleBox div.moduleInfo ul li:nth-child(even) {
+.contents #step1 .content .moduleBox div.moduleInfo ul li:nth-child(even) {
     width: 65%;
     font-size: var(--fontSize-18);
     font-weight: 600;
     color: #333333;
     padding-left: 20px;
 }
-.contents .content .moduleBox div.moduleInfo ul li input {
+.contents #step1 .content .moduleBox div.moduleInfo ul li input {
     height: 30px;
     border: 1px solid #dddddd;
     border-radius: 5px;
     max-width: 120px;
     margin-right: 10px;
 }
-.contents .content .moduleBox div.moduleInfo ul li button {
+.contents #step1 .content .moduleBox div.moduleInfo ul li button {
     height: 30px;
     max-width: 90px;
 }
-.contents .content .moduleBox div.moduleInfo ul li button img {
+.contents #step1 .content .moduleBox div.moduleInfo ul li button img {
     width: 100%;
     height: 100%;
 }

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum=scale-1, minimum-scale=1">
+    <title>관리자 - 모듈 등록하기</title>
+
+    <!-- 공통 라이브러리 js -->
+    <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/common.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/web/commonClass.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/common/base.css"> <!-- 폰트 -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/common/body.css"> <!-- 공통 BODY-->
+    <!-- admin 공통 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/admin/common/common.css">
+
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" type="text/css" href="../../public/css/admin/web/moduleRegister.css">
+    
+    <!-- 페이지별 JS -->
+    <script src="../../public/js/admin/moduleRegister.js" defer></script>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                </div>
+                <nav class="on">
+                    <span>연구기획본부</span>
+                    <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        홍길동
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="contents">
+                    <div class="r-area"> <!-- r-area ::: admin 모든 페이지에 적용-->
+                        <div class="userListMov">
+                            <div>
+                                <a href="./userList.html">
+                                    <img src="../../public/imgs/admin/common/user.png" alt="">
+                                    <p>사용자 리스트</p>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="moduleListMov">
+                            <div>
+                                <a href="./moduleList.html">
+                                    <img src="../../public/imgs/admin/common/module.png" alt="">
+                                    <p>모듈 리스트</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="inverterListMov">
+                            <div>
+                                <a href="./inverterList.html">
+                                    <img src="../../public/imgs/admin/common/inverter.png" alt="">
+                                    <p>인버터 리스트</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- r-area ::: admin 모든 페이지에 적용-->
+                    
+                    <div class="content">
+                        <div class="on registerBox" >
+                            <p class="tit">
+                                모듈 등록하기
+                            </p>
+                            <div>
+                                <form id="registrationForm">
+                                    <div>
+                                        <label for="modelNm">모델명<span>*</span></label>
+                                        <input type="text" id="modelNm" name="modelNm" required>
+                                    </div>
+                                    <div class="checkBox">
+                                        <label for="useStatus" class="checkBoxTit">사용여부<span>*</span></label>
+                                        <div>
+                                            <input type="checkbox" id="useCheckbox" name="useStatus" value="use">
+                                            <label for="useCheckbox">사용</label>
+                                            
+                                            <input type="checkbox" id="unusedCheckbox" name="useStatus" value="unused">
+                                            <label for="unusedCheckbox">미사용</label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="manufacturerName">제조사<span>*</span></label>
+                                        <input type="text" id="manufacturerName" name="manufacturerName" required>
+                                    </div>
+                                    <div>
+                                        <label for="price">가격[원]</label>
+                                        <input type="text" id="price" name="price" required>
+                                    </div>
+                                    <div>
+                                        <label for="pMax">용량[W]</label>
+                                        <input type="text" id="pMax" name="pMax" required>
+                                    </div>
+
+                                    <div>
+                                        <label for="width">넓이</label>
+                                        <input type="text" id="width" name="width" required>
+                                    </div>
+                                    <div>
+                                        <label for="height">높이</label>
+                                        <input type="text" id="height" name="height" required>
+                                    </div>
+
+                                    <div class="filebox filebox1">
+                                        <label for="modulePhoto">사진</label>
+                                        <div>
+                                            <label for="modulePhotoSearch">파일 선택</label>
+                                            <input type="file" id="modulePhotoSearch" class="upload-hidden" name="modulePhotoSearch" value="파일선택">
+                                            <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                                        </div>
+                                    </div>
+                                    <div class="filebox filebox2">
+                                        <label for="detailFileName">세부정보[PDF]</label>
+                                        <div>
+                                            <label for="detailFileNameSearch">파일 선택</label>
+                                            <input type="file" id="detailFileNameSearch" class="upload-hidden" name="detailFileNameSearch" value="파일선택">
+                                            <input class="upload-name" value="선택된 파일 없음" disabled="disabled">
+                                        </div>
+                                    </div>
+                                    <!-- <div>
+                                        <button type="submit">등록</button>
+                                    </div> -->
+                                </form>
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="gf-btn last-btn submit">
+                            <a href="#">
+                                <button type="button" class="btn next  mr-l-5" style="background-color: var(--bg-green-color);">저장하기</button>
+                            </a>
+                        </div>
+                    </div><!-- content -->
+
+                </div> <!-- container -->
+            </section>
+        </main>
+        <div class="footer" id="footer">
+            <div class="foo-companyInfo">
+                <p class="title">그린훼스코 주식회사</p>
+                <p class="tel">
+                    <span>Tel. 062-973-0086</span>
+                    <span>Fax. 062-443-2161</span>
+                    <span>Email. greenfesco@greenfesco.com</span>
+                </p>
+                <p>Add. 광주광역시 북구 첨단과기로 208번길 50, 302호(연구소)</p>
+                <p>Add. 광주광역시 광산구 빛그린18로 15(공장)</p>
+                <p>Add. 전라남도 나주시 노안면 노안로 455-41(전남지사)</p>
+            </div>
+            <div class="foo-companyBottom">
+                <p>Copyright © 2023 그린훼스코 주 All rights reserved</p>
+            </div>
+        </div>
+        
+        
+    </div> <!-- wrap-->
+
+
+</body>
+</html>

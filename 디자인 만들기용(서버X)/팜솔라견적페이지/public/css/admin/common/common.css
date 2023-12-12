@@ -17,16 +17,16 @@ section {
     justify-content: center;
 }
 
-.r-area > div.userList{
+.r-area > div.userListMov{
     background-color: #ebbc2b;
 }
 
-.r-area > div.moduleList{
+.r-area > div.moduleListMov{
     background-color: #4c68c3;
     margin-top: 10px;
 }
 
-.r-area > div.inverterList{
+.r-area > div.inverterListMov{
     background-color: #935eb1;
     margin-top: 10px;
 }   

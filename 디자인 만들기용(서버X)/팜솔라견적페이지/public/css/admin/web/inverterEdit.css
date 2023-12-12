@@ -1,0 +1,292 @@
+#wrap {
+    background-position: 0 calc(100% - 200px);
+}
+
+/* 컨텐츠 내용들 */
+.contents > .content {
+    padding: 60px;
+    width: calc(100% - 120px);
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 180px;
+}
+.contents > .content > div {
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    width: 100%;
+}
+
+
+/* 폼 박스 */
+.editBox {
+    color: #111111;
+}
+.editBox > p.tit {
+    font-size: var(--fontSize-32);
+    font-weight: 600;
+    color: #111111;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.editBox > div {
+    background-color: #f9f9f9;
+    min-height: 740px;
+    height: auto;
+}
+.editBox > div form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+.editBox > div form > div {
+    width: calc(50% - 20px);
+    font-size: var(--fontSize-18);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.editBox > div form > div.widFull {
+    width: calc(100% - 20px);
+}
+.editBox > div form > div:nth-child(odd) {
+    margin-right: 20px;
+}
+.editBox > div form > div:nth-child(even) {
+    margin-left: 20px;
+}
+.editBox > div form > div.widthFull {
+    width: calc(100%);
+    margin-right: 0;
+}
+
+.editBox > div form > div.widthFull > label {
+    width: calc(50% - 20px);
+}
+.editBox > div form > div.widthFull + div{
+    margin-right: 20px;
+    margin-left: 0;
+}
+.editBox > div form > div.widthFull + div + div {
+    margin-right: 0;
+    margin-left: 20px;
+}
+.editBox > div form > div.widthFull + div + div + div{
+    margin-right: 20px;
+    margin-left: 0;
+}
+.editBox > div form > div.widthFull + div + div + div + div {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.editBox > div form label,
+.editBox > div form input {
+    display: block;
+}
+.editBox > div form input {
+    padding: 0;
+    margin: 0;
+    height: 48px;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid #dddddd;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: var(--fontSize-18);
+    color: #333333;
+}
+
+
+/* 커스텀 셀렉트 박스 ul 태그 스타일링 */
+.editBox>div form .custom-select {
+    position: relative;
+    width: calc(50% - 20px);
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 48px;
+    box-sizing: border-box;
+}
+.editBox>div form .custom-select.active {
+    border: 1px solid #767676;
+    box-sizing: border-box;
+}
+.editBox>div form .custom-select input[type="text"] {
+    /* padding: 8px 24px 8px 12px; */
+    width: calc(100% - 36px);
+    border: none;
+    height: 100%;
+    background-color: unset;
+
+}
+
+.editBox>div form .custom-select .arrow {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #333 transparent transparent transparent;
+    transition: transform 0.3s ease;
+}
+
+/* .editBox>div form .custom-select .arrow.on {
+    rotate: 180deg;
+    top: 37%;
+    transition: transform 1s ease;
+} */
+
+.editBox>div form .custom-select .options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: -1px;
+    padding: 0;
+    background-color: #fff;
+    width: calc(100% + 2px);
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0px 3px 20px -13px #727272;
+}
+
+.editBox>div form .custom-select .options.active {
+    display: block;
+
+}
+.editBox>div form .custom-select .options li {
+    font-weight: 400;
+    color: #555555;
+    /* padding: 5px 10px; */
+    padding: 0 20px;
+    height: 48px;
+    line-height: 2.5;
+
+}
+.editBox>div form .custom-select .options li:hover {
+    background-color: #dddddd;
+}
+.editBox>div form .custom-select.active .arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+
+
+.editBox > div form label:not(.editBox > div form .checkBox > div label):not(.editBox > div form .filebox > div label) {
+    margin-bottom: 15px;
+}
+.editBox > div form label span {
+    color: #e72b2b;
+    padding-left: 5px;
+}
+.editBox > div form .checkBox > div {
+    display: flex;
+    height: 48px;
+    align-items: center;
+}
+.editBox > div form .checkBox > div label {
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+/* 원 모양의 체크박스 스타일링 */
+.editBox > div form .checkBox input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* 원 모양으로 만듦 */
+    outline: none;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding-left: 0;
+}
+
+/* 체크된 상태의 체크박스 스타일링 */
+.editBox > div form .checkBox input[type="checkbox"]:checked {
+    background-color:#ffffff; /* 체크된 상태의 배경색을 녹색으로 변경 */
+    border-color: var(--bg-green-color); /* 체크된 상태의 테두리 색상도 녹색으로 변경 */
+}
+
+/* 체크된 상태의 체크마크 스타일링 */
+.editBox > div form .checkBox input[type="checkbox"]:checked::after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%; /* 작은 원 모양으로 만듦 */
+    background-color:  var(--bg-green-color); /* 작은 원의 색상을 흰색으로 설정 */
+    margin: 7px; /* 체크된 상태에서 체크 표시가 원 주위에 위치하도록 설정 */
+}
+
+/* input[type="file"] */
+.editBox > div form > div.filebox {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+.editBox > div form > div.filebox.filebox2 {
+    margin-bottom: 0;
+}
+.editBox > div form .filebox > div {
+    width: calc(100% - 10px);
+    height: 38px;
+    display: flex;
+    cursor: pointer;
+    border: 1px solid rgb(236, 236, 236);
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    padding: 5px;
+}
+/* 3. 기존 디자인 없애기 */
+.editBox > div form .filebox input[type="file"] {
+    position: absolute;
+    width: 120px;
+    height: 38px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+}
+/* 2. label 스타일 변경 */
+.editBox > div form .filebox div > label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 ;
+    background-color: #eeeeee;
+    cursor: pointer;
+    border: 1px solid #dddddd;
+    box-sizing: border-box;
+
+    font-size: var(--fontSize-18);
+    font-weight: 400;
+    color: #555555;
+
+    height: 38px;
+    width: 120px;
+    min-width: 120px;
+}
+/* 1. 인풋 스타일 변경 */
+.editBox > div form .filebox .upload-name {
+    display: inline-block;
+    padding: 0 0 0 10px;  /* label의 패딩값과 일치 */
+    background-color: transparent ;
+    border: none;
+    height: 38px;
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+    width: 100% !important;
+
+    color: #999999;
+    font-size: var(--fontSize-18);
+    font-weight: 400;
+}
