@@ -21,11 +21,14 @@
     <!-- <link rel="stylesheet" type="text/css" href="../public/css/web/commonStyle.css"> -->
     <link rel="stylesheet" type="text/css" href="../public/css/common/base.css"> <!-- 폰트 -->
     <link rel="stylesheet" type="text/css" href="../public/css/common/body.css"> <!-- 공통 BODY-->
-    <link rel="stylesheet" href="../public/css/tablet/common.css" media="screen and (max-width:1196px)" >  <!-- Tablet -->
-    <link rel="stylesheet" href="../public/css/mobile/common.css" media="screen and (max-width:767px)" >  <!-- mobile -->
+    <link rel="stylesheet" href="../public/css/tablet/tablet-common.css" media="screen and (max-width:1196px)" >  <!-- Tablet -->
+    <link rel="stylesheet" href="../public/css/mobile/mobile-common.css" media="screen and (max-width:580px)" >  <!-- mobile -->
 
     <!-- 페이지별 CSS -->
     <link rel="stylesheet" type="text/css" href="../public/css/web/juso.css">
+    <link rel="stylesheet" href="../public/css/tablet/tablet-juso.css" media="screen and (max-width:1196px)" >  <!-- Tablet -->
+    <link rel="stylesheet" href="../public/css/mobile/mobile-juso.css" media="screen and (max-width:580px)" >  <!-- mobile -->
+
     <!-- 페이지별 JS -->
     <script src="../public/js/juso.js" defer></script>
 </head>
@@ -35,14 +38,20 @@
         <header class="header" id="header">
             <div class="container">
                 <div class="logo">
-                    <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                    <!-- <a href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a> -->
+                    <a class="logo1" href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
+                        <span class="hidden">홈</span>
+                    </a>
+                    <a class="logo2" href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
                         <span class="hidden">홈</span>
                     </a>
                 </div>
-                <nav class="off">
-                    <span></span>
+                <nav class="on">
+                    <span>연구기획본부</span>
                     <a class href="/디자인 만들기용(서버X)/팜솔라견적페이지/views/juso.html">
-                        로그인
+                        홍길동
                     </a>
                 </nav>
             </div>
@@ -63,8 +72,10 @@
                         </div>
                         <div class="equipment">
                             <div>
-                                <img src="../public/imgs/juso/icon_기자재.png" alt="">
-                                <p>기자재 관리</p>
+                                <a href="#">
+                                    <img src="../public/imgs/juso/icon_기자재.png" alt="">
+                                    <p>기자재 관리</p>
+                                </a>
                             </div>
                         </div>
                         <div class="smp-rec smp">
@@ -72,14 +83,14 @@
                             <span>
                                 <b>136.31</b> 원/kWh
                             </span>
-                            <span class="plus upDown">+4.00</span>
+                            <!-- <span class="plus upDown">+4.00</span> -->
                         </div>
                         <div class="smp-rec rec">
                             <span>2023-11-14(화)</span>
                             <span>
                                 <b>79,084</b> 원/REC
                             </span>
-                            <span class="plus upDown">+562.0</span>
+                            <!-- <span class="plus upDown">+562.0</span> -->
                         </div>
                     </div>
                     <div class="topBox">

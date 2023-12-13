@@ -1,0 +1,12 @@
+
+
+.contents #step1 .content .module {
+    height: auto;
+    display: block;
+}
+.contents #step1 .content .moduleBox {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+

@@ -1,0 +1,62 @@
+.stepBox {
+    width: calc(100% - 10px);
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.stepBox .step {
+    display: flex;
+    width: 140px;
+    height: 40px;
+    font-size: var(--fontSize-14);
+}
+
+.stepBox .step.tr2,
+.stepBox .step.tr3,
+.stepBox .step.tr4,
+.stepBox .step.tr5,
+.stepBox .step.tr6,
+.stepBox .step.tr7 {
+    margin-left: 0;
+}
+
+.stepBox .step.tr1.on,
+.stepBox .step.tr2.on,
+.stepBox .step.tr3.on,
+.stepBox .step.tr4.on,
+.stepBox .step.tr5.on,
+.stepBox .step.tr6.on,
+.stepBox .step.tr7.on {
+    background-size: contain;
+}
+
+
+.modal-body .pdCom ul  {
+    min-height: 40px;
+    height: auto;
+    flex-wrap: wrap;
+}
+.modal-body .modal-body_select {
+    max-height: 450px;
+}
+
+.modal-body .modal-body_select > div:nth-child(odd) {
+    margin-right: 0;
+}
+
+.modal-body .modal-body_select > div {
+    display: flex;
+    max-height: 400px;
+    width: 100%;
+    max-width: none;
+}
+
+
+.modifyBox ul li {
+    width: calc(250px - 30px);
+    padding: 0 15px;
+
+}
+.modifyBox ul li:not(.mod-btn) div {
+    width: 140px;
+    height: 36px;
+}

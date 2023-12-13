@@ -1,0 +1,44 @@
+.contents #step6 .content .mapValSet > div .left div:last-child {
+    flex-direction: column;
+}
+
+.contents #step6 .content .mapValSet > div .left div:last-child > div {
+    width: 100%;
+    height: auto;
+    max-width: unset;
+    max-height: 140px;
+    margin-bottom: 5px;
+}
+
+.contents #step6 .content .mapValSet > div .left div:last-child ul {
+    padding-top: 0;
+    padding: 30px 0;
+    display: block;
+    height: 80px;
+}
+.contents #step6 .content .mapValSet > div .left ul li {
+    margin: 0 auto;
+    display: inline-block;
+}
+.contents #step6 .content .mapValSet > div .left div:last-child > div:nth-child(1) ul li:first-child {
+    padding-bottom: 0;
+    display: block;
+}
+.contents #step6 .content .mapValSet > div .left div:last-child > div:nth-child(2) ul li:first-child {
+    padding-bottom: 0px;
+    display: block;
+}
+.contents #step6 .content .mapValSet > div .left div:last-child > div:nth-child(3) ul li:first-child {
+    padding-bottom: 0px;
+    display: block;
+}
+
+.contents #step6 .content .mapValSet > div .left ul li:nth-child(2){
+    width:calc(45% - 30px);
+    text-align: right;
+    padding-right: 10px;
+}
+.contents #step6 .content .mapValSet > div .left ul li:nth-child(3){
+    width:45%;
+    text-align: left;
+}

@@ -1,0 +1,6 @@
+.contents #step3 .content .mapValSetbox {
+    width: calc(100%);
+    max-width: unset;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px 1px #999999;
+}

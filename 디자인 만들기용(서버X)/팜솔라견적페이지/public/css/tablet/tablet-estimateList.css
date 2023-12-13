@@ -1,0 +1,12 @@
+
+.contents > .content:last-child {
+    margin-bottom: 80px;
+}
+.tableBox > p.title span {
+    width: 120px;
+    height: 119px;
+    margin-bottom: 35px;
+}
+.quote {
+    margin: 20px 0;
+}

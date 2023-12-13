@@ -92,11 +92,19 @@ button {
     color: #171746;
     transition: color .3s ease;
 }
-#header .logo a {
-    background: url(../../imgs/common/logoBlack.png) no-repeat;
+#header .logo a.logo1 {
+    background: url(../../imgs/common/logoBlack.png) no-repeat center;
+    background-size: contain;
     width: 224px;
     height: 41px;
 }
+#header .logo a.logo2 {
+    background: url(../../imgs/common/logo2.png) no-repeat center;
+    background-size: contain;
+    width: 41px;
+    height: 41px;
+}
+
 /* 로그인전 */
 #header nav {
     text-align: center;

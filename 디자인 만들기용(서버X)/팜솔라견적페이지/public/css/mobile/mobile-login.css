@@ -1,0 +1,8 @@
+.loginBox {
+    width: calc(100% - 80px);
+}
+
+.loginBtn > button {
+    max-width: 420px;
+    width: 100%;
+}

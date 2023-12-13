@@ -8,9 +8,15 @@
     }
 } */
 
+main {
+    margin-top: 0;
+    padding-bottom: 50px;
+    margin-bottom: 0;
+}
 
-
-
+div.gf-btn.last-btn button {
+    width: 30%;
+}
 /* 푸터 안보이게 하기 */
 #footer {
     display: none;

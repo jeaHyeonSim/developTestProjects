@@ -1,0 +1,22 @@
+.r-area > div.equipment {
+    margin-bottom: 20px;
+}
+.topBox {
+    width: calc(100% );
+    padding: 50px 0 50px;
+}
+.topBox > div {
+    width: 350px;
+    height: 252px;
+
+}
+.topBox span {
+    font-size: var(--fontSize-24);
+}
+.topBox span p{
+    padding: 0 135px;
+}
+
+.bottomBox {
+    padding: 0 10%;
+}

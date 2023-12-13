@@ -1,0 +1,17 @@
+.contents #step4 .content .inverter {
+    height: auto;
+    display: block;
+}
+.contents #step4 .content .inverterBox {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contents #step4 .content .inverterBox div.inverterInfo ul li:last-child div {
+    width: 141px;
+}
+
+.contents #step4 .content .inverterBox div.inverterInfo ul li:nth-child(11),
+.contents #step4 .content .inverterBox div.inverterInfo ul li:nth-child(12) {
+    margin-top: 5px;
+}

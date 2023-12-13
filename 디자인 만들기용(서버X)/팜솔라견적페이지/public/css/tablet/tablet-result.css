@@ -1,0 +1,97 @@
+
+.contents > .content:last-child {
+    margin-bottom: 80px;
+}
+.installInfo .r-box > div.arrangeContent > div > div > ul {
+    width: calc(100% - 30px);
+    padding: 25px 15px;
+}
+.installInfo .l-box > div:last-child ul {
+    padding: 20px 25px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.installInfo .l-box > div:last-child ul li {
+    width: 100%;
+}
+.installInfo .l-box > div:last-child ul li:last-child{
+    justify-content: center;
+}
+.installInfo .l-box > div:last-child ul li:first-child{
+    justify-content: center;
+}
+
+.installInfo .l-box > div:last-child ul li:last-child {
+    font-size: var(--fontSize-26);
+}
+
+.installInfo > div {
+    width: calc(50% - 10px);
+}
+.installInfo .l-box {
+    padding-right: 10px;
+    height: 100%;
+}
+.installInfo .r-box {
+    padding-left: 10px;
+}
+
+
+.installInfo .r-box > div.arrangeContent > div > div > div {
+    min-height: 28px;
+    height: auto;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.installInfo .r-box > div.arrangeContent > div > div > div button{
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+.installInfo .r-box > div.arrangeContent > div > div > ul > li {
+    font-size: var(--fontSize-16);
+    min-width: 91px;
+}
+
+@media all and (max-width: 750px) {
+    .installInfo .r-box > div.equipment {
+        flex-wrap: wrap;
+    }
+}
+.box > div > div ul {
+    min-width: calc(220px - 30px);
+    padding: 0 15px;
+    margin-left: 5px;
+}
+
+@media all and (max-width: 763px) {
+    /* .box > div > ul > li:nth-child(even) {
+        padding-right: 0;
+    
+    } */
+    .box > div > ul {
+        justify-content: center;
+    }
+    .box > div > ul > li {
+        padding-right: 15px;
+        min-width: 160px;
+    }
+    .box > div > ul > li > div {
+        min-width: 160px;
+    }
+    .box > div > ul > li > div > input {
+        width: 100px;
+    }
+    .box > div > ul > li:nth-last-child(-n + 4) {
+        margin-bottom: 20px;
+    }
+    .box > div > ul > li:nth-last-child(-n + 1) {
+        margin-bottom: 0;
+    }
+}
+

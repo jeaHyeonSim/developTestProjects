@@ -1,0 +1,109 @@
+
+
+
+.contents .tit span.tit-span + span {
+    min-width: 130px;
+}
+
+.landType-1 {
+    flex-wrap: wrap;
+}
+.landType-1 > div:not(.landType-1 > div:last-child) {
+    width: 25%;
+    max-width: 125px;
+}
+.landType-1 > div {
+    margin-top: 5px;
+}
+.landType-1 > div > .content {
+    height: 70px;
+}
+
+
+.landType-2 div.content .infoCommon > div dl {
+    display: block;
+    /* font-size: var(--fontSize-18); */
+}
+.landType-2 div.content .infoCommon > div {
+    padding: 0 20px;
+    padding-bottom: 10px;
+}
+
+.landType-2 div.content .infoCommon > div dl dt {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.landType-2 div.content .infoCommon > div dl dd {
+    width: 100%;
+}
+
+.separationDistance .ordBox p {
+    margin: 5px 0;
+}
+
+
+.electronicInfo .location .items {
+    display: block;
+    width: 100%;
+}
+
+.electronicInfo .location .items > div {
+    min-width: 310px;
+    width: 100%;
+    height: auto;
+    min-height: 150px;
+}
+.electronicInfo .location .items > div:not(.electronicInfo .location .items > div:last-child) {
+    margin-bottom: 10px;
+}
+
+
+.tel-info .content {
+    width: calc(100% - 20px);
+    padding: 50px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.telInfo-bgImg {
+    opacity: 0.5;
+}
+
+.tel-info .content > div:nth-child(2),
+.tel-info .content > div:nth-child(3) {
+    z-index: 100;
+}
+.tel-info .content > div:nth-child(2){
+    padding-right: 25px;
+}
+.tel-info .content > div:nth-child(3) {
+    padding-left: 25px;
+}
+.contents p.tit[data-tit-name="ElectronicInfo"] span.tit-span {
+    margin-bottom: 5px;
+}
+.contents p.tit[data-tit-name="ElectronicInfo"] {
+    display: block;
+}
+.contents .tit span.tit-span + span.tit-area {
+    min-width: 100%;
+}
+/* .contents p.tit[data-tit-name="ElectronicInfo"] span.tit-span q {
+    min-width: 130px;
+} */
+
+
+.law tbody tr td:nth-child(1) {
+    min-width: 30px;
+}
+
+.availability .info .state-area {
+    flex-wrap: wrap;
+}
+.availability .area {
+    width: 50%;
+    margin-bottom: 5px;
+}
+.content:last-child {
+    margin-bottom: 0;
+}

@@ -1,0 +1,7 @@
+#wrap {
+    max-width: 580px;
+}
+#header .logo a {
+    width: 180px;
+    height: 41px;
+}

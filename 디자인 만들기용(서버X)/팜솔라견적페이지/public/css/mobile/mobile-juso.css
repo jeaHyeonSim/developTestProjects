@@ -1,0 +1,42 @@
+.r-area {
+    display: flex;
+    left: 0;
+    justify-content: space-between;
+    z-index: 999;
+}
+.r-area > div {
+    width: 70px;
+    height: 70px;
+    border-radius: 60px;
+    font-size: var(--fontSize-14);
+
+}
+.r-area > div.equipment {
+    margin-bottom:0;
+    margin-top: 0;
+}
+.r-area > div.smp-rec {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: var(--fontSize-14);
+}
+.r-area > div.smp-rec > span:nth-child(2) > b {
+    font-size: var(--fontSize-16);
+}
+.r-area > div > div a > img {
+    display: none;
+}
+.r-area > div > div p {
+    margin-top: 0;
+    font-size: var(--fontSize-14);
+}
+
+.topBox {
+    padding-top: 70px;
+}
+.topBox span p{
+    padding: 0 10px;
+}
+.bottomBox {
+    padding: 0 5%;
+}

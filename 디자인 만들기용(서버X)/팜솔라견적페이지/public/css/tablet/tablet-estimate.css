@@ -1,0 +1,31 @@
+
+.contents > .content:last-child {
+    margin-bottom: 80px;
+}
+.installInfo .r-box > div {
+    padding: 0 15px;
+}
+.installInfo .r-box > div:nth-child(3) {
+    padding: 0px 15px;
+}
+.installInfo .r-box > div:nth-child(3) > div > span:first-child {
+    min-width: 50px;
+}
+.start::before {
+    top: 8px;
+}
+
+
+.botBox > div.top {
+    padding: 20px 15px 0 15px;
+    min-height: 160px;
+    height: auto;
+    position: relative;
+}
+.botBox > div.top > div > ul li:nth-child(even) {
+    width: calc(50% - 5px);
+    margin-left: 5px;
+}
+div.gf-btn.last-btn button {
+    width: 150px;
+}
