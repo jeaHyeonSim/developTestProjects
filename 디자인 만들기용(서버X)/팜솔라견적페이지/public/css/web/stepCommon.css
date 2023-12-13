@@ -522,18 +522,6 @@ main {
     background : linear-gradient(90deg ,#8fbc50, var(--bg-green-color));
 }
 
-@media (width <= 771px) {
-    .modal-body .modal-body_select >div{
-        max-height: 400px;
-        display: block;
-    }
-    .modal-body .modal-body_select > div {
-        width: 100%;
-        max-width: none;
-    }
-}
-
-
 /* 박스 클릭하면 나오는 수정박스*/
 .modifyBox {
     position: absolute;
