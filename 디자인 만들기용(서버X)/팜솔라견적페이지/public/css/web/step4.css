@@ -1,5 +1,12 @@
-
-.contents #step4 .content .inverter{
+.contents .content {
+    background-color: #ffffff;
+    min-height: calc(430px - 30px);
+    height: auto;
+    border-radius: 10px;
+    padding: 15px 15px;
+    width: calc(100% - 30px);
+}
+.contents #step4_main_div .content .inverter{
     width: 100%;
     height: 100%;
     display: flex;
@@ -7,7 +14,7 @@
     justify-content: space-between;
 }
 
-.contents #step4 .content .inverterBox {
+.contents #step4_main_div .content .inverterBox {
     background-color: #f9f9f9;
     width: 49.5%;
     height:auto;
@@ -17,59 +24,59 @@
 }
 
 
-.contents #step4 .content .inverterBox.on {
+.contents #step4_main_div .content .inverterBox.on {
     display: flex;
 }
-.contents #step4 .content .inverterBox.off {
+.contents #step4_main_div .content .inverterBox.off {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.contents #step4 .content .inverterBox.off .plusbtn {
+.contents #step4_main_div .content .inverterBox.off .plusbtn {
     width: 45px;
     height: 45px;
     background: url(../../imgs/step1/plus.png) no-repeat center;
     background-size: contain;
 }
-.contents #step4 .content .inverterBox.off .plusbtn:hover{
+.contents #step4_main_div .content .inverterBox.off .plusbtn:hover{
     cursor: pointer;
 }
-.contents #step4 .content .inverterBox div.inverterImg {
+.contents #step4_main_div .content .inverterBox div.inverterImg {
     width: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.contents #step4 .content .inverterBox div.inverterInfo {
+.contents #step4_main_div .content .inverterBox div.inverterInfo {
     width: 65%;
     display: flex;
     align-items: center;
 }
-.contents #step4 .content .inverterBox div.inverterInfo ul {
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul {
     width: calc(100% - 10%);
     display: flex;
     flex-wrap: wrap;
     padding: 5%;
 }
-.contents #step4 .content .inverterBox div.inverterInfo ul li {
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li {
     height: 40px;
     display: flex;
     align-items: center;
 }
-.contents #step4 .content .inverterBox div.inverterInfo ul li:nth-child(odd){
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li:nth-child(odd){
     width: 25%;
     font-size: var(--fontSize-18);
     font-weight: 400;
     color: #767676;
 }
-.contents #step4 .content .inverterBox div.inverterInfo ul li:nth-child(even) {
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li:nth-child(even) {
     width: 65%;
     font-size: var(--fontSize-18);
     font-weight: 600;
     color: #333333;
     padding-left: 20px;
 }
-.contents #step4 .content .inverterBox div.inverterInfo ul li input.price-input {
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li input.price-input {
     height: 30px;
     border: 1px solid #dddddd;
     border-radius: 5px;
@@ -77,7 +84,7 @@
     margin-right: 10px;
 }
 
-.contents #step4 .content .inverterBox div.inverterInfo ul li:last-child  div {
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li:last-child  div {
     display: flex;
     width: 110px;
     height: 26px;
@@ -87,22 +94,22 @@
     padding: 5px;
     align-items: center;
 }
-.contents #step4 .content .inverterBox div.inverterInfo ul li:last-child > div > span {
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li:last-child > div > span {
     display: block;
 }
-.contents #step4 .content .inverterBox div.inverterInfo ul li:last-child > div > span:nth-child(2) input {
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li:last-child > div > span:nth-child(2) input {
     width: 40px;
     font-size: var(--fontSize-18);
     color: #111111;
     font-weight: 600;
     text-align: center;
 }
-.contents #step4 .content .inverterBox div.inverterInfo ul li:last-child > div > span:nth-child(2) input::placeholder{
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li:last-child > div > span:nth-child(2) input::placeholder{
     color: #111111;
 }
 
-.contents #step4 .content .inverterBox div.inverterInfo ul li:last-child > div > 
-span:not(.contents #step4 .content .inverterBox div.inverterInfo ul li:last-child > div > span:nth-child(2)){
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li:last-child > div > 
+span:not(.contents #step4_main_div .content .inverterBox div.inverterInfo ul li:last-child > div > span:nth-child(2)){
     color: var(--bg-green-color);
     width: 30px;
     height: 30px;
@@ -114,11 +121,11 @@ span:not(.contents #step4 .content .inverterBox div.inverterInfo ul li:last-chil
     justify-content: center;
     cursor: pointer;
 }
-.contents #step4 .content .inverterBox div.inverterInfo ul li button {
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li button {
     height: 30px;
     max-width: 90px;
 }
-.contents #step4 .content .inverterBox div.inverterInfo ul li button img {
+.contents #step4_main_div .content .inverterBox div.inverterInfo ul li button img {
     width: 100%;
     height: 100%;
 }

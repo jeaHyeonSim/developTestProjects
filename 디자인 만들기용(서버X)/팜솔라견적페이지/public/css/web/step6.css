@@ -1,17 +1,25 @@
+.contents .content {
+    background-color: #ffffff;
+    min-height: calc(430px - 30px);
+    height: auto;
+    border-radius: 10px;
+    padding: 15px 15px;
+    width: calc(100% - 30px);
 
-#step6 .tit span:last-child {
+}
+.tit span:last-child {
     font-size: var(--fontSize-16);
     color: #555555;
     font-weight: 400;
 }
-.contents #step6 .content > div.arrange {
+.contents .content > div.arrange {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     border-bottom: 1px solid #eeeeee;
     padding-bottom: 20px;
 }
-.contents #step6 .content > div.arrange > button {
+.contents .content > div.arrange > button {
     width: 50px;
     height: 50px;
     background-color: #eeeeee;
@@ -23,17 +31,17 @@
     box-sizing: border-box;
     border: 1px solid #eeeeee;
 }
-.contents #step6 .content > div.arrange > button.on {
+.contents .content > div.arrange > button.on {
     background-color: var(--bg-green-color);
     color: #ffffff;
 }
-.contents #step6 .content > div.arrange > button:last-child {
+.contents .content > div.arrange > button:last-child {
     border: 1px solid var(--bg-green-color);
     font-size: var(--fontSize-24);
     color: var(--bg-green-color);
     background-color: #eef5f3;
 }
-.contents #step6 .content .mapping {
+.contents .content .mapping {
     color: #333333;
     font-size: var(--fontSize-24);
     box-sizing: border-box;
@@ -41,13 +49,13 @@
 }
 
 /* 하단 인버터 정보 박스 */
-.contents #step6 .content .mapValSet{
+.contents .content .mapValSet6{
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-.contents #step6 .content .mapValSet > div {
+.contents .content .mapValSet6 > div {
     width: 100%;
     background-color: #ffffff;
     border-bottom-right-radius: 10px;
@@ -55,67 +63,67 @@
     justify-content: space-between;
 }
 
-.contents #step6 .content .mapValSet > div > div {
+.contents .content .mapValSet6 > div > div {
     width: 48%;
 }
 
-.contents #step6 .content .mapValSet > div .left .juso {
+.contents .content .mapValSet6 > div .left .juso {
     border-top-right-radius: 10px;
     display: flex;
     align-items: center;
     position: relative;
     margin-bottom: 20px;
 }
-.contents #step6 .content .mapValSet > div .left .juso::before {
+.contents .content .mapValSet6 > div .left .juso::before {
     content: "";
     width: 16px;
     height: 21px;
     background: url(../../imgs/step6/map.png) no-repeat;
     background-size: cover;
 }
-.contents #step6 .content .mapValSet > div .left .juso span {
+.contents .content .mapValSet6 > div .left .juso span {
     padding-left: 10px;
     font-size: var(--fontSize-20);
     font-weight: 600;
     color: #333333;
 }
 
-.contents #step6 .content .mapValSet > div .left div:last-child {
+.contents .content .mapValSet6 > div .left div:last-child {
     display: flex;
     justify-content: space-between;
 }
-.contents #step6 .content .mapValSet > div .left div:last-child > div {
+.contents .content .mapValSet6 > div .left div:last-child > div {
     width: 150px;
     height: 180px;
     max-width: 150px;
     max-height: 180px;
 }
 
-.contents #step6 .content .mapValSet > div .left div:last-child ul {
+.contents .content .mapValSet6 > div .left div:last-child ul {
     border-radius: 5px;
     text-align: center;
     height: calc(100% - 30px);
     width: 100%;
     padding-top: 30px;
 }
-.contents #step6 .content .mapValSet > div .left ul li {
+.contents .content .mapValSet6 > div .left ul li {
     margin: 0 auto;
 }
-.contents #step6 .content .mapValSet > div .left div:last-child > div:nth-child(1) ul li:first-child {
+.contents .content .mapValSet6 > div .left div:last-child > div:nth-child(1) ul li:first-child {
     background: url(../../imgs/step6/icon1.png) no-repeat;
     background-size: contain;
     width: 42px;
     height: 42px;
     padding-bottom: 25px;
 }
-.contents #step6 .content .mapValSet > div .left div:last-child > div:nth-child(2) ul li:first-child {
+.contents .content .mapValSet6 > div .left div:last-child > div:nth-child(2) ul li:first-child {
     background: url(../../imgs/step6/icon2.png) no-repeat;
     background-size: contain;
     width: 46px;
     height: 33px;
     padding-bottom: 25px;
 }
-.contents #step6 .content .mapValSet > div .left div:last-child > div:nth-child(3) ul li:first-child {
+.contents .content .mapValSet6 > div .left div:last-child > div:nth-child(3) ul li:first-child {
     background: url(../../imgs/step6/icon3.png) no-repeat;
     background-size: contain;
     width: 46px;
@@ -123,18 +131,18 @@
     padding-bottom: 25px;
 }
 
-.contents #step6 .content .mapValSet > div .left ul li span {
+.contents .content .mapValSet6 > div .left ul li span {
     font-size: var(--fontSize-18);
     font-weight: 400;
 }
-.contents #step6 .content .mapValSet > div .left ul li:last-child{
+.contents .content .mapValSet6 > div .left ul li:last-child{
     justify-content: end;
     font-size: var(--fontSize-24);
     font-weight: 600;
     margin-top: 10px;
 }
 
-.contents #step6 .content .mapValSet > div .left div:last-child button {
+.contents .content .mapValSet6 > div .left div:last-child button {
     padding: 0;
     width: 50px;
     height: 50px;
@@ -145,54 +153,54 @@
     font-weight: 400;
     color: #999999;
 }
-.contents #step6 .content .mapValSet > div .left div:last-child button.on {
+.contents .content .mapValSet6 > div .left div:last-child button.on {
     background-color: var(--bg-green-color);
     color: #fff;
 }
 
-.contents #step6 .content .mapValSet > div .right > div {
+.contents .content .mapValSet6 > div .right > div {
     color: #333333;
     font-size: var(--fontSize-18);
 }
 
-.contents #step6 .content .mapValSet > div .right > div:not(.contents #step6 .content .mapValSet > div .right > div:last-child){
+.contents .content .mapValSet6 > div .right > div:not(.contents .content .mapValSet6 > div .right > div:last-child){
     margin-bottom: 20px;
 }
-.contents #step6 .content .mapValSet > div .right div p{
+.contents .content .mapValSet6 > div .right div p{
     margin-bottom: 10px;
     font-weight: 600;
 }
-.contents #step6 .content .mapValSet > div .right div.on p {
+.contents .content .mapValSet6 > div .right div.on p {
     color: var(--bg-green-color);
 }
 
-.contents #step6 .content .mapValSet > div .right > div > div {
+.contents .content .mapValSet6 > div .right > div > div {
     max-height: 128px;
     background-color: #f9f9f9;
     border-radius: 5px;
 }
-.contents #step6 .content .mapValSet > div .right > div.on > div {
+.contents .content .mapValSet6 > div .right > div.on > div {
     background-color: #eef5f3;
 }
-.contents #step6 .content .mapValSet > div .right  ul {
+.contents .content .mapValSet6 > div .right  ul {
     padding: 10px 25px;
     display: flex;
     flex-wrap: wrap;
 }
-.contents #step6 .content .mapValSet > div .right  ul li {
+.contents .content .mapValSet6 > div .right  ul li {
     width: 50%;
     height: 36px;
     display: flex;
     align-items: center;
 }
-.contents #step6 .content .mapValSet > div .right  ul li:nth-child(odd){
+.contents .content .mapValSet6 > div .right  ul li:nth-child(odd){
     font-weight: 400;
 }
-.contents #step6 .content .mapValSet > div .right  ul li:nth-child(even){
+.contents .content .mapValSet6 > div .right  ul li:nth-child(even){
     font-weight: 600;
     font-size: var(--fontSize-20);
     justify-content: end;
 }
-.contents #step6 .content .mapValSet > div .right  ul li:nth-child(even) > span {
+.contents .content .mapValSet6 > div .right  ul li:nth-child(even) > span {
     font-weight: 400;
 }

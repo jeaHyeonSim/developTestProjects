@@ -1,11 +1,20 @@
-.contents #step7 .content > div.arrange {
+.contents .content {
+    background-color: #ffffff;
+    min-height: calc(430px - 30px);
+    height: auto;
+    border-radius: 10px;
+    padding: 15px 15px;
+    width: calc(100% - 30px);
+
+}
+.contents #step7_main_div .content > div.arrange {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     border-bottom: 1px solid #eeeeee;
     padding-bottom: 20px;
 }
-.contents #step7 .content > div.arrange > button {
+.contents #step7_main_div .content > div.arrange > button {
     width: 50px;
     height: 50px;
     background-color: #eeeeee;
@@ -17,11 +26,11 @@
     box-sizing: border-box;
     border: 1px solid #eeeeee;
 }
-.contents #step7 .content > div.arrange > button.on {
+.contents #step7_main_div .content > div.arrange > button.on {
     background-color: var(--bg-green-color);
     color: #ffffff;
 }
-.contents #step7 .content > div.arrange > button:last-child {
+.contents #step7_main_div .content > div.arrange > button:last-child {
     border: 1px solid var(--bg-green-color);
     font-size: var(--fontSize-24);
     color: var(--bg-green-color);
@@ -29,7 +38,7 @@
 }
 
 /* 하단 인버터 정보 박스 */
-.contents #step7 .content .arrangeContents{
+.contents #step7_main_div .content .arrangeContents{
     width: 100%;
     height: 100%;
     display: flex;
@@ -39,20 +48,20 @@
 }
 
 /* 조합 들 */
-.contents #step7 .content .arrangeContents .group {
+.contents #step7_main_div .content .arrangeContents .group {
     width: 100%;
     height: 100%;
     max-height: 915px;
     overflow-y: scroll;
 }
-.contents #step7 .content .arrangeContents .group::-webkit-scrollbar {
+.contents #step7_main_div .content .arrangeContents .group::-webkit-scrollbar {
     display: none;
 }
-.contents #step7 .content .arrangeContents .group {
+.contents #step7_main_div .content .arrangeContents .group {
     -ms-overflow-style: none; /* 인터넷 익스플로러 */
     scrollbar-width: none; /* 파이어폭스 */
 }
-.contents #step7 .content .arrangeContents .group .g-title {
+.contents #step7_main_div .content .arrangeContents .group .g-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,33 +72,33 @@
     height: 20px;
     margin-bottom: 19px;
 }
-.contents #step7 .content .arrangeContents .group .g-title > div:first-child{
+.contents #step7_main_div .content .arrangeContents .group .g-title > div:first-child{
     font-size: var(--fontSize-20);
     font-weight: 600;
 }
-.contents #step7 .content .arrangeContents .group .g-title > div:last-child {
+.contents #step7_main_div .content .arrangeContents .group .g-title > div:last-child {
     font-size: var(--fontSize-16);
     font-weight: 400;
 }
-.contents #step7 .content .arrangeContents .group .g-title > div:last-child span b {
+.contents #step7_main_div .content .arrangeContents .group .g-title > div:last-child span b {
     font-weight: 600;
 }
 
-.contents #step7 .content .arrangeContents .group .g-title > div:last-child span{
+.contents #step7_main_div .content .arrangeContents .group .g-title > div:last-child span{
     display: inline-block;
 }
-.contents #step7 .content .arrangeContents .group .g-title > div:last-child span:nth-child(1){
+.contents #step7_main_div .content .arrangeContents .group .g-title > div:last-child span:nth-child(1){
     width: 139px;
     text-align: left;
     border-right: 1px solid #b0c186;
 }
-.contents #step7 .content .arrangeContents .group .g-title > div:last-child span:nth-child(2) {
+.contents #step7_main_div .content .arrangeContents .group .g-title > div:last-child span:nth-child(2) {
     width: 139px;
     text-align: center;
     border-right: 1px solid #b0c186;
 }
 
-.contents #step7 .content .arrangeContents .group .g-title > div:last-child span:nth-child(3) {
+.contents #step7_main_div .content .arrangeContents .group .g-title > div:last-child span:nth-child(3) {
     width: 115px;
     text-align: right;
 }
@@ -99,16 +108,16 @@
 
 
 /* 하단 인버터 정보 박스 : 박스 들 */
-.contents #step7 .content .arrangeContents .group .arrngs {
+.contents #step7_main_div .content .arrangeContents .group .arrngs {
     padding: 20px 10px;
     margin-bottom: 10px;
     background-color: #f9f9f9;
     border-radius: 5px;
 }
-.contents #step7 .content .arrangeContents .group .arrngs:last-child {
+.contents #step7_main_div .content .arrangeContents .group .arrngs:last-child {
     margin-bottom: 0;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > p {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > p {
     font-size: var(--fontSize-20);
     font-weight: 600;
     color: #111111;
@@ -117,7 +126,7 @@
     position: relative;
     height: 20px;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > p::before {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > p::before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -127,25 +136,27 @@
     height: 20px;
     width: 4px;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div {
+
+
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child {
     display: flex;
     justify-content: space-between;
     overflow-x: scroll;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div::-webkit-scrollbar {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child::-webkit-scrollbar {
     display: none;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child {
     -ms-overflow-style: none; /* 인터넷 익스플로러 */
     scrollbar-width: none; /* 파이어폭스 */
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  {
     background-color: #ffffff;
     width: 100%;
     height:333px;
     max-height: calc(333px - 32px);
-    max-width: calc(310px - 82px);
-    min-width: calc(310px - 82px);
+    max-width: calc(310px - 75px);
+    min-width: calc(310px - 75px);
     border-radius: 5px;
     text-align: center;
     padding: 30px 40px 0;
@@ -154,43 +165,43 @@
     margin-right: 10px;
 }
 
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.img {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.img {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info {
     width: 100%;
     display: flex;
     align-items: center;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li {
     height: 30px;
     display: flex;
     align-items: center;
     font-size: var(--fontSize-16);
     text-align: left;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:nth-child(odd){
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li:nth-child(odd){
     width: 27%;
     font-weight: 400;
     color: #767676;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:nth-child(even) {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li:nth-child(even) {
     width: calc(73% - 20px);
     min-width: 70px;
     font-weight: 600;
     color: #333333;
     padding-left: 20px;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li input {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li input {
     height: 30px;
     border: 1px solid #dddddd;
     border-radius: 5px;
@@ -198,7 +209,7 @@
     margin-right: 10px;
 }
 
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child  div {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li:last-child  div {
     display: flex;
     width: 110px;
     height: 26px;
@@ -208,14 +219,14 @@
     padding: 5px;
     align-items: center;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li:last-child > div > span {
     display: block;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span:nth-child(2){
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li:last-child > div > span:nth-child(2){
     font-size: var(--fontSize-18);
     color: #111111;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span:not(.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li:last-child > div > span:nth-child(2)){
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li:last-child > div > span:not(.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li:last-child > div > span:nth-child(2)){
     color: var(--bg-green-color);
     width: 30px;
     height: 30px;
@@ -227,7 +238,7 @@
     justify-content: center;
     cursor: pointer;
 }
-.contents #step7 .content .arrangeContentsbox.r-box > p:not(.c#step7 ontents .content .arrangeContentsbox.r-box > p:first-child){
+.contents #step7_main_div .content .arrangeContentsbox.r-box > p:not(.c#step7_main_div ontents .content .arrangeContentsbox.r-box > p:first-child){
     font-size: var(--fontSize-16);
     font-weight: 400;
     color: #555555;
@@ -235,11 +246,11 @@
 }
 
 
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li button {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li button {
     height: 30px;
     max-width: 90px;
 }
-.contents #step7 .content .arrangeContents .group .arrngs > div > .arrngContent  div.info ul li button img {
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:last-child > .arrngContent  div.info ul li button img {
     width: 100%;
     height: 100%;
 }

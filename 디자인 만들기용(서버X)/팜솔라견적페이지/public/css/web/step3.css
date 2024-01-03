@@ -1,4 +1,4 @@
-.contents #step3 .content .mapValSet{
+.contents .content .mapValSet3{
     width: 100%;
     height: 100%;
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: space-between;
     position: relative;
 }
-.contents #step3 .content .mapValSetbox {
+.contents .content .mapValSet3 .mapValSetbox3 {
     background-color: #f9f9f9;
     width: calc(49.5% - 80px);
     max-width: 480px;
@@ -17,19 +17,22 @@
     padding: 30px 40px;
     border-radius: 5px;
 }
-.contents #step3 .content .mapValSetbox > p:first-child {
+.contents .content .mapValSetbox3.r-box {
+    max-height: unset;
+}
+.contents .content .mapValSet3 .mapValSetbox3 > p:first-child {
     color: #111111;
     font-size: var(--fontSize-18);
     font-weight: 600;
     margin-bottom: 15px;
 }
-.contents #step3 .content .mapValSetbox.l-box > p:not(.contents #step3 .content .mapValSetbox > p:first-child){
+.contents .content .mapValSet3 .mapValSetbox3.l-box > p:not(.contents .content .mapValSet3 .mapValSetbox3 > p:first-child){
     font-size: var(--fontSize-16);
     font-weight: 400;
     color: #555555;
     line-height: 1.1;
 }
-.contents #step3 .content .mapValSetbox.l-box > div {
+.contents .content .mapValSet3 .mapValSetbox3.l-box > div {
     color: #555555;
     font-size: var(--fontSize-16);
     font-weight: 600;
@@ -42,7 +45,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.contents #step3 .content .mapValSetbox.l-box > div > div:last-child {
+.contents .content .mapValSet3 .mapValSetbox3.l-box > div > div:last-child {
     width: 188px;
     
     border: 1px solid #eeeeee;
@@ -53,23 +56,59 @@
     align-items: center;
     padding: 0 5px;
 }
-.contents #step3 .content .mapValSetbox.l-box > div > div > span {
+
+
+.contents .content .mapValSetbox3.l-box > div.moduleAzimuth.reference {
+    margin-top: 5px;
+}
+.contents .content .mapValSetbox3.l-box > div.moduleAzimuth.reference > div:last-child {
+    border: none;
+    width: 188px;
+    justify-content: center;
+}
+.contents .content .mapValSetbox3.l-box > div.moduleAzimuth.reference > div:last-child button{
+    width: 32%;
+    height: 40px;
+    border:  1px solid #eeeeee;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #111111;
+    font-size: var(--fontSize-18);
+    font-weight: 600;
+}
+.contents .content .mapValSetbox3.l-box > div.moduleAzimuth.reference > div:last-child button {
+    text-decoration: none;
+}
+.contents .content .mapValSetbox3.l-box > div.moduleAzimuth.reference > div:last-child button {
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(221,221,221,1)  100%);
+}
+.contents .content .mapValSetbox3.l-box > div.moduleAzimuth.reference > div:last-child button:nth-child(2){
+    margin: 0 2%;
+}
+.contents .content .mapValSetbox3.l-box > div.moduleAzimuth.reference > div:last-child button.on {
+    background: linear-gradient(to bottom, #8EBC50, #2B9264 100%);
+    color: #fff;
+}
+
+
+
+.contents .content .mapValSet3 .mapValSetbox3.l-box > div > div > span {
     display: block;
 }
 
-.contents  #step3 .content .mapValSetbox.l-box > div > div > span:nth-child(2) input {
+.contents  .content .mapValSet3 .mapValSetbox3.l-box > div > div > span:nth-child(2) input {
     width: 40px;
     font-size: var(--fontSize-18);
     color: #111111;
     font-weight: 600;
     text-align: center;
 }
-.contents  #step3 .content .mapValSetbox.l-box > div > div > span:nth-child(2) input::placeholder{
+.contents  .content .mapValSet3 .mapValSetbox3.l-box > div > div > span:nth-child(2) input::placeholder{
     color: #111111;
 }
 
 
-.contents #step3 .content .mapValSetbox.l-box > div > div > span:not(.contents #step3 .content .mapValSetbox.l-box > div > div > span:nth-child(2)){
+.contents .content .mapValSet3 .mapValSetbox3.l-box > div > div > span:not(.contents .content .mapValSet3 .mapValSetbox3.l-box > div > div > span:nth-child(2)){
     color: var(--bg-green-color);
     width: 30px;
     height: 30px;
@@ -81,13 +120,13 @@
     justify-content: center;
     cursor: pointer;
 }
-.contents #step3 .content .mapValSetbox.r-box > p:not(.contents #step3 .content .mapValSetbox.r-box > p:first-child){
+.contents .content .mapValSet3 .mapValSetbox3.r-box > p:not(.contents .content .mapValSet3 .mapValSetbox3.r-box > p:first-child){
     font-size: var(--fontSize-16);
     font-weight: 400;
     color: #555555;
     line-height: 1.1;
 }
-.contents #step3 .content .mapValSetbox.r-box > div {
+.contents .content .mapValSet3 .mapValSetbox3.r-box > div {
     width: 100%;
     min-height: 45px;
     height: auto;
@@ -97,12 +136,12 @@
     font-weight: 600;
     /* margin-bottom: 15px; */
 }
-.contents #step3 .content .mapValSetbox.r-box > div.arrange {
+.contents .content .mapValSet3 .mapValSetbox3.r-box > div.arrange {
     display: flex;
     height: 43px;
     justify-content: space-between;
 }
-.contents #step3 .content .mapValSetbox.r-box > div.arrange button {
+.contents .content .mapValSet3 .mapValSetbox3.r-box > div.arrange button {
     width: 193px;
     height: 100%;
     border: unset;
@@ -117,14 +156,15 @@
     align-items: center;
     justify-content: center;
 }
-.contents #step3 .content .mapValSetbox.r-box > div.arrange button.on {
+.contents .content .mapValSet3 .mapValSetbox3.r-box > div.arrange button.on {
     background-color: var(--bg-green-color);
     color: #ffffff;
 }
-.contents #step3 .content .mapValSetbox.r-box > div.mGroup {
-    margin-top: 40px;
+.contents .content .mapValSet3 .mapValSetbox3.r-box > div.mGroup {
+    margin-top: 30px;
+    margin-bottom: 65px;
 }
-.contents #step3 .content .mapValSetbox.r-box img {
+.contents .content .mapValSet3 .mapValSetbox3.r-box img {
     position: absolute;
     right: 20px;
     bottom: 30px;
@@ -219,4 +259,58 @@
     height: 3px;
     background: #ddd;
     content: ''
+}
+
+
+
+/* 모듈 타입 선택 */
+.moduleType {
+    margin-top: 0;
+    border-top: 2px solid #eeeeee;
+    padding-top: 15px;
+}
+.moduleType .type {
+    margin-bottom: 15px;
+}
+.moduleType .type p {
+    width: 100%;
+    margin-bottom: 15px;
+    color: #111111;
+}
+.moduleType .type > div {
+    display: flex;
+    align-items: center;
+    color: #555555;
+}
+.moduleType .type > div input {
+    height: 20px;
+    margin-right: 5px;
+}
+.moduleType .type > div input:not(.moduleType .type > div input:first-child){
+    margin-left: 30px;
+}
+.moduleType .type > div input[type="radio"] {
+    width: 1.2em;
+    height: 1.2em;
+    accent-color:var(--bg-green-color);
+    margin-top: 0;
+}
+
+.moduleType .kwPrice{
+    color: #555555;
+    font-size: var(--fontSize-16);
+}
+.moduleType .kwPrice p {
+    margin-bottom: 15px;
+    color: #555555;
+}
+.moduleType .kwPrice input {
+    height: 40px;
+    padding-left: 10px;
+    margin-right: 5px;
+    width: 100%;
+    max-width: 140px;
+    box-sizing: border-box;
+    border: 1px solid #eeeeee;
+    color: #555555;
 }
