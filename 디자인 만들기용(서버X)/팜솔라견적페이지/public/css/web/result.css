@@ -107,10 +107,11 @@ main img {
 }
 .installInfo .l-box > div:last-child ul li {
     height: 40px;
-    width: 40%;
+    width: 30%;
     display: flex;
     align-items: center;
 }
+
 .installInfo .l-box > div:last-child ul li:first-child {
     position: relative;
 }
@@ -124,10 +125,12 @@ main img {
     top: 0px;
     background-size: cover;
 }
+
 .installInfo .l-box > div:last-child ul li:last-child{
     justify-content: end;
     font-size: var(--fontSize-24);
     font-weight: 600;
+    width: 67%;
 }
 .installInfo .l-box > div:last-child ul li:last-child span {
     font-weight: 400;
@@ -136,16 +139,29 @@ main img {
     
 }
 .installInfo .l-box > div:last-child >div:nth-child(2) ul li:first-child::before  {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     background: url(../../imgs/step1/icon01.png) no-repeat;
+    background-size: contain;
 }
 .installInfo .l-box > div:last-child >div:nth-child(3) ul li:first-child::before  {
-    width: 21px;
+    width: 20px;
+    height: 20px;
+    background: url(../../imgs/step1/icon02.png) no-repeat;
+    background-size: contain;
+}
+.installInfo .l-box > div:last-child >div:nth-child(4) ul li:first-child::before {
+    width: 20px;
     height: 20px;
     background: url(../../imgs/step1/icon03.png) no-repeat;
+    background-size: contain;
 }
-
+.installInfo .l-box > div:last-child >div:nth-child(5) ul li:first-child::before {
+    width: 20px;
+    height: 20px;
+    background: url(../../imgs/result/customer-support.png) no-repeat ;
+    background-size: contain;
+}
 
 /* 오른쪽 배치 */
 .installInfo .r-box {
@@ -261,7 +277,7 @@ main img {
 }
 
 
-.installInfo .r-box > div.equipment {
+.installInfo .r-box > div.arrangeContent > div.equipment {
     height: 78px;
     background-color: #eef5f3;
     border: 1px solid #8fc9b8;
@@ -272,15 +288,14 @@ main img {
     padding: 0 30px;
     color: #111111;
     font-weight: 600;
-    font-size: var(--fontSize-18);
+    font-size: var(--fontSize-18);box-sizing: border-box;
 }
-.installInfo .r-box > div.equipment span {
-
+.installInfo .r-box > div.arrangeContent > div.equipment span {
     color: var(--bg-green-color);
     font-size: var(--fontSize-30);
 }
 
-.installInfo .r-box > div.equipment span b {
+.installInfo .r-box > div.arrangeContent > div.equipment span b {
     font-size: var(--fontSize-18);
 }
 
