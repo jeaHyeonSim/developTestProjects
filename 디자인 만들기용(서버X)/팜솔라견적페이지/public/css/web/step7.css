@@ -121,6 +121,7 @@
     display: flex;
     color: #333333;
     justify-content: space-between;
+    margin-bottom: 5px;
 }
 .contents #step7_main_div .content .arrangeContents .group .arrngs > div:first-child .bach {
     font-size: var(--fontSize-20);
@@ -152,6 +153,13 @@
     border-left: 1px solid #999999;
     display: inline-block;
     font-size: var(--fontSize-16);
+    line-height: 1.2;
+}
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:first-child > div > span:nth-child(5){
+    border-left: none;
+}
+.contents #step7_main_div .content .arrangeContents .group .arrngs > div:first-child > div > span b {
+    color: var(--bg-green-color);
 }
 .contents #step7_main_div .content .arrangeContents .group .arrngs > div:first-child > div > span:first-child {
     border-left: none;
