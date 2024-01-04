@@ -28,16 +28,6 @@ config.kakaoAKkey = "5396bdb11af5af0741cf1ce924f30d27";
 config.confmKey = 'devU01TX0FVVEgyMDIzMDkyNTE0MDk1MDExNDEyODQ=';
 // 공공데이터포털
 config.openApiKey = 'rFQGSmKC0okekhO4D79Zw0QJugOvcbC3gvWgQHOCeDm7sskr7Nru3gUQ0bp2G%2FlS7lgrx0xqI3fszVbEilxHwg%3D%3D';
-// 국가공간 - 개별공시지가속성 (발급 ID : simjh7601)
-config.nsdi_indvdLandKey = "8f6b977a5c750917ea1956";
-// 국가공간 - 토지소유정보속성 (발급 ID : simjh7601)
-config.nsdi_possessionKey = "32d8bec0a1b921174ef409";
-// 국가공간 - 토지특성속성조회 (발급 ID : simjh7601)
-config.nsdi_landCharacteristicsKey = "348bb576db231e470a60aa";
-// 국가공간 - 토지이동이력속성조회 (발급 ID : simjh7601)
-config.nsdi_landMoveAttrKey = "a3aed635a1400b0e0be93e";
-// 국가공간 - 토지특성WFS조회 (발급 ID : simjh7601)
-config.nsdi_landCharacteristicsWfsKey = "41417e27f43a26c0b7e85e";
 // 국가법령 API (가입한 ID)
 config.lawKey = "simjh7601";
 
