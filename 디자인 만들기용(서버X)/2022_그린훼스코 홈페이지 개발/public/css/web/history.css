@@ -1,0 +1,77 @@
+
+.historyMain {
+    position: relative;
+    width: 80%;
+    margin: 75px auto;
+}
+.historyMain .hisRes {
+    position: absolute;
+    height: 35px;
+    top: -45px;
+    right: 0;
+    color: black;
+
+}
+.historyMain .hisRes button {
+
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.historyMain .hisRes button.on {
+    background-color: rgb(25, 138, 105);
+    color: #fff;
+}
+.historyView {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+.historyView ul > li {
+    position: relative;
+    padding-left: 13px;
+}
+
+.historyView ul > li > b {
+    position: absolute;
+    left: 0;
+    font-weight: 500;
+}
+
+.historyView p {
+    width: 100%;
+    margin: 0 auto 10px;
+}
+.historyView p > button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.historyView p > button.on {
+    background-color: rgb(25, 138, 105);
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+.historyView table {
+    width: 100%;
+    margin: 0 auto 30px;
+    border-collapse: collapse;
+    border-spacing: 0 5px; /* tr 사이에 패딩넣기 옆 위아래*/
+    border: 1px solid black;
+}
+.historyView table .cen {
+    text-align: center;
+}
+
+
+.historyView table tr, table td, th {
+    border: 1px solid black;
+}
+
+
+.historyView tbody > tr > td {
+    padding: 3px 5px;
+}

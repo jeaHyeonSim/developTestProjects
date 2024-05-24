@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    
+        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../../node_modules/moment/min/moment.min.js"></script>
+
+        <link rel="stylesheet" href="../public/css/web/common/reset.css">
+        <link rel="stylesheet" href="../public/css/web/history.css">
+        <link rel="stylesheet" href="../public/css/web/historyRegister.css">
+        <script src="../public/js/web/history.js" defer></script>
+        <script src="../public/js/web/historyRegister.js" defer></script>
+
+    </head>
+<body>
+    <div class="historyMain">
+        <div class="hisRes">
+            <button class="list on">연혁 리스트</button>
+            <button class="res">연혁 생성</button>
+        </div>
+        <div class="historyView">
+            <p class="yearBtn">
+                <button class="on all" data-year="all">전체</button>
+                <button data-year="2020">2020</button>
+                <button data-year="2021">2021</button>
+                <button data-year="2022">2022</button>
+                <button data-year="2023">2023</button>
+                <button data-year="2024">2024</button>
+            </p>
+            <table>
+                <colgroup>
+                    <col style="width: 8%;">
+                    <col style="width: 5%;">
+                    <col style="width: 80%;">
+                    <col style="width: 5%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th style="min-width: 100px;">연혁 년도</th>
+                        <th style="min-width: 60px;">연혁 월</th>
+                        <th style="min-width: 600px;">연혁 내용</th>
+                        <th style="min-width: 50px;">삭제</th>
+                    </tr>
+                </thead>
+                <tbody class="historyList">
+                    <tr>
+                        <td class="cen">2024</td>
+                        <td class="cen">01</td>
+                        <td>그린훼스코 ..... KC인증<ul></ul></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="cen">2024</td>
+                        <td class="cen">01</td>
+                        <td>그린훼스코 ..... KC인증
+                            <ul>
+                                <li>
+                                    <b>-</b>배전기기의 전압 및 전류의 전송....
+                                </li>
+                                <li>
+                                    <b>-</b>배전기기의 전압 및 전류의 전송....
+                                </li>
+                                <li>
+                                    <b>-</b>배전기기의 전압 및 전류의 전송....
+                                </li>
+                            </ul>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="historyRegister">
+            <div class="container">
+                <form id="myForm">
+                    <div class="form-group">
+                        <label for="year">연도</label>
+                        <select id="year" name="year">
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="month">월</label>
+                        <select id="month" name="month">
+                            <option value="1">1월</option>
+                            <option value="2">2월</option>
+                            <option value="3">3월</option>
+                            <option value="4">4월</option>
+                            <option value="5">5월</option>
+                            <option value="6">6월</option>
+                            <option value="7">7월</option>
+                            <option value="8">8월</option>
+                            <option value="9">9월</option>
+                            <option value="10">10월</option>
+                            <option value="11">11월</option>
+                            <option value="12">12월</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">내용</label>
+                        <textarea id="content" name="content"></textarea>
+                        <label for="subContent">서브 내용</label>
+                        <!-- <input type="text" id="subContent1" name="subContent" class="subContent">
+                        <input type="text" id="subContent2" name="subContent" class="subContent"> -->
+                        
+                        <div class="plus">
+                            <button data-tooltip="서브내용 추가">
+                                <img src="../public/imgs/web/history/add.png" alt="">
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <div class="buttons">
+                        <button type="button" id="save">저장</button>
+                        <button type="button" id="cancel">취소</button>
+                    </div>
+                </form>
+                <div class="output" id="output"></div>
+                <div class="output" id="output2">
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
