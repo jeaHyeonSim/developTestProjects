@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.header {
+    height: auto;
+    display: flex;
+    align-content: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+.header__title {
+    font-size: 1.8rem;
+}
+main {
+    height: calc(100% - 70px);
+    width: 100%;
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(1) {
+    min-width: 185px;
+}
+#calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(2) .fc-button-primary {
+
+    /*background-color: rgba(255, 255, 255, 1);*/
+    font-size: 15px;
+    color: #000000;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ddd;
+    font-weight: bold;
+    width: 100px;
+    padding: 10px;
+}
+#calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(2) > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 2px 2px #b7b7b7;
+
+}
+#calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(2) > button.fc-dayGridMonth-button.fc-button.fc-button-primary {
+    margin-left: 0;
+    background-color: #ddd;
+}
+#calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(2) > button.fc-timeGridDay-button.fc-button.fc-button-primary.fc-button-active {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 2px 2px #b7b7b7;
+}
+#calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(2) > button.fc-timeGridDay-button.fc-button.fc-button-primary {
+    background-color: #ddd;
+}
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus, .fc .fc-button-primary:not(:disabled):active:focus {
+    box-shadow: unset;
+}
